@@ -387,6 +387,18 @@ if(!useJQueryRenderer) {
         return this;
     };
 
+    initRender.prototype.has = function(target) {
+        var targets = this.find(target);
+
+        return this.filter(function() {
+            for(var i = 0; i < targets.length; i++) {
+                if(this.contains(targets[i])) {
+                    return true;
+                }
+            }
+        });
+    };
+
     initRender.prototype.html = function(value) {
         if(value === undefined) {
             if(arguments.length) {
