@@ -12,7 +12,7 @@ var dataMap = new window.WeakMap();
 
 var methods = [
     "on", "off", "one", "trigger", "triggerHandler", "focusin", "focusout", "click", "focus", "blur", "submit",
-    "html", "val", "has", "scope",
+    "val", "has", "scope",
     "hide", "show", "toggle", "slideUp", "slideDown", "slideToggle"];
 
 var renderer = function(selector, context) {
@@ -244,7 +244,9 @@ if(!useJQueryRenderer) {
                 }
                 return renderer(tbody.eq(0)).append(element);
             }
-            rendererStrategy.insertElement(this[0], element[0]);
+            if(element[0] && element[0].nodeType) { //for html method
+                rendererStrategy.insertElement(this[0], element[0]);
+            }
         }
         return this;
     };
@@ -382,6 +384,25 @@ if(!useJQueryRenderer) {
         }
         cleanData(this[0], false);
         rendererStrategy.setText(this[0], text);
+        return this;
+    };
+
+    initRender.prototype.html = function(value) {
+        if(value === undefined) {
+            if(arguments.length) {
+                return this;
+            }
+            return this[0].innerHTML;
+        }
+
+        this.empty();
+
+        if(typeof value === "string" || typeof value === "number") {
+            this[0].innerHTML = value;
+        } else {
+            this.append(value);
+        }
+
         return this;
     };
 
