@@ -163,7 +163,7 @@ if(!useJQueryRenderer) {
 
     var prepareTextElement = function(text) {
         var element;
-        //text = text.trim(); //jsrender
+        text = text.trimLeft(); //jsrender
         if(text.indexOf("<") >= 0 || text.indexOf("&") >= 0) {
             if(text[0] === "<" && text[text.length - 1] === ">") {
                 element = renderer(text);
