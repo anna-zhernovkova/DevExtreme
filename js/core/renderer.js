@@ -12,7 +12,7 @@ var dataMap = new window.WeakMap();
 
 var methods = [
     "on", "off", "one", "trigger", "triggerHandler", "focusin", "focusout", "click", "focus", "blur", "submit",
-    "val", "has", "scope",
+    "has", "scope",
     "hide", "show", "toggle", "slideUp", "slideDown", "slideToggle"];
 
 var renderer = function(selector, context) {
@@ -1011,6 +1011,16 @@ if(!useJQueryRenderer) {
         }
 
         return result;
+    };
+
+    initRender.prototype.val = function(value) {
+        if(value === undefined) {
+            return this[0].value;
+        }
+
+        this[0].value = value;
+
+        return this;
     };
 }
 
