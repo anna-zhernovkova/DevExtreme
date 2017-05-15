@@ -1014,11 +1014,17 @@ if(!useJQueryRenderer) {
     };
 
     initRender.prototype.val = function(value) {
-        if(value === undefined) {
-            return this[0].value;
+        var element = this[0];
+
+        if(!element) {
+            return this;
         }
 
-        this[0].value = value;
+        if(value === undefined) {
+            return element.value;
+        }
+
+        element.value = value;
 
         return this;
     };
