@@ -1044,7 +1044,18 @@ renderer.templates = function() {
     return $.templates.apply(this, arguments);
 };
 renderer.merge = $.merge;
-renderer.param = $.param;
+
+//TODO: move to data/odata/utils.js
+renderer.param = function(params) {
+    var result = [];
+
+    for(var name in params) {
+        result.push(name + "=" + params[name]);
+    }
+
+    return result.join("&");
+};
+
 renderer.now = $.now;
 renderer._data = $._data;
 renderer.data = function(element, key, value) {
