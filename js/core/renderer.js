@@ -1085,7 +1085,31 @@ renderer.makeArray = $.makeArray;
 renderer.contains = $.contains;
 renderer.Callbacks = $.Callbacks;
 renderer.Deferred = $.Deferred;
-renderer.map = $.map;
+
+renderer.map = function(elems, callback, arg) {
+    var i,
+        result = [];
+
+    var applyCallback = function(index, arg) {
+        var value = callback(elems[i], i, arg);
+
+        if(value != null) {
+            result.push(value);
+        }
+    };
+
+    if(Array.isArray(elems) || elems.toArray) {
+        for(i = 0; i < elems.length; i++) {
+            applyCallback(i, arg);
+        }
+    } else {
+        for(i in elems) {
+            applyCallback(i, arg);
+        }
+    }
+
+    return [].concat.apply([], result);
+};
 renderer.each = $.each;
 
 module.exports = useJQueryRenderer ? $ : renderer;
