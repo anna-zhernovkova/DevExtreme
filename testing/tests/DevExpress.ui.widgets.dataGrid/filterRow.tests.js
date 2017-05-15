@@ -404,8 +404,7 @@ QUnit.test('update filter text with timeout', function(assert) {
     var filterRowInput = this.columnHeadersView.element().find('.dx-texteditor');
     assert.equal(filterRowInput.length, 1);
 
-    filterRowInput.find('input').val(90);
-    filterRowInput.find('input').trigger('keyup');
+    filterRowInput.find('.dx-texteditor-input').val(90).trigger('keyup');
 
     //act
     this.clock.tick(600);
@@ -437,8 +436,7 @@ QUnit.test('update filter text to empty string', function(assert) {
     var filterRowInput = this.columnHeadersView.element().find('.dx-texteditor');
     assert.equal(filterRowInput.length, 1);
 
-    filterRowInput.find('input').val('');
-    filterRowInput.find('input').trigger('keyup');
+    filterRowInput.find('.dx-texteditor-input').val('').trigger('keyup');
 
     //act
     this.clock.tick(600);
@@ -470,8 +468,7 @@ QUnit.test("update filter text for number column with format", function(assert) 
 
     //act
     var filterRowInput = this.columnHeadersView.element().find(".dx-texteditor");
-    filterRowInput.find("input").val(90);
-    filterRowInput.find("input").trigger("keyup");
+    filterRowInput.find('.dx-texteditor-input').val(90).trigger('keyup');
 
     this.clock.tick(700);
 
@@ -501,8 +498,7 @@ QUnit.test("update filter text for date column with format", function(assert) {
     this.columnHeadersView.render(testElement);
 
     //act
-
-    var filterRowInput = this.columnHeadersView.element().find(".dx-texteditor input");
+    var filterRowInput = this.columnHeadersView.element().find(".dx-texteditor .dx-texteditor-input");
 
     filterRowInput
         .val("1992/08/06")
@@ -846,8 +842,7 @@ QUnit.test("Apply filter button is changed enabled state", function(assert) {
     this.columnHeadersView.render(testElement);
 
     filterRowInput = this.columnHeadersView.element().find('.dx-texteditor');
-    filterRowInput.find('input').val(90);
-    filterRowInput.find('input').trigger('keyup');
+    filterRowInput.find('.dx-texteditor-input').val(90).trigger('keyup');
     this.clock.tick(0);
 
     $button = testElement.find(".dx-apply-button");
@@ -965,8 +960,7 @@ QUnit.test("Set highlight to editor container when filter is changed", function(
     this.columnHeadersView.render(testElement);
 
     filterRowInput = this.columnHeadersView.element().find('.dx-texteditor');
-    filterRowInput.find('input').val(90);
-    filterRowInput.find('input').trigger('keyup');
+    filterRowInput.find('.dx-texteditor-input').val(90).trigger('keyup');
     this.clock.tick(0);
 
     $editorContainer = filterRowInput.closest(".dx-editor-container");
@@ -994,8 +988,7 @@ QUnit.test("Remove highlights from editor container when filter is applied", fun
     this.headerPanel.render(testElement);
 
     filterRowInput = this.columnHeadersView.element().find('.dx-texteditor');
-    filterRowInput.find('input').val(90);
-    filterRowInput.find('input').trigger('keyup');
+    filterRowInput.find('.dx-texteditor-input').val(90).trigger('keyup');
     this.clock.tick(0);
 
     $button = testElement.find(".dx-apply-button");
@@ -1164,9 +1157,8 @@ QUnit.test("State of the 'Apply filter' button should be saved after repaint", f
     this.headerPanel.render($testElement);
     this.columnHeadersView.render($testElement);
 
-    filterRowInput = $testElement.find(".dx-datagrid-filter-row .dx-texteditor input").first();
-    filterRowInput.val(90);
-    filterRowInput.trigger('keyup');
+    filterRowInput = $testElement.find(".dx-datagrid-filter-row .dx-texteditor .dx-texteditor-input");
+    filterRowInput.val(90).trigger('keyup');
     this.clock.tick();
 
     //act
@@ -1259,7 +1251,7 @@ QUnit.test("Not apply filter when changed filter operation with empty filter val
 
     that.columnHeadersView.render(testElement);
 
-    filterRowInput = testElement.find("input").first();
+    filterRowInput = testElement.find(".dx-texteditor-input");
     filterMenu = that.columnHeadersView.element().find('.dx-menu');
     rootMenuItem = filterMenu.find(".dx-menu-item");
     $(rootMenuItem).trigger("dxclick");
