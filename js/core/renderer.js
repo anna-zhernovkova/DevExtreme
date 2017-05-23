@@ -1114,47 +1114,46 @@ renderer.Callbacks = $.Callbacks;
 renderer.Deferred = $.Deferred;
 
 renderer.map = function(elems, callback, arg) {
-    var i,
-        result = [];
+    var result = [];
 
     var applyCallback = function(index, arg) {
-        var value = callback(elems[i], i, arg);
+        var value = callback(elems[index], index, arg);
 
         if(value != null) {
             result.push(value);
         }
     };
 
-    if(Array.isArray(elems) || elems.toArray) {
-        for(i = 0; i < elems.length; i++) {
+    if(Array.isArray(elems) || "length" in elems) {
+        for(var i = 0; i < elems.length; i++) {
             applyCallback(i, arg);
         }
     } else {
-        for(i in elems) {
-            applyCallback(i, arg);
+        for(var key in elems) {
+            applyCallback(key, arg);
         }
     }
 
     return [].concat.apply([], result);
 };
-renderer.each = function(elem, callback) {
-    if(!!elem) {
-        if(Array.isArray(elem) || "length" in elem) {
-            for(var i = 0; i < elem.length; i++) {
-                if(callback.call(elem[i], i, elem[i]) === false) {
+renderer.each = function(elems, callback) {
+    if(!!elems) {
+        if(Array.isArray(elems) || "length" in elems) {
+            for(var i = 0; i < elems.length; i++) {
+                if(callback.call(elems[i], i, elems[i]) === false) {
                     break;
                 }
 		    }
         } else {
-            for(var key in elem) {
-                if(callback.call(elem[key], key, elem[key]) === false) {
+            for(var key in elems) {
+                if(callback.call(elems[key], key, elems[key]) === false) {
                     break;
                 }
 		    }
 	    }
     }
 
-    return elem;
+    return elems;
 };
 
 module.exports = useJQueryRenderer ? $ : renderer;
