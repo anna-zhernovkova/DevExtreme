@@ -1137,6 +1137,24 @@ renderer.map = function(elems, callback, arg) {
 
     return [].concat.apply([], result);
 };
-renderer.each = $.each;
+renderer.each = function(elem, callback) {
+    if(!!elem) {
+        if(Array.isArray(elem) || "length" in elem) {
+            for(var i = 0; i < elem.length; i++) {
+                if(callback.call(elem[i], i, elem[i]) === false) {
+                    break;
+                }
+		    }
+        } else {
+            for(var key in elem) {
+                if(callback.call(elem[key], key, elem[key]) === false) {
+                    break;
+                }
+		    }
+	    }
+    }
+
+    return elem;
+};
 
 module.exports = useJQueryRenderer ? $ : renderer;
