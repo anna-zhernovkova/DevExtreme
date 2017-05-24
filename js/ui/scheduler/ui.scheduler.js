@@ -1050,6 +1050,7 @@ var Scheduler = Widget.inherit({
                     this._appointments.option("allowAllDayResize", value !== "day");
                     this._reloadDataSource();
                 }).bind(this));
+                this._recalculateWorkspace();
                 break;
             case "appointmentTemplate":
                 this._appointments.option("itemTemplate", value);
@@ -1685,6 +1686,10 @@ var Scheduler = Widget.inherit({
         this._workSpace = this._createComponent($workSpace, VIEWS_CONFIG[this.option("currentView")].workSpace, this._workSpaceConfig(groups));
         this._workSpace.getWorkArea().append(this._appointments.element());
 
+        this._recalculateWorkspace();
+    },
+
+    _recalculateWorkspace: function() {
         var recalculateHandler = (function() {
             domUtils.triggerResizeEvent(this.element());
         }).bind(this);
@@ -1948,9 +1953,6 @@ var Scheduler = Widget.inherit({
                     container: options.container
                 });
             }),
-            onShowing: function(e) {
-                AppointmentForm.fixFormVisibility(e.component.content());
-            },
             defaultOptionsRules: [
                 {
                     device: function() {
@@ -2001,7 +2003,7 @@ var Scheduler = Widget.inherit({
 
         function convert(obj, dateFieldName) {
             var date = new Date(this.fire("getField", dateFieldName, obj));
-            var tzDiff = this._getTimezoneOffsetByOption() * 3600000 + this.fire("getClientTimezoneOffset");
+            var tzDiff = this._getTimezoneOffsetByOption() * 3600000 + this.fire("getClientTimezoneOffset", date);
 
             return new Date(date.getTime() + tzDiff);
         }
@@ -2072,23 +2074,25 @@ var Scheduler = Widget.inherit({
         exceptionDate = new Date(exceptionDate);
 
         function processAppointmentDates(appointment, commonTimezoneOffset) {
-            var clientTzOffset = -(this._subscribes["getClientTimezoneOffset"]() / 3600000);
-
+            var startDate = this.fire("getField", "startDate", appointment);
             var processedStartDate = this.fire(
                 "convertDateByTimezoneBack",
-                this.fire("getField", "startDate", appointment),
+                startDate,
                 this.fire("getField", "startDateTimeZone", appointment)
                 );
 
+            var endDate = this.fire("getField", "endDate", appointment);
             var processedEndDate = this.fire(
                 "convertDateByTimezoneBack",
-                this.fire("getField", "endDate", appointment),
+                endDate,
                 this.fire("getField", "endDateTimeZone", appointment)
                 );
 
             if(typeof commonTimezoneOffset === "number" && !isNaN(commonTimezoneOffset)) {
-                var processedStartDateInUTC = processedStartDate.getTime() - clientTzOffset * 3600000,
-                    processedEndDateInUTC = processedEndDate.getTime() - clientTzOffset * 3600000;
+                var startDateClientTzOffset = -(this._subscribes["getClientTimezoneOffset"](startDate) / 3600000);
+                var endDateClientTzOffset = -(this._subscribes["getClientTimezoneOffset"](endDate) / 3600000);
+                var processedStartDateInUTC = processedStartDate.getTime() - startDateClientTzOffset * 3600000,
+                    processedEndDateInUTC = processedEndDate.getTime() - endDateClientTzOffset * 3600000;
 
                 processedStartDate = new Date(processedStartDateInUTC + commonTimezoneOffset * 3600000);
                 processedEndDate = new Date(processedEndDateInUTC + commonTimezoneOffset * 3600000);

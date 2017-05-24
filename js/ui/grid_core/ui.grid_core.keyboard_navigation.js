@@ -16,6 +16,7 @@ var ROWS_VIEW_CLASS = "rowsview",
     GROUP_ROW_CLASS = "dx-group-row",
     MASTER_DETAIL_ROW_CLASS = "dx-master-detail-row",
     MASTER_DETAIL_CELL_CLASS = "dx-master-detail-cell",
+    DROPDOWN_EDITOR_OVERLAY_CLASS = "dx-dropdowneditor-overlay",
     COMMAND_EXPAND_CLASS = "dx-command-expand",
 
     INTERACTIVE_ELEMENTS_SELECTOR = "input:not([type='hidden']), textarea, a, [tabindex]",
@@ -78,11 +79,10 @@ var KeyboardNavigationController = core.ViewController.inherit({
             if($cell && $cell.length > 0) {
                 //that._focusView(view, index);
                 setTimeout(function() {
-                    if(that.getController("editorFactory").focus()) {
-                        that._focus($cell);
-                    }
                     if(that._editingController.isEditing()) {
                         that._focusInteractiveElement.bind(that)($cell);
+                    } else {
+                        that._focus($cell);
                     }
                 });
             }
@@ -421,6 +421,10 @@ var KeyboardNavigationController = core.ViewController.inherit({
         }
     },
 
+    _isInsideEditForm: function(element) {
+        return $(element).closest("." + this.addWidgetPrefix(EDIT_FORM_CLASS)).length > 0;
+    },
+
     _isMasterDetailCell: function(element) {
         var $masterDetailCell = $(element).closest("." + MASTER_DETAIL_CELL_CLASS),
             $masterDetailGrid = $masterDetailCell.closest("." + this.getWidgetContainerClass()).parent();
@@ -431,8 +435,11 @@ var KeyboardNavigationController = core.ViewController.inherit({
     _handleTabKeyOnMasterDetailCell: function(target, direction) {
         if(this._isMasterDetailCell(target)) {
             this._updateFocusedCellPosition($(target).closest("." + MASTER_DETAIL_CELL_CLASS));
+
             var $nextCell = this._getNextCell(direction, "row");
-            $nextCell && $nextCell.attr("tabindex", 0);
+            if(!this._isInsideEditForm($nextCell)) {
+                $nextCell && $nextCell.attr("tabindex", 0);
+            }
 
             return true;
         }
@@ -457,6 +464,7 @@ var KeyboardNavigationController = core.ViewController.inherit({
             }
             if(isEditing) {
                 var column,
+                    row,
                     isEditingAllowed;
 
                 this._updateFocusedCellPosition(this._getCellElementFromTarget(eventTarget));
@@ -467,7 +475,9 @@ var KeyboardNavigationController = core.ViewController.inherit({
                 }
 
                 column = this._columnsController.getVisibleColumns()[this.getView("rowsView").getCellIndex($cell)];
-                isEditingAllowed = editingOptions.allowUpdating && column.allowEditing;
+                row = this._dataController.items()[this._getRowIndex($cell && $cell.parent())];
+
+                isEditingAllowed = (editingOptions.allowUpdating || row && row.inserted) && column.allowEditing;
 
                 if(!isEditingAllowed) {
                     this._editingController.closeEditCell();
@@ -527,7 +537,11 @@ var KeyboardNavigationController = core.ViewController.inherit({
             var $cell = this._getCellElementFromTarget(eventArgs.originalEvent.target);
             this._updateFocusedCellPosition($cell);
             if(!this._isRowEditMode()) {
-                this._editingController.closeEditCell();
+                if(this._editingController.getEditMode() === "cell") {
+                    this._editingController.cancelEditData();
+                } else {
+                    this._editingController.closeEditCell();
+                }
             } else {
                 this._focusEditFormCell($cell);
                 this._editingController.cancelEditData();
@@ -784,7 +798,8 @@ var KeyboardNavigationController = core.ViewController.inherit({
             that._initFocusedViews();
 
             that._documentClickHandler = that.createAction(function(e) {
-                if(!$(e.jQueryEvent.target).closest("." + that.addWidgetPrefix(ROWS_VIEW_CLASS)).length) {
+                var $target = $(e.jQueryEvent.target);
+                if(!$target.closest("." + that.addWidgetPrefix(ROWS_VIEW_CLASS)).length && !$target.closest("." + DROPDOWN_EDITOR_OVERLAY_CLASS).length) {
                     that._resetFocusedCell();
                 }
             });

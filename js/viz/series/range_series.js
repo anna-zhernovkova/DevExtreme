@@ -1,8 +1,7 @@
 "use strict";
 
 //there are rangebar, rangearea
-var $ = require("../../core/renderer"),
-    commonUtils = require("../../core/utils/common"),
+var commonUtils = require("../../core/utils/common"),
     extend = require("../../core/utils/extend").extend,
     _extend = extend,
     _isDefined = commonUtils.isDefined,
@@ -132,7 +131,7 @@ exports.chart["rangearea"] = _extend({}, areaSeries, {
 
         elementsGroup && elementsGroup.smartAttr(style.elements);
         bordersGroup && bordersGroup.attr(style.border);
-        $.each(that._graphics || [], function(_, graphic) {
+        (that._graphics || []).forEach(function(graphic) {
             graphic.line && graphic.line.attr({ "stroke-width": style.border["stroke-width"] });
             graphic.bottomLine && graphic.bottomLine.attr({ "stroke-width": style.border["stroke-width"] });
         });

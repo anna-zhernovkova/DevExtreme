@@ -259,6 +259,8 @@ var EditingController = modules.ViewController.inherit((function() {
         },
 
         refresh: function() {
+            if(getEditMode(this) === EDIT_MODE_CELL) return;
+
             if(getEditMode(this) !== EDIT_MODE_BATCH) {
                 this.init();
             } else {
@@ -456,7 +458,9 @@ var EditingController = modules.ViewController.inherit((function() {
                 that._showEditPopup(insertKey.rowIndex);
             } else {
                 $firstCell = that.getFirstEditableCellInRow(insertKey.rowIndex);
+                that._editCellInProgress = true;
                 that._delayedInputFocus($firstCell, function() {
+                    that._editCellInProgress = false;
                     var $cell = that.getFirstEditableCellInRow(insertKey.rowIndex);
                     $cell && $cell.trigger(clickEvent.name);
                 });
@@ -546,9 +550,11 @@ var EditingController = modules.ViewController.inherit((function() {
 
         _showEditPopup: function(rowIndex) {
             var that = this,
+                isMobileDevice = devices.current().deviceType !== "desktop",
                 popupOptions = extend(
                     {
                         showTitle: false,
+                        fullScreen: isMobileDevice,
                         toolbarItems: [
                             { toolbar: 'bottom', location: 'after', widget: 'dxButton', options: that._getSaveButtonConfig() },
                             { toolbar: 'bottom', location: 'after', widget: 'dxButton', options: that._getCancelButtonConfig() }
@@ -976,8 +982,10 @@ var EditingController = modules.ViewController.inherit((function() {
                 result = $.Deferred();
 
             var resetEditIndices = function(that) {
-                that._editColumnIndex = -1;
-                that._editRowIndex = -1;
+                if(editMode !== EDIT_MODE_CELL) {
+                    that._editColumnIndex = -1;
+                    that._editRowIndex = -1;
+                }
             };
 
             if(that._beforeSaveEditData() || that._saving) {
@@ -1136,6 +1144,8 @@ var EditingController = modules.ViewController.inherit((function() {
             if(!isRowEditMode(that)) {
                 setTimeout(function() {
                     if(editMode === EDIT_MODE_CELL && that.hasChanges()) {
+                        that._editRowIndex = -1;
+                        that._editColumnIndex = -1;
                         that.saveEditData();
                     } else if(oldEditRowIndex >= 0) {
                         var rowIndices = [oldEditRowIndex];
@@ -1202,11 +1212,7 @@ var EditingController = modules.ViewController.inherit((function() {
                 that._updateEditButtons();
 
                 if(options.column.showEditorAlways && getEditMode(that) === EDIT_MODE_CELL && options.row && !options.row.inserted) {
-                    that.saveEditData().always(function() {
-                        that._editColumnIndex = options.columnIndex;
-                        that._editRowIndex = options.row.rowIndex + that._dataController.getRowIndexOffset();
-                        that._focusEditingCell();
-                    });
+                    that.saveEditData();
                 } else if(options.row && (forceUpdateRow || options.column.setCellValue !== options.column.defaultSetCellValue)) {
                     that._dataController.updateItems({
                         changeType: "update",
@@ -1432,7 +1438,7 @@ var EditingController = modules.ViewController.inherit((function() {
                 },
                 buttonItems = [];
 
-            var prepareButtonItem = function(name, methodName) {
+            var prepareButtonItem = function(name, methodName, sortIndex) {
                 var className = classNameButtonByNames[name],
                     onInitialized = function(e) {
                         e.element.addClass(headerPanel._getToolbarButtonClass(EDIT_BUTTON_CLASS + " " + that.addWidgetPrefix(className) + "-button"));
@@ -1456,17 +1462,18 @@ var EditingController = modules.ViewController.inherit((function() {
                     name: name + "Button",
                     disabled: isButtonDisabled,
                     location: "after",
-                    locateInMenu: "auto"
+                    locateInMenu: "auto",
+                    sortIndex: sortIndex
                 };
             };
 
             if(editingOptions.allowAdding) {
-                buttonItems.push(prepareButtonItem("addRow", "addRow"));
+                buttonItems.push(prepareButtonItem("addRow", "addRow", 20));
             }
 
             if((editingOptions.allowUpdating || editingOptions.allowAdding || editingOptions.allowDeleting) && getEditMode(that) === EDIT_MODE_BATCH) {
-                buttonItems.push(prepareButtonItem("save", "saveEditData"));
-                buttonItems.push(prepareButtonItem("revert", "cancelEditData"));
+                buttonItems.push(prepareButtonItem("save", "saveEditData", 21));
+                buttonItems.push(prepareButtonItem("revert", "cancelEditData", 22));
             }
 
             return buttonItems;
@@ -1913,7 +1920,8 @@ module.exports = {
                         editingController = that._editingController,
                         $targetElement = $(e.jQueryEvent.target),
                         columnIndex = that._getColumnIndexByElement($targetElement),
-                        allowUpdating = that.option("editing.allowUpdating"),
+                        row = that._dataController.items()[e.rowIndex],
+                        allowUpdating = that.option("editing.allowUpdating") || row && row.inserted,
                         column = that._columnsController.getVisibleColumns()[columnIndex],
                         allowEditing = column && (column.allowEditing || editingController.isEditCell(e.rowIndex, columnIndex));
 

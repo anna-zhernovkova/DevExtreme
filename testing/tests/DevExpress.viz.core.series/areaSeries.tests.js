@@ -906,12 +906,12 @@ function setDiscreteType(series) {
 
         assert.deepEqual(series._bordersGroup.attr.lastCall.args[0], {
             "dashStyle": "b-s dashStyle",
-            "stroke": "b-s color",
-            "stroke-width": 0
+            "stroke": "none",
+            "stroke-width": "b-s width"
         });
 
         $.each(series._bordersGroup.children, function(_, path) {
-            assert.equal(path._stored_settings["stroke-width"], 0);
+            assert.equal(path._stored_settings["stroke-width"], "b-s width");
             assert.ok(path.sharp.called);
             assert.ok(path.sharp.lastCall.calledAfter(path.attr.lastCall));
         });
@@ -934,12 +934,39 @@ function setDiscreteType(series) {
 
         assert.deepEqual(series._bordersGroup.attr.lastCall.args[0], {
             "dashStyle": "b-s dashStyle",
-            "stroke": "b-s color",
-            "stroke-width": 0
+            "stroke": "none",
+            "stroke-width": "b-s width"
         });
 
         $.each(series._bordersGroup.children, function(_, path) {
-            assert.equal(path._stored_settings["stroke-width"], 0);
+            assert.equal(path._stored_settings["stroke-width"], "b-s width");
+            assert.ok(path.sharp.called);
+            assert.ok(path.sharp.lastCall.calledAfter(path.attr.lastCall));
+        });
+    });
+
+    QUnit.test("Get rid of stroke-width 0 on border style", function(assert) {
+        var series = createSeries($.extend(true, {}, this.options, {
+            selectionStyle: {
+                border: {
+                    width: 0,
+                    visible: true
+                }
+            }
+        }));
+        series.updateData(this.data);
+        series.draw(this.translators);
+
+        series.select();
+
+        assert.deepEqual(series._bordersGroup.attr.lastCall.args[0], {
+            "dashStyle": "b-s dashStyle",
+            "stroke": "none",
+            "stroke-width": 1
+        });
+
+        $.each(series._bordersGroup.children, function(_, path) {
+            assert.equal(path._stored_settings["stroke-width"], 1);
             assert.ok(path.sharp.called);
             assert.ok(path.sharp.lastCall.calledAfter(path.attr.lastCall));
         });
@@ -1804,6 +1831,7 @@ function setDiscreteType(series) {
         assert.ok(this.renderer.stub("path").getCall(0).returnValue.sharp.calledOnce);
         assert.ok(this.renderer.stub("path").getCall(0).returnValue.sharp.firstCall.calledAfter(this.renderer.stub("path").getCall(0).returnValue.attr.lastCall));
 
+
         checkElementPoints(assert, this.renderer.stub("path").getCall(1).args[0], [[0, 5], [0, 5], [3, 5], [3, 5], [3, 5], [3, 5], [3, 5], [3, 5], [0, 5], [0, 5]], true, "first area element on creating");
         assert.equal(this.renderer.stub("path").getCall(1).args[1], "bezierarea");
 
@@ -1811,6 +1839,7 @@ function setDiscreteType(series) {
         assert.equal(this.renderer.stub("path").getCall(2).args[1], "bezier");
         assert.ok(this.renderer.stub("path").getCall(2).returnValue.sharp.calledOnce);
         assert.ok(this.renderer.stub("path").getCall(2).returnValue.sharp.firstCall.calledAfter(this.renderer.stub("path").getCall(2).returnValue.attr.lastCall));
+
 
         checkElementPoints(assert, this.renderer.stub("path").getCall(3).args[0], [[9, 5], [9, 5], [12, 5], [12, 5], [12, 5], [12, 5], [12, 5], [12, 5], [9, 5], [9, 5]], true, "second area element on creating");
         assert.equal(this.renderer.stub("path").getCall(3).args[1], "bezierarea");
