@@ -212,6 +212,28 @@ QUnit.test("dropDownBox should work with the slow dataSource", function(assert) 
     assert.equal(instance.option("value"), 2, "value was applied");
 });
 
+QUnit.test("dropDownBox should update display text after dataSource changed", function(assert) {
+    var items = [{ id: 1, name: "item 1" }, { id: 2, name: "item 2" }, { id: 3, name: "item 3" }],
+        instance = new DropDownBox(this.$element, {
+            dataSource: [],
+            displayExpr: "name",
+            valueExpr: "id",
+            value: [2, 3]
+        }),
+        $input = this.$element.find("input");
+
+    instance.option("dataSource", items);
+
+    assert.equal($input.val(), "item 2, item 3", "input text has been updated");
+});
+
+QUnit.test("text option should follow the displayValue option", function(assert) {
+    var instance = new DropDownBox(this.$element, {});
+    instance.option("displayValue", "test");
+
+    assert.equal(instance.option("text"), "test", "text option has been changed");
+});
+
 
 QUnit.module("popup options", moduleConfig);
 
@@ -351,9 +373,9 @@ QUnit.testInActiveWindow("input should get focused when shift+tab pressed on fir
     assert.ok(event.isDefaultPrevented(), "prevent default for focusing it's own input but not an input of the previous editor on the page");
 });
 
-QUnit.test("inner input should be focused after popup opening", function(assert) {
+QUnit.testInActiveWindow("inner input should be focused after popup opening", function(assert) {
     var inputFocusedHandler = sinon.stub(),
-        $input = $("<input>", { id: "input1", type: "text" }).on("focus", inputFocusedHandler),
+        $input = $("<input>", { id: "input1", type: "text" }).on("focusin", inputFocusedHandler),
         instance = new DropDownBox(this.$element, {
             focusStateEnabled: true,
             contentTemplate: function(component, $content) {

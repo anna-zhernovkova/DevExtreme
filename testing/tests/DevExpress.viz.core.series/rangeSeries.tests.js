@@ -753,12 +753,12 @@ var environmentWithSinonStubPoint = {
 
         assert.deepEqual(series._bordersGroup.attr.lastCall.args[0], {
             "dashStyle": "b-s dashStyle",
-            "stroke": "b-s color",
-            "stroke-width": 0
+            "stroke": "none",
+            "stroke-width": "b-s width"
         });
 
         $.each(series._bordersGroup.children, function(_, path) {
-            assert.equal(path._stored_settings["stroke-width"], 0);
+            assert.equal(path._stored_settings["stroke-width"], "b-s width");
         });
     });
 
@@ -779,12 +779,12 @@ var environmentWithSinonStubPoint = {
 
         assert.deepEqual(series._bordersGroup.attr.lastCall.args[0], {
             "dashStyle": "b-s dashStyle",
-            "stroke": "b-s color",
-            "stroke-width": 0
+            "stroke": "none",
+            "stroke-width": "b-s width"
         });
 
         $.each(series._bordersGroup.children, function(_, path) {
-            assert.equal(path._stored_settings["stroke-width"], 0);
+            assert.equal(path._stored_settings["stroke-width"], "b-s width");
         });
     });
 })();

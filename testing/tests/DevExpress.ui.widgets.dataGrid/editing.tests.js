@@ -4731,6 +4731,43 @@ QUnit.testInActiveWindow('Cell should save focus state after data saving in cell
     assert.ok(rowsView.getCellElement(0, 1).find(".dx-widget").hasClass("dx-state-focused"), "editor is focused");
 });
 
+//T463800
+QUnit.testInActiveWindow('Focus should not returns to previous cell after data saving in cell editing mode', function(assert) {
+    //arrange
+    var that = this,
+        rowsView = that.rowsView,
+        editor,
+        testElement = $('#container');
+
+    that.options.loadingTimeout = 30;
+    that.options.columns[0] = { dataField: "name", showEditorAlways: true };
+
+    that.options.editing = {
+        allowUpdating: true,
+        mode: 'cell'
+    };
+
+    that.element = function() {
+        return testElement;
+    };
+
+    rowsView.render(testElement);
+    that.columnsController.init();
+
+    that.editCell(0, 0);
+
+    editor = rowsView.getCellElement(0, 0).find(".dx-textbox").data("dxTextBox");
+
+    //act
+    editor.option("value", "test2");
+    that.editCell(0, 1);
+    that.clock.tick(30);
+
+    //assert
+    assert.strictEqual(rowsView.getCellElement(0, 0).find("input").val(), "test2", "value input");
+    assert.ok(rowsView.getCellElement(0, 1).find(".dx-widget").hasClass("dx-state-focused"), "editor is focused");
+});
+
 //T383760
 QUnit.testInActiveWindow('Update be called once in cell mode on value change for boolean editor', function(assert) {
     //arrange
@@ -7541,6 +7578,43 @@ QUnit.test("Insert row when set validate in column and edit mode cell", function
     assert.equal(testElement.find('tbody > tr').length, 5, "count rows");
 });
 
+//T497279
+QUnit.testInActiveWindow("Insert row using extern button when edit mode cell", function(assert) {
+    if(devices.real().deviceType !== "desktop") {
+        assert.ok(true, "focus is not actual for mobile devices");
+        return;
+    }
+    //arrange
+    var that = this,
+        rowsView = this.rowsView,
+        testElement = $('#container');
+
+    var $addRowButton = $("<div>").appendTo("#qunit-fixture").dxButton({
+        text: "Add Row",
+        onClick: function() {
+            that.addRow();
+        }
+    });
+
+    rowsView.render(testElement);
+
+    that.applyOptions({
+        editing: {
+            mode: "cell",
+            allowUpdating: false
+        }
+    });
+
+    //act
+    $addRowButton.trigger("dxclick");
+    this.clock.tick();
+
+    //assert
+    assert.equal(testElement.find('.dx-row-inserted').length, 1, "inserted row is rendered");
+    assert.ok(testElement.find('.dx-row-inserted').children().eq(0).hasClass("dx-focused"), 1, "first cell in inserted row is focused");
+    assert.ok(getInputElements(testElement).length, 1, "one editor is rendered");
+});
+
 QUnit.test('Edit cell with edit mode batch and change page', function(assert) {
     //arrange
     var that = this,
@@ -9699,4 +9773,20 @@ QUnit.test("EditorPreparing event have the correct parameters", function(assert)
     expectedProperties.forEach(function(item) {
         assert.ok(spyArgs[0].hasOwnProperty(item), "The '" + item + "' property existed");
     });
+});
+
+QUnit.test("Show full screen editing popup on mobile devices", function(assert) {
+    var that = this;
+
+    that.setupModules(that);
+    that.renderRowsView();
+
+    //act
+    that.editRow(0);
+    that.clock.tick();
+    that.preparePopupHelpers();
+
+    //assert
+    var isFullScreen = devices.current().deviceType !== "desktop";
+    assert.equal(that.editPopupInstance.option("fullScreen"), isFullScreen, "'fullScreen' option value is 'false' on a desktop and 'true' on a mobile device");
 });
