@@ -597,8 +597,8 @@ declare module DevExpress.ui {
         /** @docid dxTagBoxOptions_onMultiTagPreparing */
         onMultiTagPreparing?: Function;
 
-        /** @docid dxTagBoxOptions_maxTagCount */
-        maxTagCount?: number;
+        /** @docid dxTagBoxOptions_maxDisplayedTags */
+        maxDisplayedTags?: number;
 
         /** @docid dxTagBoxOptions_showMultiTagOnly */
         showMultiTagOnly?: boolean;
@@ -1815,6 +1815,9 @@ declare module DevExpress.ui {
 
         /** @docid dxDropDownBoxOptions_dropDownOptions */
         dropDownOptions?: DevExpress.ui.dxPopupOptions;
+
+        /** @docid dxDropDownBoxOptions_fieldTemplate */
+        fieldTemplate?: any;
 
         /** @docid dxDropDownBoxOptions_valueChangeEvent */
         valueChangeEvent?: string;

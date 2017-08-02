@@ -2,6 +2,7 @@
 
 var $ = require("../core/renderer"),
     eventsEngine = require("../events/core/events_engine"),
+    dataUtils = require("../core/element_data"),
     devices = require("../core/devices"),
     noop = require("../core/utils/common").noop,
     isDefined = require("../core/utils/type").isDefined,
@@ -317,12 +318,12 @@ var TagBox = SelectBox.inherit({
             onSelectAllValueChanged: null,
 
             /**
-             * @name dxTagBoxOptions_maxTagCount
-             * @publicName maxTagCount
+             * @name dxTagBoxOptions_maxDisplayedTags
+             * @publicName maxDisplayedTags
              * @type number
              * @default undefined
              */
-            maxTagCount: undefined,
+            maxDisplayedTags: undefined,
 
             /**
              * @name dxTagBoxOptions_showMultiTagOnly
@@ -486,7 +487,7 @@ var TagBox = SelectBox.inherit({
         var selectedCount = this._getValue().length;
 
         if(!this.option("showMultiTagOnly")) {
-            args.text = messageLocalization.getFormatter("dxTagBox-moreSelected")(selectedCount - this.option("maxTagCount") + 1);
+            args.text = messageLocalization.getFormatter("dxTagBox-moreSelected")(selectedCount - this.option("maxDisplayedTags") + 1);
         } else {
             args.text = messageLocalization.getFormatter("dxTagBox-selected")(selectedCount);
         }
@@ -721,13 +722,12 @@ var TagBox = SelectBox.inherit({
             .addClass(NATIVE_CLICK_CLASS);
 
         this._renderInputSize();
-        this._clearFilter();
         this._renderTags();
         this._popup && this._popup.refreshPosition();
     },
 
     _listItemClickHandler: function(e) {
-        this._clearTextValue();
+        !this.option("showSelectionControls") && this._clearTextValue();
 
         if(this.option("applyValueMode") === "useButtons") {
             return;
@@ -752,9 +752,9 @@ var TagBox = SelectBox.inherit({
 
     _multiTagRequired: function() {
         var values = this._getValue(),
-            maxTagCount = this.option("maxTagCount");
+            maxDisplayedTags = this.option("maxDisplayedTags");
 
-        return isDefined(maxTagCount) && values.length > maxTagCount;
+        return isDefined(maxDisplayedTags) && values.length > maxDisplayedTags;
     },
 
     _renderMultiTag: function($input) {
@@ -810,10 +810,10 @@ var TagBox = SelectBox.inherit({
 
             var $multiTag = this._multiTagRequired() && this._renderMultiTag($input),
                 showMultiTagOnly = this.option("showMultiTagOnly"),
-                maxTagCount = this.option("maxTagCount");
+                maxDisplayedTags = this.option("maxDisplayedTags");
 
             items.forEach(function(item, index) {
-                if(($multiTag && showMultiTagOnly) || ($multiTag && !showMultiTagOnly && index - maxTagCount >= -1)) {
+                if(($multiTag && showMultiTagOnly) || ($multiTag && !showMultiTagOnly && index - maxDisplayedTags >= -1)) {
                     return false;
                 }
                 this._renderTag(item, $multiTag || $input);
@@ -897,7 +897,7 @@ var TagBox = SelectBox.inherit({
 
         for(var i = 0; i < tagsLength; i++) {
             var $tag = $tags[i];
-            if(value === $.data($tag, TAGBOX_TAG_DATA_KEY)) {
+            if(value === dataUtils.data($tag, TAGBOX_TAG_DATA_KEY)) {
                 result = $($tag);
                 break;
             }
@@ -933,7 +933,7 @@ var TagBox = SelectBox.inherit({
     _removeTagElement: function($tag) {
         if($tag.hasClass(TAGBOX_MULTI_TAG_CLASS)) {
             if(!this.option("showMultiTagOnly")) {
-                this.option("value", this._getValue().slice(0, this.option("maxTagCount")));
+                this.option("value", this._getValue().slice(0, this.option("maxDisplayedTags")));
             } else {
                 this.reset();
             }
@@ -1187,7 +1187,7 @@ var TagBox = SelectBox.inherit({
                 this.callBase(args);
                 this._setListDataSourceFilter();
                 break;
-            case "maxTagCount":
+            case "maxDisplayedTags":
             case "showMultiTagOnly":
                 this._renderTags();
                 break;
