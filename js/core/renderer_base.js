@@ -8,9 +8,8 @@ var sizeUtils = require("./utils/size");
 var matches = require("./polyfills/matches");
 
 var methods = [
-    "focusin", "focusout",
     "html", "css",
-    "slideUp", "slideDown", "slideToggle", "focus", "blur", "submit"];
+    "slideUp", "slideDown", "slideToggle"];
 
 var renderer = function(selector, context) {
     return new initRender(selector, context);
