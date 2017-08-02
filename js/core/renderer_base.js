@@ -10,7 +10,6 @@ var methods = [
     "data", "removeData",
     "on", "off", "one", "trigger", "triggerHandler", "focusin", "focusout", "click",
     "html", "css",
-    "val",
     "slideUp", "slideDown", "slideToggle", "focus", "blur", "submit"];
 
 var renderer = function(selector, context) {
@@ -399,6 +398,14 @@ initRender.prototype.text = function(text) {
     return this;
 };
 
+initRender.prototype.val = function(value) {
+    if(arguments.length === 1) {
+        return this.prop("value", value);
+    }
+
+    return this.prop("value");
+};
+
 initRender.prototype.contents = function() {
     return renderer(this[0] ? this[0].childNodes : []);
 };
@@ -776,7 +783,6 @@ renderer.when = $.when;
 renderer.event = $.event;
 renderer.Event = $.Event;
 renderer.holdReady = $.holdReady || $.fn.holdReady;
-renderer.makeArray = $.makeArray;
 renderer.contains = $.contains;
 renderer.Deferred = $.Deferred;
 renderer.map = $.map;
