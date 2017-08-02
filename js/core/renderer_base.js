@@ -8,7 +8,7 @@ var matches = require("./polyfills/matches");
 
 var methods = [
     "data", "removeData",
-    "on", "off", "one", "trigger", "triggerHandler", "focusin", "focusout", "click",
+    "triggerHandler", "focusin", "focusout", "click",
     "html", "css",
     "slideUp", "slideDown", "slideToggle", "focus", "blur", "submit"];
 
@@ -391,16 +391,14 @@ initRender.prototype.text = function(text) {
     }
 
     cleanData(this[0], false);
-
-    text = text === undefined ? "" : text;
-    rendererStrategy.setText(this[0], text);
+    rendererStrategy.setText(this[0], typeUtils.isDefined(text) ? text : "");
 
     return this;
 };
 
 initRender.prototype.val = function(value) {
     if(arguments.length === 1) {
-        return this.prop("value", value);
+        return this.prop("value", typeUtils.isDefined(value) ? value : "");
     }
 
     return this.prop("value");
@@ -443,7 +441,7 @@ initRender.prototype.find = function(selector) {
     } else {
         for(i = 0; i < this.length; i++) {
             selector = selector.nodeType ? selector : selector[0];
-            if(renderer.contains(this[i], selector)) {
+            if(this[i] !== selector && this[i].contains(selector)) {
                 nodes.push(selector);
             }
         }
@@ -782,7 +780,6 @@ renderer.when = $.when;
 renderer.event = $.event;
 renderer.Event = $.Event;
 renderer.holdReady = $.holdReady || $.fn.holdReady;
-renderer.contains = $.contains;
 renderer.Deferred = $.Deferred;
 
 module.exports = {

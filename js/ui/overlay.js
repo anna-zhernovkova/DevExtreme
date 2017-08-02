@@ -1,6 +1,7 @@
 "use strict";
 
 var $ = require("../core/renderer"),
+    eventsEngine = require("../events/core/events_engine"),
     fx = require("../animation/fx"),
     translator = require("../animation/translator"),
     compareVersions = require("../core/utils/version").compare,
@@ -80,7 +81,7 @@ var getElement = function(value) {
     return value && $(value instanceof $.Event ? value.target : value);
 };
 
-$(document).on(pointerEvents.down, function(e) {
+eventsEngine.on(document, pointerEvents.down, function(e) {
     for(var i = OVERLAY_STACK.length - 1; i >= 0; i--) {
         if(!OVERLAY_STACK[i]._proxiedDocumentDownHandler(e)) {
             return;
@@ -447,9 +448,9 @@ var Overlay = Widget.inherit({
         this._$wrapper.attr("data-bind", "dxControlsDescendantBindings: true");
 
         // NOTE: hack to fix B251087
-        this._$wrapper.on("MSPointerDown", noop);
+        eventsEngine.on(this._$wrapper, "MSPointerDown", noop);
         // NOTE: bootstrap integration T342292
-        this._$wrapper.on("focusin", function(e) { e.stopPropagation(); });
+        eventsEngine.on(this._$wrapper, "focusin", function(e) { e.stopPropagation(); });
 
         this._toggleViewPortSubscription(true);
     },
@@ -532,7 +533,6 @@ var Overlay = Widget.inherit({
     _documentDownHandler: function(e) {
         if(this._showAnimationProcessing) {
             this._stopAnimation();
-            return;
         }
 
         var closeOnOutsideClick = this.option("closeOnOutsideClick");
@@ -542,7 +542,7 @@ var Overlay = Widget.inherit({
         }
         if(closeOnOutsideClick) {
             var $container = this._$content,
-                outsideClick = (!$container.is(e.target) && !$.contains($container.get(0), e.target) && $(e.target).closest(document).length);
+                outsideClick = (!$container.is(e.target) && !$container.get(0).contains(e.target) && $(e.target).closest(document).length);
 
             if(outsideClick) {
                 if(this.option("shading")) {
@@ -688,6 +688,7 @@ var Overlay = Widget.inherit({
             deferred = $.Deferred(),
             animation = that._getAnimationConfig() || {},
             hideAnimation = this._normalizeAnimation(animation.hide, "from"),
+            startHideAnimation = (hideAnimation && hideAnimation.start) || noop,
             completeHideAnimation = (hideAnimation && hideAnimation.complete) || noop,
             hidingArgs = { cancel: false };
 
@@ -702,14 +703,22 @@ var Overlay = Widget.inherit({
             this._toggleShading(false);
             this._toggleSubscriptions(false);
 
-            this._animate(hideAnimation, function() {
-                that._renderVisibility(false);
+            this._animate(hideAnimation,
+                function() {
+                    that._$content.css("pointer-events", "");
+                    that._renderVisibility(false);
 
-                completeHideAnimation.apply(this, arguments);
-                that._actions.onHidden();
+                    completeHideAnimation.apply(this, arguments);
+                    that._actions.onHidden();
 
-                deferred.resolve();
-            });
+                    deferred.resolve();
+                },
+
+                function() {
+                    that._$content.css("pointer-events", "none");
+                    startHideAnimation.apply(this, arguments);
+                }
+            );
         }
         return deferred.promise();
     },
@@ -722,19 +731,9 @@ var Overlay = Widget.inherit({
         if(animation) {
             startCallback = startCallback || animation.start || noop;
 
-            var $content = this._$content;
-
             fx.animate(this._$content, extend({}, animation, {
-                start: function() {
-                    $content.css("pointer-events", "none");
-
-                    startCallback.apply(this, arguments);
-                },
-                complete: function() {
-                    $content.css("pointer-events", "");
-
-                    completeCallback.apply(this, arguments);
-                }
+                start: startCallback,
+                complete: completeCallback
             }));
         } else {
             completeCallback();
@@ -819,9 +818,9 @@ var Overlay = Widget.inherit({
     _toggleTabTerminator: function(enabled) {
         var eventName = eventUtils.addNamespace("keydown", this.NAME);
         if(enabled) {
-            $(document).on(eventName, this._proxiedTabTerminatorHandler);
+            eventsEngine.on(document, eventName, this._proxiedTabTerminatorHandler);
         } else {
-            $(document).off(eventName, this._proxiedTabTerminatorHandler);
+            eventsEngine.off(document, eventName, this._proxiedTabTerminatorHandler);
         }
     },
 
@@ -884,10 +883,10 @@ var Overlay = Widget.inherit({
         this._proxiedTargetParentsScrollHandler = this._proxiedTargetParentsScrollHandler
             || (function(e) { this._targetParentsScrollHandler(e); }).bind(this);
 
-        $().add(this._$prevTargetParents)
-            .off(scrollEvent, this._proxiedTargetParentsScrollHandler);
+        eventsEngine.off($().add(this._$prevTargetParents), scrollEvent, this._proxiedTargetParentsScrollHandler);
+
         if(subscribe && closeOnScroll) {
-            $parents.on(scrollEvent, this._proxiedTargetParentsScrollHandler);
+            eventsEngine.on($parents, scrollEvent, this._proxiedTargetParentsScrollHandler);
             this._$prevTargetParents = $parents;
         }
     },
@@ -952,7 +951,7 @@ var Overlay = Widget.inherit({
             }
         });
 
-        return isHidden || !$.contains(document, $parent.get(0));
+        return isHidden || !document.body.contains($parent.get(0));
     },
 
     _renderContentImpl: function() {
@@ -980,17 +979,15 @@ var Overlay = Widget.inherit({
         var startEventName = eventUtils.addNamespace(dragEvents.start, this.NAME),
             updateEventName = eventUtils.addNamespace(dragEvents.move, this.NAME);
 
-        $dragTarget
-            .off(startEventName)
-            .off(updateEventName);
+        eventsEngine.off($dragTarget, startEventName);
+        eventsEngine.off($dragTarget, updateEventName);
 
         if(!this.option("dragEnabled")) {
             return;
         }
 
-        $dragTarget
-            .on(startEventName, this._dragStartHandler.bind(this))
-            .on(updateEventName, this._dragUpdateHandler.bind(this));
+        eventsEngine.on($dragTarget, startEventName, this._dragStartHandler.bind(this));
+        eventsEngine.on($dragTarget, updateEventName, this._dragUpdateHandler.bind(this));
     },
 
     _renderResize: function() {
@@ -1021,26 +1018,25 @@ var Overlay = Widget.inherit({
         var $scrollTerminator = this._wrapper();
         var terminatorEventName = eventUtils.addNamespace(dragEvents.move, this.NAME);
 
-        $scrollTerminator
-            .off(terminatorEventName)
-            .on(terminatorEventName, {
-                validate: function() {
-                    return true;
-                },
-                getDirection: function() {
-                    return "both";
-                },
-                _toggleGestureCover: noop,
-                _clearSelection: noop,
-                isNative: true
-            }, function(e) {
-                var originalEvent = e.originalEvent.originalEvent;
-                e._cancelPreventDefault = true;
+        eventsEngine.off($scrollTerminator, terminatorEventName);
+        eventsEngine.on($scrollTerminator, terminatorEventName, {
+            validate: function() {
+                return true;
+            },
+            getDirection: function() {
+                return "both";
+            },
+            _toggleGestureCover: noop,
+            _clearSelection: noop,
+            isNative: true
+        }, function(e) {
+            var originalEvent = e.originalEvent.originalEvent;
+            e._cancelPreventDefault = true;
 
-                if(originalEvent && originalEvent.type !== "mousemove") {
-                    e.preventDefault();
-                }
-            });
+            if(originalEvent && originalEvent.type !== "mousemove") {
+                e.preventDefault();
+            }
+        });
     },
 
     _getDragTarget: function() {

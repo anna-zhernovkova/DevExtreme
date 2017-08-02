@@ -137,7 +137,7 @@ QUnit.test("render type", function(assert) {
 
     this.instance.option("type", "time");
 
-    var inputValue = this.$input().val(),
+    var inputValue = $(this.$input()).val(),
         normalizedInputValue = support.inputType(this.instance.option("mode")) ? uiDateUtils.fromStandardDateFormat(inputValue) : dateLocalization.parse(inputValue, uiDateUtils.FORMATS_MAP.time);
 
     assert.equal(normalizedInputValue.getHours(), date.getHours());
@@ -149,7 +149,7 @@ QUnit.test("render valueChangeEvent", function(assert) {
         type: "date"
     });
 
-    this.$input()
+    $(this.$input())
         .val("2012-11-26")
         .trigger("change");
 
@@ -180,7 +180,7 @@ QUnit.test("simulated date picker should not be opened if pickerType is 'native'
     });
 
     var $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
-    $input.trigger("dxclick");
+    $($input).trigger("dxclick");
 
     var $popup = $dateBox.find(".dx-popup");
 
@@ -252,7 +252,7 @@ QUnit.test("T195971 - popup is not showing after click on the 'clear' button", f
         $clearButton = $dateBox.find(".dx-clear-button-area");
 
     assert.ok(!dateBox.option("opened"), "popup is closed");
-    $clearButton.trigger("dxclick");
+    $($clearButton).trigger("dxclick");
     assert.ok(!dateBox.option("opened"), "popup is still closed after click on clear button");
 });
 
@@ -279,8 +279,8 @@ QUnit.test("invalid value should be cleared after clear button click", function(
     var $input = $dateBox.find(".dx-texteditor-input");
     var $clearButton = $dateBox.find(".dx-clear-button-area");
 
-    $input.val("asd").trigger("change");
-    $clearButton.trigger("dxclick");
+    $($input.val("asd")).trigger("change");
+    $($clearButton).trigger("dxclick");
 
     assert.equal(instance.option("text"), "", "dateBox 'text' option is clear");
     assert.equal($input.val(), "", "dateBox input is empty");
@@ -496,14 +496,14 @@ QUnit.test("dateBox should stay focused after value selecting in date strategy",
         focusStateEnabled: true
     });
     var instance = $dateBox.dxDateBox("instance");
-    var $popupContent = instance._popup.content().parent();
+    var $popupContent = $(instance._popup.content().parent());
 
-    $popupContent.on("mousedown", function(e) {
+    $($popupContent).on("mousedown", function(e) {
         assert.ok(e.isDefaultPrevented(), "datebox does not lose focus on overlay content clicking");
     });
 
     // NOTE: why we use not dxpointerdown (T241214)
-    $popupContent.trigger("mousedown");
+    $($popupContent).trigger("mousedown");
 });
 
 QUnit.test("dateBox should stay focused after value selecting in time strategy", function(assert) {
@@ -520,14 +520,14 @@ QUnit.test("dateBox should stay focused after value selecting in time strategy",
             focusStateEnabled: true
         }),
         instance = $dateBox.dxDateBox("instance"),
-        $popupContent = instance._popup.content().parent();
+        $popupContent = $(instance._popup.content().parent());
 
-    $popupContent.on("mousedown", function(e) {
+    $($popupContent).on("mousedown", function(e) {
         assert.ok(e.isDefaultPrevented(), "datebox does not lose focus on popup content clicking");
     });
 
     // NOTE: why we use not dxpointerdown (T241214)
-    $popupContent.trigger("mousedown");
+    $($popupContent).trigger("mousedown");
 });
 
 QUnit.test("dateBox should stay focused after value selecting in datetime strategy", function(assert) {
@@ -544,14 +544,14 @@ QUnit.test("dateBox should stay focused after value selecting in datetime strate
             focusStateEnabled: true
         }),
         instance = $dateBox.dxDateBox("instance"),
-        $popupContent = instance._popup.content().parent();
+        $popupContent = $(instance._popup.content().parent());
 
-    $popupContent.on("mousedown", function(e) {
+    $($popupContent).on("mousedown", function(e) {
         assert.ok(e.isDefaultPrevented(), "datebox does not lose focus on popup content clicking");
     });
 
     // NOTE: why we use not dxpointerdown (T241214)
-    $popupContent.trigger("mousedown");
+    $($popupContent).trigger("mousedown");
 });
 
 QUnit.test("calendar in datebox should not have tabIndex attribute", function(assert) {
@@ -568,7 +568,7 @@ QUnit.test("calendar in datebox should not have tabIndex attribute", function(as
             focusStateEnabled: true
         }),
         instance = $dateBox.dxDateBox("instance"),
-        $calendar = instance._popup.content().find(".dx-calendar");
+        $calendar = $(instance._popup.content().find(".dx-calendar"));
 
     assert.equal($calendar.attr("tabindex"), null, "calendar has not tabindex");
 });
@@ -591,11 +591,11 @@ QUnit.testInActiveWindow("set focus on 'tab' key from editor to overlay and inve
 
     keyboard.keyDown("tab");
 
-    var $hourBox = instance._strategy._timeView._hourBox.element(),
+    var $hourBox = $(instance._strategy._timeView._hourBox.element()),
         $inputHourBox = instance._strategy._timeView._hourBox._input();
     assert.ok($hourBox.hasClass(STATE_FOCUSED_CLASS), "tab set focus to first input in overlay");
 
-    $inputHourBox.trigger($.Event("keydown", { which: 9, shiftKey: true }));
+    $($inputHourBox).trigger($.Event("keydown", { which: 9, shiftKey: true }));
 
     assert.ok($dateBox.hasClass(STATE_FOCUSED_CLASS), "dateBox on focus reset focus to element");
 });
@@ -680,7 +680,7 @@ QUnit.test("dxDateBox calendar popup should be closed after value is changed if 
 
     var dateBox = $dateBox.dxDateBox("instance");
     dateBox.open();
-    getInstanceWidget(dateBox).element().find(".dx-calendar-cell:not(.dx-calendar-selected-date)").eq(0).trigger("dxclick");
+    $(getInstanceWidget(dateBox).element().find(".dx-calendar-cell:not(.dx-calendar-selected-date)").eq(0)).trigger("dxclick");
 
     assert.ok(!dateBox.option("opened"), "dateBox popup is closed");
     assert.ok(!dateBox._popup.option("visible"), "popup is not visible");
@@ -778,7 +778,7 @@ QUnit.test("incorrect work of mergeDates function (B237850)", function(assert) {
     this.instance.option("type", "date");
     this.instance.option("value", new Date(2000, 6, 31, 1, 1, 1));
 
-    this.$input()
+    $(this.$input())
         .val("2000-09-10")
         .trigger("change");
 
@@ -788,13 +788,13 @@ QUnit.test("incorrect work of mergeDates function (B237850)", function(assert) {
 QUnit.test("incorrect work of mergeDates function if previous value not valid (Q568689)", function(assert) {
     this.instance.option("type", "time");
 
-    this.$input()
+    $(this.$input())
         .val("")
         .trigger("change");
 
     assert.strictEqual(this.instance.option("value"), null);
 
-    this.$input()
+    $(this.$input())
         .val("12:30")
         .trigger("change");
 
@@ -943,7 +943,7 @@ QUnit.test("cancel & done button action", function(assert) {
     rollers.month.option("selectedIndex", 10);
     rollers.year.option("selectedIndex", 2);
 
-    this.popup().overlayContent().find(".dx-popup-done.dx-button").trigger("dxclick");
+    $(this.popup().overlayContent()).find(".dx-popup-done.dx-button").trigger("dxclick");
     assert.deepEqual(this.instance.option("value"), new Date(2002, 10, 13));
 
     this.instance.open();
@@ -953,7 +953,7 @@ QUnit.test("cancel & done button action", function(assert) {
     rollers.month.option("selectedIndex", 8);
     rollers.year.option("selectedIndex", 0);
 
-    this.popup().overlayContent().find(".dx-popup-cancel.dx-button").trigger("dxclick");
+    $(this.popup().overlayContent()).find(".dx-popup-cancel.dx-button").trigger("dxclick");
     assert.deepEqual(this.instance.option("value"), new Date(2002, 10, 13));
 });
 
@@ -1269,7 +1269,7 @@ QUnit.test("change input value should change calendar value", function(assert) {
         type: "date",
         value: new Date(2016, 1, 25)
     });
-    $dateBox.find(".dx-dropdowneditor-button").trigger("dxclick");
+    $($dateBox.find(".dx-dropdowneditor-button")).trigger("dxclick");
 
     var dateBox = $dateBox.dxDateBox("instance");
     var calendar = $(".dx-calendar").dxCalendar("instance");
@@ -1280,7 +1280,7 @@ QUnit.test("change input value should change calendar value", function(assert) {
 
     $input.val("");
     keyboardMock($input).type(dateString);
-    $input.trigger("change");
+    $($input).trigger("change");
 
     assert.deepEqual(calendar.option("value"), dateBox.option("value"), "datebox value and calendar value are equal");
     assert.strictEqual(dateBox.option("isValid"), true, "Editor should be marked as true");
@@ -1297,7 +1297,7 @@ QUnit.test("wrong value in input should mark datebox as invalid", function(asser
         $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
 
     keyboardMock($input).type("blabla");
-    $input.trigger("change");
+    $($input).trigger("change");
     assert.equal($input.val(), "blabla", "input value should not be erased");
     assert.strictEqual(dateBox.option("value"), null, "Editor's value should be reset");
     assert.strictEqual(dateBox.option("isValid"), false, "Editor should be marked as invalid");
@@ -1316,7 +1316,7 @@ QUnit.test("wrong value in input should mark time datebox as invalid", function(
         $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
 
     keyboardMock($input).type("blabla");
-    $input.trigger("change");
+    $($input).trigger("change");
 
     assert.equal($input.val(), "blabla", "input value should not be erased");
     assert.strictEqual(dateBox.option("value"), null, "Editor's value should be reset");
@@ -1338,7 +1338,7 @@ QUnit.test("wrong value in input should mark pre-filled datebox as invalid", fun
 
     $input.val("");
     keyboardMock($input).type("blabla");
-    $input.trigger("change");
+    $($input).trigger("change");
 
     assert.equal($input.val(), "blabla", "input value should not be erased");
     assert.deepEqual(dateBox.option("value"), value, "Editor's value should not be changed");
@@ -1676,7 +1676,7 @@ QUnit.test("Pressing escape must hide the calendar and clean focus", function(as
     var escapeKeyDown = $.Event("keydown", { which: 27 });
     this.fixture.dateBox.option("focusStateEnabled", true);
     this.fixture.dateBox.open();
-    this.fixture.dateBox._input().trigger(escapeKeyDown);
+    $(this.fixture.dateBox._input()).trigger(escapeKeyDown);
     assert.ok(!this.fixture.dateBox.option("opened"));
     assert.ok(!this.fixture.dateBox._input().is(":focus"));
 });
@@ -1911,7 +1911,7 @@ QUnit.test("Value should be changed only after click on 'Apply' button if the 'a
     calendar.option("value", newValue);
     assert.deepEqual(dateBox.option("value"), value, "value is not changed yet");
 
-    $applyButton.trigger("dxclick");
+    $($applyButton).trigger("dxclick");
     assert.deepEqual(dateBox.option("value"), newValue, "value is changed after click");
 });
 
@@ -1928,7 +1928,7 @@ QUnit.test("Value should be changed if it was entered from keyboard and it is ou
     });
 
     var dateBox = this.fixture.dateBox,
-        $input = dateBox.element().find(".dx-texteditor-input"),
+        $input = $(dateBox.element().find(".dx-texteditor-input")),
         kb = keyboardMock($input),
         inputValue = "1/5/2015";
 
@@ -1956,7 +1956,7 @@ QUnit.test("Empty value should not be marked as 'out of range'", function(assert
     });
 
     var dateBox = this.fixture.dateBox,
-        $input = dateBox.element().find(".dx-texteditor-input"),
+        $input = $(dateBox.element().find(".dx-texteditor-input")),
         kb = keyboardMock($input);
 
     clearInput($input, kb);
@@ -1976,7 +1976,7 @@ QUnit.test("Popup should not be hidden after value change using keyboard", funct
     });
 
     var dateBox = this.fixture.dateBox,
-        $input = dateBox.element().find(".dx-texteditor-input"),
+        $input = $(dateBox.element().find(".dx-texteditor-input")),
         kb = keyboardMock($input);
 
     dateBox.open();
@@ -2032,7 +2032,7 @@ QUnit.test("T203457 - popup should be closed when selected date is clicked", fun
     var dateBox = this.fixture.dateBox;
     dateBox.open();
     var $selectedDate = dateBox._popup._wrapper().find(".dx-calendar-selected-date");
-    $selectedDate.trigger("dxclick");
+    $($selectedDate).trigger("dxclick");
 
     assert.ok(!dateBox.option("opened"), "popup is closed");
 });
@@ -2124,7 +2124,7 @@ QUnit.test("T247493 - value is cleared when text is changed to invalid date and 
     });
 
     var dateBox = this.fixture.dateBox,
-        $element = dateBox.element(),
+        $element = $(dateBox.element()),
         $input = $element.find(".dx-texteditor-input"),
         kb = keyboardMock($input);
 
@@ -2149,9 +2149,9 @@ QUnit.test("T252170 - date time should be the same with set value after calendar
     var dateBox = this.fixture.dateBox;
     dateBox.open();
     var calendar = dateBox._strategy._widget,
-        $calendar = calendar.element();
+        $calendar = $(calendar.element());
 
-    $calendar.find(".dx-calendar-cell[data-value='2015/06/10']").trigger("dxclick");
+    $($calendar.find(".dx-calendar-cell[data-value='2015/06/10']")).trigger("dxclick");
     assert.deepEqual(calendar.option("value"), new Date(2015, 5, 10, 15, 54, 13), "new calendar value saves set value time");
     assert.deepEqual(dateBox.option("value"), new Date(2015, 5, 10, 15, 54, 13), "new datebox value saves set value time");
 });
@@ -2211,7 +2211,7 @@ QUnit.test("DateBox should not take current date value at the opening if value i
     var instance = $dateBox.dxDateBox("instance");
     var $dropDownButton = $dateBox.find(".dx-dropdowneditor-button");
 
-    $dropDownButton.trigger("dxclick");
+    $($dropDownButton).trigger("dxclick");
 
     assert.equal(instance.option("value"), null, "value shouldn't be dropped after opening");
 });
@@ -2259,7 +2259,7 @@ QUnit.test("date box should contain calendar and time view inside box in large s
                 opened: true
             }),
             instance = $element.dxDateBox("instance"),
-            $content = instance._popup.content(),
+            $content = $(instance._popup.content()),
             box = Box.getInstance($content.find("." + BOX_CLASS)),
             $clock = $content.find(".dx-timeview-clock");
 
@@ -2285,7 +2285,7 @@ QUnit.test("date box should contain calendar and time view inside box in small s
                 opened: true
             }),
             instance = $element.dxDateBox("instance"),
-            $content = instance._popup.content(),
+            $content = $(instance._popup.content()),
             box = Box.getInstance($content.find("." + BOX_CLASS)),
             $clock = $content.find(".dx-timeview-clock");
 
@@ -2346,7 +2346,7 @@ QUnit.test("datebox value is bound to time view value", function(assert) {
             opened: true
         }),
         instance = $element.dxDateBox("instance"),
-        $content = instance._popup.content(),
+        $content = $(instance._popup.content()),
         timeView = $content.find("." + TIMEVIEW_CLASS).dxTimeView("instance");
 
     var date = new Date(2014, 2, 1, 14, 33);
@@ -2368,7 +2368,7 @@ QUnit.test("time value should be updated after select date", function(assert) {
             opened: true
         }),
         dateBox = $element.dxDateBox("instance"),
-        $content = dateBox._popup.content(),
+        $content = $(dateBox._popup.content()),
         calendar = $content.find("." + CALENDAR_CLASS).dxCalendar("instance"),
         timeView = $content.find("." + TIMEVIEW_CLASS).dxTimeView("instance");
 
@@ -2419,7 +2419,7 @@ QUnit.test("T208853 - time is reset when calendar value is changed", function(as
         calendar = $dateBoxOverlay.find(".dx-calendar").dxCalendar("instance");
 
     calendar.option("value", new Date(2014, 1, 16));
-    $applyButton.trigger("dxclick");
+    $($applyButton).trigger("dxclick");
 
     assert.deepEqual(dateBox.option("value"), new Date(2014, 1, 16, 11, 20), "date and time are correct");
 });
@@ -2435,7 +2435,7 @@ QUnit.test("T231015 - widget should set default date or time if only one widget'
     dateBox.open();
     var date = new Date();
     dateBox._strategy._widget.option("value", new Date(2015, 3, 21));
-    dateBox._popup._wrapper().find(".dx-popup-done").trigger("dxclick");
+    $(dateBox._popup._wrapper()).find(".dx-popup-done").trigger("dxclick");
 
     date.setFullYear(2015, 3, 21);
     assert.equal(Math.floor(dateBox.option("value").getTime() / 1000 / 10), Math.floor(date.getTime() / 1000 / 10), "value is correct if only calendar value is changed");
@@ -2445,7 +2445,7 @@ QUnit.test("T231015 - widget should set default date or time if only one widget'
     dateBox.open();
     date = new Date();
     dateBox._strategy._timeView.option("value", new Date(2015, 3, 21, 15, 15, 34));
-    dateBox._popup._wrapper().find(".dx-popup-done").trigger("dxclick");
+    $(dateBox._popup._wrapper()).find(".dx-popup-done").trigger("dxclick");
 
     date.setHours(15, 15, 34);
     assert.equal(Math.floor(dateBox.option("value").getTime() / 1000 / 10), Math.floor(date.getTime() / 1000 / 10), "value is correct if only timeView value is changed");
@@ -2461,7 +2461,7 @@ QUnit.test("T253298 - widget should set default date and time if value is null a
 
     dateBox.open();
     var date = new Date();
-    dateBox._popup._wrapper().find(".dx-popup-done").trigger("dxclick");
+    $(dateBox._popup._wrapper()).find(".dx-popup-done").trigger("dxclick");
 
     assert.equal(Math.round(dateBox.option("value").getTime() / 1000 / 10), Math.round(date.getTime() / 1000 / 10), "value is correct");
 });
@@ -2475,7 +2475,7 @@ QUnit.test("DateBox should have time part when pickerType is rollers", function(
     }).dxDateBox("instance");
 
     var format = uiDateUtils.FORMATS_MAP["datetime"];
-    var $input = dateBox.element().find("." + TEXTEDITOR_INPUT_CLASS);
+    var $input = $(dateBox.element().find("." + TEXTEDITOR_INPUT_CLASS));
 
     assert.equal($input.val(), dateLocalization.format(date, format), "input value is correct");
 });
@@ -2498,7 +2498,7 @@ QUnit.test("DateBox with time should be rendered correctly in IE, templatesRende
         dateBox.option("opened", true);
         clock.tick();
 
-        var $content = dateBox._popup.content(),
+        var $content = $(dateBox._popup.content()),
             $timeView = $content.find(".dx-timeview-clock");
         assert.ok($timeView.parent().width() > 100, "Time view was rendered correctly");
     } finally {
@@ -2676,8 +2676,8 @@ QUnit.test("T351678 - the date is reset after item click", function(assert) {
         opened: true
     });
 
-    var $list = this.dateBox._strategy._widget.element();
-    $list.find(".dx-list-item").eq(3).trigger("dxclick");
+    var $list = $(this.dateBox._strategy._widget.element());
+    $($list.find(".dx-list-item").eq(3)).trigger("dxclick");
 
     assert.deepEqual(this.dateBox.option("value"), new Date(2020, 4, 13, 1, 30), "date is correct");
 });
@@ -2969,10 +2969,10 @@ QUnit.test("apply contoured date on enter for date and datetime mode", function(
 
     var $input = this.$dateBox.find(".dx-texteditor-input");
 
-    $input.trigger($.Event("keydown", { which: 38 }));
-    $input.trigger($.Event("keydown", { which: 40 }));
-    $input.trigger($.Event("keydown", { which: 38 }));
-    $input.trigger($.Event("keydown", { which: 13 }));
+    $($input).trigger($.Event("keydown", { which: 38 }));
+    $($input).trigger($.Event("keydown", { which: 40 }));
+    $($input).trigger($.Event("keydown", { which: 38 }));
+    $($input).trigger($.Event("keydown", { which: 13 }));
 
     assert.equal(this.dateBox.option("opened"), false, "popup is hidden");
 
@@ -3028,7 +3028,7 @@ QUnit.testInActiveWindow("onValueChanged fires after clearing and enter key pres
     $input.val("");
     this.dateBox.option("text", "");
 
-    $input.trigger($.Event("keydown", { which: 13 }));
+    $($input).trigger($.Event("keydown", { which: 13 }));
 
     assert.equal(valueChanged.callCount, 2, "valueChanged is called");
 });
@@ -3047,7 +3047,7 @@ QUnit.test("Enter key press prevents default when popup in opened", function(ass
         keyboard = keyboardMock($input);
 
     try {
-        $dateBox.on("keydown", function(e) {
+        $($dateBox).on("keydown", function(e) {
             if(e.isDefaultPrevented()) {
                 prevented++;
             }
@@ -3314,8 +3314,8 @@ QUnit.test("time works correct when value is invalid", function(assert) {
     var $button = $dateBox.find(".dx-dropdowneditor-button");
 
     $input.val("");
-    $input.trigger("change");
-    $button.trigger("dxclick");
+    $($input).trigger("change");
+    $($button).trigger("dxclick");
 
     var popup = $dateBox.find(".dx-popup").dxPopup("instance");
 
@@ -3335,7 +3335,7 @@ QUnit.test("invalidDateMessage", function(assert) {
     var $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
 
     $input.val("ips");
-    $input.trigger("change");
+    $($input).trigger("change");
 
     var validationError = $dateBox.dxDateBox("instance").option("validationError").message;
     assert.equal(validationError, "A lorem ipsum...", "validation message is correct");
@@ -3351,7 +3351,7 @@ QUnit.test("dateOutOfRangeMessage", function(assert) {
 
     var $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
 
-    $input.trigger("change");
+    $($input).trigger("change");
 
     var validationError = $dateBox.dxDateBox("instance").option("validationError").message;
     assert.equal(validationError, "A lorem ipsum...", "validation message is correct");
@@ -3366,7 +3366,7 @@ QUnit.test("year is too big", function(assert) {
 
     var $input = $dateBox.find("." + TEXTEDITOR_INPUT_CLASS);
     $input.val("01/01/999999999");
-    $input.trigger("change");
+    $($input).trigger("change");
 
     assert.equal($dateBox.dxDateBox("option", "isValid"), false, "datebox has invalid state");
     assert.equal($input.val(), "01/01/999999999", "value is not changed");
@@ -3407,7 +3407,7 @@ QUnit.test("datebox should be valid if value was changed in the onValueChanged h
         $input = $dateBox.find("input");
 
     $input.val("");
-    $input.trigger("change");
+    $($input).trigger("change");
 
     assert.equal(date, $dateBox.dxDateBox("instance").option("value"), "value set correctly");
     assert.ok(!$dateBox.hasClass("dx-invalid"), "datebox should be marked as valid");
@@ -3657,7 +3657,7 @@ QUnit.test("ISO strings support", function(assert) {
         var $input = $("#dateBox").find(".dx-texteditor-input");
         assert.equal($input.val(), "1/11/2016", "text is correct");
 
-        $input.val("1/12/2016").trigger("change");
+        $($input.val("1/12/2016")).trigger("change");
 
         assert.equal($("#dateBox").dxDateBox("option", "value"), "2016-01-12T12:00:00", "value is correct");
     } finally {
@@ -3683,7 +3683,7 @@ QUnit.test("ISO strings support dateSerializationFormat", function(assert) {
         var $input = $("#dateBox").find(".dx-texteditor-input");
         assert.equal($input.val(), serializeUTCDate(2016, 0, 11), "text is correct");
 
-        $input.val(serializeUTCDate(2016, 0, 12)).trigger("change");
+        $($input.val(serializeUTCDate(2016, 0, 12))).trigger("change");
         assert.equal($("#dateBox").dxDateBox("option", "value"), "2016-01-12T00:00:00Z", "value is correct");
     } finally {
         config().forceIsoDateParsing = defaultForceIsoDateParsing;
@@ -3703,7 +3703,7 @@ QUnit.test("enter value with big year if dateSerializationFormat is defined", fu
 
         var $input = $("#dateBox").find(".dx-texteditor-input");
 
-        $input.val("1/12/21016").trigger("change");
+        $($input.val("1/12/21016")).trigger("change");
 
         assert.equal($("#dateBox").dxDateBox("option", "value"), "21016-01-12T00:00:00", "value is correct");
     } finally {
@@ -3723,7 +3723,7 @@ QUnit.test("enter value with big year if dateSerializationFormat is defined and 
 
         var $input = $("#dateBox").find(".dx-texteditor-input");
 
-        $input.val("1/12/21016").trigger("change");
+        $($input.val("1/12/21016")).trigger("change");
 
         assert.deepEqual($("#dateBox").dxDateBox("option", "value"), new Date(21016, 0, 12), "value is correct and it is not serialized");
     } finally {
