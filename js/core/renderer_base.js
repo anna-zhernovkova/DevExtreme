@@ -7,12 +7,11 @@ var sizeUtils = require("./utils/size");
 var matches = require("./polyfills/matches");
 
 var methods = [
-    "offset", "offsetParent", "position",
     "data", "removeData",
     "on", "off", "one", "trigger", "triggerHandler", "focusin", "focusout", "click",
     "html", "css",
     "val",
-    "hide", "show", "toggle", "slideUp", "slideDown", "slideToggle", "focus", "blur", "submit"];
+    "slideUp", "slideDown", "slideToggle", "focus", "blur", "submit"];
 
 var renderer = function(selector, context) {
     return new initRender(selector, context);
@@ -776,7 +775,6 @@ renderer.cleanData = function(element) {
 renderer.when = $.when;
 renderer.event = $.event;
 renderer.Event = $.Event;
-renderer.easing = $.easing;
 renderer.holdReady = $.holdReady || $.fn.holdReady;
 renderer.makeArray = $.makeArray;
 renderer.contains = $.contains;
