@@ -427,14 +427,14 @@ var Overlay = Widget.inherit({
     },
 
     _init: function() {
+        this._$wrapper = $("<div>").addClass(OVERLAY_WRAPPER_CLASS);
+        this._$content = $("<div>").addClass(OVERLAY_CONTENT_CLASS);
+
         this.callBase();
 
         this._initActions();
         this._initCloseOnOutsideClickHandler();
         this._initTabTerminatorHandler();
-
-        this._$wrapper = $("<div>").addClass(OVERLAY_WRAPPER_CLASS);
-        this._$content = $("<div>").addClass(OVERLAY_CONTENT_CLASS);
 
         var $element = this.$element();
         this._$wrapper.addClass($element.attr("class"));
@@ -553,8 +553,11 @@ var Overlay = Widget.inherit({
 
     _initTemplates: function() {
         this.callBase();
+        var integrationOptions = this.option("integrationOptions");
 
-        this._defaultTemplates["content"] = new EmptyTemplate(this);
+        this._defaultTemplates["content"] = integrationOptions && integrationOptions.createTemplate
+            ? integrationOptions.createTemplate(this._$content)
+            : new EmptyTemplate(this);
     },
 
     _isTopOverlay: function() {
@@ -967,13 +970,15 @@ var Overlay = Widget.inherit({
 
     _renderContentImpl: function() {
         var $element = this.$element();
-        this._$content.appendTo($element);
 
         var contentTemplate = this._getTemplate(this.option("contentTemplate"));
-        contentTemplate && contentTemplate.render({
-            container: getPublicElement(this.$content()),
-            noModel: true
-        });
+        if(contentTemplate) {
+            this._$content = contentTemplate.render({
+                container: getPublicElement($element),
+                noModel: true
+            }).filter("div").addClass(OVERLAY_CONTENT_CLASS);
+            $element.append(this._$content);
+        }
 
         this._renderDrag();
         this._renderResize();

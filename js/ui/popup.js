@@ -406,20 +406,11 @@ var Popup = Overlay.inherit({
 
         this.$element().addClass(POPUP_CLASS);
         this._wrapper().addClass(POPUP_WRAPPER_CLASS);
-        this._$popupContent = this._$content
-            .wrapInner($("<div>").addClass(POPUP_CONTENT_CLASS))
-            .children().eq(0);
-    },
-
-    _render: function() {
-        var isFullscreen = this.option("fullScreen");
-
-        this._toggleFullScreenClass(isFullscreen);
-        this.callBase();
+        this._$popupContent = $("<div>").addClass(POPUP_CONTENT_CLASS);
     },
 
     _toggleFullScreenClass: function(value) {
-        this._$content
+        this.overlayContent()
             .toggleClass(POPUP_FULL_SCREEN_CLASS, value)
             .toggleClass(POPUP_NORMAL_CLASS, !value);
     },
@@ -433,6 +424,9 @@ var Popup = Overlay.inherit({
 
     _renderContentImpl: function() {
         this.callBase();
+        var isFullscreen = this.option("fullScreen");
+        this._toggleFullScreenClass(isFullscreen);
+        this._$popupContent.appendTo(this.overlayContent());
         this._renderTitle();
         this._renderBottom();
     },
@@ -653,7 +647,7 @@ var Popup = Overlay.inherit({
     _renderDrag: function() {
         this.callBase();
 
-        this._$content.toggleClass(POPUP_DRAGGABLE_CLASS, this.option("dragEnabled"));
+        this.overlayContent().toggleClass(POPUP_DRAGGABLE_CLASS, this.option("dragEnabled"));
     },
 
     _renderResize: function() {
@@ -673,8 +667,8 @@ var Popup = Overlay.inherit({
             return;
         }
 
-        var contentPaddings = this._$content.outerHeight() - this._$content.height(),
-            contentHeight = this._$content.get(0).getBoundingClientRect().height - contentPaddings;
+        var contentPaddings = this.overlayContent().outerHeight() - this.overlayContent().height(),
+            contentHeight = this.overlayContent().get(0).getBoundingClientRect().height - contentPaddings;
         if(this._$title && this._$title.is(":visible")) {
             contentHeight -= this._$title.get(0).getBoundingClientRect().height || 0;
         }
@@ -686,16 +680,16 @@ var Popup = Overlay.inherit({
     },
 
     _disallowUpdateContentHeight: function() {
-        var isHeightAuto = this._$content.get(0).style.height === "auto",
-            maxHeightSpecified = this._$content.css("maxHeight") !== "none",
-            minHeightSpecified = parseInt(this._$content.css("minHeight")) > 0;
+        var isHeightAuto = this.overlayContent().get(0).style.height === "auto",
+            maxHeightSpecified = this.overlayContent().css("maxHeight") !== "none",
+            minHeightSpecified = parseInt(this.overlayContent().css("minHeight")) > 0;
 
         return isHeightAuto && !(maxHeightSpecified || minHeightSpecified);
     },
 
     _renderDimensions: function() {
         if(this.option("fullScreen")) {
-            this._$content.css({
+            this.overlayContent().css({
                 width: "100%",
                 height: "100%"
             });
@@ -726,7 +720,7 @@ var Popup = Overlay.inherit({
 
     _renderPosition: function() {
         if(this.option("fullScreen")) {
-            translator.move(this._$content, {
+            translator.move(this.overlayContent(), {
                 top: 0,
                 left: 0
             });
@@ -763,7 +757,7 @@ var Popup = Overlay.inherit({
             case "fullScreen":
                 this._toggleFullScreenClass(args.value);
                 this._renderGeometry();
-                domUtils.triggerResizeEvent(this._$content);
+                domUtils.triggerResizeEvent(this.overlayContent());
                 break;
             case "showCloseButton":
                 this._renderTitle();
@@ -777,8 +771,10 @@ var Popup = Overlay.inherit({
         return this._$bottom;
     },
 
-    $content: function() {
-        return this._$popupContent;
+    $content: function(callBase) {
+        return callBase
+            ? this.callBase()
+            : this._$popupContent;
     },
 
     content: function() {
@@ -786,7 +782,7 @@ var Popup = Overlay.inherit({
     },
 
     overlayContent: function() {
-        return this._$content;
+        return this.$content(true);
     }
 
 });

@@ -10,7 +10,7 @@
 
     <script type="text/javascript" src="../vendor/jquery/jquery-3.1.0.js"></script>
 
-    <script type="text/javascript" src="../vendor/knockout/knockout-3.4.0.debug.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js"></script>
 
     <!--<script type="text/javascript" src="../vendor/cldr/cldr.js"></script>
     <script type="text/javascript" src="../vendor/cldr/cldr/event.js"></script>
@@ -26,20 +26,27 @@
 </head>
 
 <body>
-    <div data-bind="dxButton: buttonOptions"></div>
-
+    <!-- ko with: model -->
+    <div style="height: 36px" data-bind="dxSelectBox: { dataSource: ds }">
+        <div data-options="dxTemplate: { name: 'item' }">
+            <div data-bind="text: $parent.display($data)"></div>
+        </div>
+    </div>
+    <!-- /ko -->
     <script>
-        $(function() {
-            var viewModel = {
-                buttonOptions: {
-                    text: 'Click me!',
-                    onClick: function(e) {
-                        alert("clicked");
-                    }
-                }
-            };
-
-            ko.applyBindings(viewModel);
+        var mas = [];
+        for (var i = 0; i < 60; i++) {
+            mas.push(i);
+        }
+        ko.applyBindings({
+            model: {
+                ds: new DevExpress.data.DataSource({
+                    store: new DevExpress.data.ArrayStore(mas),
+                    paginate: true,
+                    pageSize: 20
+                }),
+                display: (val) => "_" + val
+            }
         });
     </script>
 </body>
