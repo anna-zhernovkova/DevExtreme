@@ -214,7 +214,6 @@ QUnit.test("filtering items by array fields", function(assert) {
     assert.equal(filteredItems.length, 0);
 });
 
-
 QUnit.module('defer render/update', {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -418,7 +417,6 @@ QUnit.test("Return deferred in deferUpdate and using deferRenderer", function(as
     assert.equal(logs[1], "render");
     assert.equal(logs[2], "update completed");
 });
-
 
 QUnit.module("applyServerDecimalSeparator");
 

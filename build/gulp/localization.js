@@ -38,7 +38,6 @@ var getMessages = function(directory, locale) {
     return serializeObject(json, true);
 };
 
-
 gulp.task('localization', ['localization-messages', 'localization-messages-legacy', 'localization-generated-sources']);
 
 gulp.task('localization-messages', function() {

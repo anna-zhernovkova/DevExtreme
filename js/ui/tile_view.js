@@ -422,7 +422,6 @@ var TileView = CollectionWidget.inherit({
             baseItemMain = this.option(config.baseItemMainDimension),
             itemMargin = this.option("itemMargin");
 
-
         var cssProps = { display: (itemRatioMain <= 0 || itemRatioCross <= 0) ? "none" : "" },
             mainDimension = itemRatioMain * baseItemMain + (itemRatioMain - 1) * itemMargin,
             crossDimension = itemRatioCross * baseItemCross + (itemRatioCross - 1) * itemMargin;

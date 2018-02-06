@@ -283,7 +283,6 @@ var ResourceManager = Class.inherit({
             resourceDataLength = resourceData.length,
             color;
 
-
         if(resourceDataLength) {
             for(var i = 0; i < resourceDataLength; i++) {
                 if(valueGetter(resourceData[i]) === value) {

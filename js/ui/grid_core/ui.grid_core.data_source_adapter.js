@@ -62,7 +62,6 @@ module.exports = gridCore.Controller.inherit((function() {
             that._hasLastPage = false;
             that._currentTotalCount = 0;
 
-
             that.changed = Callbacks();
             that.loadingChanged = Callbacks();
             that.loadError = Callbacks();

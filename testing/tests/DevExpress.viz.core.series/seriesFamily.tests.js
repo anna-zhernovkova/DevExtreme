@@ -2166,7 +2166,6 @@ QUnit.test("Set three series - matching points", function(assert) {
     checkStackedPointHeight(assert, family.series[1], 20, -40, -90, 0, 0, -30);
     checkStackedPointHeight(assert, family.series[2], -40, 80, -180, -10, 20, -90);
 
-
 });
 
 QUnit.test("Set three series in two groups - matching points", function(assert) {
@@ -2997,7 +2996,6 @@ QUnit.test("Set three series. null point in the middle of first series", functio
         points2 = pointsForStacking.points2(),
         points3 = pointsForStacking.points3();
 
-
     points1[1] = new MockPoint({ argument: "Second", value: null });
 
     $.each(points1.concat(points2).concat(points3), function(_, p) {
@@ -3480,7 +3478,6 @@ QUnit.test("Set three series - matching points", function(assert) {
 
     checkFullStackedPoints(assert, mixedPoints1, mixedPoints2, mixedPoints3);
 });
-
 
 QUnit.module("Stacked series. Negatives as zeroes");
 

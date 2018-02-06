@@ -30,7 +30,6 @@ var eventSource = (function() {
     };
 })();
 
-
 var isDxEvent = function(e) {
     return eventSource(e) === "dx";
 };
@@ -63,7 +62,6 @@ var isFakeClickEvent = function(e) {
     return e.screenX === 0 && !e.offsetX && e.pageX === 0;
 };
 
-
 var eventData = function(e) {
     return {
         x: e.pageX,
@@ -79,7 +77,6 @@ var eventDelta = function(from, to) {
         time: to.time - from.time || 1
     };
 };
-
 
 var hasTouches = function(e) {
     if(isNativeTouchEvent(e)) {
@@ -110,7 +107,6 @@ var needSkipEvent = function(e) {
     }
 };
 
-
 var fixMethod = function(e) { return e; };
 var setEventFixMethod = function(func) {
     fixMethod = func;
@@ -135,7 +131,6 @@ var fireEvent = function(props) {
     return event;
 };
 
-
 var addNamespace = function(eventNames, namespace) {
     if(!namespace) {
         throw errors.Error("E0017");
@@ -154,7 +149,6 @@ var addNamespace = function(eventNames, namespace) {
 
     return eventNames.join(" ");
 };
-
 
 module.exports = {
     eventSource: eventSource,

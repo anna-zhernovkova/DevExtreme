@@ -7,7 +7,6 @@ var gridCore = require("./ui.data_grid.core"),
     stateStoringCore = require("../grid_core/ui.grid_core.state_storing"),
     equalByValue = commonUtils.equalByValue;
 
-
 //TODO move processLoadState to target modules (data, columns, pagerView)
 var processLoadState = function(that) {
     var columnsController = that.getController("columns"),

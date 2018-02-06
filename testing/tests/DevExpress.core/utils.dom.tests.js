@@ -46,7 +46,6 @@ QUnit.test("normalizeTemplateElement with script element", function(assert) {
     assert.equal($result.text(), "Test", "template based on script element works fine");
 });
 
-
 QUnit.module("clipboard");
 
 QUnit.test("get text from clipboard", function(assert) {
@@ -63,7 +62,6 @@ QUnit.test("get text from clipboard", function(assert) {
 
     assert.equal(clipboardText, "test", "text from clipboard is correct");
 });
-
 
 QUnit.module("selection");
 
@@ -91,7 +89,6 @@ QUnit.test("clearSelection should not run if selectionType is 'Caret'", function
         window.getSelection = originalGetSelection;
     }
 });
-
 
 QUnit.module("initMobileViewPort");
 

@@ -409,7 +409,6 @@ QUnit.test("getAreaFields for many data fields", function(assert) {
         store: this.testStore
     });
 
-
     //assert
     var dataFields = dataSource.getAreaFields("data");
     assert.equal(dataFields.length, 12, "data fields count");
@@ -444,7 +443,6 @@ QUnit.test("Load Field Values", function(assert) {
         };
 
     this.testStore.load.returns($.Deferred().resolve(loadResult));
-
 
     var fieldValues;
 
@@ -744,7 +742,6 @@ QUnit.test("Load store", function(assert) {
         };
 
     def.resolve(loadResult);
-
 
     //assert
     assert.deepEqual(dataSource.getData(), loadResult);
@@ -2108,7 +2105,6 @@ QUnit.test("Change field after expand", function(assert) {
 
         store: this.testStore
     });
-
 
     this.testStore.load.returns($.Deferred().resolve({
         rows: [{
@@ -3617,7 +3613,6 @@ QUnit.test("T411764. Change generated caption on fields prepared", function(asse
     //act
     dataSource.field(0, { area: "column" });
 
-
     assert.strictEqual(dataSource.field(0).caption, "FIELD1");
 });
 
@@ -3813,7 +3808,6 @@ QUnit.test("data on load done when sync loading", function(assert) {
 QUnit.test("headers formatting", function(assert) {
     this.testStore.load.returns($.Deferred().resolve(this.storeData));
 
-
     var customizeText = sinon.spy(function() {
             return "custom Text";
         }),
@@ -3987,7 +3981,6 @@ if(window.INTRANET) {
     });
 }
 
-
 QUnit.module("Sorting", defaultEnvironment);
 
 QUnit.test("Sort data", function(assert) {
@@ -4065,7 +4058,6 @@ QUnit.test("Data order by default", function(assert) {
         ],
         store: this.testStore
     });
-
 
     this.storeData.columns = this.storeData.columns[0].children;
 
@@ -4482,7 +4474,6 @@ QUnit.test("Sort by summary with path", function(assert) {
     assert.strictEqual(data.rows[1].value, "A");
     assert.strictEqual(data.rows[2].value, "B");
 });
-
 
 QUnit.module("Sorting by summary", {
     beforeEach: function() {
@@ -4998,7 +4989,6 @@ QUnit.test("Sort by summary with path collapse item", function(assert) {
     assert.strictEqual(dataSource.field("OrderDate").expanded, false);
 });
 
-
 QUnit.module("Apply summary mode", {
     beforeEach: function() {
         var that = this;
@@ -5034,7 +5024,6 @@ QUnit.test("apply Display Summary Mode when expressions were not used", function
         ],
         store: this.testStore
     });
-
 
     this.storeData.columns = this.storeData.columns[0].children;
 
@@ -5105,8 +5094,6 @@ QUnit.test("load fields without area if it is used in calculateSummaryValue", fu
 
     assert.strictEqual(dataSource.getAreaFields("data", true).length, 1);
 });
-
-
 
 QUnit.test("apply Display Summary Mode when expressions were used", function(assert) {
     var def = $.Deferred();
@@ -5450,7 +5437,6 @@ QUnit.test("apply Display Summary Mode when expressions were used when data sort
         }]);
 });
 
-
 QUnit.module("State storing", defaultEnvironment);
 
 QUnit.test("Get current State. DataSource is not loaded", function(assert) {
@@ -5552,7 +5538,6 @@ QUnit.test("Get current State", function(assert) {
 
     assert.deepEqual(state.rowExpandedPaths, [["2005"], ["2005", "January"], ["2007"]]);
     assert.deepEqual(state.columnExpandedPaths, [["Cat2"]]);
-
 
     assert.deepEqual(state.fields, [{
         "area": "row",
@@ -6349,7 +6334,6 @@ QUnit.test("set state when store fields not loaded", function(assert) {
             { dataField: "Year" }
     ]);
 
-
     assert.ok(fieldsPrepared.calledOnce);
     assert.strictEqual(fieldsPrepared.lastCall.args[0].length, 2);
 
@@ -6475,5 +6459,4 @@ QUnit.test("All stores implement correct interface", function(assert) {
         });
     });
 });
-
 

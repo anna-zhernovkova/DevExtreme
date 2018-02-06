@@ -11,8 +11,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
-
 require("common.css!");
 
 require("ui/data_grid/ui.data_grid");
@@ -24,7 +22,6 @@ var $ = require("jquery"),
     dataUtils = require("core/element_data");
 
 var Pager = require("ui/data_grid/pager");
-
 
 QUnit.module("Pager", {
     beforeEach: function() {
@@ -253,7 +250,6 @@ QUnit.test("Pager is not rendered on partial update", function(assert) {
     assert.equal(pagerView._createComponent.callCount, 1, "_createComponent call count after partial update");
 });
 
-
 QUnit.test("get page sizes when pageSizes option is auto and pageSize = 5", function(assert) {
     var pagerView = this.pagerView;
 
@@ -405,7 +401,6 @@ QUnit.test("isVisible when pageCount == 1, hasKnownLastPage is false and visible
     this.dataControllerOptions.hasKnownLastPage = false;
     this.dataControllerOptions.isLoaded = true;
 
-
     //act
     var isVisible = pagerView.isVisible();
 
@@ -436,7 +431,6 @@ QUnit.test("isVisible when pageCount > 1 and visible is false", function(assert)
 
     this.options.pager = { visible: false };
     this.dataControllerOptions.pageCount = 2;
-
 
     //act
     pagerView.render($("#container"));

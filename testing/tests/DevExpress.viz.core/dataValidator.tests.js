@@ -1149,7 +1149,6 @@ QUnit.test("ArgumentType & ValueType merge. Different group", function(assert) {
         groupData2 = createGroupsData({ argumentType: "string", valueType: "numeric" }),
         groupsData = {};
 
-
     groupsData.groups = groupData1.groups.concat(groupData2.groups);
     groupsData.argumentOptions = groupData1.argumentOptions;
 

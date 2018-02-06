@@ -54,6 +54,5 @@ function createQueue(discardPendingTasks) {
     };
 }
 
-
 exports.create = createQueue;
 exports.enqueue = createQueue().add; // Default global queue for UI sync, consider renaming

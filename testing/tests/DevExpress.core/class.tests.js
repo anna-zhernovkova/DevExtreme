@@ -53,7 +53,6 @@ B.redefine({
     }
 });
 
-
 QUnit.test("instanceof on ctor-less class", function(assert) {
     var class1 = Class.inherit({});
     var obj1 = new class1();
@@ -149,7 +148,6 @@ QUnit.test("check for 'new'", function(assert) {
     //});
 });
 
-
 QUnit.module("mixins");
 
 QUnit.test("no include in root Class", function(assert) {
@@ -183,7 +181,6 @@ QUnit.test("two includes with ctor", function(assert) {
         }
 
     };
-
 
     var myClass = Class.inherit({
 
@@ -242,7 +239,6 @@ QUnit.test("two dependent includes with ctor", function(assert) {
         }
 
     };
-
 
     var myClass = Class.inherit({
 
@@ -328,7 +324,6 @@ QUnit.test("ctor of mixin included to parent class is invoked for descendants", 
     assert.ok(o.mixed);
 });
 
-
 QUnit.module("Static");
 
 QUnit.test("static methods should be inherited", function(assert) {
@@ -350,7 +345,6 @@ QUnit.test("static methods should be inherited", function(assert) {
     assert.equal((new B()).callFoo(), "foo");
     assert.equal((new C()).callFoo(), "foobar");
 });
-
 
 QUnit.module("API");
 
@@ -382,7 +376,6 @@ QUnit.test("subclassOf method", function(assert) {
 
     assert.ok(!B.subclassOf(C));
 });
-
 
 QUnit.module("regressions");
 

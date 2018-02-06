@@ -40,7 +40,6 @@ var POPUP_OPTION_MAP = {
     "popupHeight": "height"
 };
 
-
 /**
 * @name dxlookup
 * @isEditor

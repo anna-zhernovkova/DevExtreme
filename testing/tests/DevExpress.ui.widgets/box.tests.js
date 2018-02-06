@@ -52,7 +52,6 @@ var relativeOffset = function($element, $relativeElement) {
     };
 };
 
-
 QUnit.module("render");
 
 QUnit.test("render", function(assert) {
@@ -91,7 +90,6 @@ QUnit.test("Scrollable placed in dxBox stretch correctly", function(assert) {
     assert.equal($scrollable.height(), 100, "Scrollable height is correct");
 });
 
-
 QUnit.module("layouting");
 
 QUnit.test("direction column", function(assert) {
@@ -119,7 +117,6 @@ QUnit.test("direction column", function(assert) {
     };
 
     assert.deepEqual(firstItemLayout, firstItemExpectedLayout, "first item positioned correctly");
-
 
     var $secondItem = $items.eq(1);
     var secondItemLayout = $.extend(relativeOffset($secondItem), {
@@ -271,7 +268,6 @@ QUnit.test("crossAlign for column direction", function(assert) {
     assert.equal(relativeOffset($item).left, 0, "item positioned for crossAlign: start");
     assert.equal($item.width(), size, "item is stretched over content");
 
-
     box.option("crossAlign", "end");
     assert.equal(relativeOffset($item).left, boxSize - size, "item positioned for crossAlign: end");
     assert.equal($item.width(), size, "item is stretched over content");
@@ -299,7 +295,6 @@ QUnit.test("crossAlign for row direction", function(assert) {
     var $item = $box.find("." + BOX_ITEM_CLASS).eq(0);
     assert.equal(relativeOffset($item).top, 0, "item positioned for crossAlign: start");
     assert.equal($item.height(), size, "item is stretched over content");
-
 
     box.option("crossAlign", "end");
     assert.equal(relativeOffset($item).top, boxSize - size, "item positioned for crossAlign: end");
@@ -402,7 +397,6 @@ QUnit.test("baseSize and ratio option", function(assert) {
     assert.equal($secondItem.width(), secondItemDimension.baseSize + secondItemDimension.ratio * partSpace, "second item has correct size");
 });
 
-
 QUnit.test("default shrink option", function(assert) {
     var firstItemDimension = { ratio: 1, baseSize: 160 };
     var secondItemDimension = { ratio: 3, baseSize: 40 };
@@ -482,7 +476,6 @@ QUnit.test("minSize & maxSize", function(assert) {
     assert.equal($thirdItem.css("minHeight"), "0px", "min-height is 0 by default");
 });
 
-
 QUnit.test("rendering after visibility changing", function(assert) {
     var clock = sinon.useFakeTimers();
     try {
@@ -544,7 +537,6 @@ QUnit.test("shrink may be set to 0", function(assert) {
     assert.equal($items.eq(1).height(), secondItemSize - (firstItemSize + secondItemSize - boxSize) / (firstItemShrink + secondItemShrink) * secondItemShrink);
 });
 
-
 QUnit.module("template rendering");
 
 QUnit.test("innerBox with template", function(assert) {
@@ -583,7 +575,6 @@ QUnit.test("innerBox with nested box item", function(assert) {
 
     assert.equal($.trim($box.text()), "Box1", "inner box rendered");
 });
-
 
 QUnit.module("fallback strategy");
 
@@ -636,7 +627,6 @@ QUnit.test("items size should be changed after dxupdate event inside fieldset", 
 
     assert.equal($items.eq(0).outerWidth(), 100, "items rendered correctly");
 });
-
 
 QUnit.module("layouting in RTL (fallback strategy)");
 
@@ -710,7 +700,6 @@ QUnit.test("crossAlign for column direction", function(assert) {
     assert.equal(relativeOffset($item).left, 0, "item positioned for crossAlign: stretch");
     assert.equal($item.width(), boxSize, "element is stretched over container");
 });
-
 
 QUnit.module("rendering box item");
 

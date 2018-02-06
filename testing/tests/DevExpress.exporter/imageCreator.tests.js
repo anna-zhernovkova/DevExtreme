@@ -368,7 +368,6 @@ QUnit.test("Defined background", function(assert) {
     });
 });
 
-
 QUnit.module("Svg to canvas", {
     beforeEach: function() {
         this.drawnElements = [];
@@ -1238,7 +1237,6 @@ QUnit.test("Text decoration", function(assert) {
             assert.equal(lineThroughDecoration.args.height, 1, "Line-through decoration line height");
             assert.roughEqual(lineThroughDecoration.args.width, 103, 5.5, "Line-through decoration line width");
             assert.equal(that.drawnElements[10].style.fillStyle, "#23ffff", "Line-through decoration line fill color");
-
 
             // noDisplay decoration (no stroke, no fill) assert
             assert.equal(noDisplayDecoration.args.x, 250, "noDisplay line-through decoration line x");

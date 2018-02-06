@@ -21,13 +21,11 @@ var $ = require("../core/renderer"),
 
 // NOTE external urls must have protocol explicitly specified (because inside Cordova package the protocol is "file:")
 
-
 var PROVIDERS = {
     googleStatic: require("./map/provider.google_static"),
     google: require("./map/provider.dynamic.google"),
     bing: require("./map/provider.dynamic.bing")
 };
-
 
 var MAP_CLASS = "dx-map",
     MAP_CONTAINER_CLASS = "dx-map-container",
@@ -357,7 +355,6 @@ var Map = Widget.inherit({
             * @action
             */
             onReady: null,
-
 
             /**
             * @name dxMapOptions_onContentReady

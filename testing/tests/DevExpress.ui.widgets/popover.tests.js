@@ -60,7 +60,6 @@ var getElementsPositionAndSize = function($popover, $target) {
     };
 };
 
-
 QUnit.module("render");
 
 QUnit.test("render", function(assert) {
@@ -208,7 +207,6 @@ QUnit.test("arrow for popover should be rendered only once", function(assert) {
     }
 });
 
-
 QUnit.module("options change");
 
 QUnit.test("fullScreen", function(assert) {
@@ -242,7 +240,6 @@ QUnit.test("target", function(assert) {
                 visible: true,
                 position: "top"
             });
-
 
         var elements = getElementsPositionAndSize($popover, $target),
             target = elements.target,
@@ -314,7 +311,6 @@ QUnit.test("arrowPosition option changed", function(assert) {
         fixtures.collisionTopLeft.drop();
     }
 });
-
 
 QUnit.module("arrow positioning");
 
@@ -598,7 +594,6 @@ QUnit.test("arrow position should be correct if content is flipped", function(as
     }
 });
 
-
 QUnit.module("content positioning");
 
 QUnit.test("content position", function(assert) {
@@ -833,7 +828,6 @@ QUnit.test("content position inside of target", function(assert) {
     }
 });
 
-
 QUnit.module("positioning");
 
 QUnit.test("position of popover with high content", function(assert) {
@@ -1015,7 +1009,6 @@ QUnit.test("popover should not change it's position option during rendering", fu
         fixtures.simple.drop();
     }
 });
-
 
 QUnit.module("flipping");
 
@@ -1306,7 +1299,6 @@ QUnit.test("flipping with right position", function(assert) {
     }
 });
 
-
 QUnit.module("animation");
 
 QUnit.test("content position with animation type = 'slide'", function(assert) {
@@ -1345,7 +1337,6 @@ QUnit.test("content position with animation type = 'slide'", function(assert) {
         fixtures.collisionTopLeft.drop();
     }
 });
-
 
 QUnit.module("behavior");
 
@@ -1398,7 +1389,6 @@ QUnit.test("popover should be visible on start when visible and deferRendering i
         fixtures.collisionTopLeft.drop();
     }
 });
-
 
 QUnit.module("position offset", {
     beforeEach: function() {
@@ -1525,7 +1515,6 @@ QUnit.test("animation of popover should run correctly when the 'animation.show.t
     assert.equal(Math.round(content.offsetTop - arrow.height - target.height - target.offsetTop), 0, "content top is OK");
 });
 
-
 QUnit.module("popover content size");
 
 QUnit.test("popover content height is reduced to fit in boundaries by height", function(assert) {
@@ -1627,7 +1616,6 @@ QUnit.test("popover content height shrinking considers existing offset", functio
         fixtures.customBoundary.drop();
     }
 });
-
 
 QUnit.module("Show/Hide", {
     beforeEach: function() {

@@ -84,7 +84,6 @@ QUnit.test("Two scrollable elements should be rendered", function(assert) {
     var $dateTableScrollable = this.instance.$element().find(".dx-scheduler-date-table-scrollable"),
         $headerScrollable = this.instance.$element().find(".dx-scheduler-header-scrollable");
 
-
     assert.equal($dateTableScrollable.length, 1, "Date table scrollable was rendered");
     assert.ok($dateTableScrollable.dxScrollable("instance"), "Date table scrollable is instance of dxScrollable");
 
@@ -362,7 +361,6 @@ QUnit.test("the 'getCoordinatesByDate' method should return right coordinates fo
     }
 });
 
-
 QUnit.test("the 'getCellIndexByCoordinates' method should return right coordinates", function(assert) {
     var cellWidth = this.instance.$element().find(".dx-scheduler-date-table-cell").eq(0).outerWidth();
     var cellIndex = this.instance.getCellIndexByCoordinates({ left: cellWidth * 15, top: 1 });
@@ -453,7 +451,6 @@ QUnit.test("Scheduler timeline day should have a right css class", function(asse
 
 QUnit.test("Scheduler timeline day view should have right cell & row count", function(assert) {
     var $element = this.instance.$element();
-
 
     assert.equal($element.find(".dx-scheduler-date-table-row").length, 1, "Date table has 1 rows");
     assert.equal($element.find(".dx-scheduler-date-table-cell").length, 48, "Date table has 48 cells");
@@ -665,7 +662,6 @@ QUnit.test("Scheduler timeline week should have a right css class", function(ass
 QUnit.test("Scheduler timeline week view should have right cell & row count", function(assert) {
     var $element = this.instance.$element();
 
-
     assert.equal($element.find(".dx-scheduler-date-table-row").length, 1, "Date table has 1 rows");
     assert.equal($element.find(".dx-scheduler-date-table-cell").length, 336, "Date table has 336 cells");
 });
@@ -681,7 +677,6 @@ QUnit.test("Scheduler timeline week view should have right cell & row count is s
     });
     var $element = this.instance.$element(),
         $lastRow = $element.find(".dx-scheduler-header-row").last();
-
 
     assert.equal($element.find(".dx-scheduler-date-table-row").length, 2, "Date table has 1 rows");
     assert.equal($element.find(".dx-scheduler-date-table-cell").length, 28, "Date table has 28 cells");
@@ -933,7 +928,6 @@ QUnit.test("Scheduler timeline work week should have a right css class", functio
 QUnit.test("Scheduler timeline work week view should have right cell & row count", function(assert) {
     var $element = this.instance.$element();
 
-
     assert.equal($element.find(".dx-scheduler-date-table-row").length, 1, "Date table has 1 rows");
     assert.equal($element.find(".dx-scheduler-date-table-cell").length, 240, "Date table has 240 cells");
 });
@@ -1037,7 +1031,6 @@ QUnit.test("Scheduler timeline month should have rigth first view date", functio
     assert.deepEqual(this.instance.getStartViewDate(), new Date(2015, 9, 1, 0), "First view date is OK after startDayHour option changed");
 });
 
-
 QUnit.test("Each cell of scheduler timeline month should contain rigth jQuery dxCellData", function(assert) {
     this.instance.option({
         currentDate: new Date(2015, 3, 1),
@@ -1103,7 +1096,6 @@ QUnit.module("Timeline Keyboard Navigation", {
         stubInvokeMethod(this.instance);
     }
 });
-
 
 QUnit.test("Timeline should select/unselect cells with shift & arrows", function(assert) {
     this.instance.option({

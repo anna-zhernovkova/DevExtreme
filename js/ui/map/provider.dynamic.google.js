@@ -67,13 +67,11 @@ var initCustomMarkerClass = function() {
     };
 };
 
-
 var googleMapsLoaded = function() {
     return window.google && window.google.maps;
 };
 
 var googleMapsLoader;
-
 
 var GoogleProvider = DynamicProvider.inherit({
 

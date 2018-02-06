@@ -400,7 +400,6 @@ var DropDownEditor = TextBox.inherit({
         isFocused && eventsEngine.trigger(this._input(), "focusout");
     },
 
-
     _fieldRenderData: function() {
         return this.option("value");
     },

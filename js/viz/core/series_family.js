@@ -436,7 +436,6 @@ function SeriesFamily(options) {
     }
 }
 
-
 exports.SeriesFamily = SeriesFamily;
 
 SeriesFamily.prototype = {

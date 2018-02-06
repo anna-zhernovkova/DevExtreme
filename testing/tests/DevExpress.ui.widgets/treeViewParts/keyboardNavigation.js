@@ -37,7 +37,6 @@ QUnit.test("node is focused after focusing on element", function(assert) {
     assert.ok($firstNode.hasClass("dx-state-focused"), "item was focused ");
 }),
 
-
 QUnit.test("down arrow move focus to the next element", function(assert) {
     var $treeView = initTree({
             focusStateEnabled: true,
@@ -234,7 +233,6 @@ QUnit.test("down arrow move focus on item with the same level", function(assert)
         keyboard = keyboardMock($treeView),
         $firstItem = $treeView.find("." + internals.ITEM_CLASS).eq(0),
         $secondNode = $treeView.find("." + internals.NODE_CLASS).eq(4);
-
 
     $treeView.find(".dx-treeview-toggle-item-visibility-opened").trigger("dxclick");
 

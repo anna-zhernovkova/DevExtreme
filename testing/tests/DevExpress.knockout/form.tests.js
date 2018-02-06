@@ -45,7 +45,6 @@ var moduleSetup = {
     }
 };
 
-
 QUnit.module("Knockout integration", moduleSetup);
 
 QUnit.test("Generate items from layoutData with unacceptable data", function(assert) {
@@ -148,7 +147,6 @@ QUnit.test("Must unwrap visible option when render", function(assert) {
     viewModel.formOptions.items[1].visible(true);
     assert.equal($form.find(visibleEditorSelector).length, 2, "Both editors are visible");
 });
-
 
 QUnit.test("Change formData field and other observable", function(assert) {
     var viewModel = {
@@ -450,7 +448,6 @@ QUnit.test("Editor doesn't update the field data if it's already up to date", fu
     assert.equal(updateFieldValueSpy.callCount, 0, "Editor doesn't update actual value");
     assert.equal(formInstance.option("formData.testObj.name"), "Alex", "FormData is correct");
 });
-
 
 QUnit.module("Templates");
 

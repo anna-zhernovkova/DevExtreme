@@ -61,7 +61,6 @@ var getGroupAggregates = function(data) {
     return data.summary || data.aggregates || [];
 };
 
-
 exports.FooterView = columnsView.ColumnsView.inherit((function() {
     return {
         _getRows: function() {

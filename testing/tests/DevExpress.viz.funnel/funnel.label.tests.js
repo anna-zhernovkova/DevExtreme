@@ -651,7 +651,6 @@ QUnit.test("Connector strategy. left horizontalAlignment", function(assert) {
     assert.deepEqual(connectorStrategy.prepareLabelPoints.call(label), 	[ [ 14, 15 ], [ 54, 15 ], [ 54, 35 ], [ 14, 35 ]], "prepareLabelPoints");
 });
 
-
 QUnit.test("Connector strategy. inverted", function(assert) {
     stubAlgorithm.getFigures.returns([
         [0, 0, 1, 0, 1, 0.5, 0, 0.5]

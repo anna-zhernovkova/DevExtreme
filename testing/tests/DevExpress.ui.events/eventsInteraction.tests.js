@@ -38,7 +38,6 @@ var moduleConfig = {
 
 GestureEmitter.touchBoundary(GestureEmitter.initialTouchBoundary);
 
-
 QUnit.module("events unsubscribing", {
 
     beforeEach: function() {
@@ -88,7 +87,6 @@ QUnit.test("emitter should be removed only after last emitter event unsubscribed
     $element.off("dxtestend");
     assert.equal(this.emitterDisposed, 1);
 });
-
 
 QUnit.module("click and hold", moduleConfig);
 
@@ -185,7 +183,6 @@ QUnit.test("click should not be fired after unsubscribed on callback hold", func
     assert.equal(clickFired, 0, "click not fired");
 });
 
-
 QUnit.module("click and hold with feedback", moduleConfig);
 
 QUnit.test("inactive should be fired after click with timeout", function(assert) {
@@ -221,7 +218,6 @@ QUnit.test("inactive should be fired after hold without timeout", function(asser
     assert.equal(inactiveFired, 1, "inactive fired without timeout");
 });
 
-
 QUnit.module("click and dblclick", moduleConfig);
 
 QUnit.test("dblclick should be fired with dxclick", function(assert) {
@@ -243,7 +239,6 @@ QUnit.test("dblclick should be fired with dxclick", function(assert) {
     assert.equal(clickFired, 2, "click fired twice");
     assert.equal(dblclickFired, 1, "dblclick fired once");
 });
-
 
 QUnit.module("singletouch gestures");
 
@@ -542,7 +537,6 @@ testContinuous({
     endDirection: "horizontal"
 });
 
-
 var testNestedGesture = function(config) {
     QUnit.test(config.parent.direction + " " + config.parent.event.replace("dx", "") +
         " in " + config.child.direction + " " + config.child.event.replace("dx", ""), function(assert) {
@@ -623,7 +617,6 @@ $.each(gestures, function(_, firstGesture) {
     });
 });
 
-
 var testNestedGestureAcceptingOnUnsubscribing = function(parentGesture, childGesture) {
     QUnit.test(parentGesture.replace("dx", "") +
         " in " + childGesture.replace("dx", ""), function(assert) {
@@ -658,7 +651,6 @@ $.each(gestures, function(_, firstGesture) {
     });
 });
 
-
 var testNestedGestureCanceling = function(parentGesture, childGesture) {
     QUnit.test(parentGesture.replace("dx", "") +
         " in " + childGesture.replace("dx", ""), function(assert) {
@@ -692,7 +684,6 @@ $.each(gestures, function(_, firstGesture) {
         testNestedGestureCanceling(firstGesture, secondGesture);
     });
 });
-
 
 QUnit.module("singletouch immediate gestures", moduleConfig);
 
@@ -798,7 +789,6 @@ QUnit.test("second gesture should not be started with wrong direction without ti
     assert.equal(swipeFired, 0, "swipestart was not fired");
 });
 
-
 QUnit.module("simple events with singletouch gestures", moduleConfig);
 
 QUnit.test("click should not be fired after swipe", function(assert) {
@@ -847,7 +837,6 @@ QUnit.test("swipe should not be fired after hold", function(assert) {
     pointer.wait(1800).move(100).up();
 });
 
-
 QUnit.module("singletouch gestures with feedback", moduleConfig);
 
 QUnit.test("inactive should be fired after swipe without timeout if swipe started with delay", function(assert) {
@@ -868,7 +857,6 @@ QUnit.test("inactive should be fired after swipe without timeout if swipe starte
     pointer.move(50);
     assert.equal(inactiveFired, 1, "inactive fired without timeout");
 });
-
 
 QUnit.module("singletouch gestures with mousewheel", moduleConfig);
 
@@ -970,7 +958,6 @@ QUnit.test("first both scroll should be selected if scrolling by wheel with shif
     pointerMock($child).start().wheel(60, true);
 });
 
-
 var testMultitouch = function(config) {
     QUnit.test(config.parent.event + " in " + config.child.event, function(assert) {
         var log = [];
@@ -1012,7 +999,6 @@ var testMultitouch = function(config) {
     });
 };
 
-
 QUnit.module("multitouch");
 
 testMultitouch({
@@ -1021,7 +1007,6 @@ testMultitouch({
     actions: ["down", "verticalMove", "down", "verticalMove"],
     success: ["child"]
 });
-
 
 QUnit.module("multitouch with singletouch gestures");
 
@@ -1080,7 +1065,6 @@ testMultitouch({
     actions: ["down", "verticalMove", "down", "verticalMove", "up", "verticalMove", "up", "verticalMove"],
     success: ["parent", "child", "parent"]
 });
-
 
 QUnit.module("events unsubscription");
 

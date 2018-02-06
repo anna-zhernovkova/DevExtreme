@@ -70,7 +70,6 @@ var dxFunnel = require("../core/base_widget").inherit({
         return this._rect;
     },
 
-
     _getAlignmentRect: function() {
         return this._rect;
     },

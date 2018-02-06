@@ -32,7 +32,6 @@ var BaseIndicatorTester = BaseIndicator.inherit({
     }
 });
 
-
 var environment = {
     beforeEach: function() {
         this.renderer = new vizMocks.Renderer();

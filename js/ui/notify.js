@@ -7,7 +7,6 @@ var $ = require("../core/renderer"),
     isPlainObject = require("../core/utils/type").isPlainObject,
     Toast = require("./toast");
 
-
 var $notify = null;
 
 var notify = function(message, /* optional */ type, displayTime) {

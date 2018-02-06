@@ -54,7 +54,6 @@ var KEY_TEXT = "text",
     KEY_TEXT_DECORATION = "text-decoration",
     NONE = "none";
 
-
 var objectCreate = (function() {
     if(!Object.create) {
         return function(proto) {
@@ -1118,7 +1117,6 @@ SvgElement.prototype = {
         removeFuncIriCallback(this.element._fixFuncIri);
         clearChildren(this.element);
 
-
         this._getJQElement().remove();
         return this;
     },
@@ -1919,5 +1917,4 @@ var fixFuncIriCallbacks = (function() {
 exports.refreshPaths = function() {
     fixFuncIriCallbacks.fire();
 };
-
 

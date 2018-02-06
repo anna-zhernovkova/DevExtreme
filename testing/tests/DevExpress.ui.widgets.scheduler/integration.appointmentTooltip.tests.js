@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     Tooltip = require("ui/tooltip"),
     tooltip = require("ui/tooltip/ui.tooltip"),
@@ -102,7 +101,6 @@ QUnit.test("Click on disabled appointment should not call scheduler.showAppointm
 
     tooltip.hide();
 });
-
 
 QUnit.test("Click on appointment should not call scheduler.showAppointmentTooltip for disabled mode", function(assert) {
     var data = new DataSource({
@@ -676,7 +674,6 @@ QUnit.test("Tooltip for recurrence appointment should display right dates(T38418
     assert.equal($date.text(), "February 6, 11:00 AM - 12:00 PM", "dates and time were displayed correctly");
     tooltip.hide();
 });
-
 
 QUnit.test("Tooltip should hide when window was resized", function(assert) {
     this.createInstance({

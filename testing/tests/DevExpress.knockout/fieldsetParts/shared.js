@@ -120,7 +120,6 @@ var fieldsetFixtureTemplate = '    <div id="markup" style="width: 980px">							
     </div>																								\
 </div>';
 
-
 var checkThatTestingIsPossible = function() {
     if(browser.mozilla) {
         QUnit.test("Temporarily we do not test for firefox", function(assert) {
@@ -200,10 +199,6 @@ var testBaselineOffset = function($labelContainer, $valueContainer) {
         $imgForInput.remove();
     }
 };
-
-
-
-
 
 module.exports = function(themeName, options) {
     if(!checkThatTestingIsPossible()) {

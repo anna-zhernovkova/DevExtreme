@@ -36,7 +36,6 @@ QUnit.module("error logging", {
     }
 });
 
-
 var mockVersion = function(s) {
     return s.replace(/\d+_\d+/, "[VERSION]");
 };

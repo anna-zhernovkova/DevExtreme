@@ -26,7 +26,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("format: api value changing", moduleConfig);
 
 QUnit.test("number type of input is not supported with masks", function(assert) {
@@ -102,7 +101,6 @@ QUnit.test("api value changing should hide a placeholder", function(assert) {
     assert.equal(this.input.val(), "$ 1", "text is correct");
     assert.notOk($placeholder.is(":visible"), "placeholder is hidden");
 });
-
 
 QUnit.module("format: sign and minus button", moduleConfig);
 
@@ -313,7 +311,6 @@ QUnit.test("removed digits should not be replaced to 0 when they are not require
     assert.equal(this.input.val(), "1", "decimal point was removed together with last float digit");
 });
 
-
 QUnit.module("format: minimum and maximum", moduleConfig);
 
 QUnit.test("invert sign should be prevented if minimum is larger than 0", function(assert) {
@@ -382,7 +379,6 @@ QUnit.test("boundary value should correctly apply after second try to set overfl
     assert.equal(this.input.val(), "1", "text is adjusted to min");
     assert.equal(this.instance.option("value"), 1, "value is adjusted to min");
 });
-
 
 QUnit.module("format: text input", moduleConfig);
 
@@ -553,7 +549,6 @@ QUnit.test("valueChanged event fires on value apply", function(assert) {
     assert.ok(valueChangedSpy.calledOnce, "valueChanged event called once");
 });
 
-
 QUnit.module("format: percent format", moduleConfig);
 
 QUnit.test("percent format should work properly on value change", function(assert) {
@@ -589,7 +584,6 @@ QUnit.test("input before leading zero in percent format", function(assert) {
 
     assert.equal(this.input.val(), "450%", "text is correct");
 });
-
 
 QUnit.module("format: removing", moduleConfig);
 
@@ -849,7 +843,6 @@ QUnit.test("removing decimal separator if decimal separator is not default", fun
         config({ decimalSeparator: oldDecimalSeparator });
     }
 });
-
 
 QUnit.module("format: caret boundaries", moduleConfig);
 

@@ -13,7 +13,6 @@ var LOCATIONS = testing.LOCATIONS,
 
 var MAP_CONTAINER_CLASS = "dx-map-container";
 
-
 QUnit.module("googleStatic provider", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";

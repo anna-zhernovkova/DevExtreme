@@ -8,7 +8,6 @@ require("integration/knockout");
 
 $("#qunit-fixture").html('<div id="toolbar" data-bind="dxToolbar: { items: items }"></div>');
 
-
 QUnit.module("regression", {
     beforeEach: function() {
         this.$element = $("#toolbar");

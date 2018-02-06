@@ -11,5 +11,4 @@ var EmptyTemplate = TemplateBase.inherit({
 
 });
 
-
 module.exports = EmptyTemplate;

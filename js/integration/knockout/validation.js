@@ -20,7 +20,6 @@ var koDxValidator = Class.inherit({
         });
     },
 
-
     validate: function() {
         var result = ValidationEngine.validate(this.target(), this.validationRules, this.name);
         this._applyValidationResult(result);
@@ -43,7 +42,6 @@ var koDxValidator = Class.inherit({
     }
 
 }).include(EventsMixin);
-
 
 ko.extenders.dxValidator = function(target, option) {
     target.dxValidator = new koDxValidator(target, option);

@@ -357,7 +357,6 @@ QUnit.test('Winloss sparkline get TooltipFormatObject', function(assert) {
         });
     sparkline._showTooltipCallback();
 
-
     assert.deepEqual(sparkline._tooltip.show.lastCall.args, [{
         firstValue: '4:undefined',
         lastValue: '12:undefined',

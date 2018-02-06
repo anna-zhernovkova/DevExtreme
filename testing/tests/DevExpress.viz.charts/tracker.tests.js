@@ -30,7 +30,6 @@ var createLegend = function() {
     legend.stub("coordsIn").returns(false);
     legend.stub("getItemByCoord").returns(false);
 
-
     legend.stub("getOptions").returns({
         hoverMode: "includepoints"
     });
@@ -1277,7 +1276,6 @@ QUnit.test("click on legend with chancel in legendClick handler", function(asser
     event.cancel = true;
     this.options.eventTrigger.withArgs("legendClick").lastCall.args[2]();
 
-
     assert.ok(!this.options.eventTrigger.withArgs("seriesClick").called);
 });
 
@@ -1804,7 +1802,6 @@ QUnit.test("Work after update with new series", function(assert) {
     newSeries.isNew = true;
     this.seriesGroup.element["chart-data-series"] = newSeries;
 
-
     this.tracker.updateSeries([newSeries]);
 
     //Act
@@ -2066,7 +2063,6 @@ QUnit.test("pointerdown, pointerup with gesture action when animation enabled", 
     animationStep(1);
     assert.equal(this.options.chart._transformArgument.callCount, 4);
     assert.deepEqual(this.options.chart._transformArgument.lastCall.args, [-100, 0]);
-
 
     assert.ok(!this.options.chart.zoomArgument.called);
     this.renderer.root.animate.firstCall.args[1].complete();

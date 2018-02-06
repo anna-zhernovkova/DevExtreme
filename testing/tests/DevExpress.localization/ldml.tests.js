@@ -62,7 +62,6 @@ QUnit.test("getFormat", function(assert) {
     checkFormat("yyyy 'm'. MMMM d");
 });
 
-
 QUnit.module("number formatter");
 
 QUnit.test("integer with non-required digits", function(assert) {

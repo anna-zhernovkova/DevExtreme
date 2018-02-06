@@ -15,5 +15,4 @@ var FunctionTemplate = TemplateBase.inherit({
 
 });
 
-
 module.exports = FunctionTemplate;

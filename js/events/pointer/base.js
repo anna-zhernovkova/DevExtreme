@@ -8,7 +8,6 @@ var eventsEngine = require("../../events/core/events_engine"),
 
 var POINTER_EVENTS_NAMESPACE = "dxPointerEvents";
 
-
 var BaseStrategy = Class.inherit({
 
     ctor: function(eventName, originalEvents) {
@@ -96,6 +95,5 @@ var BaseStrategy = Class.inherit({
         eventsEngine.off(element, this._originalEvents);
     }
 });
-
 
 module.exports = BaseStrategy;

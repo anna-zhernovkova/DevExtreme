@@ -700,7 +700,6 @@ QUnit.test("T112555", function(assert) {
 
     var $hueMarker = this.element.find(".dx-colorview-hue-scale-handle");
 
-
     move($hueMarker, {
         left: 0,
         top: 0

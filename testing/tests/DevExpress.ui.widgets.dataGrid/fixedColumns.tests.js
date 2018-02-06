@@ -16,7 +16,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 require("common.css!");
 require("generic_light.css!");
 
@@ -1384,7 +1383,6 @@ if(device.deviceType === "desktop") {
         that.rowsView.height(50);
         that.rowsView.resize();
 
-
         $fixTable = $testElement.find(".dx-datagrid-rowsview").children(".dx-datagrid-content-fixed").find("table");
         $table = $testElement.find(".dx-datagrid-rowsview").children(".dx-scrollable-wrapper").find("table").first();
         scrollableInstance = that.rowsView.element().dxScrollable("instance");
@@ -1779,7 +1777,6 @@ QUnit.test("Draw filter row when set filterOperations option in fixed first colu
     assert.equal($fixTable.find("td").length, 3, "count fixed column");
     assert.ok(!$fixTable.find("td").first().hasClass("dx-first-cell"), "not has class dx-first-cell");
 });
-
 
 //T331287
 QUnit.test("Reset filter operation for fixed column", function(assert) {

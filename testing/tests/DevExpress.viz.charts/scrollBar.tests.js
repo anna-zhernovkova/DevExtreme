@@ -213,7 +213,6 @@ QUnit.test("setPosition by arguments. Discrete axis. stick false", function(asse
     scrollTranslator.translate.withArgs("40", +1).returns(50);
     scrollTranslator.translate.withArgs("40").returns(45);
 
-
     scrollTranslator.translate.withArgs("70", -1).returns(70);
     scrollTranslator.translate.withArgs("70", +1).returns(80);
     scrollTranslator.translate.withArgs("70").returns(75);
@@ -244,7 +243,6 @@ QUnit.test("setPosition by arguments. Discrete axis. stick true", function(asser
     scrollTranslator.translate.withArgs("40", +1).returns(50);
     scrollTranslator.translate.withArgs("40").returns(45);
 
-
     scrollTranslator.translate.withArgs("70", -1).returns(70);
     scrollTranslator.translate.withArgs("70", +1).returns(80);
     scrollTranslator.translate.withArgs("70").returns(75);
@@ -273,7 +271,6 @@ QUnit.test("setPosition by arguments. Stick false", function(assert) {
     scrollTranslator.translate.withArgs("40", +1).returns(50);
     scrollTranslator.translate.withArgs("40").returns(45);
 
-
     scrollTranslator.translate.withArgs("70", -1).returns(70);
     scrollTranslator.translate.withArgs("70", +1).returns(80);
     scrollTranslator.translate.withArgs("70").returns(75);
@@ -301,7 +298,6 @@ QUnit.test("setPosition by arguments.Stick true", function(assert) {
     scrollTranslator.translate.withArgs("40", -1).returns(40);
     scrollTranslator.translate.withArgs("40", +1).returns(50);
     scrollTranslator.translate.withArgs("40").returns(45);
-
 
     scrollTranslator.translate.withArgs("70", -1).returns(70);
     scrollTranslator.translate.withArgs("70", +1).returns(80);
@@ -640,7 +636,6 @@ QUnit.module("Scroll moving", {
         $(this.group.children[0].element).on("dxc-scroll-start", this.startEventsHandler);
         $(this.group.children[0].element).on("dxc-scroll-move", this.moveEventsHandler);
 
-
     },
     afterEach: function() {
         environment.afterEach.call(this);
@@ -704,7 +699,6 @@ QUnit.test("move scroll when scale = 1", function(assert) {
     this.moveEventsHandler.lastCall.args[0].preventDefault();
     assert.ok(preventDefault.calledOnce);
     assert.equal(this.moveEventsHandler.callCount, 2);
-
 
 });
 

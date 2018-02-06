@@ -30,8 +30,6 @@ var Fixture = Class.inherit({
     }
 });
 
-
-
 QUnit.module("General", {
     beforeEach: function() {
         this.fixture = new Fixture();
@@ -124,7 +122,6 @@ QUnit.test("Validator with set validation group", function(assert) {
     assert.strictEqual(result.brokenRules[0].validator, validator, "Validator reference");
 });
 
-
 QUnit.test("Validator can be reset", function(assert) {
     //arrange
     var validator = this.fixture.createValidator({ validationRules: [{ type: "custom", validationCallback: function() { return false; } }] });
@@ -165,7 +162,6 @@ QUnit.test("Untouched validator should not be validated after validationRules ch
     assert.equal(spy.callCount, 0, "validation performed");
 });
 
-
 QUnit.module("Validator specific tests", {
     beforeEach: function() {
         this.fixture = new Fixture();
@@ -195,7 +191,6 @@ QUnit.test("changed Value (correct -> incorrect through options) should be valid
     assert.equal(result.brokenRule.message, errorMessage, "Validation message should be passed from rules");
 });
 
-
 QUnit.test("changed Value (incorrect -> correct through options) should be validated", function(assert) {
     var validator = this.fixture.createValidator({
         value: "",
@@ -204,7 +199,6 @@ QUnit.test("changed Value (incorrect -> correct through options) should be valid
             message: "Please set validator's value"
         }]
     });
-
 
     this.fixture.stubAdapter.getValue.returns("");
     validator.validate();
@@ -225,14 +219,12 @@ QUnit.test("Validator should be able to bypass validation", function(assert) {
         }]
     });
 
-
     this.fixture.stubAdapter.bypass.returns(true);
     var result = validator.validate();
 
     assert.strictEqual(result.isValid, true, "Validator should be able to bypass validation");
     assert.ok(!result.brokenRule, "brokenRule is null");
 });
-
 
 QUnit.module("Registration in groups", {
     beforeEach: function() {
@@ -242,7 +234,6 @@ QUnit.module("Registration in groups", {
         this.fixture.teardown();
     }
 });
-
 
 QUnit.test("Widget should be registered in a group", function(assert) {
     //act
@@ -293,7 +284,6 @@ QUnit.test("Widget should be able to reinit group registration", function(assert
     assert.strictEqual(ValidationEngine.getGroupConfig().validators[0], validator, "Validator should be registered");
 });
 
-
 QUnit.module("Events", {
     beforeEach: function() {
         this.fixture = new Fixture();
@@ -309,7 +299,6 @@ QUnit.test("Validated event should fire", function(assert) {
         validationRules = [{ type: 'required' }],
         expectedFailedValidationRule = { type: 'required', isValid: false, message: "Login is required", validator: {}, value: value },
         handler = sinon.stub();
-
 
     var validator = this.fixture.createValidator({
         name: name,
@@ -367,7 +356,6 @@ QUnit.test("validator.reset should fire event (to work correctly with dxValidati
     assert.strictEqual(params.brokenRule, null, "Null should be passed as brokenRule ");
 });
 
-
 QUnit.module("Editors Standard Adapter", {
     beforeEach: function() {
         this.fixture = new Fixture();
@@ -394,7 +382,6 @@ QUnit.test("Adapter reacts on editor's value change - to invalid", function(asse
 
     editor.option("value", emptyValue);
 
-
     assert.strictEqual(editor.option("isValid"), false, "Editor options should be set");
     assert.ok(handler.calledOnce, "onValidated handler should be called");
     var brokenRule = handler.getCall(0).args[0].brokenRule;
@@ -416,7 +403,6 @@ QUnit.test("Adapter reacts on editor's value change - to valid", function(assert
             onValidated: handler
         });
 
-
     validator.validate();
     editor.option("value", value);
 
@@ -425,7 +411,6 @@ QUnit.test("Adapter reacts on editor's value change - to valid", function(assert
     var brokenRule = handler.getCall(1).args[0].brokenRule;
     assert.ok(!brokenRule, "Validation error should not be set");
 });
-
 
 QUnit.test("Validation request should get value from editor", function(assert) {
     var value = "123",
@@ -439,16 +424,12 @@ QUnit.test("Validation request should get value from editor", function(assert) {
             }]
         });
 
-
     var result = validator.validate();
-
-
 
     assert.strictEqual(result.isValid, true, "result should be valid");
 
     assert.strictEqual(editor.option("isValid"), true, "Editor options should be set");
 });
-
 
 QUnit.test("Editor's validators request should not be mixed with another editors", function(assert) {
     var value = "123",
@@ -472,7 +453,6 @@ QUnit.test("Editor's validators request should not be mixed with another editors
         value: emptyValue
     });
 
-
     this.fixture.createValidator(
         {
             adapter: null,
@@ -489,7 +469,6 @@ QUnit.test("Editor's validators request should not be mixed with another editors
     assert.strictEqual(editor1.option("isValid"), false, "Editor1 changed and should be marked as valid");
     assert.strictEqual(editor2.option("isValid"), true, "Editor2 have not changed yet and should not be validated");
 });
-
 
 QUnit.test("Editor-specific validation should be kept", function(assert) {
     var
@@ -509,7 +488,6 @@ QUnit.test("Editor-specific validation should be kept", function(assert) {
             }],
             onValidated: handler
         });
-
 
     //act
     validator.validate();
@@ -542,7 +520,6 @@ QUnit.test("Disabled editor should bypass validation", function(assert) {
 
     assert.strictEqual(result, true, "Disabled editor should bypass validation");
 });
-
 
 QUnit.module("Custom Adapters", {
     beforeEach: function() {
@@ -591,7 +568,6 @@ QUnit.test("Attempt to set null adapter should throw exception", function(assert
         "Exception messages should be readable"
         );
 });
-
 
 QUnit.test("Validation happens on firing callback, results are shown by our widgets (dxValidationSummary)", function(assert) {
     var that = this,

@@ -323,7 +323,6 @@ var DefaultLayoutController = Class.inherit({
         this._applyModelToTransitionElements($layout, viewInfo.model);
         this._viewEngine.applyLayout($viewTemplate, $layout);
 
-
         $viewItems.each(function(i, item) {
             var $item = $(item);
 
@@ -459,7 +458,6 @@ var DefaultLayoutController = Class.inherit({
             domUtils.triggerShownEvent($viewElement);
             $transitionContentElements = $transitionContentElements.add($viewElement);
         });
-
 
         that._$mainLayout.append(viewInfo.renderResult.$viewItems.filter(".dx-command"));
         $markup.remove();

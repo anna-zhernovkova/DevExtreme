@@ -25,7 +25,6 @@ QUnit.test("enqueue continues when deferred is rejected", function(assert) {
     assert.expect(0);
 });
 
-
 QUnit.module("create");
 
 QUnit.test("default (discardPendingTasks = false)", function(assert) {

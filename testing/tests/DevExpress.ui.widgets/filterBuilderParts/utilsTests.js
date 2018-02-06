@@ -94,7 +94,6 @@ QUnit.module("Utils", function() {
         var groupValue = utils.getGroupValue(group);
         assert.equal(groupValue, "and");
 
-
         group = ["!", group];
         groupValue = utils.getGroupValue(group);
         assert.equal(groupValue, "!and");
@@ -142,7 +141,6 @@ QUnit.module("Utils", function() {
         assert.notOk(utils.isEmptyGroup(["CompanyName", "=", "DevExpress"]));
         assert.notOk(utils.isEmptyGroup([["CompanyName", "=", "DevExpress"]]));
         assert.notOk(utils.isEmptyGroup([["CompanyName", "=", "DevExpress"], "and", ["CompanyName", "=", "DevExpress"]]));
-
 
         assert.ok(utils.isEmptyGroup(["!", []]));
         assert.ok(utils.isEmptyGroup(["!", ["and"]]));
@@ -239,7 +237,6 @@ QUnit.module("Utils", function() {
             dataType: "string",
             parentId: "group.group2"
         }]);
-
 
         hierarchicalFields = [{
             dataField: "group.field1",
@@ -765,7 +762,6 @@ QUnit.module("Filter normalization", function() {
 
         assert.deepEqual(group, condition1);
     });
-
 
     QUnit.test("get normalized filter from group with empty inner group", function(assert) {
         var group = [["and"], "and"];

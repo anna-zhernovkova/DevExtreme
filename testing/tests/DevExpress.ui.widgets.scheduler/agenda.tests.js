@@ -84,7 +84,6 @@ QUnit.test("the getEndViewDate method", function(assert) {
     var lastViewDate = this.instance.getEndViewDate();
     assert.deepEqual(lastViewDate, new Date(2016, 1, 23, 23, 59), "The last view date is OK");
 
-
     this.instance.option("agendaDuration", 15);
     lastViewDate = this.instance.getEndViewDate();
 
@@ -174,7 +173,6 @@ QUnit.test("Agenda date table should not contain any content", function(assert) 
     });
 });
 
-
 QUnit.test("Agenda date table cell should not handle hover", function(assert) {
     this.createInstance({
         currentDate: new Date(2016, 1, 17).toString()
@@ -227,7 +225,6 @@ QUnit.test("Agenda element should not handle click event", function(assert) {
             assert.ok(false);
         }
     });
-
 
     var $element = $(this.instance.$element());
     $element.find("." + DATE_TABLE_CELL_CLASS).eq(0).trigger("dxclick");

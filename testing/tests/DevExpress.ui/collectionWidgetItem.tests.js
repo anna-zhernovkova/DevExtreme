@@ -4,7 +4,6 @@ var $ = require("jquery"),
     CollectionWidget = require("ui/collection/ui.collection_widget.edit"),
     CollectionWidgetItem = require("ui/collection/item");
 
-
 QUnit.module("changing item field", {
     beforeEach: function() {
         var TestCollectionItem = this.TestCollectionItem = CollectionWidgetItem.inherit({
@@ -119,7 +118,6 @@ QUnit.test("visible should be rendered correctly after value changed", function(
 
     assert.ok($item.hasClass(INVISIBLE_STATE_CLASS));
 });
-
 
 QUnit.module("disabled builtin");
 

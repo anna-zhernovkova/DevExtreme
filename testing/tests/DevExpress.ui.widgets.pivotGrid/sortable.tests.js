@@ -67,7 +67,6 @@ function createHorizontalMarkUp(width, addItems, createTable) {
     });
 }
 
-
 QUnit.module("sortable without containers");
 
 QUnit.test("sortable render without parameters", function(assert) {
@@ -542,7 +541,6 @@ QUnit.test("dragging when no itemContainer", function(assert) {
     assert.ok(!changedArgs, "changed not called");
 });
 
-
 QUnit.module("'useIndicator' option");
 
 QUnit.test("indicator is shown on right dragging", function(assert) {
@@ -627,7 +625,6 @@ QUnit.test("indicator is shown on left dragging", function(assert) {
 
     indicator = $(".dx-position-indicator");
 
-
     assert.ok(indicator.length, "indicator is rendered");
     assert.ok(indicator.offset().left <= $sortable.find(".test-item").eq(1).offset().left, "indicator is rendered before 1 item");
 });
@@ -704,7 +701,6 @@ QUnit.test("remove indicator when item dragged out from container", function(ass
         .move(offset.left - 3, offset.top + 3)
         .move(offset.left - 302, offset.top)
         .move(offset.left - 302, offset.top - 100);
-
 
     assert.strictEqual($(".dx-position-indicator").length, 0, "indicator is removed");
 });
@@ -980,7 +976,6 @@ QUnit.test("Indicator should not be shown on dragging to the same item at anothe
     var indicator = $(".dx-position-indicator");
     assert.ok(!indicator.length);
 });
-
 
 QUnit.module("sortable when source item is hidden", {
     beforeEach: function() {
@@ -1315,7 +1310,6 @@ QUnit.test("dragging between different sortables by groupFilter callback to non-
         .down()
         .move(400, 300);
 
-
     //assert
     assert.strictEqual($(".dx-position-indicator").length, 1);
 
@@ -1430,7 +1424,6 @@ QUnit.test("Enable dragging at runtime", function(assert) {
     assert.deepEqual($sortable.dxSortable("instance").option("onChanged").lastCall.args[0].sourceIndex, 0);
     assert.deepEqual($sortable.dxSortable("instance").option("onChanged").lastCall.args[0].targetIndex, 2);
 });
-
 
 QUnit.module("Group items", {
     beforeEach: function() {
@@ -1594,7 +1587,6 @@ QUnit.test("Get correct source index for last item", function(assert) {
     assert.strictEqual(changedArgs.sourceIndex, 3, "sourceIndex");
     assert.strictEqual(changedArgs.targetIndex, 1, "targetIndex");
 });
-
 
 QUnit.module("Horizontal direction. RTL", {
     beforeEach: function() {
@@ -1789,7 +1781,6 @@ QUnit.test("drag to begin of the container. Render Indicator", function(assert) 
     assert.roughEqual(parseInt(indicator.css("left")), $sortable.find(".test-item").eq(0).offset().left + $sortable.find(".test-item").eq(0).outerWidth(true), 1);
     assert.ok(indicator.hasClass("dx-position-indicator-last"));
 });
-
 
 QUnit.module("Scroll group content", {
     beforeEach: function() {
@@ -2058,5 +2049,4 @@ QUnit.test("Stop scrolling affer drag from emty space(no group) to another group
     assert.strictEqual(this.onScroll.callCount, 0);
     assert.strictEqual($sortable.find(".test-container").eq(0).dxScrollable("instance").hasEvent("scroll"), false);
 });
-
 

@@ -15,12 +15,10 @@ var fixture = $("<div>")
     .attr("id", "qunit-fixture")
     .appendTo($("body"));
 
-
 $("<div>")
     .attr("id", "container")
     .css({ width: 250, height: 100 })
     .appendTo(fixture);
-
 
 QUnit.begin(function() {
     rendererModule.Renderer = function() {
@@ -63,7 +61,6 @@ var environment = {
         this.$container.remove();
     }
 };
-
 
 QUnit.module('Tooltip events on non-touch device', environment);
 

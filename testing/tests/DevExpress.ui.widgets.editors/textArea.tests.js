@@ -18,12 +18,10 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 var TEXTAREA_CLASS = "dx-textarea",
     INPUT_CLASS = "dx-texteditor-input",
     CONTAINER_CLASS = "dx-texteditor-container",
     PLACEHOLDER_CLASS = "dx-placeholder";
-
 
 QUnit.module("rendering");
 
@@ -91,7 +89,6 @@ QUnit.test("scrolling with dxpointer events", function(assert) {
 
     $(document).off(".dxtestns");
 });
-
 
 QUnit.module("options changing");
 
@@ -268,14 +265,12 @@ QUnit.test("the 'maxHeight' option works correctly", function(assert) {
     assert.equal($element.outerHeight(), 30, "widget height is correct");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria multiline attribute", function(assert) {
     var $element = $("#textarea").dxTextArea();
     assert.equal($element.find(".dx-texteditor-input").attr("aria-multiline"), "true", "aria multiline is correct");
 });
-
 
 QUnit.module("the 'autoResizeEnabled' option");
 

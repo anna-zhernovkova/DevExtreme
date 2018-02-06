@@ -236,7 +236,6 @@ var HtmlApplication = Application.inherit({
         return result;
     },
 
-
     /**
     * @name HtmlApplicationmethods_createNavigation
     * @publicName createNavigation(navigationConfig)

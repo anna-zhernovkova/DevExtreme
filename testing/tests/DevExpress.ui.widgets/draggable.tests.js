@@ -44,7 +44,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("rendering", moduleConfig);
 
 QUnit.test("element has class", function(assert) {
@@ -377,7 +376,6 @@ QUnit.test("behaviour depends from 'area' option", function(assert) {
     pointerMock($("#other")).down(-100, -100);
     this.checkPosition(100 - this.$element.width() / 2, 100 - this.$element.height() / 2, assert);
 });
-
 
 QUnit.module("regressions", moduleConfig);
 

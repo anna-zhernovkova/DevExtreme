@@ -385,7 +385,6 @@ QUnit.test("Render vertical menu with leftOrTop submenuDirection", function(asse
     fixtures.simple.drop();
 });
 
-
 QUnit.module("Menu - selection", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -475,7 +474,6 @@ QUnit.test("Selection in different submenus", function(assert) {
         item2 = $(menu.element).find("." + DX_MENU_ITEM_CLASS).eq(1),
         item3 = $(menu.element).find("." + DX_MENU_ITEM_CLASS).eq(2),
         item11, item21, item31, submenu;
-
 
     assert.ok(menu, "menu is created");
     assert.equal($(menu.element).find("." + DX_MENU_ITEM_SELECTED_CLASS).length, 0, "no selected items");
@@ -656,7 +654,6 @@ QUnit.test("It should be possible to select nested submenu by itemData", functio
         fx.off = true;
     }
 });
-
 
 QUnit.module("Menu tests", {
     beforeEach: function() {
@@ -1342,7 +1339,6 @@ QUnit.test("click should not be blocked on menu's item", function(assert) {
     }
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -1465,7 +1461,6 @@ QUnit.testInActiveWindow("When press down arrow key we only show submenu if exis
         .keyDown("right")
         .keyDown("down");
 
-
     submenuKeyboard = keyboardMock(Submenu.getInstance(instance._visibleSubmenu.$element())._itemContainer());
 
     submenuKeyboard
@@ -1499,7 +1494,6 @@ QUnit.testInActiveWindow("When press right arrow key we only show submenu if exi
     keyboardMock(instance._itemContainer())
         .keyDown("down")
         .keyDown("right");
-
 
     submenuKeyboard = keyboardMock(Submenu.getInstance(instance._visibleSubmenu.$element())._itemContainer());
     submenuKeyboard
@@ -1688,7 +1682,6 @@ QUnit.test("left key in submenu can move focus to previous item of main menu (ho
     assert.equal(instance._getActiveItem(true).text(), "item1");
 });
 
-
 QUnit.test("RTL: left key in submenu can move focus to next item of main menu (horizontal menu)", function(assert) {
     //arrange
     var instance = this.menu.instance,
@@ -1797,7 +1790,6 @@ QUnit.testInActiveWindow("Root item should not get focus on pointerdown when it 
     }
 });
 
-
 QUnit.module("Menu with templates", {
     beforeEach: function() {
         fx.off = true;
@@ -1835,7 +1827,6 @@ QUnit.test("Create items with template", function(assert) {
     assert.equal($(submenu._overlay.content()).find("." + DX_MENU_ITEM_CLASS).eq(1).text(), "test", "template rendered");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("Aria role", function(assert) {
@@ -1843,7 +1834,6 @@ QUnit.test("Aria role", function(assert) {
 
     assert.equal($element.attr("role"), "menubar");
 });
-
 
 QUnit.module("adaptivity: render", {
     beforeEach: function() {
@@ -2044,7 +2034,6 @@ QUnit.test("Adaptivity should be available for horizontal orientation only", fun
     assert.equal($adaptiveContainer.length, 0, "adaptiveContainer was not rendered");
 });
 
-
 QUnit.module("adaptivity: transfer options", {
     beforeEach: function() {
         $("#qunit-fixture").width(50);
@@ -2213,7 +2202,6 @@ QUnit.test("animationEnabled option should be true in the dxTreeView if animatio
 
     assert.strictEqual(treeview.option("animationEnabled"), false, "animation has been changed to disabled");
 });
-
 
 QUnit.module("adaptivity: behavior", {
     beforeEach: function() {
@@ -2501,7 +2489,6 @@ QUnit.test("Adaptive width limit should contain only root items", function(asser
 
     assert.ok($button.is(":hidden"), "adaptive mode should be disabled");
 });
-
 
 function createMenu(options) {
     var $menu = $("#menu").dxMenu(options),

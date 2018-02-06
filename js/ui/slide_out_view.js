@@ -27,7 +27,6 @@ var SLIDEOUTVIEW_CLASS = "dx-slideoutview",
 
     ANIMATION_DURATION = 400;
 
-
 var animation = {
     moveTo: function($element, position, completeAction) {
         fx.animate($element, {

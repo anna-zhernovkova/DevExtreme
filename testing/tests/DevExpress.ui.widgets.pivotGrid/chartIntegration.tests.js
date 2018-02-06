@@ -17,7 +17,6 @@ require("generic_light.css!");
 require("ui/pivot_grid/ui.pivot_grid");
 require("viz/chart");
 
-
 $('<div id="pivotGridContainer">').appendTo("#qunit-fixture");
 $('<div id="chartContainer">').appendTo("#qunit-fixture");
 
@@ -50,7 +49,6 @@ function createChart(options, container) {
 
     return container.dxChart("instance");
 }
-
 
 QUnit.module("Chart Binding", {
     beforeEach: function() {
@@ -281,7 +279,6 @@ QUnit.test("no rebind chart after change pivotGrid dataSource if chart unbound",
     assert.strictEqual(chartReady.callCount, 0);
 });
 
-
 QUnit.test("Pass grandTotal text", function(assert) {
     var pivotGrid = createPivotGrid({
             dataSource: this.pivotGridOptions.dataSource,
@@ -330,7 +327,6 @@ QUnit.test("Not redraw chart during virtual scrolling", function(assert) {
         pivotGrid = createPivotGrid(pivotGridOptions),
         chart = createChart({ legend: { visible: false } }),
         chartReady = sinon.stub();
-
 
     pivotGrid.bindChart(chart);
     chart.on("done", chartReady);
@@ -495,7 +491,6 @@ QUnit.test("Generate data for zero level", function(assert) {
     assert.strictEqual(series[0].getPoints()[0].argument, "Grand Total");
     assert.strictEqual(series[0].getPoints()[0].value, 830);
 
-
 });
 
 QUnit.test("Can Include all items", function(assert) {
@@ -546,7 +541,6 @@ QUnit.test("Generate data", function(assert) {
     assert.strictEqual(series[1].getPoints()[1].argument, "1997");
     assert.strictEqual(series[1].getPoints()[1].value, 42);
 });
-
 
 QUnit.module("Chart dataSource item generation with several dataFields", {
     beforeEach: function() {
@@ -890,7 +884,6 @@ QUnit.test("Generate data - put data fields into arguments and series", function
     assert.strictEqual(panesOptions[0].name, undefined);
 });
 
-
 QUnit.module("Value Axis Options", {
     beforeEach: function() {
         executeAsyncMock.setup();
@@ -1104,7 +1097,6 @@ QUnit.test("Several dataField. dataFields are placed on argument Axis", function
     assert.deepEqual(this.valueAxisOptions, [{}]);
 });
 
-
 QUnit.module("Customize Chart", {
     beforeEach: function() {
         executeAsyncMock.setup();
@@ -1182,11 +1174,9 @@ QUnit.test("Customize Data", function(assert) {
         }
     });
 
-
     this.pivotGridDataSource.expandHeaderItem("row", ["Brazil"]);
     this.pivotGridDataSource.expandHeaderItem("column", [1997]);
     this.pivotGridDataSource.load();
-
 
     this.createBinding({
         processCell: processCell

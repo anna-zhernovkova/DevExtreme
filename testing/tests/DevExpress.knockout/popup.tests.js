@@ -53,7 +53,6 @@ QUnit.test("'title' option has higher priority that the 'titleTemplate' option (
     assert.equal($title.text(), "Test Title");
 });
 
-
 QUnit.module("templates");
 
 QUnit.test("popup should not crash with KO (T180280)", function(assert) {

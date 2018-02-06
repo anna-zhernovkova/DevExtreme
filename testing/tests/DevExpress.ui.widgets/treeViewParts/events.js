@@ -493,7 +493,6 @@ QUnit.test("onItemClick should not be fired when clicking on the checkbox", func
     assert.equal(clickHandler.callCount, 0, "onItemClick was not fired");
 });
 
-
 QUnit.test("T177595", function(assert) {
     var handle = sinon.spy(commonUtils.noop);
     var $treeView = initTree({

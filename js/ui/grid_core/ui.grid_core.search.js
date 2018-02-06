@@ -13,7 +13,6 @@ var SEARCH_PANEL_CLASS = "search-panel",
     SEARCH_TEXT_CLASS = "search-text",
     FILTERING_TIMEOUT = 700;
 
-
 function allowSearch(column) {
     return isDefined(column.allowSearch) ? column.allowSearch : column.allowFiltering;
 }
@@ -26,7 +25,6 @@ function parseValue(column, text) {
         return column.parseValue ? column.parseValue(text) : text;
     }
 }
-
 
 module.exports = {
     defaultOptions: function() {

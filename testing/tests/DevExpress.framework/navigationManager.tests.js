@@ -562,7 +562,6 @@ QUnit.test("Navigation direction calculation", function(assert) {
     assert.equal(log.length, 13);
     assert.equal(log[12].options.direction, "none");
 
-
 });
 
 QUnit.test("Navigation direction calculation (B235738)", function(assert) {

@@ -142,7 +142,6 @@ gulp.task('npm-dts-generator', function() {
         return file(name, content, { src: true });
     });
 
-
     return merge(
         gulp.src('artifacts/ts/dx.all.d.ts')
             .pipe(replace('/*!', '/**'))

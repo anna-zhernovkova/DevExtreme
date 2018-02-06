@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     dblclickEvent = require("events/dblclick"),
     Color = require("color"),
@@ -864,7 +863,6 @@ QUnit.test("Recurrence editor should work correctly after switch off the recurre
 
     assert.ok(true, "recurrence editor works correctly");
 });
-
 
 QUnit.test("AllDay recurrence appointments should be rendered correctly after changing currentDate", function(assert) {
     var tasks = [

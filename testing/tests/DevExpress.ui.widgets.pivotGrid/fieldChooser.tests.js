@@ -297,7 +297,6 @@ QUnit.test("Render Fields Tree with dimension and displayFolder", function(asser
             { text: "Field 3", index: 2, field: fields[2], key: "field3", selected: false, isDefault: undefined, isMeasure: undefined, icon: undefined },
                 { key: "HierarchyField", selected: false, text: "a hierarchy field", isDefault: undefined, field: fields[6], index: 6, isMeasure: false, icon: "hierarchy" }
 
-
             ]
         },
     { index: 4, field: fields[4], selected: false, text: "Field 5", key: "field5", isDefault: undefined, isMeasure: undefined, icon: undefined }
@@ -751,7 +750,6 @@ if(devices.current().deviceType === "desktop") {
         assert.equal($filterMenuList.find(".dx-list-item").length, 5, 'list item count');
         assert.equal($filterMenuList.find(".dx-list-item-selected").length, 1, 'list selected item count');
 
-
         //act
         $filterMenuList.find(".dx-list-item").eq(0).trigger("dxclick");
 
@@ -861,7 +859,6 @@ QUnit.test("Change filter type for not group field", function(assert) {
     assert.equal($filterMenuList.length, 1);
 
     assert.equal($filterMenuList.find(".dx-list-select-all").length, 1, 'list all item count');
-
 
     //act
     $filterMenuList.find(".dx-list-select-all").trigger("dxclick");
@@ -1072,7 +1069,6 @@ QUnit.test("Change filter type for group field", function(assert) {
     assert.equal($filterMenuList.find(".dx-treeview-node").length, 2, 'list item count');
     assert.equal($filterMenuList.find(".dx-treeview-select-all-item").length, 1, 'list all item count');
 
-
     //act
     $filterMenuList.find(".dx-treeview-select-all-item").trigger("dxclick");
     $filterMenuList = $(".dx-header-filter-menu .dx-treeview");
@@ -1139,7 +1135,6 @@ QUnit.test("Dragging Fields", function(assert) {
         pointer.move(offset.left, offset.top).up();
 
     }
-
 
     assert.ok(true);
     assert.strictEqual(fields.length, 3);
@@ -1465,7 +1460,6 @@ QUnit.test("resetTreeView works correct", function(assert) {
     assert.equal(treeview.option("searchValue"), "", "treeview was cleaned");
     assert.ok(treeview.collapseAll.calledOnce, "treeview was collapsed");
 });
-
 
 QUnit.module("dxPivotGridFieldChooser context menu", {
     beforeEach: function() {

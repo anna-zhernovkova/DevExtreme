@@ -1076,7 +1076,6 @@ var TagBox = SelectBox.inherit({
 
         values = values || this._getValue();
 
-
         iteratorUtils.each(values, (function(index, selectedValue) {
             if(this._isValueEquals(value, selectedValue)) {
                 result = index;

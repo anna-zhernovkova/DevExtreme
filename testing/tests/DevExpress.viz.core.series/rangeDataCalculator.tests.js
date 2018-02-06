@@ -1779,7 +1779,6 @@ QUnit.test("String.", function(assert) {
         rangeData,
         series = createSeries($.extend(true, {}, this.defaultOptions, { argumentAxisType: "discrete", valueAxisType: "discrete" }));
 
-
     series.updateData(data);
     rangeData = series.getRangeData();
 
@@ -1969,7 +1968,6 @@ QUnit.test("String.", function(assert) {
     var data = [{ arg: "1", l: "11", h: "110", o: "11", c: "110" }, { arg: "2", l: "22", h: "100", o: "22", c: "100" }, { arg: "3", l: "3", h: "4", o: "3", c: "4" }, { arg: "4", l: "15", h: "115", o: "15", c: "115" }],
         rangeData,
         series = createSeries($.extend(true, {}, this.defaultOptions, { argumentAxisType: "discrete", valueAxisType: "discrete" }));
-
 
     series.updateData(data);
     rangeData = series.getRangeData();
@@ -2297,7 +2295,6 @@ QUnit.test("Numeric. zooming args between points.", function(assert) {
     assert.equal(rangeData.max, 40, "max y");
 });
 
-
 //T583086
 QUnit.test("Zooming points with null values", function(assert) {
     var data = getOriginalData([{ arg: 1, val: null }, { arg: 1, val: 16 }, { arg: 2, val: 90 }, { arg: 3, val: 100 }, { arg: 4, val: 100 }]),
@@ -2332,7 +2329,6 @@ QUnit.test("Numeric. Area", function(assert) {
     assert.equal(rangeData.max, 45, "max y");
     //assert.strictEqual(rangeData.arg.interval, 1);
 });
-
 
 QUnit.test("Range data has viewport", function(assert) {
     var data = [{ arg: 1, val: 10 }, { arg: 2, val: 20 }, { arg: 3, val: 30 }, { arg: 4, val: 40 }, { arg: 5, val: 50 }, { arg: 6, val: 60 }],

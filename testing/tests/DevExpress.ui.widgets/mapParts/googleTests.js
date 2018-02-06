@@ -755,7 +755,6 @@ QUnit.test("marker html offset", function(assert) {
         }
     });
 
-
 });
 
 QUnit.test("marker html interaction", function(assert) {

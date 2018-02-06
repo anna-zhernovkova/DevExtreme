@@ -519,7 +519,6 @@ QUnit.test("set value axes spider ticks from argument axis", function(assert) {
     assert.ok(valueAxis.setSpiderTicks.calledAfter(argumentAxis.draw));
 });
 
-
 QUnit.test("create axis with correct options", function(assert) {
     this.createSimplePolarChart({});
     var argumentAxis = this.createAxis.returnValues[0],

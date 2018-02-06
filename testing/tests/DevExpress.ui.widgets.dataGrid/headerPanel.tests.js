@@ -9,7 +9,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 require("common.css!");
 
 require("ui/data_grid/ui.data_grid");

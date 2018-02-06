@@ -8,7 +8,6 @@ var $ = require("jquery"),
 /* global MockTranslator */
 require("../../helpers/chartMocks.js");
 
-
 var environment = {
     beforeEach: function() {
         this.renderer = new vizMocks.Renderer();

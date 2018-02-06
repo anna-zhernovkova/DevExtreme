@@ -25,7 +25,6 @@ var CHECKBOX_CLASS = "dx-checkbox",
     CHECKBOX_TEXT_CLASS = "dx-checkbox-text",
     CHECKBOX_HAS_TEXT_CLASS = "dx-checkbox-has-text";
 
-
 QUnit.module("render");
 
 QUnit.test("markup init", function(assert) {
@@ -104,7 +103,6 @@ QUnit.test("onContentReady fired after setting the value", function(assert) {
     });
 });
 
-
 QUnit.module("options");
 
 QUnit.test("visible", function(assert) {
@@ -160,7 +158,6 @@ QUnit.test("checkbox icon must not resize according to the 'width' and 'height' 
     assert.equal($element.find(ICON_SELECTOR).height(), initHeight, "icon height is not resized");
 });
 
-
 QUnit.module("hidden input");
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -199,7 +196,6 @@ QUnit.test("the hidden should change its value on widget value change", function
     assert.equal($input.val(), "true", "input value has been changed second time");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget input should get the 'name' attribute with a correct value", function(assert) {
@@ -211,7 +207,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("regressions");
 
@@ -226,7 +221,6 @@ QUnit.test("Q504139", function(assert) {
     instance.option({ value: 0 });
     assert.ok(!$element.hasClass(CHECKED_CLASS));
 });
-
 
 QUnit.module("widget sizing render");
 
@@ -256,7 +250,6 @@ QUnit.test("change width", function(assert) {
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
 
-
 QUnit.module("keyboard navigation");
 
 QUnit.test("check state changes on space press", function(assert) {
@@ -277,7 +270,6 @@ QUnit.test("check state changes on space press", function(assert) {
 
     assert.equal(instance.option("value"), true, "value has been change successfully");
 });
-
 
 QUnit.module("aria accessibility");
 

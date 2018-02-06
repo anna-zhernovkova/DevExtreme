@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     noop = require("core/utils/common").noop,
     errors = require("ui/widget/ui.errors"),
@@ -1037,10 +1036,8 @@ QUnit.test("Appointment labels should be localized before sending to the details
     var $tooltip = $(".dx-scheduler-appointment-tooltip");
     $tooltip.find(".dx-scheduler-appointment-tooltip-buttons").find(".dx-button").eq(1).trigger("dxclick");
 
-
     var detailsForm = this.instance.getAppointmentDetailsForm(),
         formItems = detailsForm.option("items");
-
 
     assert.equal(formItems[0].label.text, messageLocalization.format("dxScheduler-editorLabelTitle"), "Title is OK");
     assert.equal(formItems[1].itemType, "empty", "Item is empty");
@@ -1099,7 +1096,6 @@ QUnit.test("Appointment startDate and endDate should be correct in the details v
         endDateExpr: "End",
         timeZone: timezone
     });
-
 
     this.instance.showAppointmentPopup(task);
 
@@ -2167,7 +2163,6 @@ QUnit.test("Appointment with custom tz that isn't equal to scheduler tz should b
 
     $appointment = this.instance.$element().find(".dx-scheduler-appointment").first();
 
-
     assert.roughEqual($appointment.position().top, $cell.outerHeight() * 6, 2.001, "Appointment top is OK");
     assert.equal($appointment.outerHeight(), initialAppointmentHeight, "Appointment height is OK");
 
@@ -2266,7 +2261,6 @@ QUnit.test("Recurrence appointment with 'Etc/UTC' tz should be updated correctly
         assert.roughEqual($appointment.position().top, $cell.outerHeight() * 3, 2.001, "Appointment top is OK");
         assert.equal($appointment.outerHeight(), initialAppointmentHeight, "Appointment height is OK");
 
-
         var startDateText = $appointment.find(".dx-scheduler-appointment-content-date").eq(0).text(),
             endDateText = $appointment.find(".dx-scheduler-appointment-content-date").eq(2).text(),
             cellData = dataUtils.data($cell.get(0), "dxCellData"),
@@ -2353,7 +2347,6 @@ QUnit.test("Task dragging when custom timeZone is set", function(assert) {
 [false, true].forEach(function(forceIsoDateParsing) {
     QUnit.test("Drag task that contains timestamps when forceIsoDateParsing is " + forceIsoDateParsing, function(assert) {
         var defaultForceIsoDateParsing = config().forceIsoDateParsing;
-
 
         try {
             config().forceIsoDateParsing = forceIsoDateParsing;
@@ -2592,7 +2585,6 @@ QUnit.test("Appointment should have correct position while horizontal dragging",
     var $appointment = $(this.instance.$element()).find(".dx-scheduler-appointment").eq(0),
         dragDistance = 150,
         timePanelWidth = this.instance.$element().find(".dx-scheduler-time-panel").outerWidth(true);
-
 
     var pointer = pointerMock($appointment).start(),
         startPosition = translator.locate($appointment);
@@ -3383,12 +3375,10 @@ QUnit.test("Recurrence repeat-end editor should be closed after reopening appoin
         switchEditor = $popup.find(".dx-recurrence-switch").dxSwitch("instance"),
         switchEndEditor = $popup.find(".dx-recurrence-switch-repeat-end").dxSwitch("instance");
 
-
     switchEditor.option("value", true);
 
     switchEndEditor.option("value", true);
     $popup.find(".dx-popup-done").trigger("dxclick");
-
 
     this.instance.showAppointmentPopup(secondAppointment);
 
@@ -3815,7 +3805,6 @@ QUnit.test("DropDown appointments should not be duplicated when items option cha
     assert.equal(ddAppointments.length, 3, "There are 3 drop down appts");
 });
 
-
 QUnit.test("Recurrence appointment should be rendered correctly when currentDate was changed: month view", function(assert) {
     var appointment = {
         startDate: new Date(2015, 1, 14, 0),
@@ -4046,7 +4035,6 @@ QUnit.test("Appointment should be rendered correctly when custom timezone was se
         dataSource: appointments,
         timeZone: "Asia/Ashkhabad"
     });
-
 
     var $recAppointment = this.instance.$element().find(".dx-scheduler-appointment").eq(0);
 

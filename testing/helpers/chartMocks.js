@@ -296,7 +296,6 @@
             }
         }
 
-
         renderer = new vizMocks.Renderer();
 
         translatorData = $.extend({}, translatorData);
@@ -372,7 +371,6 @@
             throw "Unexpected series request";
         };
 
-
         loadingIndicatorModule.LoadingIndicator = function(parameters) {
             return new vizMocks.LoadingIndicator(parameters);
         };
@@ -395,7 +393,6 @@
         };
     };
     //////  Translator
-
 
     exports.MockTranslator = function(data) {
         var innerData = data,
@@ -661,7 +658,6 @@
         };
     };
 
-
     exports.MockPoint = Class.inherit(
         {
             ctor: function(options) {
@@ -888,7 +884,6 @@
             resetHoles: function() { },
             setInvisibility: sinon.spy()
         });
-
 
     var MockAxis = exports.MockAxis = function(renderOptions) {
         var renderer = renderOptions.renderer,

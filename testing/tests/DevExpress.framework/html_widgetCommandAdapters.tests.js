@@ -188,7 +188,6 @@ QUnit.test("Menu Location option from command container", function(assert) {
     assert.equal(true, commandDeprecatedMenu.isAction, "Property isAction has been created");
 });
 
-
 QUnit.test("showText option from command container", function(assert) {
     var commandMapping = new CommandMapping();
     commandMapping.mapCommands("toolbar", [
@@ -737,7 +736,6 @@ QUnit.test("Toolbar item should become visible after dxCommand visible option ch
     assert.strictEqual(item.visible, true);
     assert.strictEqual(item.options.visible, true);
 });
-
 
 QUnit.module("dxList adapter", moduleConfig);
 

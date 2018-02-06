@@ -14,7 +14,6 @@ var DBLCLICK_EVENT_NAME = "dxdblclick",
 
     DBLCLICK_TIMEOUT = 300;
 
-
 var DblClick = Class.inherit({
 
     ctor: function() {

@@ -153,7 +153,6 @@ module.exports = errorUtils({
     */
     E0101: "Misconfigured range validation rule is detected",
 
-
     /**
     * @name Errors and Warnings_E0102
     * @publicName E0102
@@ -178,13 +177,11 @@ module.exports = errorUtils({
     */
     E0121: "The onCustomItemCreating action should return an item or Promise of jQuery Deferred object resolved when an item is created",
 
-
     /**
     * @name Errors and Warnings_E4016
     * @publicName E4016
     */
     E4016: "The compileSetter(expr) method is called with 'self' passed as a parameter",
-
 
     /**
     * @name Errors and Warnings_W0000

@@ -825,7 +825,6 @@ var EditingController = modules.ViewController.inherit((function() {
             that._delayedInputFocus($editCell, beforeFocusCallback, callBeforeFocusCallbackAlways);
         },
 
-
         /**
          * @name dxDataGridMethods_removeRow
          * @publicName removeRow(rowIndex)

@@ -21,9 +21,7 @@ QUnit.testStart(function() {
 
 var TOUCH_BOUNDARY = GestureEmitter.initialTouchBoundary;
 
-
 GestureEmitter.touchBoundary(TOUCH_BOUNDARY);
-
 
 var moduleConfig = {
     beforeEach: function() {
@@ -36,7 +34,6 @@ var moduleConfig = {
         this.clock.restore();
     }
 };
-
 
 $.each(["horizontal", "vertical"], function(_, direction) {
 
@@ -74,7 +71,6 @@ $.each(["horizontal", "vertical"], function(_, direction) {
 
         assert.deepEqual(updateHistory, [0.5, 0.75]);
     });
-
 
     function testSwipeEndEvent(testName, pixelOffset, expectedItemOffset) {
         QUnit.test(testName, function(assert) {
@@ -210,7 +206,6 @@ $.each(["horizontal", "vertical"], function(_, direction) {
     });
 });
 
-
 QUnit.module("behaviour", moduleConfig);
 
 QUnit.test("swipe should not be crashed if element deleted at swiping", function(assert) {
@@ -260,7 +255,6 @@ QUnit.test("swipe ignores wheel", function(assert) {
 
     pointerMock(this.element).wheel();
 });
-
 
 QUnit.module("blur", {
     beforeEach: function() {
@@ -336,7 +330,6 @@ QUnit.testInActiveWindow("swiper should not reset active element outside (B25022
     }
 });
 
-
 QUnit.module("subscriptions", {
     beforeEach: function() {
         this.element = $("<div class='el'></div>").appendTo("body");
@@ -372,7 +365,6 @@ QUnit.test("swipe event is not bubble", function(assert) {
     $("body").off(".testNamespace");
 });
 
-
 QUnit.module("hacks");
 
 QUnit.test("default behaviour on dxpointermove should be prevented to reduce user selection while swipe", function(assert) {
@@ -388,7 +380,6 @@ QUnit.test("default behaviour on dxpointermove should be prevented to reduce use
 
     $element.trigger($.Event("dxpointerup", { pointerType: "mouse", pointers: [] }));
 });
-
 
 QUnit.module("integration", moduleConfig);
 

@@ -468,7 +468,6 @@ QUnit.test("arrow_down/arrow_up/enter provide item navigation and selection", fu
     keyboard.keyDown(KEY_DOWN);
     assert.equal($list.is(":hidden"), false, "when press down arrow and input not empty, list is visible");
 
-
     keyboard.keyDown(KEY_ENTER);
     assert.equal(instance.option("value"), "item 1", "when we will press enter key, list value should be replace item value");
 
@@ -488,7 +487,6 @@ QUnit.test("arrow_down/arrow_up/enter provide item navigation and selection", fu
         .keyDown(KEY_DOWN)
         .keyDown(KEY_DOWN)
         .keyDown(KEY_DOWN);
-
 
     $selectedItem = $list.find(FOCUSED_STATE_SELECTOR);
     assert.equal(isRenderer(instance._list.option("focusedElement")), !!config().useJQuery, "focusedElement is correct");
@@ -578,7 +576,6 @@ QUnit.testInActiveWindow("enter - prevent default", function(assert) {
 
     keyboard.keyDown(KEY_ENTER);
 });
-
 
 QUnit.test("try to autocomplete current value when type missing searchValue", function(assert) {
     var $list,
@@ -789,7 +786,6 @@ QUnit.test("Manual datasource - search in datasource", function(assert) {
         keyboard = this.keyboard,
         searchedString = null;
 
-
     this.element.dxAutocomplete({
         value: "",
         dataSource: {
@@ -894,7 +890,6 @@ QUnit.test("there should be no warnings after widget value is cleared (T386512)"
         spy.restore();
     }
 });
-
 
 QUnit.module("Overlay integration", {
     beforeEach: function() {
@@ -1022,7 +1017,6 @@ QUnit.testInActiveWindow("popup should not reopened on Enter key press", functio
     this.keyboard.press("enter");
     $(this.$input).trigger("change");
 });
-
 
 QUnit.test("popup should be hidden after reset", function(assert) {
     this.instance.option("value", "");
@@ -1361,8 +1355,6 @@ QUnit.test("B251208 - dxAutocomplete: cannot select text by keyboard", function(
     assert.equal(this.$input.prop("selectionEnd"), 2);
 });
 
-
-
 QUnit.module("widget sizing render", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -1426,7 +1418,6 @@ QUnit.testInActiveWindow("filter is not reset", function(assert) {
     var $overlayContent = $(".dx-overlay-content");
     assert.ok($overlayContent.height() > 0, "overlay height is correct");
 });
-
 
 QUnit.module("aria accessibility");
 

@@ -208,7 +208,6 @@ QUnit.test("Center element has correct margin with RTL", function(assert) {
     assert.equal(margin, "0px auto", "aligned by center");
 });
 
-
 QUnit.module("option change handlers", {
     beforeEach: function() {
         this.element = $("#toolbar");
@@ -221,7 +220,6 @@ QUnit.test("items", function(assert) {
     instance.option("items", [{ location: "center", text: "1" }]);
     assert.equal(this.element.text(), "1");
 });
-
 
 QUnit.module("toolbar with menu", {
     beforeEach: function() {
@@ -462,7 +460,6 @@ QUnit.test("option visible", function(assert) {
         submenuType: "listBottom"
     });
 
-
     var listOverlay = this.instance._listOverlay;
     if(listOverlay) {
         listOverlay.show();
@@ -505,7 +502,6 @@ QUnit.test("dropdown menu should have correct position", function(assert) {
     assert.equal(position.at, "bottom right", "at position is correct");
     assert.equal(position.my, "top right", "my position is correct");
 });
-
 
 QUnit.module("swipe", {
     beforeEach: function() {
@@ -639,7 +635,6 @@ QUnit.test("appbar state with only menu items", function(assert) {
     assert.ok(!this.$element.hasClass("dx-toolbar-mini"));
 });
 
-
 QUnit.module("submenuType = 'listTop'", {
     beforeEach: function() {
         this.$element = $("#toolbar");
@@ -704,7 +699,6 @@ QUnit.test("it should be possible to expand toolbar with no items in submenu", f
     $($menuButton).trigger("dxclick");
     assert.ok(isMenuVisible(instance), "toolbar is expanded");
 });
-
 
 QUnit.module("regressions", {
     beforeEach: function() {
@@ -838,7 +832,6 @@ QUnit.test("title should be centered considering different before/after block wi
     assert.equal($center.width(), 230);
 });
 
-
 QUnit.test("title should be centered considering different before/after block widths (big after case)", function(assert) {
     var title = "LongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongText";
 
@@ -879,7 +872,6 @@ QUnit.test("title should be centered considering different before/after block wi
     assert.equal(parseInt($center.css("margin-left")), 60);
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria role", function(assert) {
@@ -887,7 +879,6 @@ QUnit.test("aria role", function(assert) {
 
     assert.equal($element.attr("role"), "toolbar", "role is correct");
 });
-
 
 QUnit.module("item groups", {
     beforeEach: function() {
@@ -941,7 +932,6 @@ QUnit.test("toolbar groups should be placed inside toolbar blocks", function(ass
     assert.equal($center.find("." + TOOLBAR_ITEM_CLASS).length, 3, "3 items are in center");
     assert.equal($after.find("." + TOOLBAR_ITEM_CLASS).length, 2, "2 items are in after");
 });
-
 
 QUnit.module("adaptivity", {
     beforeEach: function() {
@@ -999,7 +989,6 @@ QUnit.test("center section should be at correct position for huge before section
         }),
         $before = $element.find("." + TOOLBAR_BEFORE_CONTAINER_CLASS).eq(0),
         $center = $element.find("." + TOOLBAR_CENTER_CONTAINER_CLASS).eq(0);
-
 
     assert.equal($center.offset().left, $before.offset().left + $before.outerWidth(), "center has correct position");
 });
@@ -1468,7 +1457,6 @@ QUnit.test("toolbar menu should have correct focused element", function(assert) 
         ]
     });
 
-
     var $dropDownMenu = $element.find("." + DROP_DOWN_MENU_CLASS),
         dropDown = $dropDownMenu.dxDropDownMenu("instance");
 
@@ -1476,7 +1464,6 @@ QUnit.test("toolbar menu should have correct focused element", function(assert) 
         assert.expect(0);
         return;
     }
-
 
     dropDown.open();
 
@@ -1506,7 +1493,6 @@ QUnit.test("toolbar menu should have correct item element", function(assert) {
     dropDown.open();
     assert.equal($(".dx-list-item").length, 1, "only one item in menu is rendered");
 });
-
 
 QUnit.test("toolbar menu should be rendered after change item visible", function(assert) {
     assert.expect(3);
@@ -1580,7 +1566,6 @@ QUnit.testInActiveWindow("items should not be rearranged if width is not changed
 
     assert.ok($input.is(":focus"), "focus is not lost");
 });
-
 
 QUnit.module("default template", {
     prepareItemTest: function(data) {

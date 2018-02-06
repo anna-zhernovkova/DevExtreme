@@ -109,7 +109,6 @@ var checkGroups = function(assert, series) {
 
 (function StockSeries() {
 
-
     var seriesType = "stock";
 
     QUnit.module("Creation", environment);
@@ -321,7 +320,6 @@ var checkGroups = function(assert, series) {
         assert.ok(series._markersGroup);
     });
 
-
     QUnit.test("Create groups with animation. T101152", function(assert) {
         var series = this.createSeries({
             type: seriesType,
@@ -389,7 +387,6 @@ var checkGroups = function(assert, series) {
         });
     });
 
-
     QUnit.module("StockSeries Color", {
         beforeEach: function() {
             environment.beforeEach.call(this);
@@ -400,7 +397,6 @@ var checkGroups = function(assert, series) {
                         { date: null, o: 5, h: 5, l: 3, c: 3 },
                         { date: 4, o: 4, h: 9, l: 2, c: null },
                         { date: 5, o: 4, h: 9, l: 2, c: 5 }];
-
 
         },
         afterEach: environment.afterEach
@@ -525,7 +521,6 @@ var checkGroups = function(assert, series) {
         });
         series.updateData(this.data);
         assert.equal(series.level, "low");
-
 
         assert.equal(this.createPoint.callCount, 5);
 
@@ -1047,7 +1042,6 @@ var checkGroups = function(assert, series) {
                 }
             }
         });
-
 
     });
 
@@ -1634,7 +1628,6 @@ var checkGroups = function(assert, series) {
         });
     });
 
-
     QUnit.module("CandleStick Color", {
         beforeEach: function() {
             environment.beforeEach.call(this);
@@ -1767,7 +1760,6 @@ var checkGroups = function(assert, series) {
         });
         series.updateData(this.data);
         assert.equal(series.level, "low");
-
 
         assert.equal(this.createPoint.callCount, 5);
 

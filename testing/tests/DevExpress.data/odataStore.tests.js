@@ -717,7 +717,6 @@ QUnit.test("no double conversion for Int64", function(assert) {
         callback: function(bag) { this.responseText = { url: bag.url }; }
     });
 
-
     var assertFunc = function(r) { assert.ok(r.url.indexOf("(123L)") > -1); };
     var promises = [
         new ODataStore({ url: "odata2.org", keyType: "Int64" })
@@ -883,7 +882,6 @@ QUnit.test("Guid key processed as string if key type is String (T316902)", funct
         })
         .always(done);
 });
-
 
 QUnit.module("insert", moduleConfig);
 QUnit.test("requires key", function(assert) {
@@ -1522,7 +1520,6 @@ QUnit.test("OData service error", function(assert) {
         })
         .always(done);
 });
-
 
 QUnit.test("unexpected server response with 200 status", function(assert) {
     var done = assert.async();

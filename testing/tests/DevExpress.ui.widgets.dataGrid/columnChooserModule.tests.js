@@ -931,7 +931,6 @@ QUnit.test("CheckBox mode - check hidden band column", function(assert) {
 
     $(columnChooserView._popupContainer.$content().find(".dx-checkbox").first()).trigger("dxclick");
 
-
     //assert
     $checkBoxElements = columnChooserView._popupContainer.$content().find(".dx-checkbox");
     assert.equal($checkBoxElements.length, 3, "count checkbox");
@@ -1024,7 +1023,6 @@ QUnit.test("CheckBox mode - update treeview when changing the column options", f
     //assert
     assert.strictEqual(this.columnChooserView._renderTreeView.callCount, 1, "update treeview");
 });
-
 
 //T571469
 QUnit.test("Filter value should be reset after disabled search", function(assert) {

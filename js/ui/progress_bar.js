@@ -223,7 +223,6 @@ var ProgressBar = TrackBar.inherit({
             this._toggleIndeterminateState(false);
         }
 
-
         if(val === max) {
             this._completeAction();
         }

@@ -144,7 +144,6 @@ QUnit.test('Pager second render', function(assert) {
     assert.equal($("." + "dx-pager").length, 1, 'drawn one pager only');
 });
 
-
 QUnit.test('Get pages when pages count more maxPagesCount', function(assert) {
     var $pager = $("#container").dxPager({ maxPagesCount: 10, pageCount: 13 }),
         instance = $pager.dxPager("instance");
@@ -270,7 +269,6 @@ QUnit.test("PagesChooser is not visible if pages count equal one", function(asse
     var testElement = $('#container'),
         $pages;
 
-
     testElement.dxPager({ maxPagesCount: 7, pageCount: 1 });
     $pages = testElement.find(".dx-page");
 
@@ -281,7 +279,6 @@ QUnit.test("PagesChooser is not visible if pages count equal one", function(asse
 QUnit.test("PagesChooser is visible always if pageNavigatorVisible is true", function(assert) {
     var testElement = $('#container'),
         $pages;
-
 
     testElement.dxPager({ maxPagesCount: 7, pageCount: 1, pagesNavigatorVisible: true });
     $pages = testElement.find(".dx-page");
@@ -294,7 +291,6 @@ QUnit.test("PagesChooser is not visible  if pageNavigatorVisible is false", func
     var testElement = $('#container'),
         $pages;
 
-
     testElement.dxPager({ maxPagesCount: 7, pageCount: 1, pagesNavigatorVisible: false });
     $pages = testElement.find(".dx-page");
 
@@ -305,7 +301,6 @@ QUnit.test("PagesChooser is not visible when pageNavigatorVisible is false", fun
     var testElement = $('#container'),
         pager,
         $pages;
-
 
     pager = testElement.dxPager({ maxPagesCount: 7, pageCount: 1, pagesNavigatorVisible: true }).dxPager("instance");
     pager.option("pagesNavigatorVisible", false);

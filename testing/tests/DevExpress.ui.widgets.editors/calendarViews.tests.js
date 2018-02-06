@@ -51,7 +51,6 @@ var FakeView = BaseView.inherit({
     _renderValue: noop
 });
 
-
 QUnit.module("Basics");
 
 QUnit.test("all views must be derived from the base view class", function(assert) {
@@ -287,7 +286,6 @@ QUnit.test("value time component should not be compared in min and max options",
     assert.ok(!$(".dx-calendar-selected-date").hasClass("dx-calendar-empty-cell"), "current date is available");
 });
 
-
 QUnit.module("YearView", {
     beforeEach: function() {
         fx.off = true;
@@ -394,7 +392,6 @@ QUnit.test("today must be decorated with a css class", function(assert) {
     var todayCell = this.$element.find("." + CALENDAR_TODAY_CLASS);
     assert.equal(todayCell.length, 1);
 });
-
 
 QUnit.module("DecadeView", {
     beforeEach: function() {
@@ -509,7 +506,6 @@ QUnit.test("data-value after render for cells in decade view", function(assert) 
     });
 });
 
-
 QUnit.module("CenturyView", {
     beforeEach: function() {
         fx.off = true;
@@ -623,7 +619,6 @@ QUnit.test("today must be decorated with a css class", function(assert) {
     assert.equal(todayCell.length, 1);
 });
 
-
 QUnit.module("MonthView min/max", {
     beforeEach: function() {
         fx.off = true;
@@ -676,7 +671,6 @@ QUnit.test("monthView should not allow to navigate to a date earlier than min an
     assert.deepEqual(view.option("contouredDate"), this.max);
 });
 
-
 QUnit.module("MonthView disabledDates", {
     beforeEach: function() {
         fx.off = true;
@@ -724,7 +718,6 @@ QUnit.test("monthView should not allow to navigate to a disabled date", function
     trigger(UP_ARROW_KEY_CODE);
     assert.deepEqual(view.option("contouredDate"), new Date(2010, 10, 5));
 });
-
 
 QUnit.module("MonthView disabledDates as array", {
     beforeEach: function() {
@@ -775,7 +768,6 @@ QUnit.test("monthView should not allow to navigate to a disabled date", function
     assert.deepEqual(view.option("contouredDate"), new Date(2010, 10, 5));
 });
 
-
 QUnit.module("YearView min/max", {
     beforeEach: function() {
         fx.off = true;
@@ -822,7 +814,6 @@ QUnit.test("yearView should not allow to navigate to a date earlier than min and
     assert.deepEqual(view.option("contouredDate"), this.max);
 });
 
-
 QUnit.module("YearView disabledDates", {
     beforeEach: function() {
         fx.off = true;
@@ -866,7 +857,6 @@ QUnit.test("yearView should not allow to navigate to a disabled date via keyboar
 
     assert.deepEqual(view.option("contouredDate"), new Date(2015, 3, 15));
 });
-
 
 QUnit.module("DecadeView min/max", {
     beforeEach: function() {
@@ -914,7 +904,6 @@ QUnit.test("decadeView should not allow to navigate to a date earlier than min a
     assert.deepEqual(view.option("contouredDate"), this.max);
 });
 
-
 QUnit.module("DecadeView disabledDates", {
     beforeEach: function() {
         fx.off = true;
@@ -957,7 +946,6 @@ QUnit.test("decadeView should not allow to navigate to a disabled date via keybo
     trigger(UP_ARROW_KEY_CODE);
     assert.deepEqual(view.option("contouredDate"), Date(2015, 3, 15));
 });
-
 
 QUnit.module("CenturyView min/max", {
     beforeEach: function() {
@@ -1003,7 +991,6 @@ QUnit.test("centuryView should not allow to navigate to a date earlier than min 
     assert.deepEqual(view.option("contouredDate"), this.max);
 });
 
-
 QUnit.module("CenturyView disabledDates", {
     beforeEach: function() {
         fx.off = true;
@@ -1046,7 +1033,6 @@ QUnit.test("centuryView should not allow to navigate to a disabled date via keyb
     trigger(38);
     assert.deepEqual(view.option("contouredDate"), new Date(2070, 0, 15));
 });
-
 
 QUnit.module("Aria accessibility", {
     beforeEach: function() {

@@ -37,7 +37,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("buttons group rendering", moduleConfig);
 
 QUnit.test("widget should be rendered", function(assert) {
@@ -96,7 +95,6 @@ QUnit.test("widget should correctly process 'disabled' option changed", function
     assert.ok(!$radioGroup.find(".dx-collection").hasClass("dx-state-disabled"), "inner collection hasn't disabled-state class");
 });
 
-
 QUnit.module("buttons rendering", moduleConfig);
 
 QUnit.test("button markup item if item.value is specified", function(assert) {
@@ -147,7 +145,6 @@ QUnit.test("button markup item if item has html", function(assert) {
     assert.equal($radioButton.prop("value"), "foo", "input value rendered correctly");
 });
 
-
 QUnit.module("layout", moduleConfig);
 
 QUnit.test("should be generated proper class with vertical layout", function(assert) {
@@ -184,7 +181,6 @@ QUnit.test("On the tablet radio group must use a horizontal layout", function(as
 
     assert.ok(isHorizontalLayout, "radio group on tablet have horizontal layout");
 });
-
 
 QUnit.module("hidden input");
 
@@ -243,7 +239,6 @@ QUnit.test("the hidden input should get value in respect of the 'valueExpr' opti
     assert.equal($input.val(), items[0].id, "input value is correct");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget hidden input should get the 'name' attribute with a correct value", function(assert) {
@@ -255,7 +250,6 @@ QUnit.test("widget hidden input should get the 'name' attribute with a correct v
 
     assert.equal($input.attr("name"), expectedName, "the hidden input 'name' attribute has correct value");
 });
-
 
 QUnit.module("value", moduleConfig);
 
@@ -324,7 +318,6 @@ QUnit.test("onValueChanged option should get jQuery event as a parameter", funct
     assert.notOk(jQueryEvent, "jQuery event is not defined when api used");
 });
 
-
 QUnit.module("valueExpr", moduleConfig);
 
 QUnit.test("value should be correct if valueExpr is a string", function(assert) {
@@ -382,7 +375,6 @@ QUnit.test("value should be correct if valueExpr is a string", function(assert) 
 
     assert.ok($firstItem.hasClass(RADIO_BUTTON_CHECKED_CLASS), "item with zero value rendered correctly");
 });
-
 
 QUnit.module("widget sizing render", moduleConfig);
 
@@ -447,7 +439,6 @@ QUnit.test("change width", function(assert) {
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
 
-
 QUnit.module("keyboard navigation", moduleConfig);
 
 QUnit.test("keys tests", function(assert) {
@@ -510,7 +501,6 @@ QUnit.test("keyboard navigation does not work in disabled widget", function(asse
 
     assert.ok($element.attr('tabindex') === undefined, "collection of radio group has not tabindex");
 });
-
 
 QUnit.module("focus policy", moduleConfig);
 
@@ -616,7 +606,6 @@ QUnit.testInActiveWindow("the 'focus()' method should set focused class to widge
     instance.focus();
     assert.ok($radioGroup.hasClass("dx-state-focused"), "widget got focused class");
 });
-
 
 QUnit.module("aria accessibility");
 

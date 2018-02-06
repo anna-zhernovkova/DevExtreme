@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     fx = require("animation/fx"),
     pointerMock = require("../../helpers/pointerMock.js"),
@@ -112,7 +111,6 @@ QUnit.test("Phantom appointment position should be correctled after dragStart", 
 
     pointer.dragEnd();
 });
-
 
 QUnit.test("Phantom appointment should have correct appointmentData", function(assert) {
     this.createInstance();

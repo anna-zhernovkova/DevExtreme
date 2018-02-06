@@ -21,7 +21,6 @@ var NAVBAR_ITEM_CLASS = "dx-nav-item",
 
     TAB_SELECTED_CLASS = "dx-tab-selected";
 
-
 QUnit.module("rendering");
 
 QUnit.test("item without icon should have correct class", function(assert) {

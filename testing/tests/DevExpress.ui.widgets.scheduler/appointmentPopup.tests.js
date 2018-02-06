@@ -41,7 +41,6 @@ var moduleOptions = {
     }
 };
 
-
 QUnit.module("Appointment Popup Content", moduleOptions);
 
 QUnit.test("showAppointmentPopup should render a popup only once", function(assert) {
@@ -397,7 +396,6 @@ QUnit.test("allDay changing should switch date & type in editors", function(asse
 
     allDayEditor.option("value", true);
 
-
     var startDate = $popupContent.find(".dx-datebox").eq(0).dxDateBox("instance"),
         endDate = $popupContent.find(".dx-datebox").eq(1).dxDateBox("instance");
 
@@ -569,7 +567,6 @@ QUnit.test("Scheduler appointment popup should has right content when appointmen
 
     assert.equal($popup.length, 1, "popup with template was shown");
 });
-
 
 QUnit.test("Validate works always before done click", function(assert) {
     var data = new DataSource({

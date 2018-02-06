@@ -98,7 +98,6 @@ QUnit.test("event with option binding", function(assert) {
     $element.trigger("dxtestevent");
 });
 
-
 QUnit.module("event bindings", {
     beforeEach: function() {
         registerEvent("dxtestevent", {});

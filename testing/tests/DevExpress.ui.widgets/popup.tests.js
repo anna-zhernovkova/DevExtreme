@@ -86,7 +86,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 QUnit.module("basic");
 
 QUnit.test("markup init", function(assert) {
@@ -351,7 +350,6 @@ QUnit.test("toolbar must receive 'rtlEnabled' from dxPopup after optionChanged",
     assert.notOk(toolbarInstance.option("rtlEnabled"), "toolbar's 'rtlEnabled' option is false");
 });
 
-
 QUnit.module("dimensions");
 
 QUnit.test("content must not overlap bottom buttons", function(assert) {
@@ -403,7 +401,6 @@ QUnit.test("dxPopup should render custom template with render function that retu
             }
         }
     });
-
 
     assert.equal($content.text(), "text", "container is correct");
 });
@@ -493,7 +490,6 @@ QUnit.test("maxHeight should affect popup content height correctly", function(as
         $overlayContent.height()
     );
 });
-
 
 QUnit.module("options changed callbacks", {
     beforeEach: function() {
@@ -780,7 +776,6 @@ QUnit.test("empty item should not be rendered in top toolbar", function(assert) 
     assert.equal($toolbarItems.length, 0, "no items are rendered inside top toolbar");
 });
 
-
 QUnit.module("resize", {
     beforeEach: function() {
         fx.off = true;
@@ -850,7 +845,6 @@ QUnit.test("resize callbacks", function(assert) {
     assert.equal(onResizeFired, 1, "onResize fired");
     assert.equal(onResizeEndFired, 1, "onResizeEnd fired");
 });
-
 
 QUnit.module("drag popup by title", {
     beforeEach: function() {
@@ -934,7 +928,6 @@ QUnit.test("popup should be dragged if title was changed", function(assert) {
     }, "popup was moved");
 });
 
-
 QUnit.module("rendering", {
     beforeEach: function() {
         this.element = $("#popup").dxPopup();
@@ -998,7 +991,6 @@ QUnit.test("container argument of toolbarItems.template option is correct", func
     });
 });
 
-
 QUnit.test("dx-popup-fullscreen-width class should be attached when width is equal to screen width", function(assert) {
     this.instance.option("width", function() { return $(window).width(); });
     this.instance.show();
@@ -1007,7 +999,6 @@ QUnit.test("dx-popup-fullscreen-width class should be attached when width is equ
     this.instance.option("width", function() { return $(window).width() - 1; });
     assert.ok(!this.instance.overlayContent().hasClass("dx-popup-fullscreen-width"), "fullscreen width class is detached");
 });
-
 
 QUnit.module("templates");
 

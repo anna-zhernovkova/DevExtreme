@@ -42,7 +42,6 @@ QUnit.test("dxhold should be unsubscribed on unsubscribing contextmenu", functio
     assert.equal(holdEvents.length, 0, "dxhold event handler was removed");
 });
 
-
 QUnit.module("desktop contextmenu");
 
 QUnit.test("contextmenu should be fired on contextmenu event", function(assert) {

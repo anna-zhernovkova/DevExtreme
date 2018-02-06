@@ -5,7 +5,6 @@ var $ = require("../../core/renderer"),
     each = require("../../core/utils/iterator").each,
     EditStrategy = require("../collection/ui.collection_widget.edit.strategy.plain");
 
-
 var LIST_ITEM_CLASS = "dx-list-item",
     LIST_GROUP_CLASS = "dx-list-group";
 

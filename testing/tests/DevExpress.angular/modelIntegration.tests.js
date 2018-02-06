@@ -220,7 +220,6 @@ $.each(["dxTagBox"/*, "dxFileUploader"*/], function(_, widgetName) {
     });
 });
 
-
 QUnit.test("ngmodel should not bind value option to widget", function(assert) {
     var $markup = $("<div></div>")
         .attr("dx-widget", "{}")

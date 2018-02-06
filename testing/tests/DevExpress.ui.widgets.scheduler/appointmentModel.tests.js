@@ -225,7 +225,6 @@ var dxSchedulerAppointmentModel = require("ui/scheduler/ui.scheduler.appointment
         }
     });
 
-
     QUnit.test("Start date of appt lower than first filter date & end appt date higher than second filter date", function(assert) {
         var dataSource = new DataSource({
             store: [{
@@ -520,7 +519,6 @@ var dxSchedulerAppointmentModel = require("ui/scheduler/ui.scheduler.appointment
         dataSource.filter(existingFilter);
         appointmentModel.filterByDate(new Date(2014, 11, 29, 0), new Date(2014, 11, 30), true);
         dataSource.load();
-
 
         assert.deepEqual(dataSource.items(), [{ text: "a", StartDate: new Date(2014, 11, 29, 1), EndDate: new Date(2014, 11, 29, 2), priorityId: 2 }], "Appointments are OK");
     });

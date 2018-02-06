@@ -18,7 +18,6 @@ var SCROLLABLE_NATIVE = "dxNativeScrollable",
 
     HIDE_SCROLLBAR_TIMEOUT = 500;
 
-
 var NativeStrategy = Class.inherit({
 
     ctor: function(scrollable) {

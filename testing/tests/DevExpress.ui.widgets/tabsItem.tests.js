@@ -18,7 +18,6 @@ QUnit.test("badge should be rendered correctly by default", function(assert) {
     assert.ok(!$badge.length);
 });
 
-
 QUnit.test("badge should be rendered correctly with value = 22", function(assert) {
     var widget = new Tabs($("<div>"), {
             items: [{ badge: 22 }]

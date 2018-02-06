@@ -26,7 +26,6 @@ Callback.prototype._fireCore = function(context, args) {
     firingIndexes.pop();
 };
 
-
 Callback.prototype.add = function(fn) {
     if(typeof fn === "function" && (!this._options.unique || !this.has(fn))) {
         this._list.push(fn);

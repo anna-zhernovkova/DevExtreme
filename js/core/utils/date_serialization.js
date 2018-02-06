@@ -92,7 +92,6 @@ var getIso8601Format = function(text, useUtc) {
         return;
     }
 
-
     for(var i = 1; i < ISO8601_PATTERN_PARTS.length; i++) {
         if(parts[i]) {
             result += ISO8601_PATTERN_PARTS[i] || parts[i];

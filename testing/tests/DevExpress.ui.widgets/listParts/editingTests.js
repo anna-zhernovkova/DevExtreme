@@ -142,7 +142,6 @@ QUnit.test("deleteItem should remove an item", function(assert) {
     assert.equal($list.find(toSelector(LIST_ITEM_CLASS)).length, 2, "items were removed from the dom");
 });
 
-
 var groupedListData = {
     data: [
         {
@@ -173,7 +172,6 @@ var groupedListData = {
         }
     ]
 };
-
 
 QUnit.module("deleting in grouped list");
 
@@ -285,7 +283,6 @@ QUnit.test("items reordering by keyboard", function(assert) {
     assert.deepEqual(list.option("items"), items, "items were reordered");
 });
 
-
 QUnit.module("deleting in grouped list with dataSource", {
     beforeEach: function() {
         executeAsyncMock.setup();
@@ -314,7 +311,6 @@ QUnit.test("deleteItem shouldn't load data", function(assert) {
         assert.equal($listItems.length, $newListItems.length + 1, "new item wasn't loaded");
     });
 });
-
 
 QUnit.module("selectAll methods");
 
@@ -804,7 +800,6 @@ QUnit.test("deleteItem should change selected items", function(assert) {
             }
         ];
 
-
     var $list = $("#templated-list").dxList({
             items: this.data,
             grouped: true,
@@ -848,7 +843,6 @@ QUnit.test("item should be selectable by click on it in the grouped list", funct
 
     assert.ok($items.eq(0).hasClass("dx-list-item-selected"), "item became selected");
 });
-
 
 QUnit.module("selecting in grouped list with single mode", {
     beforeEach: function() {
@@ -942,7 +936,6 @@ QUnit.test("selectedItems should accept only one item", function(assert) {
     assert.deepEqual(list.option("selectedItems"), itemsSelection, "selected only one item");
 });
 
-
 QUnit.module("selecting in grouped list with dataSource");
 
 QUnit.test("selection should hold selection after dataSource filtering (T474406)", function(assert) {
@@ -980,7 +973,6 @@ QUnit.test("selection should hold selection after dataSource filtering (T474406)
 
     assert.deepEqual(list.option("selectedItemKeys"), ["a", "b"]);
 });
-
 
 QUnit.module("reordering in grouped items", {
     beforeEach: function() {

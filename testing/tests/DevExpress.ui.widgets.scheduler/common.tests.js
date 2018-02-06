@@ -89,7 +89,6 @@ QUnit.testStart(function() {
         assert.ok(true, "Widget works correctly");
     });
 
-
     QUnit.test("Scheduler shouldn't have paginate in default DataSource", function(assert) {
         this.instance.option({ dataSource: this.tasks });
 
@@ -1619,7 +1618,6 @@ QUnit.testStart(function() {
         this.instance.addAppointment(newAppointment);
         this.clock.tick();
 
-
         var args = addingSpy.getCall(0).args[0];
 
         assert.ok(addingSpy.calledOnce, "onAppointmentAdding was called");
@@ -1738,7 +1736,6 @@ QUnit.testStart(function() {
         assert.equal(error.message, "Unknown error occurred", "Error message is OK");
     });
 
-
     QUnit.test("onAppointmentUpdating", function(assert) {
         var updatingSpy = sinon.spy(noop),
             oldData = [{ startDate: new Date(2015, 1, 9, 16), endDate: new Date(2015, 1, 9, 17), text: "caption" }],
@@ -1822,7 +1819,6 @@ QUnit.testStart(function() {
 
         var $appointment = $(this.instance.$element().find(".dx-scheduler-appointment").eq(0)),
             initialPosition = translator.locate($appointment);
-
 
         $(this.instance.$element().find(".dx-scheduler-date-table-cell").eq(5)).trigger(dragEvents.enter);
 
@@ -2383,7 +2379,6 @@ QUnit.testStart(function() {
             currentView: "week"
         });
     });
-
 
     QUnit.test("onAppointmentRendered should contain information about all recurring appts on agenda view", function(assert) {
         this.createInstance({
@@ -3225,7 +3220,6 @@ QUnit.testStart(function() {
 
         assert.ok(this.instance.$element().hasClass("dx-scheduler-small"), "Scheduler has 'dx-scheduler-small' css class");
     });
-
 
     QUnit.test("Scheduler should have a small css class", function(assert) {
         this.createInstance({

@@ -284,7 +284,6 @@ QUnit.test("Reset disabled state, initially disabled", function(assert) {
     }]);
 });
 
-
 QUnit.module("DataSource", commons.environment);
 
 QUnit.test("Creation", function(assert) {

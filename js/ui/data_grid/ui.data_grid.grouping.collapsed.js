@@ -64,7 +64,6 @@ exports.GroupingHelper = groupingCore.GroupingHelper.inherit((function() {
         }
     };
 
-
     var updateGroupInfoItem = function(that, item, isLastGroupLevel, path, offset) {
         var groupInfo = that.findGroupInfo(path),
             count;

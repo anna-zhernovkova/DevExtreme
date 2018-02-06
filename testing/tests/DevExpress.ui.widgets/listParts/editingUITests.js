@@ -30,7 +30,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 var SWITCHABLE_DELETE_READY_CLASS = "dx-list-switchable-delete-ready",
     SWITCHABLE_MENU_SHIELD_POSITIONING_CLASS = "dx-list-switchable-menu-shield-positioning",
     SWITCHABLE_DELETE_TOP_SHIELD_CLASS = "dx-list-switchable-delete-top-shield",
@@ -276,7 +275,6 @@ QUnit.test("forget delete should not enable scrolling that already was disabled"
     assert.equal(scrollView.option("disabled"), true, "scroll disabled reset");
 });
 
-
 var SWITCHABLE_DELETE_BUTTON_CONTAINER_CLASS = "dx-list-switchable-delete-button-container",
     SWITCHABLE_DELETE_BUTTON_WRAPPER_CLASS = "dx-list-switchable-delete-button-wrapper",
     SWITCHABLE_DELETE_BUTTON_INNER_WRAPPER_CLASS = "dx-list-switchable-delete-button-inner-wrapper",
@@ -366,7 +364,6 @@ QUnit.test("delete button click should delete list item", function(assert) {
     $deleteButton.trigger("dxclick");
 });
 
-
 var TOGGLE_DELETE_SWITCH_CLASS = "dx-list-toggle-delete-switch",
     TOGGLE_DELETE_SWITCH_ICON_CLASS = "dx-icon-toggle-delete";
 
@@ -402,7 +399,6 @@ QUnit.test("toggling delete toggle button should switch delete ready class", fun
     $deleteToggle.trigger("dxclick");
     assert.ok($item.hasClass(SWITCHABLE_DELETE_READY_CLASS), "delete ready class added if toggle pressed");
 });
-
 
 var STATIC_DELETE_BUTTON_CONTAINER_CLASS = "dx-list-static-delete-button-container",
     STATIC_DELETE_BUTTON_CLASS = "dx-list-static-delete-button";
@@ -471,7 +467,6 @@ QUnit.test("click on delete button should not raise item click event when item d
     assert.equal(clickHandled, 0, "click action is not triggered");
 });
 
-
 QUnit.module("slideButton delete decorator");
 
 QUnit.test("item swiping should add delete ready class", function(assert) {
@@ -504,8 +499,6 @@ QUnit.test("item swiping should not add delete ready class if widget is disabled
 
     assert.ok(startEvent.cancel, "swipe canceled in disabled widget");
 });
-
-
 
 var SLIDE_MENU_WRAPPER_CLASS = "dx-list-slide-menu-wrapper",
 
@@ -820,7 +813,6 @@ QUnit.test("multiple swipes should not break deletion", function(assert) {
 
         var pointer = pointerMock($item).start();
 
-
         pointer.swipeStart().swipe(-0.5).swipeEnd(-1);
         clock.tick(300);
         pointer.swipeStart().swipe(0.5).swipeEnd(1);
@@ -865,7 +857,6 @@ QUnit.test("optimizations", function(assert) {
         renderer.fn.outerWidth = origOuterWidth;
     }
 });
-
 
 QUnit.module("slide menu decorator", {
     beforeEach: function() {
@@ -1134,7 +1125,6 @@ QUnit.test("click on menu toggle should cause item click event if at least 2 men
     }
 });
 
-
 QUnit.module("swipe delete decorator", {
     beforeEach: function() {
         fx.off = true;
@@ -1248,7 +1238,6 @@ QUnit.test("item should be deleted from menu", function(assert) {
 
     $deleteMenuItem.trigger("dxclick");
 });
-
 
 QUnit.module("context menu decorator", {
     beforeEach: function() {
@@ -1495,7 +1484,6 @@ QUnit.test("rtlEnabled option should be passed to overlay", function(assert) {
 
     assert.ok(menu.option("rtlEnabled"), "rtl option is true");
 });
-
 
 QUnit.module("item select decorator");
 
@@ -1874,7 +1862,6 @@ QUnit.test("grouped list with dataSource and store key specified should select i
     assert.ok($item.hasClass("dx-list-item-selected"), "item is selected");
 });
 
-
 QUnit.module("selectAll for all pages");
 
 QUnit.test("next loaded page should be selected when selectAll is enabled", function(assert) {
@@ -2113,7 +2100,6 @@ QUnit.test("selectAll and unselectAll should log warning if selectAllMode is all
     assert.equal($selectAll.dxCheckBox("option", "value"), true, "selectAll checkbox is in selected state");
     assert.equal($list.dxList("option", "selectedItems").length, 0, "items are not selected");
 
-
     //act
     $selectAll.trigger("dxclick");
 
@@ -2125,7 +2111,6 @@ QUnit.test("selectAll and unselectAll should log warning if selectAllMode is all
 
     errors.log.restore();
 });
-
 
 QUnit.module("item select decorator with all selection mode");
 
@@ -2437,7 +2422,6 @@ QUnit.test("onContentReady event should be called after update the state Select 
     clock.restore();
 });
 
-
 QUnit.module("item select decorator with single selection mode");
 
 var SELECT_RADIO_BUTTON_CONTAINER_CLASS = "dx-list-select-radiobutton-container",
@@ -2476,7 +2460,6 @@ QUnit.test("item click changes radio button state only to true in single selecti
 
     assert.equal(radioButton.option("value"), true, "item selected");
 });
-
 
 QUnit.module("reordering decorator", {
     beforeEach: function() {

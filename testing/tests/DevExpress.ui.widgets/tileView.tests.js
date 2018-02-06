@@ -26,7 +26,6 @@ var TILEVIEW_CLASS = "dx-tileview",
     DEFAULT_ITEMMARGIN = 20,
     DEFAULT_ITEMOFFSET = DEFAULT_ITEMSIZE + DEFAULT_ITEMMARGIN;
 
-
 var items = [{
     text: "item1"
 }, {
@@ -173,7 +172,6 @@ $.each(configs, function(direction, config) {
     });
 
 });
-
 
 QUnit.module("rendering", {
     beforeEach: function() {
@@ -323,7 +321,6 @@ $.each(configs, function(direction, config) {
 
 });
 
-
 QUnit.module("widget sizing render");
 
 QUnit.test("default", function(assert) {
@@ -357,7 +354,6 @@ QUnit.test("change width", function(assert) {
 
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
-
 
 QUnit.module("integration with dataSource", {
     beforeEach: function() {
@@ -455,7 +451,6 @@ QUnit.test("setting indicateLoading to false hides load panel at once", function
     assert.equal(loadPanel.option("visible"), false, "load panel hidden");
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         this.$element = $("#widget").dxTileView({
@@ -500,7 +495,6 @@ QUnit.test("end move focus to last element", function(assert) {
 
     assert.ok($element.find(TILEVIEW_ITEM_SELECTOR).last().hasClass("dx-state-focused"), "last element obtained dx-state-focused after press end");
 });
-
 
 $.each(configs, function(direction, config) {
 

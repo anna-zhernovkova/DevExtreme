@@ -267,7 +267,6 @@ exports.DataController = Class.inherit((function() {
                     });
                 });
 
-
             });
 
             return d;
@@ -276,7 +275,6 @@ exports.DataController = Class.inherit((function() {
         function createHeaderItem(childrenStack, depth, index) {
             var parent = childrenStack[depth] = childrenStack[depth] || [],
                 node = parent[index] = {};
-
 
             if(childrenStack[depth + 1]) {
                 node.children = childrenStack[depth + 1];

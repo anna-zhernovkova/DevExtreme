@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     devices = require("core/devices"),
     resizeCallbacks = require("core/utils/resize_callbacks"),

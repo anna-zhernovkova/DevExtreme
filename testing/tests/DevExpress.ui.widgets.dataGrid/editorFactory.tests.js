@@ -410,7 +410,6 @@ QUnit.test('Boolean editor', function(assert) {
     //act
     var checkBox = $container.dxCheckBox('instance');
 
-
     //assert
     assert.ok(checkBox, 'dxCheckBox created');
     assert.ok(checkBox.$element().hasClass(DATAGRID_CHECKBOX_SIZE_CLASS), 'checkbox has dx-datagrid-checkbox-size class');
@@ -437,7 +436,6 @@ QUnit.test('Boolean editor when inOnForm is true', function(assert) {
     });
     //act
     var checkBox = $container.dxCheckBox('instance');
-
 
     //assert
     assert.ok(checkBox, 'dxCheckBox created');
@@ -603,7 +601,6 @@ QUnit.test('Date editor with custom editorOptions', function(assert) {
     //assert
     assert.equal(editor.option('pickerType'), "rollers", "pickerType from editorOptions");
 });
-
 
 QUnit.test('Boolean editor when filtering', function(assert) {
     var $container = $('#container'),
@@ -1081,7 +1078,6 @@ QUnit.test('ReadOnly for boolean editor', function(assert) {
     //act
     var checkBox = $container.dxCheckBox('instance');
 
-
     //assert
     assert.ok(checkBox.option("readOnly"), "readonly");
     assert.ok(!checkBox.option("hoverStateEnabled"), "no hover");
@@ -1412,7 +1408,6 @@ QUnit.test("Focus on cell with focused checkbox editor", function(assert) {
     that.editorFactoryController.component.element = function() {
         return testElement;
     };
-
 
     that.editorFactoryController._getFocusedElement = function($dataGridElement) {
         return testElement.find(".dx-data-row .dx-checkbox").eq(0);

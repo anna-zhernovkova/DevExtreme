@@ -5,7 +5,6 @@ var $ = require("../../core/renderer"),
 
 var DATE_TIME_SHADER_CLASS = "dx-scheduler-date-time-shader";
 
-
 var currentTimeShader = Class.inherit({
     render: function(workspace) {
         this._workspace = workspace;

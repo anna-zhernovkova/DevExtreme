@@ -66,7 +66,6 @@ QUnit.test("visible item binding", function(assert) {
     assert.ok($(".dx-item").is(":hidden"), "item is hidden");
 });
 
-
 QUnit.module("selectedItem", moduleConfig);
 
 QUnit.test("selectedItem binding", function(assert) {

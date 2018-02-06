@@ -527,7 +527,6 @@ QUnit.test("Show context menu via api when position is undefined", function(asse
     assert.deepEqual(overlay.option("position.of").get(0), $("#menuTarget").get(0), "position is correct");
 });
 
-
 QUnit.module("Showing and hiding submenus", moduleConfig);
 
 QUnit.test("submenu should be shown after click on root item", function(assert) {
@@ -661,7 +660,6 @@ QUnit.test("custom slide animation should work for submenus", function(assert) {
     assert.ok(parentLeft < childrenLeft, "child item should not overlap parent item");
 });
 
-
 QUnit.module("Visibility callbacks", moduleConfig);
 
 QUnit.test("onHiding and onHidden options with outside click", function(assert) {
@@ -794,7 +792,6 @@ QUnit.test("onShowing and onShown options with visible option", function(assert)
     instance.option("visible", true);
     assert.deepEqual(events, ["onShowing", "onShown"], "events triggered and trigger order is correct");
 });
-
 
 QUnit.module("Options", moduleConfig);
 
@@ -1226,7 +1223,6 @@ QUnit.test("items changed should not break keyboard navigation", function(assert
     assert.equal($(instance.option("focusedElement")).text(), "1", "focused element is correct");
 });
 
-
 QUnit.module("Public api", moduleConfig);
 
 QUnit.test("itemsContainer method should return overlay content", function(assert) {
@@ -1235,7 +1231,6 @@ QUnit.test("itemsContainer method should return overlay content", function(asser
     assert.ok(instance.itemsContainer().hasClass("dx-overlay-content"));
     assert.ok(instance.itemsContainer().hasClass(DX_CONTEXT_MENU_CLASS));
 });
-
 
 QUnit.module("Behavior", moduleConfig);
 
@@ -1392,7 +1387,6 @@ QUnit.test("incomplete show animation should be stopped when new submenu item st
     }
 });
 
-
 QUnit.module("Selection", moduleConfig);
 
 QUnit.test("select item via item.selected property", function(assert) {
@@ -1442,7 +1436,6 @@ QUnit.test("changing selection via selectedItem option", function(assert) {
     assert.notOk(items[0].selected, "first item is not selected");
 });
 
-
 QUnit.module("Aria accessibility", moduleConfig);
 
 QUnit.test("aria role", function(assert) {
@@ -1485,7 +1478,6 @@ QUnit.test("aria-activedescendant should have correct target", function(assert) 
     assert.notEqual($itemsContainer.attr("aria-activedescendant"), undefined, "aria-activedescendant is on the overlay");
     assert.equal(this.$element.attr("aria-activedescendant"), undefined, "no aria-activedescendant on the element");
 });
-
 
 QUnit.module("Keyboard navigation", moduleConfig);
 
@@ -1985,7 +1977,6 @@ QUnit.test("Focus should follow the nested hovered item if item in the parent le
 
     assert.ok(instance.itemElements().eq(3).hasClass(DX_STATE_FOCUSED_CLASS), "Item 22 is focused");
 });
-
 
 function getVisibleSubmenuCount(instance) {
     return instance.itemsContainer().find("." + DX_SUBMENU_CLASS).filter(function() {

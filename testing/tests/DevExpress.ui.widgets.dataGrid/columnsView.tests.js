@@ -18,7 +18,6 @@ var devices = require("core/devices"),
     MockColumnsController = dataGridMocks.MockColumnsController,
     setupDataGridModules = dataGridMocks.setupDataGridModules;
 
-
 QUnit.module('API methods', {
     beforeEach: function() {
         var that = this;
@@ -285,7 +284,6 @@ QUnit.test("Not set title attribute when group cell text is trimmed and groupCel
     //assert
     assert.strictEqual(lastCellElement.attr("title"), undefined, "not has attribute title in last group cell");
 });
-
 
 //T268245
 QUnit.test("Not set title attribute when cell text is trimmed and headerCellTemplate defined", function(assert) {

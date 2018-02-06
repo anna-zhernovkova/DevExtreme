@@ -76,8 +76,6 @@ var getScrollOffset = function($scrollable) {
 viewPort($("#qunit-fixture").addClass("dx-viewport"));
 devices.current("iPhone");
 
-
-
 QUnit.testStart(function() {
     var markup = '\
         <div id="scrollable" style="height: 50px; width: 50px;">\
@@ -193,7 +191,6 @@ QUnit.test("init option 'rtl' is true", function(assert) {
     instance.option("rtlEnabled", false);
     assert.ok(!$element.hasClass(RTL_CLASS));
 });
-
 
 QUnit.module("actions", moduleConfig);
 
@@ -489,7 +486,6 @@ QUnit.test("changing action option does not cause render", function(assert) {
     testAction("onBounce");
     testAction("onUpdated");
 });
-
 
 QUnit.module("dynamic", moduleConfig);
 
@@ -1083,7 +1079,6 @@ QUnit.test("scrollable should have correct scrollPosition when content is croppe
     assert.equal($scrollable.dxScrollable("instance").scrollLeft(), 50);
 });
 
-
 QUnit.module("horizontal direction", moduleConfig);
 
 QUnit.test("horizontal moving scrollable moves content", function(assert) {
@@ -1105,7 +1100,6 @@ QUnit.test("horizontal moving scrollable moves content", function(assert) {
 
     mouse.up();
 });
-
 
 QUnit.test("horizontal inertia calc distance", function(assert) {
     assert.expect(1);
@@ -1300,7 +1294,6 @@ QUnit.test("reset unused position after change direction (both)", function(asser
     assert.equal(scrollable.scrollLeft(), 0, "left position was reset after change direction");
     assert.equal(scrollable.scrollTop(), 10, "top position was not reset after change direction");
 });
-
 
 QUnit.module("scrollbar", moduleConfig);
 
@@ -1704,7 +1697,6 @@ QUnit.test("scrollbar add active class when thumb is clicked", function(assert) 
     var $scrollbar = $scrollable.find("." + SCROLLABLE_SCROLLBAR_CLASS);
     var $thumb = $scrollable.find("." + SCROLLABLE_SCROLL_CLASS);
 
-
     assert.equal($scrollbar.hasClass(SCROLLBAR_ACTIVE_CLASS), false, "active class was not attached before mouse down on thumb");
     pointerMock($thumb).start().down();
 
@@ -1866,7 +1858,6 @@ QUnit.test("scroll event should be triggered if scroll position changed", functi
     });
 });
 
-
 QUnit.test("content", function(assert) {
     var $scrollable = $("#scrollable").dxScrollable({
         useNative: false
@@ -1975,7 +1966,6 @@ QUnit.test("scrollBy to location with dynamic content", function(assert) {
     var scrollable = $scrollable.dxScrollable("instance"),
         $content = $scrollable.find("." + SCROLLABLE_CONTENT_CLASS);
 
-
     $content.append($("<div>").height(100));
     scrollable.scrollBy(distance);
     scrollable.scrollBy(distance);
@@ -1999,7 +1989,6 @@ QUnit.test("scrollBy to location with dynamic content if auto update is prevente
 
     var scrollable = $scrollable.dxScrollable("instance"),
         $content = $scrollable.find("." + SCROLLABLE_CONTENT_CLASS);
-
 
     $content.append($("<div>").height(100));
     scrollable.scrollBy(distance);
@@ -2676,7 +2665,6 @@ QUnit.test("scroll should work on mousewheel after draging on horizontal bar", f
     assert.equal(scrollable.scrollOffset().top, distance, "scrolled vertically");
 });
 
-
 QUnit.module("initViewport integration", moduleConfig);
 
 QUnit.test("initViewport with disabled panning doesn't lock native scrolling", function(assert) {
@@ -2773,7 +2761,6 @@ QUnit.test("dxpointermove is prevented when scrolling is disabled (Q574378)", fu
     }
 });
 
-
 QUnit.module("events integration", moduleConfig);
 
 QUnit.test("scrollable returns to bound and prevent other gestures", function(assert) {
@@ -2825,7 +2812,6 @@ QUnit.test("scrollable locking", function(assert) {
 
     this.clock.tick(1000);
 });
-
 
 QUnit.module("regression", moduleConfig);
 
@@ -2946,7 +2932,6 @@ QUnit.test("scrollable content should not blink in bounce on iOS", function(asse
     assert.ok(!onEnd, "constant _disablePushBack is false on scroll end");
 });
 
-
 QUnit.module("scrollers interaction", moduleConfig);
 
 QUnit.test("scrolling component with content size equal to container size nested in another component causes outer component scrolling", function(assert) {
@@ -3001,7 +2986,6 @@ QUnit.test("disabled scrollable nested in another scrollable causes outer compon
         assert.ok(true, "scroll action fired for external dxScrollable");
     });
 });
-
 
 QUnit.module("scrolling by thumb", moduleConfig);
 
@@ -3344,7 +3328,6 @@ QUnit.test("scroll by thumb does not hide scrollbar when mouse goes outside of s
         .down()
         .move(0, -1);
 
-
     assert.equal(scrollbar.option("visible"), true, "scrollbar is visible");
 
     $container.trigger($.Event("mouseleave", { originalEvent: {} }));
@@ -3481,7 +3464,6 @@ QUnit.test("scrollbar set active state only for one scrollable when direction of
     assert.equal($childScrollbar.hasClass(SCROLLABLE_SCROLLBAR_ACTIVE_CLASS), false, "child scrollbar has not active state");
     assert.equal($scrollbar.hasClass(SCROLLABLE_SCROLLBAR_ACTIVE_CLASS), false, "scrollbar has not active state");
 });
-
 
 QUnit.module("useNative", moduleConfig);
 
@@ -4067,7 +4049,6 @@ QUnit.test("useNative false in simulator", function(assert) {
     }
 });
 
-
 QUnit.module("active element blurring", {
     beforeEach: function() {
         moduleConfig.beforeEach.call(this);
@@ -4150,7 +4131,6 @@ QUnit.testInActiveWindow("scrollable should not reset active element outside (B2
         $outerInput.remove();
     }
 });
-
 
 QUnit.module("keyboard support");
 
@@ -4390,7 +4370,6 @@ QUnit.testInActiveWindow("arrows was not handled when focus on input element", f
     }
 });
 
-
 QUnit.module("visibility events integration");
 
 QUnit.test("scroll should save position on dxhiding and restore on dxshown", function(assert) {
@@ -4452,7 +4431,6 @@ QUnit.test("scroll should save position on dxhiding when scroll is hidden", func
 
     assert.deepEqual(scrollable.scrollOffset(), { left: 0, top: 20 }, "scroll position restored after dxshown");
 });
-
 
 if(styleUtils.styleProp("touchAction")) {
     QUnit.module("nested scrolling in IE/Edge");

@@ -54,8 +54,6 @@ var closestCommonParent = function(startTarget, endTarget) {
     }
 };
 
-
-
 var triggerVisibilityChangeEvent = function(eventName) {
     var VISIBILITY_CHANGE_SELECTOR = ".dx-visibility-change-handler";
 
@@ -78,7 +76,6 @@ var uniqueId = (function() {
         return (prefix || "") + counter++;
     };
 })();
-
 
 var dataOptionsAttributeName = "data-options";
 
@@ -133,7 +130,6 @@ var createMarkupFromString = function(str) {
     return tempElement.contents();
 };
 
-
 var normalizeTemplateElement = function(element) {
     var $element = isDefined(element) && (element.nodeType || isRenderer(element))
         ? $(element)
@@ -153,7 +149,6 @@ var normalizeTemplateElement = function(element) {
 var toggleAttr = function($target, attr, value) {
     value ? $target.attr(attr, value) : $target.removeAttr(attr);
 };
-
 
 var clipboardText = function(event, text) {
     var clipboard = (event.originalEvent && event.originalEvent.clipboardData) || window.clipboardData;

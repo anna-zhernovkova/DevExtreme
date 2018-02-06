@@ -9,8 +9,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
-
 require("common.css!");
 
 require("ui/data_grid/ui.data_grid");
@@ -128,7 +126,6 @@ QUnit.test("rowClick event when summary is defined", function(assert) {
     var footerView = this.createFooterView(this.defaultFooterOptions),
         $summary,
         rowClickArgs = [];
-
 
     footerView.render($("#container"));
     $summary = $(".dx-datagrid-summary-item");
@@ -1002,7 +999,6 @@ QUnit.test("Show group footer", function(assert) {
 
     that.columns[0].groupIndex = 0;
 
-
     that.setupDataGridModules({
         summary: {
             groupItems: [{
@@ -1057,7 +1053,6 @@ QUnit.test("Show group footer when edit column exists", function(assert) {
     assert.ok($groupFooterEditCell.hasClass("dx-command-edit"), "is command edit cell");
     assert.equal($groupFooterEditCell.text(), "", "edit column cell in group footer row is empty");
 });
-
 
 //T324170
 QUnit.test("Show group footer when has calculateCustomSummary and groupItems with showInColumn and without column", function(assert) {

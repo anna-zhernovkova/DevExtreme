@@ -46,7 +46,6 @@ var Fixture = Class.inherit({
     }
 });
 
-
 QUnit.testStart(function() {
     var markup = '\
     <div id="dxValidationGroup-empty"></div>\
@@ -54,7 +53,6 @@ QUnit.testStart(function() {
 
     $("#qunit-fixture").html(markup);
 });
-
 
 QUnit.module("General", {
     beforeEach: function() {
@@ -93,7 +91,6 @@ QUnit.test("dxValidator can be validated as part of dxValidationGroup", function
     assert.ok(validator.validate.calledOnce, "Validator should be validated as part of group");
 });
 
-
 QUnit.test("dxValidator should be registered as part of dxValidationGroup - when dxValidationGroup was created after dxValidator", function(assert) {
     var $container = $("#dxValidationGroup-empty");
 
@@ -119,7 +116,6 @@ QUnit.test("dxValidationGroup can be disposed, container should be cleared (T199
     //assert
     assert.strictEqual(false, $container.hasClass("dx-validationgroup"), "Specific class should be added");
 });
-
 
 QUnit.test("dxValidator can be reset as part of dxValidationGroup", function(assert) {
     var $container = $("#dxValidationGroup-empty"),
@@ -147,11 +143,9 @@ QUnit.test("validator should find group after dxshown event is triggered", funct
     domUtils.triggerShownEvent($container);
     ValidationEngine.validateGroup(group);
 
-
     //assert
     assert.ok(validator.validate.calledOnce, "Validator should be validated as part of group");
 });
-
 
 QUnit.module("API", {
     beforeEach: function() {

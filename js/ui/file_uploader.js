@@ -47,7 +47,6 @@ var FILEUPLOADER_CLASS = "dx-fileuploader",
 
     FILEUPLOADER_AFTER_LOAD_DELAY = 400;
 
-
 var renderFileUploaderInput = function() {
     return $("<input>").attr("type", "file");
 };

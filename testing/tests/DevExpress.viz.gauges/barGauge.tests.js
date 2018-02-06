@@ -57,7 +57,6 @@ QUnit.begin(function() {
                     }
                 }
 
-
                 if(arguments[1] && typeof arguments[1].step === 'function') {
                     var that = this,
                         step = arguments[1].step,

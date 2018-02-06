@@ -255,7 +255,6 @@ QUnit.test("resourcesManager.getResourceTreeLeaves should work correctly when re
         ]
     }]);
 
-
     var resourcesFromItem = this.instance.getResourcesFromItem({
         text: "Item 1",
         startDate: new Date(),
@@ -335,7 +334,6 @@ QUnit.test("Get resources value by fields", function(assert) {
         done();
     });
 });
-
 
 QUnit.test("Get resources value by fields with long resource dataSource", function(assert) {
     this.createInstance(resourceDataWithDataSource);

@@ -8,7 +8,6 @@ var SWIPE_START_EVENT = "dxswipestart",
     SWIPE_EVENT = "dxswipe",
     SWIPE_END_EVENT = "dxswipeend";
 
-
 var HorizontalStrategy = {
     defaultItemSizeFunc: function() {
         return this.getElement().width();
@@ -54,7 +53,6 @@ var VerticalStrategy = {
         return this.FAST_SWIPE_SPEED_LIMIT * Math.abs(endEventData.y - this._tickData.y) >= (endEventData.time - this._tickData.time);
     }
 };
-
 
 var STRATEGIES = {
     "horizontal": HorizontalStrategy,

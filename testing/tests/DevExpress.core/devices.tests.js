@@ -394,7 +394,6 @@ QUnit.test("method themes.ready calls a callback function after device setting a
     devices.current({ platform: "ios" });
 });
 
-
 QUnit.test("attach css classes", function(assert) {
     var originalRealDevice = devices.real();
 
@@ -564,7 +563,6 @@ QUnit.test("isSimulator return true when is ripple emulator", function(assert) {
         window.tinyHippos = ripple;
     }
 });
-
 
 QUnit.module("orientation", {
     beforeEach: function() {

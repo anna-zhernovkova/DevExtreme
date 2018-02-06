@@ -14,7 +14,6 @@ module.exports = dependencyInjector({
         var formatIsValid = typeUtils.isString(format) && format !== '' || typeUtils.isPlainObject(format) || typeUtils.isFunction(format),
             valueIsValid = typeUtils.isNumeric(value) || typeUtils.isDate(value);
 
-
         if(!formatIsValid || !valueIsValid) {
             return typeUtils.isDefined(value) ? value.toString() : '';
         }
@@ -229,7 +228,6 @@ module.exports = dependencyInjector({
 
         dateUnitInterval = dateUtils.getDateUnitInterval(dateDifferences);
         correctDateDifferences(dateDifferences, dateUnitInterval, true);
-
 
         dateUnitInterval = dateUtils.getDateUnitInterval(tickInterval || 'second');
         correctDateDifferences(dateDifferences, dateUnitInterval, false);

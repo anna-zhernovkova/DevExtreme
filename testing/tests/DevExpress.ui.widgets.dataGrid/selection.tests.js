@@ -595,7 +595,6 @@ QUnit.test("get selectedRows for multiple selection. Several objects in array", 
 
     this.selectionController.selectRows([{ name: 'Dan', age: 16 }, { name: 'Dmitry', age: 18 }]); //1, 3
 
-
     var selectedRows = this.selectionController.getSelectedRowsData();
 
     assert.deepEqual(this.selectionController.option("selectedRowKeys"), [{ name: 'Dan', age: 16 }, { name: 'Dmitry', age: 18 }]);
@@ -655,7 +654,6 @@ QUnit.test("selectedRows with non-unique key", function(assert) {
 
     this.dataController.optionChanged({ name: 'dataSource' });
 
-
     //act
     this.selectionController.selectRows([16, 18]);
 
@@ -693,7 +691,6 @@ QUnit.test("selectedRowKeys should not be changed after assign", function(assert
     assert.notStrictEqual(this.selectionController.getSelectedRowsData(), keys, "selectRowsData not equal keys by instance");
 });
 
-
 QUnit.test("Deselect selectedRows. Store with key", function(assert) {
     //arrange
     this.applyOptions({
@@ -702,7 +699,6 @@ QUnit.test("Deselect selectedRows. Store with key", function(assert) {
     });
 
     this.dataController.optionChanged({ name: 'dataSource' });
-
 
     this.selectionController.selectRows([16, 18]);
 
@@ -729,7 +725,6 @@ QUnit.test("Deselect all if key is defined", function(assert) {
     });
 
     this.dataController.optionChanged({ name: 'dataSource' });
-
 
     this.selectionController.selectRows([16, 18]);
 
@@ -1271,7 +1266,6 @@ QUnit.test("redundant load after refresh when the grid restores its selection", 
         paginate: true
     });
 
-
     this.dataController.setDataSource(this.dataSource);
     this.dataSource.load();
 
@@ -1718,12 +1712,10 @@ QUnit.test("changeRowSelection. Several calls on different rows with control key
     assert.deepEqual(this.selectionController.getSelectedRowKeys(), [{ name: 'Dan', age: 16 }]);
 });
 
-
 var setupSelectionWithKeysModule = function() {
     setupModule.apply(this);
 
     this.applyOptions({ columns: ['name', 'age'] });
-
 
     this.array = [
         { id: 1, name: 'Alex', age: 15 },
@@ -1804,7 +1796,6 @@ QUnit.test("changeRowSelection with shift key. Select All and changeRowSelection
     assert.ok(!this.dataController.items()[4].isSelected);
     assert.ok(this.dataController.items()[5].isSelected);
 });*/
-
 
 QUnit.test("changeRowSelection with shift key. Change shift selection from down to down", function(assert) {
     this.applyOptions({
@@ -1994,7 +1985,6 @@ QUnit.test("selectRows when filter row defined", function(assert) {
     assert.deepEqual(this.selectionController.getSelectedRowsData(), [{ id: 2, name: 'Dan', age: 16 }, { id: 4, name: 'Dmitry', age: 18 }]);
 });
 
-
 //T150738
 QUnit.test("set selectedRows when CustomStore used without filter implementation", function(assert) {
     var array = this.array;
@@ -2010,7 +2000,6 @@ QUnit.test("set selectedRows when CustomStore used without filter implementation
     });
     var dataSource = new DataSource({ store: store, requireTotalCount: true });
     dataSource.load();
-
 
     this.dataController.setDataSource(dataSource);
     this.selectionController.selectRows([2, 3]);
@@ -2981,7 +2970,6 @@ QUnit.test("selectAll when remoteOperations disabled", function(assert) {
     assert.strictEqual(this.selectionController.isSelectAll(), undefined, "isSelectAll");
 });
 
-
 QUnit.module("Multiple selection with checkboxes on click", { beforeEach: setupSelectionModule, afterEach: teardownSelectionModule });
 
 QUnit.test("changeRowSelection for one row", function(assert) {
@@ -3105,7 +3093,6 @@ QUnit.test("selectRows with several values", function(assert) {
     assert.deepEqual(this.selectionController.getSelectedRowKeys(), [{ name: 'Dan', age: 16 }, { name: 'Dmitry', age: 18 }]);
     assert.ok(this.selectionController.isSelectionWithCheckboxes(), 'isSelectionWithCheckboxes');
 });
-
 
 QUnit.module("Selection with views", {
     beforeEach: function() {
@@ -3240,7 +3227,6 @@ QUnit.test("Indeterminate state of selectAll", function(assert) {
     assert.ok($checkbox.hasClass('dx-checkbox-indeterminate'), "indeterminate state of checkbox");
 });
 
-
 QUnit.test("selectAll checkbox state after change filter", function(assert) {
     var $checkbox,
         testElement = $('#container');
@@ -3271,7 +3257,6 @@ QUnit.test("selectAll checkbox state after change filter", function(assert) {
     $checkbox = $('.dx-header-row').find('.dx-checkbox');
     assert.strictEqual($checkbox.dxCheckBox("option", "value"), undefined, "indeterminate state of checkbox");
 });
-
 
 QUnit.test("Uncheck selectAll button call deselectAll", function(assert) {
     var $checkbox,
@@ -3312,7 +3297,6 @@ QUnit.test("Indeterminate state of selectAll when selectedRowKeys defined", func
     //assert
     assert.ok($checkbox.hasClass('dx-checkbox-indeterminate'), "indeterminate state of checkbox");
 });
-
 
 QUnit.test("Unchecked of selectAll when rows are not isSelected", function(assert) {
     var $checkbox,
@@ -3363,7 +3347,6 @@ QUnit.test("updateSelection with invalid itemIndexes", function(assert) {
         changeType: 'updateSelection',
         itemIndexes: [10]
     });
-
 
     //assert
     assert.equal(testElement.find('.dx-checkbox').length, 7);
@@ -3432,7 +3415,6 @@ QUnit.test("Show checkboxes when selectedRowKeys are defined from options_T10239
     assert.ok(this.selectionController.isSelectionWithCheckboxes());
     assert.ok(!$("#container").find("table").hasClass("dx-select-checkboxes-hidden"));
 });
-
 
 QUnit.test("change selectAllMode to 'page' at runtime", function(assert) {
     var testElement = $("#container");

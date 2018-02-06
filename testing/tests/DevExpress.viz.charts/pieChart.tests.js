@@ -69,7 +69,6 @@ function createPoint(options) {
     return point;
 }
 
-
 var environment = {
         beforeEach: function() {
             setupMocks.call(this);
@@ -214,7 +213,6 @@ var environment = {
             assert.ok(!label.draw.calledWith(false), "label should not be hidden");
         }
     });
-
 
 (function mainTest() {
 
@@ -513,7 +511,6 @@ var environment = {
         assert.ok(chart._renderer.stopAllAnimations.called);
         assert.deepEqual(renderMethod.lastCall.args[0], { force: true }, "chart re-rendered");
 
-
     });
 
     QUnit.test("dxChart with single series, series type is unknown in option series", function(assert) {
@@ -553,7 +550,6 @@ var environment = {
         this.themeManager.getOptions.withArgs("pieSegment").returns({
             point: { pointThemeApplied: true }
         });
-
 
         //act
         var chart = this.createPieChart({

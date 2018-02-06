@@ -35,7 +35,6 @@ var DROP_DOWN_MENU_CLASS = "dx-dropdownmenu",
     DROP_DOWN_MENU_POPUP_CLASS = "dx-dropdownmenu-popup",
     DROP_DOWN_MENU_POPUP_WRAPPER_CLASS = "dx-dropdownmenu-popup-wrapper";
 
-
 var moduleConfig = function(usePopover) {
     return {
         beforeEach: function() {
@@ -344,7 +343,6 @@ QUnit.test("popup should be rendered if opened option is set to true on init", f
     assert.ok(popoverInstance.option("visible"), "popup is visible");
 });
 
-
 QUnit.module("KO cases", {
     beforeEach: function() {
         fx.off = true;
@@ -357,7 +355,6 @@ QUnit.module("KO cases", {
         this.clock.restore();
     }
 });
-
 
 QUnit.module("position", {
     beforeEach: function() {
@@ -400,7 +397,6 @@ QUnit.test("check position for LTR and RTL", function(assert) {
 
     assert.equal(positionConfig, instance.option("popupPosition"));
 });
-
 
 QUnit.module("behavior", moduleConfig());
 
@@ -452,13 +448,11 @@ QUnit.test("click on list item hides drop-down list if closeOnClick=true", funct
 QUnit.test("click on list item is not outside click for popup", function(assert) {
     assert.expect(1);
 
-
     this.toggleMenu();
 
     this.popup.option("visible", false);
     assert.equal(this.ddMenu.option("opened"), false);
 });
-
 
 QUnit.module("integration");
 
@@ -642,8 +636,6 @@ QUnit.test("B233109: dropDownMenu menu interference", function(assert) {
     assert.equal(popup2.option("visible"), false);
 });
 
-
-
 QUnit.test("B250811 - Cancel item in overflow menu on Android does not work", function(assert) {
     assert.expect(1);
 
@@ -665,7 +657,6 @@ QUnit.test("B250811 - Cancel item in overflow menu on Android does not work", fu
         .last()
         .trigger("dxclick");
 });
-
 
 QUnit.module("widget sizing render", {
     beforeEach: function() {
@@ -827,7 +818,6 @@ QUnit.test("No exceptions on 'tab' key pressing when popup is not opened", funct
     keyboard.keyDown("tab");
 });
 
-
 QUnit.module("'opened' option", moduleConfig());
 
 QUnit.test("Default option value", function(assert) {
@@ -863,7 +853,6 @@ QUnit.test("option opened should change after button click", function(assert) {
 
     assert.ok(this.ddMenu.option("opened"), "option opened change to true");
 });
-
 
 QUnit.module("aria accessibility", {
     beforeEach: function() {

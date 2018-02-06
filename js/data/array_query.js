@@ -74,7 +74,6 @@ var WrappedIterator = Iterator.inherit({
     reset: function() { return this.iter.reset(); }
 });
 
-
 var MapIterator = WrappedIterator.inherit({
     ctor: function(iter, mapper) {
         this.callBase(iter);
@@ -221,7 +220,6 @@ var SortIterator = Iterator.inherit({
         return xIndex - yIndex;
     }
 });
-
 
 var compileCriteria = (function() {
 

@@ -11,7 +11,6 @@ var noop = require("core/utils/common").noop,
 /* global MockAngularTranslator */
 require("../../helpers/chartMocks.js");
 
-
 var defaultCorrection = {
     radiusInner: 0,
     radiusOuter: 120,
@@ -263,7 +262,6 @@ QUnit.test("Correction with percent", function(assert) {
     assert.strictEqual(this.point._label.setDataField.lastCall.args[1], "percentValue");
 });
 
-
 QUnit.module("Point radiuses correction", {
     beforeEach: function() {
         this.point = createPoint({
@@ -412,7 +410,6 @@ QUnit.test("toAngle > fromAngle", function(assert) {
     assert.ok(!point.coordsIn(51, 40), "out outerRadius");
     assert.ok(point.coordsIn(50, 40));
 
-
     var sinFrom = Math.sin(point.fromAngle * Math.PI / 180),
         sinTo = Math.sin(point.toAngle * Math.PI / 180),
         cosFrom = Math.cos(point.fromAngle * Math.PI / 180),
@@ -467,7 +464,6 @@ QUnit.test("circle point", function(assert) {
     assert.ok(!point.coordsIn(51, 40), "out outerRadius");
 
 });
-
 
 QUnit.module("Draw Point", {
     beforeEach: function() {
@@ -908,7 +904,6 @@ QUnit.test("Get tooltip format object", function(assert) {
     assert.equal(cc.originalValue, 10);
 });
 
-
 QUnit.module("Label", {
     beforeEach: environmentWithStubLabels
 });
@@ -976,7 +971,6 @@ QUnit.test("Set label tracker data", function(assert) {
 
     assert.deepEqual(point.getLabel().setTrackerData.getCall(0).args[0], point, "trackerData");
 });
-
 
 QUnit.module("get columns coord", {
     beforeEach: environmentWithStubLabels
@@ -1261,7 +1255,6 @@ QUnit.test("Draw connector, color of border and containerBackgroundColor are equ
 
     assert.deepEqual(label.setFigureToDrawConnector.firstCall.args[0], { x: 300, y: 268, angle: 270 });
 });
-
 
 QUnit.module("show/hide API", {
     beforeEach: function() {

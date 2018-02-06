@@ -24,7 +24,6 @@ var cleanComponentRegistrations = function() {
     });
 };
 
-
 QUnit.module(
     "simple component tests", {
         beforeEach: function() {
@@ -1056,7 +1055,6 @@ QUnit.module("Widget & CollectionWidget with templates enabled", function() {
     });
 });
 
-
 QUnit.module(
     "component disposing on node removing",
     {
@@ -1224,7 +1222,6 @@ QUnit.module(
     }
 );
 
-
 QUnit.module(
     "component action context",
     {
@@ -1303,7 +1300,6 @@ QUnit.module(
         });
     }
 );
-
 
 QUnit.module("Template w/o ko scenario", function() {
 

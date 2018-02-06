@@ -27,7 +27,6 @@ require('./build/gulp/layouts');
 require('./build/gulp/localization');
 require('./build/gulp/style-compiler');
 
-
 gulp.task('default', function(callback) {
     runSequence(
         'clean',

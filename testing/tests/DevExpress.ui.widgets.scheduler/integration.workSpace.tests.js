@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     eventsEngine = require("events/core/events_engine"),
     renderer = require("core/renderer"),
@@ -64,7 +63,6 @@ QUnit.test("Work space should have correct currentDate option", function(assert)
 
     assert.deepEqual($element.find(".dx-scheduler-work-space").dxSchedulerWorkSpaceDay("instance").option("currentDate"), new Date(2015, 1, 28), "Work space has a right currentDate option");
 });
-
 
 QUnit.test("Work space should have correct min option", function(assert) {
     this.createInstance({
@@ -608,8 +606,6 @@ QUnit.test("Cell data should be applied when resources are loaded", function(ass
         }
     });
 
-
-
 });
 
 QUnit.test("Cell data should be updated after view changing", function(assert) {
@@ -636,8 +632,6 @@ QUnit.test("Cell data should be updated after view changing", function(assert) {
         startDate: new Date(2016, 8, 4),
         endDate: new Date(2016, 8, 4, 0, 30)
     }, "Cell data is OK!");
-
-
 
 });
 
@@ -1127,8 +1121,6 @@ QUnit.test("dateCellTemplate should have correct options in agenda view", functi
 
 });
 
-
-
 QUnit.test("Agenda has right arguments in resourceCellTemplate arguments", function(assert) {
     var params;
 
@@ -1165,7 +1157,6 @@ QUnit.test("Agenda has right arguments in resourceCellTemplate arguments", funct
 
     assert.deepEqual(params, { id: 1, text: "John", color: "#A2a" }, "Cell text is OK");
 });
-
 
 QUnit.test("workSpace recalculation after render cellTemplates", function(assert) {
     this.createInstance({

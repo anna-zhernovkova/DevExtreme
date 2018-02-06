@@ -69,7 +69,6 @@ var createDebugBundlesStream = function(watch) {
         .pipe(gulp.dest(context.RESULT_JS_PATH));
 };
 
-
 gulp.task('js-bundles-debug', ['bundler-config'], function() {
     return createDebugBundlesStream(false);
 });

@@ -99,7 +99,6 @@ QUnit.test("Navigation command with template", function(assert) {
     assert.equal(app.navigationManager._navigationDevice.getUri(), "test-uri/123");
 });
 
-
 QUnit.test("Layout commands (with observable) - B231696 - dxCommand does not change its state if observable changes", function(assert) {
     var done = assert.async(),
         commandMapping = new CommandMapping();

@@ -101,7 +101,6 @@ var ResizingController = modules.ViewController.inherit({
         headerColumnWidths = that._columnHeadersView && that._columnHeadersView.getColumnWidths();
         footerColumnWidths = that._footerView && that._footerView.getColumnWidths();
 
-
         resultWidths = mergeArraysByMaxValue(rowsColumnWidths, headerColumnWidths);
         resultWidths = mergeArraysByMaxValue(resultWidths, footerColumnWidths);
         return resultWidths;

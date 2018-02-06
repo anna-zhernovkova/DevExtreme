@@ -42,7 +42,6 @@ var DX_MENU_CLASS = 'dx-menu',
     DX_ITEM_HAS_ICON = DX_MENU_ITEM_CLASS + '-has-icon',
     DX_ITEM_HAS_SUBMENU = DX_MENU_ITEM_CLASS + '-has-submenu';
 
-
 var TestComponent = MenuBase.inherit({
     NAME: "TestComponent",
     _itemDataKey: function() {
@@ -75,7 +74,6 @@ QUnit.test('Create menu with default css', function(assert) {
 
     assert.ok(menuBase.element.hasClass(DX_MENU_BASE_CLASS));
 });
-
 
 QUnit.module('Menu rendering');
 
@@ -292,7 +290,6 @@ QUnit.test('Remove extra classes from item frame if content is changed', functio
     assert.notOk($item.hasClass(DX_ITEM_HAS_TEXT), 'dx-menu-item-has-text class was removed');
 });
 
-
 QUnit.module('Menu tests', {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -307,7 +304,6 @@ QUnit.test("Menu should work properly with key fields", function(assert) {
     createMenu({ items: [{ text: "Item 1" }, { text: "Item 2", id: 1 }] });
     assert.ok(true, "menu was rendered without exceptions");
 });
-
 
 QUnit.module('ShowSubmenuMode', {
     beforeEach: function() {
@@ -427,7 +423,6 @@ QUnit.test('previous submenu should not appear if other submenu shown timeout is
         assert.ok($rootItems.eq(1).hasClass(DX_MENU_ITEM_EXPANDED_CLASS), 'Second item is expanded');
     }
 });
-
 
 QUnit.module('Selection');
 
@@ -872,7 +867,6 @@ QUnit.test('Raise onItemClick on root item click', function(assert) {
 
     this.clock.restore();
 });
-
 
 QUnit.module("aria accessibility");
 

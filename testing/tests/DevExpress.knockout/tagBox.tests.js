@@ -38,7 +38,6 @@ var moduleSetup = {
     }
 };
 
-
 QUnit.module("basic", moduleSetup);
 
 QUnit.test("fieldTemplate is bound to selected items", function(assert) {
@@ -56,7 +55,6 @@ QUnit.test("fieldTemplate is bound to selected items", function(assert) {
 
     assert.equal($("#customField").text(), "onetwo", "fieldTemplate got item in viewModel");
 });
-
 
 QUnit.module("ko integration");
 

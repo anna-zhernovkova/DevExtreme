@@ -87,7 +87,6 @@ QUnit.module("display Summary Type. CallBack arg", {
             values: [{ area: "data", caption: "summaryField1", summaryDisplayMode: "summaryDisplayType", index: 4 }]
         };
 
-
         this.grandTotalRow = {
             index: 0,
             children: this.data.rows
@@ -97,7 +96,6 @@ QUnit.module("display Summary Type. CallBack arg", {
             index: 0,
             children: this.data.columns
         };
-
 
     },
     afterEach: function() {
@@ -403,10 +401,8 @@ QUnit.test("Cache original value", function(assert) {
     assert.strictEqual(new this.Cell([this.grandTotalColumn], [this.grandTotalRow], this.data, this.descriptions, 1).value(), "GT2");
 });
 
-
 QUnit.module("summary display type calculation", {
     beforeEach: function() {
-
 
         summaryDictionary = summaryDisplayModes.summaryDictionary;
         this.data = $.extend(true, {}, data);
@@ -769,7 +765,6 @@ QUnit.test("RunningTotal with summaryDisplayType", function(assert) {
     summaryExpr.restore();
 });
 
-
 QUnit.module("summary display mode presets", {
     beforeEach: function() {
         var Cell = summaryDisplayModes.Cell;
@@ -1065,7 +1060,6 @@ QUnit.test("Percent of Total row should be null when it's value is 0", function(
     assert.strictEqual(result, null);
 });
 
-
 QUnit.test("Percent of Total row should be null when it's value is undefined", function(assert) {
     var cell = this.stubCell(),
         parentCell = this.stubCell(),
@@ -1095,7 +1089,6 @@ QUnit.test("Percent of GrandTotal should be null when it's value is 0", function
     //assert
     assert.strictEqual(result, null);
 });
-
 
 QUnit.test("Percent of GrandTotal should be null when it's value is null", function(assert) {
     var cell = this.stubCell(),
@@ -1138,7 +1131,6 @@ QUnit.test("Percent of column", function(assert) {
     assert.strictEqual(resultWithEqualValues, 1);
     assert.strictEqual(resultWhenNoParent, 1);
 });
-
 
 QUnit.module("Check empty columns and rows", {
     beforeEach: function() {
@@ -1366,7 +1358,6 @@ QUnit.test("createMockSummaryCell with custom calculateSummaryValue", function(a
     assert.equal(summaryCell.value("Field1", true), null);
     assert.equal(summaryCell.value(true), null);
 });
-
 
 var dataWithTwoValues = $.extend(true, {}, data);
 

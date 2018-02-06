@@ -203,7 +203,6 @@ QUnit.test("appropriate class should be added depending on the 'statusPosition' 
     });
 });
 
-
 QUnit.module("states", {
     beforeEach: function() {
         this.$element = $("#progressbar");

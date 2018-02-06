@@ -490,7 +490,6 @@ var checkTwoGroups = function(assert, series) {
         assert.equal(parentGroup.children[0], this.renderer.stub("g").getCall(1).returnValue);
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(3).returnValue);
 
-
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
             "clip-path": "wideClipId",
@@ -548,7 +547,6 @@ var checkTwoGroups = function(assert, series) {
         assert.equal(parentGroup.children.length, 2, "groups in series group");
         assert.equal(parentGroup.children[0], this.renderer.stub("g").getCall(1).returnValue);
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(3).returnValue);
-
 
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
@@ -617,7 +615,6 @@ var checkTwoGroups = function(assert, series) {
         assert.equal(parentGroup.children[0], this.renderer.stub("g").getCall(1).returnValue);
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(3).returnValue);
 
-
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
             "clip-path": "wideClipId",
@@ -683,7 +680,6 @@ var checkTwoGroups = function(assert, series) {
         assert.equal(parentGroup.children[0], this.renderer.stub("g").getCall(1).returnValue);
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(3).returnValue);
 
-
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
             "clip-path": "wideClipId",
@@ -699,7 +695,6 @@ var checkTwoGroups = function(assert, series) {
             assert.equal(p.animate.callCount, 0, i + " point draw without animate");
         });
     });
-
 
     QUnit.test("Draw series when errorBars enabled. forceClipping is true", function(assert) {
         var series = createSeries({
@@ -740,7 +735,6 @@ var checkTwoGroups = function(assert, series) {
         assert.equal(parentGroup.children.length, 2, "groups in series group");
         assert.equal(parentGroup.children[0], this.renderer.stub("g").getCall(1).returnValue);
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(3).returnValue);
-
 
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
@@ -792,7 +786,6 @@ var checkTwoGroups = function(assert, series) {
             assert.equal(p.animate.callCount, 0, i + " point draw without animate");
         });
     });
-
 
     QUnit.module("Scatter. Points animation", {
         beforeEach: function() {
@@ -1782,7 +1775,6 @@ var checkTwoGroups = function(assert, series) {
 
         series.updateData(this.data);
 
-
         var labels = this.createPoint.firstCall.args[2].label;
         assert.ok(labels);
         assert.ok(labels.visible);
@@ -1859,7 +1851,6 @@ var checkTwoGroups = function(assert, series) {
         });
 
         series.updateData(this.data);
-
 
         var labels = series._getPointOptions().label;
         assert.ok(labels);
@@ -1961,7 +1952,6 @@ var checkTwoGroups = function(assert, series) {
         var labels = series._getPointOptions().label;
         assert.equal(labels.customizeText, undefined);
     });
-
 
     QUnit.module("Scatter. Customize Label", {
         beforeEach: function() {

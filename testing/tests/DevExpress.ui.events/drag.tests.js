@@ -52,7 +52,6 @@ QUnit.testStart(function() {
 
 GestureEmitter.touchBoundary(GestureEmitter.initialTouchBoundary);
 
-
 QUnit.module("dragging");
 
 QUnit.test("dragstart should be fired", function(assert) {
@@ -232,7 +231,6 @@ QUnit.test("maxBottomOffset", function(assert) {
     pointer.start().down().move(0, 200).up();
 });
 
-
 QUnit.module("drop targets registration");
 
 QUnit.test("element should be pushed to drop targets on dragenter subscription", function(assert) {
@@ -326,7 +324,6 @@ QUnit.test("element should be removed from drop targets if it has not any subscr
     $dropTarget.off(dragEvents.drop);
     assert.equal(dropTargets.length, 0, "drop target removed");
 });
-
 
 QUnit.module("dropping");
 
@@ -676,7 +673,6 @@ QUnit.test("dxdragenter, dxdragleave, dxdrop should not be fired on unsubscribed
     pointer.start().down().move(250, 250).move(200, 200).move(-200, -200).up();
 });
 
-
 QUnit.module("hacks");
 
 QUnit.test("default behaviour on dxpointermove should be prevented to reduce user selection while drag", function(assert) {
@@ -734,7 +730,6 @@ QUnit.test("drag move should not prevent default if e._cancelPreventDefault is t
     var e = pointer.start().down().move(250, 250).lastEvent();
     assert.notOk(e.isDefaultPrevented(), "prevent default is cancelled");
 });
-
 
 QUnit.module("performance");
 

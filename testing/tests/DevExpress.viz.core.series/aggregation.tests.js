@@ -9,7 +9,6 @@ var $ = require("jquery"),
 /* global insertMockFactory, MockTranslator */
 require("../../helpers/chartMocks.js");
 
-
 require("viz/chart");
 
 function checkResult(assert, result, fusionPoints, num) {
@@ -818,7 +817,6 @@ QUnit.test("Set point reduction true", function(assert) {
     assert.ok(result);
     assert.strictEqual(result.isReduction, true);
 
-
 });
 
 QUnit.test("Fusion points, closeValue in the last point is null", function(assert) {
@@ -931,7 +929,6 @@ QUnit.test("Fusion points, point empty array", function(assert) {
 
     assert.deepEqual(result, {});
 });
-
 
 QUnit.module("Sampler points", {
     beforeEach: function() {

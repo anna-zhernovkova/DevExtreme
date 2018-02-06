@@ -156,7 +156,6 @@ QUnit.test('render - currentValue and baseValue are reversed, with text', functi
     assert.ok(rangeBar._line, '_line');
     assert.strictEqual(rangeBar._line.parent, rangeBar._rootElement, '_line parent');
 
-
     assert.deepEqual(rangeBar._text._stored_settings, {
         x: rangeBar._text._stored_settings.x,
         y: rangeBar._text._stored_settings.y,

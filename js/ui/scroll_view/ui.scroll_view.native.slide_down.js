@@ -10,7 +10,6 @@ var STATE_RELEASED = 0,
 
     LOADING_HEIGHT = 80;
 
-
 var SlideDownNativeScrollViewStrategy = NativeStrategy.inherit({
 
     _init: function(scrollView) {

@@ -124,7 +124,6 @@
         }
     }).include(EventsMixin);
 
-
     exports.MockHtmlApplication = HtmlApplication.inherit({
         ctor: function(options) {
             this.__showViewLog = [];

@@ -685,7 +685,6 @@ QUnit.module("onValueChanged event", function(assert) {
         assert.strictEqual(count, 1);
     });
 
-
     QUnit.test("Triggered only once on axis' date marker click", function(assert) {
         var count = 0;
         $("#container").width(600).dxRangeSelector({

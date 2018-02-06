@@ -148,7 +148,6 @@ QUnit.test("Default render with marks", function(assert) {
     assert.ok($requiredItem.find("." + internals.FIELD_ITEM_REQUIRED_MARK_CLASS).length, "field item has required mark");
     assert.ok(!$requiredItem.find("." + internals.FIELD_ITEM_OPTIONAL_MARK_CLASS).length, "field item hasn't optional mark");
 
-
     assert.ok(!$optionalItem.hasClass(internals.FIELD_ITEM_REQUIRED_CLASS), "field item hasn't required class");
     assert.ok($optionalItem.hasClass(internals.FIELD_ITEM_OPTIONAL_CLASS), "field item has optional class");
     assert.ok(!$optionalItem.find("." + internals.FIELD_ITEM_REQUIRED_MARK_CLASS).length, "field item hasn't required mark");
@@ -1006,7 +1005,6 @@ QUnit.test("Generate several items in layout", function(assert) {
         }),
         $fieldItems = $testContainer.find("." + internals.FIELD_ITEM_CLASS);
 
-
     //assert
     assert.equal($fieldItems.length, 3, "Render 3 items");
     for(var i = 0; i < 3; i++) {
@@ -1039,7 +1037,6 @@ QUnit.test("Generate several various widgets in layout", function(assert) {
         }),
         $fieldItems = $testContainer.find("." + internals.FIELD_ITEM_CLASS),
         $dateBox = $fieldItems.eq(2).find(".dx-datebox");
-
 
     //assert
     assert.ok($fieldItems.eq(0).find(".dx-textbox").length, "First item is dxTextBox");
@@ -1388,7 +1385,6 @@ QUnit.test("Change item.visible on customizeItem works correct", function(assert
     assert.equal($testContainer.find("." + internals.FIELD_ITEM_LABEL_CLASS).text(), "Age", "Correct field rendered");
 });
 
-
 QUnit.test("CustomizeItem work well after option change", function(assert) {
     //arrange, act
     var $editors,
@@ -1674,7 +1670,6 @@ QUnit.test("Render field items from fieldData and items when fieldData is a comp
     assert.equal($labels.eq(0).text(), "CTO name", "First label text");
     assert.equal($labels.eq(1).text(), "CEO name", "Second label text");
 
-
     assert.equal($inputs.length, 2, "Form has 2 inputs");
     assert.equal($inputs.eq(0).val(), "Alex", "First input value");
     assert.equal($inputs.eq(1).val(), "George", "Second input value");
@@ -1703,7 +1698,6 @@ QUnit.test("Render field items from fieldData and items when fieldData is a comp
     assert.equal($labels.length, 2, "Form has 2 labels");
     assert.equal($labels.eq(0).text(), "The smartest CTO", "First label text");
     assert.equal($labels.eq(1).text(), "The best CEO", "Second label text");
-
 
     assert.equal($inputs.length, 2, "Form has 2 inputs");
     assert.equal($inputs.eq(0).val(), "Alex", "First input value");
@@ -2222,8 +2216,6 @@ QUnit.test("onEditorEnterKey", function(assert) {
     assert.equal(testArgs.dataField, "name", "dataField");
 });
 
-
-
 QUnit.module("Render multiple columns");
 
 QUnit.test("Render layoutManager with 2 columns", function(assert) {
@@ -2266,7 +2258,6 @@ QUnit.test("Render layout items in order", function(assert) {
     });
     var $labels = $("#container .dx-responsivebox label"),
         $editors = $("#container .dx-responsivebox .dx-texteditor-input");
-
 
     //assert
     assert.equal($labels.eq(0).text(), "Name", "0 label");
@@ -2336,7 +2327,6 @@ QUnit.test("Prepare items for col span", function(assert) {
         }).dxLayoutManager("instance"),
         items = layoutManager._items;
 
-
     //assert
     assert.equal(items.length, 15, "items count");
     assert.deepEqual(items[0], { dataField: "ID", editorType: "dxNumberBox", visibleIndex: 0, col: 0, itemType: "simple" }, "0 item");
@@ -2381,7 +2371,6 @@ QUnit.test("Generate layout items for col span", function(assert) {
     var responsiveBox = $(".dx-responsivebox").dxResponsiveBox("instance"),
         items = responsiveBox.option("items");
 
-
     //assert
     assert.equal(items.length, 11, "responsiveBox items count");
     assert.equal(items[0].location.colspan, undefined, "ID has no colSpan");
@@ -2424,7 +2413,6 @@ QUnit.test("Prepare items for col span when labelLocation is 'top' (T307223)", f
             }
         }).dxLayoutManager("instance"),
         items = layoutManager._items;
-
 
     //assert
     assert.equal(items.length, 15, "items count");
@@ -2469,7 +2457,6 @@ QUnit.test("Generate rows ratio for col span", function(assert) {
 
     var responsiveBox = $(".dx-responsivebox").dxResponsiveBox("instance"),
         rows = responsiveBox.option("rows");
-
 
     //assert
     assert.equal(rows.length, 4);
@@ -2600,7 +2587,6 @@ QUnit.test("Change minColWidth when colCount is auto", function(assert) {
     instance.option("minColWidth", 100);
     assert.equal(invalidateStub.callCount, 0, "Invalidate is not fired, because colCount is not auto");
 
-
     instance.option("colCount", "auto");
     instance.option("minColWidth", 300);
 
@@ -2610,7 +2596,7 @@ QUnit.test("Change minColWidth when colCount is auto", function(assert) {
 });
 
 QUnit.test("Clear item watchers after disposing", function(assert) {
-     //arrange
+    //arrange
     var $testContainer = $("#container").width(450);
 
     $testContainer.dxLayoutManager({

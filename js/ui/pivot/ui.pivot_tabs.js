@@ -13,7 +13,6 @@ var $ = require("../../core/renderer"),
     config = require("../../core/config"),
     BindableTemplate = require("../widget/bindable_template");
 
-
 var PIVOT_TABS_CLASS = "dx-pivottabs",
 
     PIVOT_TAB_CLASS = "dx-pivottabs-tab",

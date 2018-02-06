@@ -531,7 +531,6 @@ QUnit.test("xl\\styles.xml file content", function(assert) {
         .withArgs(0, 2).returns(2)
         .withArgs(0, 3).returns(3);
 
-
     this.excelCreator._generateContent();
 
     assert.expect(1);
@@ -699,8 +698,6 @@ QUnit.test("Workwheet XML content is valid", function(assert) {
     });
 });
 
-
-
 QUnit.test("Generating worksheet with groups and three rows of the header", function(assert) {
     // arrange
     var done = assert.async();
@@ -726,9 +723,6 @@ QUnit.test("Generating worksheet with groups and three rows of the header", func
         }
     });
 });
-
-
-
 
 QUnit.test("Style XML content is valid", function(assert) {
     // arrange
@@ -1037,7 +1031,6 @@ QUnit.test("xl\\worksheets\\sheet1.xml file content with AutoFilter", function(a
         }
     });
 });
-
 
 QUnit.test("Exception should be thrown if JSzip not included has no start date", function(assert) {
     var zip_backup = this.excelCreator._zip;

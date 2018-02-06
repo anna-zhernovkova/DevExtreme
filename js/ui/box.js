@@ -31,7 +31,6 @@ var MAXSIZE_MAP = {
 
 var SHRINK = 1;
 
-
 // NEW FLEXBOX STRATEGY
 
 var FLEX_JUSTIFY_CONTENT_MAP = {
@@ -140,7 +139,6 @@ var FlexLayoutStrategy = Class.inherit({
 
     update: noop
 });
-
 
 // FALLBACK STRATEGY FOR IE
 
@@ -333,7 +331,6 @@ var FallbackLayoutStrategy = Class.inherit({
             totalWeightedShrink += shrink * size;
             totalBaseSize += size;
         }).bind(this));
-
 
         var freeSpaceSize = this._boxSize() - totalBaseSize;
 
@@ -784,7 +781,6 @@ var Box = CollectionWidget.inherit({
 * @type dxBoxOptions
 * @default undefined
 */
-
 
 Box.ItemClass = BoxItem;
 

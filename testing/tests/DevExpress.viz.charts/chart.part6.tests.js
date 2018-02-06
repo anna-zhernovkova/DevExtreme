@@ -376,7 +376,6 @@ QUnit.test("change containerBackgroundColor option only", function(assert) {
     assert.ok(chart.seriesDisposed, "Series should not be disposed");
     assert.ok(chart.seriesFamiliesDisposed, "SeriesFamilies should not be disposed");
 
-
     assert.equal(chart._options.containerBackgroundColor, "red", "Container background color should be correct");
 });
 

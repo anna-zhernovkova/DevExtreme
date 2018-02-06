@@ -224,7 +224,6 @@ QUnit.test("Virtual scrolling enabled by default and should render two tables in
     //act
     this.clock.tick();
 
-
     //assert
     assert.equal(treeList.option("scrolling.mode"), "virtual", "scrolling mode is virtual");
     var $rowsViewTables = $(treeList.$element().find(".dx-treelist-rowsview table"));
@@ -234,7 +233,6 @@ QUnit.test("Virtual scrolling enabled by default and should render two tables in
     assert.equal($rowsViewTables.eq(0).find(".dx-freespace-row").length, 1, "one freespace row in first table");
     assert.equal($rowsViewTables.eq(1).find(".dx-freespace-row").length, 1, "one freespace row in second table");
 });
-
 
 QUnit.testInActiveWindow("Ctrl + left/right keys should collapse/expand row", function(assert) {
     if(devices.real().deviceType !== "desktop") {
@@ -417,7 +415,6 @@ QUnit.test("Search Panel", function(assert) {
 
     //act
     this.clock.tick();
-
 
     //assert
     assert.equal(treeList.$element().find(".dx-data-row").length, 1, "one filtered row is rendered");

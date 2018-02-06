@@ -131,7 +131,6 @@ QUnit.test("Set value", function(assert) {
     element.css("height", "auto");
     assert.equal(element[0].style["height"], "auto", "Set height with string");
 
-
     element.css({
         position: "fixed",
         zIndex: 2,
@@ -149,7 +148,6 @@ QUnit.test("Set value", function(assert) {
 });
 
 QUnit.module("addClass method");
-
 
 QUnit.test("class should be set for only an element node", function(assert) {
     var element = renderer("<div>"),

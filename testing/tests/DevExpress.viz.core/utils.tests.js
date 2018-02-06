@@ -314,7 +314,6 @@ QUnit.test('Single pane - main case (no specific options provided)', function(as
     assert.strictEqual(this.canvas.top, 10, 'No change of main canvas on top margin');
     assert.strictEqual(this.canvas.bottom, 20, 'No change of main canvas on bottom margin');
 
-
     assert.strictEqual(pane.canvas.left, this.canvas.left, 'Pane Canvas Left margin should be equal to main canvas');
     assert.strictEqual(pane.canvas.right, this.canvas.right, 'Pane Canvas Right margin should be equal to main canvas');
     assert.strictEqual(pane.canvas.top, this.canvas.top, 'Pane Canvas Top margin should be equal to main canvas');
@@ -341,7 +340,6 @@ QUnit.test('Two equal panes - vertical alignment', function(assert) {
 
     utils.setCanvasValues(this.canvas);
     utils.updatePanesCanvases([topPane, bottomPane], this.canvas);
-
 
     assert.ok(topPane.canvas, 'Canvas added to pane');
     assert.notEqual(this.canvas, topPane.canvas, 'Pane canvas should not reference the main object in memory');

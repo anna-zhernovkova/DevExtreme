@@ -312,7 +312,6 @@ var allowHeaderFiltering = exports.allowHeaderFiltering = function(column) {
     return isDefined(column.allowHeaderFiltering) ? column.allowHeaderFiltering : column.allowFiltering;
 };
 
-
 exports.headerFilterMixin = {
     _applyColumnState: function(options) {
         var $headerFilterIndicator,

@@ -23,12 +23,10 @@ var $ = require("../core/renderer"),
     isPlainObject = typeUtils.isPlainObject,
     noop = require("../core/utils/common").noop;
 
-
 var RELATIVE_VALUE_REGEX = /^([+-])=(.*)/i,
     ANIM_DATA_KEY = "dxAnimData",
     ANIM_QUEUE_KEY = "dxAnimQueue",
     TRANSFORM_PROP = "transform";
-
 
 /**
 * @name animationConfig
@@ -616,7 +614,6 @@ var PopAnimationConfigurator = {
     }
 };
 
-
 var animationConfigurators = {
     "custom": CustomAnimationConfigurator,
     "slide": SlideAnimationConfigurator,
@@ -637,7 +634,6 @@ var getAnimationConfigurator = function(config) {
 
     return result;
 };
-
 
 var defaultJSConfig = {
         type: "custom",

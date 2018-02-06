@@ -63,7 +63,6 @@ QUnit.test("palette in blend mode", function(assert) {
     assert.deepEqual(this.bar(3).attr.getCall(2).args, [{ fill: "yellow" }], "bar 4 color");
 });
 
-
 QUnit.test("palette extension mode can be changed", function(assert) {
     this.create({
         values: [1, 2, 3, 4],

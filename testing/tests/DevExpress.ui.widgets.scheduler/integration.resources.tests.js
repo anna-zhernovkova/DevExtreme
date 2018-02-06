@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     fx = require("animation/fx"),
     DataSource = require("data/data_source/data_source").DataSource,
@@ -102,7 +101,6 @@ QUnit.test("Editor for resource should be passed to details view", function(asse
     assert.deepEqual(ownerEditor.editorOptions.dataSource.items(), resources[0].dataSource, "Data source is OK");
     assert.deepEqual(taskDetailsView.option("formData").ownerId, [1], "Value is OK");
 
-
     this.instance.showAppointmentPopup(task2);
     taskDetailsView = this.instance.getAppointmentDetailsForm();
 
@@ -154,7 +152,6 @@ QUnit.test("Editor for resource should be passed to details view for scheduler w
 
     var taskDetailsView = this.instance.getAppointmentDetailsForm(),
         ownerEditor = taskDetailsView.option("items")[10];
-
 
     assert.equal(ownerEditor.editorType, "dxTagBox", "Editor is dxTagBox");
     assert.deepEqual(ownerEditor.editorOptions.dataSource, resources[0].dataSource, "Data source is OK");

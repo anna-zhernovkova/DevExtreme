@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     translator = require("animation/translator"),
     dblclickEvent = require("events/dblclick"),
@@ -219,7 +218,6 @@ QUnit.test("Task dragging into the allDay container", function(assert) {
     $(this.instance.$element()).find(".dx-scheduler-date-table-cell").eq(5).trigger(dragEvents.enter);
     $allDayAppointment.trigger(dragEvents.end);
 
-
     assert.ok(!this.instance.option("dataSource").items()[0].allDay, "New data is correct");
     assert.deepEqual(this.instance.option("dataSource").items()[0].endDate, new Date(2015, 1, 9, 3), "New data is correct");
     assert.equal($element.find(".dx-scheduler-all-day-appointments .dx-scheduler-appointment").length, 0, "allDayContainer is empty");
@@ -251,7 +249,6 @@ QUnit.test("Task dragging into the allDay container when allDay-cell is exactly 
     $allDayAppointment.trigger(dragEvents.start);
     $(this.instance.$element()).find(".dx-scheduler-date-table-cell").eq(3).trigger(dragEvents.enter);
     $allDayAppointment.trigger(dragEvents.end);
-
 
     assert.ok(!this.instance.option("dataSource").items()[0].allDay, "New data is correct");
     assert.deepEqual(this.instance.option("dataSource").items()[0].endDate, new Date(2015, 2, 4, 0, 30), "New data is correct");
@@ -303,7 +300,6 @@ QUnit.test("boundOffset of allDay appointment should be correct on init", functi
 
     assert.equal($appointment.dxDraggable("instance").option("boundOffset").top, -allDayPanelHeight, "Bound offset is correct");
 });
-
 
 QUnit.test("allDayExpanded option of workspace should be updated after dragged into the all day container", function(assert) {
     var data = new DataSource({
@@ -443,7 +439,6 @@ QUnit.test("Tail of long appointment should have a right width", function(assert
 
     assert.roughEqual($appointment.outerWidth(), $cell.outerWidth() * 2, 1.001, "Task has a right width");
 });
-
 
 QUnit.test("All-day appointment should save duration after resize operation", function(assert) {
     this.createInstance({

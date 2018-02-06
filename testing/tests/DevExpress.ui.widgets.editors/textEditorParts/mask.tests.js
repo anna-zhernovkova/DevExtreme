@@ -68,7 +68,6 @@ QUnit.test("render mask with fixed chars", function(assert) {
     assert.equal($input.val(), "(_)", "mask is rendered");
 });
 
-
 QUnit.module("typing", moduleConfig);
 
 QUnit.test("accept only allowed chars", function(assert) {
@@ -389,7 +388,6 @@ QUnit.test("press enter when caret position in the middle of the text", function
     assert.equal($input.val(), "_x", "second char is still there");
 });
 
-
 QUnit.module("backspace key", moduleConfig);
 
 QUnit.test("backspace should remove last char and move caret backward", function(assert) {
@@ -520,7 +518,6 @@ QUnit.test("input event with the 'deleteContentBackward' input type should remov
     assert.equal($input.val(), "x-x_", "char removed");
 });
 
-
 QUnit.module("delete key");
 
 QUnit.test("char should be deleted after pressing on delete key", function(assert) {
@@ -561,7 +558,6 @@ QUnit.test("delete should remove only selected valuable chars (T242341)", functi
 
     assert.equal($input.val(), "_- x", "letter deleted");
 });
-
 
 QUnit.module("selection", moduleConfig);
 
@@ -732,7 +728,6 @@ QUnit.testInActiveWindow("change mask visibility", function(assert) {
     assert.equal(textEditor.option("text"), "__", "placeholder is visible");
 });
 
-
 QUnit.module("focusing", moduleConfig);
 
 QUnit.testInActiveWindow("cursor should be set after fixed mask letters", function(assert) {
@@ -817,7 +812,6 @@ QUnit.testInActiveWindow("caret should be at the last symbol when input is incom
     assert.equal(keyboard.caret().start, 1, "caret is at the last symbol");
     assert.equal(keyboard.caret().end, 1, "caret is at the last symbol");
 });
-
 
 QUnit.module("value", moduleConfig);
 
@@ -1180,7 +1174,6 @@ QUnit.test("clear button click should not lead to error when value is empty", fu
     }
 });
 
-
 QUnit.module("paste", moduleConfig);
 
 QUnit.test("paste on empty editor", function(assert) {
@@ -1371,7 +1364,6 @@ QUnit.test("paste event should be fired in the FireFox when ctrl+V pressed", fun
     assert.equal($input.val(), "00", "'v' char from ctrl+V combination was ignored");
 });
 
-
 QUnit.module("drag text", moduleConfig);
 
 QUnit.test("mask should support drag", function(assert) {
@@ -1410,7 +1402,6 @@ QUnit.test("mask should support drag with spaces", function(assert) {
     assert.equal($input.val(), "(xy__)", "mask is corrected");
 });
 
-
 QUnit.module("cut");
 
 QUnit.test("cut handled correctly", function(assert) {
@@ -1443,7 +1434,6 @@ testMaskRule("'C' is any char except space", { mask: "CCCCCCC", text: " Az9$яШ
 testMaskRule("'c' is any char", { mask: "ccccccc", text: " Az9$яШ", result: " Az9$яШ" });
 testMaskRule("'A' is alphanumeric", { mask: "AAAAAAA", text: " Az9$яШ", result: " Az9яШ" });
 testMaskRule("'a' is alphanumeric or space", { mask: "aaaaaaa", text: " Az9$яШ", result: " Az9яШ" });
-
 
 QUnit.module("custom mask maskRules", moduleConfig);
 
@@ -1530,7 +1520,6 @@ QUnit.test("text argument has maskChar instead of spaces", function(assert) {
     });
 });
 
-
 QUnit.module("escape built-in rules");
 
 QUnit.test("built-in rules should be escaped with '\'", function(assert) {
@@ -1541,7 +1530,6 @@ QUnit.test("built-in rules should be escaped with '\'", function(assert) {
 
     assert.equal($textEditor.find(".dx-texteditor-input").val(), "la", "first rule work as stub");
 });
-
 
 QUnit.module("validation");
 
@@ -1628,7 +1616,6 @@ QUnit.test("validation after value changed", function(assert) {
     assert.equal(textEditor.option("isValid"), false, "value is invalid");
 });
 
-
 QUnit.module("T9", moduleConfig);
 
 QUnit.test("mask works when keypress is not fired", function(assert) {
@@ -1711,7 +1698,6 @@ QUnit.testInActiveWindow("Last char remove correctly when keypress fired after b
     assert.equal($input.val(), "_-_", "chars was removed");
 });
 
-
 QUnit.module("states");
 
 QUnit.test("mask should not be changed when readonly mode is enabled", function(assert) {
@@ -1731,7 +1717,6 @@ QUnit.test("mask should not be changed when readonly mode is enabled", function(
 
     assert.equal($input.val(), "_", "text was not typed");
 });
-
 
 QUnit.module("Hidden input");
 

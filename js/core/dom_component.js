@@ -192,7 +192,6 @@ var DOMComponent = Component.inherit({
         var that = this;
         var resizeEventName = "dxresize." + this.NAME + VISIBILITY_CHANGE_EVENTNAMESPACE;
 
-
         eventsEngine.off(that.$element(), resizeEventName);
         eventsEngine.on(that.$element(), resizeEventName, function() {
             that._dimensionChanged();
@@ -453,6 +452,5 @@ DOMComponent.defaultOptions = function(rule) {
     this._classCustomRules = this._classCustomRules || [];
     this._classCustomRules.push(rule);
 };
-
 
 module.exports = DOMComponent;

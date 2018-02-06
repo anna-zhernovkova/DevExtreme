@@ -103,7 +103,6 @@ QUnit.test("render selected item", function(assert) {
     assert.ok($list.find("." + LIST_ITEM_CLASS).eq(1).hasClass(LIST_ITEM_SELECTED_CLASS), "SelectBox has selected class, when value was set");
 });
 
-
 QUnit.module("rendering with css");
 
 QUnit.test("Right width of popup", function(assert) {
@@ -120,7 +119,6 @@ QUnit.test("Right width of popup", function(assert) {
 
     assert.equal(instance._popup.option("width"), 100 + instance.option("popupWidthExtension"));
 });
-
 
 QUnit.module("hidden input", moduleSetup);
 
@@ -217,7 +215,6 @@ QUnit.test("the hidden input should get correct values if async data source is u
     assert.equal($element.find("input[type='hidden']").val(), newValue, "first rendered option value is correct");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget hidden input should get the 'name' attribute with a correct value", function(assert) {
@@ -229,7 +226,6 @@ QUnit.test("widget hidden input should get the 'name' attribute with a correct v
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("functionality", moduleSetup);
 
@@ -889,7 +885,6 @@ QUnit.test("no items should be focused if input value is changed", function(asse
     assert.equal($list.find(".dx-state-focused").length, 0, "no items are focused");
 });
 
-
 QUnit.module("widget options", moduleSetup);
 
 QUnit.test("option onValueChanged", function(assert) {
@@ -1363,7 +1358,6 @@ QUnit.testInActiveWindow("allowClearing option changing", function(assert) {
     assert.equal($input.val(), "1", "input text has been restored");
 });
 
-
 QUnit.module("clearButton", moduleSetup);
 
 QUnit.test("'clear' button click should not open selectbox", function(assert) {
@@ -1446,7 +1440,6 @@ QUnit.test("'clear' button should reset selectedValue if 'acceptCustomValue' is 
     assert.equal($input.val(), '', "input is empty");
 });
 
-
 QUnit.module("showSelectionControls", moduleSetup);
 
 QUnit.test("showSelectionControls is true", function(assert) {
@@ -1476,7 +1469,6 @@ QUnit.test("click on item changes value", function(assert) {
 
     assert.equal($selectBox.dxSelectBox("option", "value"), 2, "value changed");
 });
-
 
 QUnit.module("editing", moduleSetup);
 
@@ -1802,7 +1794,6 @@ QUnit.test("selectionChanged should not fire if selectedItem was not changed", f
     assert.strictEqual(instance.option("selectedItem"), items[0], "selectedItem was not changed");
     assert.equal(selectionChangedHandler.callCount, 1, "selectionChanged should not fire twice");
 });
-
 
 QUnit.test("set non existing item is not reset after dataSource changing", function(assert) {
     var $selectBox = $("#selectBox").dxSelectBox({
@@ -2221,7 +2212,6 @@ QUnit.test("Value is reset to previous one after error is thrown", function(asse
     assert.equal($selectBox.dxSelectBox("option", "value"), "1", "widget value is correct");
 });
 
-
 QUnit.module("search", moduleSetup);
 
 QUnit.test("data is not displayed before min search length is exceeded", function(assert) {
@@ -2623,7 +2613,6 @@ QUnit.test("Input value should not be changed after dropdown click when 'startsw
     assert.equal($input.val(), instance.option("value"), "input should show correct value");
 });
 
-
 QUnit.module("search substitution", {
     beforeEach: function() {
         this.item = "abc";
@@ -3023,7 +3012,6 @@ QUnit.test("After load new page list should not be scrolled to selected item", f
     });
 });
 
-
 QUnit.module("Async tests");
 
 QUnit.testInActiveWindow("Value should be reset after on selectedItem after focusout", function(assert) {
@@ -3166,7 +3154,6 @@ QUnit.test("incorrect list items count after press key_down", function(assert) {
 
     assert.ok($list.find("." + LIST_ITEM_CLASS).length === 3);
 });
-
 
 QUnit.test("B251138 disabled", function(assert) {
     var instance = $("#selectBox").dxSelectBox({ dataSource: [0, 1, 2], disabled: false }).dxSelectBox('instance');
@@ -3414,7 +3401,6 @@ QUnit.test("T427723: dxSelectBox placed in a custom Angular directive throws the
     }
 });
 
-
 QUnit.module("hide on blur", moduleSetup);
 
 QUnit.testInActiveWindow("selectbox does not hide self after input blur", function(assert) {
@@ -3429,7 +3415,6 @@ QUnit.testInActiveWindow("selectbox does not hide self after input blur", functi
     $input.blur();
     assert.equal($popupContent.is(":visible"), true, "popup visible after focus out");
 });
-
 
 QUnit.module("keyboard navigation", moduleSetup);
 
@@ -3832,7 +3817,6 @@ QUnit.testInActiveWindow("value should be reset to the previous one on the 'tab'
     assert.equal(selectBox.option("value"), items[0], "widget value is reset");
 });
 
-
 QUnit.testInActiveWindow("input value should be reset to the previous one on the 'esc' press", function(assert) {
     if(devices.real().deviceType !== "desktop") {
         assert.ok(true, "not actual");
@@ -3846,7 +3830,6 @@ QUnit.testInActiveWindow("input value should be reset to the previous one on the
         selectBox = $selectBox.dxSelectBox("instance"),
         $input = $selectBox.find("." + TEXTEDITOR_INPUT_CLASS),
         keyboard = keyboardMock($input);
-
 
     keyboard.focus();
     selectBox.open();
@@ -3928,7 +3911,6 @@ QUnit.test("value should be restored after the drop down button pressed when sel
     $dropDownButton.trigger("dxclick");
     assert.equal($input.val(), "first", "value has been restored");
 });
-
 
 QUnit.module("keyboard navigation 'TAB' button", moduleSetup);
 
@@ -4116,7 +4098,6 @@ QUnit.testInActiveWindow("the 'tab' key press should focus the 'apply' button if
     assert.ok($applyButton.hasClass("dx-state-focused"), "the apply button is focused");
 });
 
-
 QUnit.module("acceptCustomValue mode", moduleSetup);
 
 QUnit.test("input value can be edited when acceptCustomValue=true", function(assert) {
@@ -4235,7 +4216,6 @@ QUnit.testInActiveWindow("dxSelectBox should not filter a dataSource when the wi
 
     assert.ok(filterDataSourceStub.notCalled, "dataSource didn't filter when widget disposed");
 });
-
 
 QUnit.module("focus policy", {
     beforeEach: function() {

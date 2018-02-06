@@ -234,7 +234,6 @@ exports.custom = function(options) {
     };
 };
 
-
 /**
  * @name ui_dialogmethods_alert
  * @publicName alert(message,title)

@@ -13,7 +13,6 @@ var TestEventMap = {
     "dxpointercancel": "testcancel"
 };
 
-
 QUnit.module("base events", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();

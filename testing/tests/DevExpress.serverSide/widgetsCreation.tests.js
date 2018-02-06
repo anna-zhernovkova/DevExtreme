@@ -81,7 +81,6 @@ Object.keys(widgets).forEach(function(widget) {
     });
 });
 
-
 var notDisposableWidgets = [
     "ActionSheet",
     "ContextMenu",

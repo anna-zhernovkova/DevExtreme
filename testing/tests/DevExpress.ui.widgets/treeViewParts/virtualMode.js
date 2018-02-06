@@ -299,7 +299,6 @@ QUnit.test("Don't render toggle icon if item.hasChildren is false", function(ass
         hasItemsExpr: "hasChildren"
     });
 
-
     var icons = this.$element.find("." + internals.TOGGLE_ITEM_VISIBILITY_CLASS);
     assert.equal(icons.length, 2);
 });
@@ -343,7 +342,6 @@ QUnit.test("Render empty checkboxes on root level", function(assert) {
         showCheckBoxesMode: "normal",
         virtualModeEnabled: true
     });
-
 
     var $checkboxes = this.$element.find(".dx-checkbox");
     assert.equal($checkboxes.length, 3, "number of checkboxes is right");
@@ -1059,7 +1057,6 @@ QUnit.test("load indicator should be removed after datasource is loaded even if 
         virtualModeEnabled: true
     });
 });
-
 
 QUnit.module("the 'createChildren' option");
 

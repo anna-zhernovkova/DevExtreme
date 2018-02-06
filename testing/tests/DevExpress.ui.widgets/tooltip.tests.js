@@ -16,7 +16,6 @@ var wrapper = function() {
 
 viewPort($("#qunit-fixture").addClass("dx-viewport"));
 
-
 QUnit.testStart(function() {
     var markup =
         '<div id="qunit-fixture">\
@@ -38,7 +37,6 @@ QUnit.test("render as tooltip", function(assert) {
     assert.ok($tooltip.hasClass(TOOLTIP_CLASS));
     assert.ok(wrapper().length);
 });
-
 
 QUnit.module("overlay integration", {
     beforeEach: function() {
@@ -89,7 +87,6 @@ QUnit.test("tooltip should have correct z-index", function(assert) {
 
     assert.equal($tooltipContent.css("z-index"), 10001, "tooltip's z-index is correct");
 });
-
 
 QUnit.module("aria accessibility");
 

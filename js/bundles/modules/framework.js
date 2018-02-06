@@ -62,7 +62,6 @@ DevExpress.framework.NavigationStack = require("../../framework/navigation_manag
 DevExpress.framework.utils = require("../../framework/utils").utils;
 DevExpress.framework.templateProvider = require("../../framework/utils").templateProvider;
 
-
 DevExpress.framework.html.CommandManager = require("../../framework/html/command_manager");
 
 DevExpress.framework.html.HtmlApplication = require("../../framework/html/html_application");

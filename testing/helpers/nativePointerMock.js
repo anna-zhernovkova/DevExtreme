@@ -110,8 +110,6 @@
                 abort: 1
             }, MOUSE_EVENTS, KEY_EVENTS, TOUCH_EVENTS);
 
-
-
         var simulateKeyEvent = function(target, type, bubbles, cancelable, view, ctrlKey, altKey, shiftKey, metaKey, keyCode, charCode) {
             if(!target) {
                 throw Error("Invalid target");
@@ -210,7 +208,6 @@
             if(!target) {
                 throw Error("Invalid target.");
             }
-
 
             if(isString(type)) {
                 if(!MOUSE_EVENTS[type.toLowerCase()] && !MS_POINTER_EVENTS[type] && !POINTER_EVENTS[type]) {
@@ -588,7 +585,6 @@
         $element[0].dispatchEvent(event);
     };
 
-
     var result = function($element) {
 
         $element = $($element);
@@ -740,7 +736,6 @@
             return options;
         };
 
-
         var originalEvent = function(options) {
             var event;
 
@@ -775,7 +770,6 @@
                     pointerType: "mouse"
                 }, options);
             }
-
 
             var event = $.extend($.Event(options.type), originalEvent(options), options);
 

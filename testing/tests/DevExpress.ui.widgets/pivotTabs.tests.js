@@ -45,7 +45,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 var position = function($element) {
     return translator.locate($element).left;
 };
@@ -53,7 +52,6 @@ var position = function($element) {
 var width = function($element) {
     return $element.outerWidth();
 };
-
 
 var mockFxAnimate = function(animation, type, output) {
     animation[type] = function($element, end, action) {
@@ -98,7 +96,6 @@ var animationCapturing = {
     }
 };
 
-
 QUnit.module("pivot tabs rendering");
 
 QUnit.test("widget should be rendered", function(assert) {
@@ -112,7 +109,6 @@ QUnit.test("selected index should be equal 0", function(assert) {
 
     assert.equal(pivotTabs.option("selectedIndex"), 0, "selectedIndex equals 0");
 });
-
 
 QUnit.module("markup");
 
@@ -221,7 +217,6 @@ QUnit.test("ghost item should be rendered", function(assert) {
     assert.equal($ghostItem.css("opacity"), 0, "ghost item is hidden");
 });
 
-
 QUnit.module("design mode", {
     beforeEach: function() {
         config({ designMode: true });
@@ -259,7 +254,6 @@ QUnit.test("tab click should be rejected", function(assert) {
     pointerMock($items.eq(1)).click();
     assert.strictEqual(pivotTabs.option("selectedIndex"), 0, "index should not change");
 });
-
 
 QUnit.module("options", {
     beforeEach: function() {
@@ -314,7 +308,6 @@ QUnit.test("swipeEnabled option", function(assert) {
     swipeEvent = pointer.start().swipeStart().swipe(-0.5).swipeEnd(-1).lastEvent();
     assert.ok(!swipeEvent.cancel, "swipe should work");
 });
-
 
 QUnit.module("options change", {
     beforeEach: function() {
@@ -380,7 +373,6 @@ QUnit.test("selected index change should change items positions in RTL mode", fu
 
     testItemsPositionsRTL($pivotTabs.find(toSelector(PIVOT_ITEM_CLASS)), items, selectedIndex, $pivotTabs.width());
 });
-
 
 QUnit.module("animations", {
     beforeEach: function() {
@@ -455,7 +447,6 @@ QUnit.test("stop", function(assert) {
         fx.stop = origFxStop;
     }
 });
-
 
 QUnit.module("selected index change animation", {
     beforeEach: function() {
@@ -606,7 +597,6 @@ QUnit.test("prepare action should not be fired", function(assert) {
     pivotTabs.option("selectedIndex", 1);
 });
 
-
 QUnit.module("interaction via tabs click", {
     beforeEach: function() {
         fx.off = true;
@@ -628,7 +618,6 @@ QUnit.test("tab click should change selected item", function(assert) {
 
     assert.equal(pivotTabs.option("selectedIndex"), 1, "item selected");
 });
-
 
 QUnit.module("interaction via swipe", {
     beforeEach: function() {
@@ -1059,7 +1048,6 @@ QUnit.test("previous animation should be stopped", function(assert) {
     assert.equal(this.completeCount, 1, "previous not finished once");
 });
 
-
 QUnit.module("pivot integration", {
     beforeEach: function() {
         this.capturedAnimations = animationCapturing.start();
@@ -1116,7 +1104,6 @@ QUnit.test("previous animation should be stopped", function(assert) {
     pivotTabs.prepare();
     assert.equal(this.completeCount, 1, "previous animation finished");
 });
-
 
 QUnit.module("default template", {
     prepareItemTest: function(data) {

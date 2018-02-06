@@ -230,7 +230,6 @@ QUnit.test("Pass codebehind arguments", function(assert) {
     assert.equal(log[0].model.viewInfo.canBack, false);
 });
 
-
 QUnit.test("View navigation stack", function(assert) {
     var ns = {
         index: function() {
@@ -364,7 +363,6 @@ QUnit.test("Auto create back command", function(assert) {
         useViewTitleAsBackText: true
     });
 
-
     app.navigate("index");
     assert.equal(app.navigationManager.currentStack.items.length, 1);
     assert.equal(app.__showViewLog[0].commands.length, 0);
@@ -400,7 +398,6 @@ QUnit.test("Auto create back command", function(assert) {
         useViewTitleAsBackText: false
     });
 
-
     app.navigate("index");
     app.navigate("view2");
     assert.equal(app.navigationManager.currentStack.items.length, 2);
@@ -423,7 +420,6 @@ QUnit.test("Back command persists its navigation stack key", function(assert) {
     app.on("afterViewSetup", function(args) {
         lastViewInfo = args.viewInfo;
     });
-
 
     app.navigate("stack1");
     assert.equal(app.navigationManager.currentStack.items.length, 1);
@@ -1266,7 +1262,6 @@ QUnit.test("resolveViewCacheKey (T292466)", function(assert) {
     assert.equal(viewShownLog[5].params.view, "view1");
     assert.equal(viewShownLog[5].params.id, "2");
 });
-
 
 QUnit.module("Application (async tests)");
 

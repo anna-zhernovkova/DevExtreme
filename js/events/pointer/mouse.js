@@ -24,7 +24,6 @@ var normalizeMouseEvent = function(e) {
     };
 };
 
-
 var observer;
 var activated = false;
 var activateStrategy = function() {
@@ -58,6 +57,5 @@ MouseStrategy.activate = activateStrategy;
 MouseStrategy.resetObserver = function() {
     observer.reset();
 };
-
 
 module.exports = MouseStrategy;

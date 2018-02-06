@@ -460,7 +460,6 @@ exports.XmlaStore = Class.inherit((function() {
             }
         });
 
-
         while(axes.length < 2) {
             axes.push([[{
                 level: 0

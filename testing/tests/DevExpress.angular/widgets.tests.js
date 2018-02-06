@@ -371,7 +371,6 @@ QUnit.test("dxTabs - navigation buttons should show/hide after showing/hiding it
     assert.equal($markup.find(".dx-tabs-nav-button").length, 2);
 });
 
-
 QUnit.module("dxDataGrid", {
     beforeEach: function() {
         QUnit.timerIgnoringCheckers.register(ignoreAngularBrowserDeferTimer);
@@ -588,12 +587,10 @@ QUnit.test("Change selection.mode option via binding and refresh", function(asse
 
     this.clock.tick(30);
 
-
     //act
     $($markup.find(".dx-data-row").eq(0).children().first()).trigger("dxclick");
 
     this.clock.tick(30);
-
 
     scope.$apply(function() {
         scope.mode = "single";
@@ -603,12 +600,10 @@ QUnit.test("Change selection.mode option via binding and refresh", function(asse
 
     this.clock.tick(30);
 
-
     //assert
     assert.equal($markup.find(".dx-header-row").eq(0).children().length, 2, "two cells in header row");
     assert.equal($markup.find(".dx-data-row").eq(0).children().length, 2, "two cells in data row");
 });
-
 
 QUnit.test("Scope refreshing count on init", function(assert) {
     var $markup = $("<div dx-data-grid=\"gridOptions\"></div> <div>{{ calculateValue() }}</div>");
@@ -740,7 +735,6 @@ QUnit.test("The hamburger button should be visible on small screen (T377800)", f
     assert.ok($markup.find(".dx-menu-hamburger-button").is(":visible"));
 });
 
-
 QUnit.module("toolbar", {
     beforeEach: function() {
         QUnit.timerIgnoringCheckers.register(ignoreAngularBrowserDeferTimer);
@@ -814,7 +808,6 @@ QUnit.test("dxPopup - bindingOptions for a title property should be worked", fun
         done();
     }, 0);
 });
-
 
 QUnit.module("accordion");
 
@@ -903,7 +896,6 @@ QUnit.test("not cleared timers not detected", function(assert) {
 
     $markup.remove();
 });
-
 
 QUnit.module("box", {
     beforeEach: function() {
@@ -998,7 +990,6 @@ QUnit.test("tree view should not crash with complex ids", function(assert) {
     initMarkup($markup, controller, this);
 });
 
-
 QUnit.module("dxScheduler", {
     beforeEach: function() {
         QUnit.timerIgnoringCheckers.register(ignoreAngularBrowserDeferTimer);
@@ -1043,7 +1034,6 @@ QUnit.test("Custom store with ISO8601 dates", function(assert) {
 
     assert.equal($markup.find(".dx-scheduler-appointment").length, 1, "appointment count");
 });
-
 
 QUnit.module("Widgets without model for template", {
     beforeEach: function() {
@@ -1158,7 +1148,6 @@ QUnit.test("Scope for template with 'noModel' option is not destroyed after clea
 
     assert.ok(scope.$root);
 });
-
 
 QUnit.module("dxValidator", {
     beforeEach: function() {

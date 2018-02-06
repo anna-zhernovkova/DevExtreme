@@ -180,7 +180,6 @@ var dropDownAppointments = Class.inherit({
         settings[0].isCompact = false;
         settings[0].virtual = false;
 
-
         var appointmentData = {
             itemData: itemData,
             settings: settings

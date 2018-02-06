@@ -111,7 +111,6 @@ var TestComponent = Component.inherit({
     }
 });
 
-
 QUnit.module("default");
 
 QUnit.test("options api - 'option' method", function(assert) {
@@ -1005,7 +1004,6 @@ QUnit.test("the _getOptionValue method sets the context for function option (T57
     assert.deepEqual(value, context, "context is correct");
 });
 
-
 QUnit.module("defaultOptions", {
     beforeEach: function() {
         this.originalDevice = devices.current();
@@ -1042,7 +1040,6 @@ QUnit.test("set default options for specific device platform", function(assert) 
 
     devices._currentDevice = { platform: "ios" };
     assert.equal(new TestComponent().option("test"), "value", "test option is configured for ios");
-
 
     devices._currentDevice = { platform: "android" };
     assert.notEqual(new TestComponent().option("test"), "value", "test option is not configured for android");

@@ -10,7 +10,6 @@ var $ = require("../core/renderer"),
     when = deferredUtils.when,
     Deferred = deferredUtils.Deferred;
 
-
 exports.svgCreator = {
     _markup: "",
     _imageArray: {},

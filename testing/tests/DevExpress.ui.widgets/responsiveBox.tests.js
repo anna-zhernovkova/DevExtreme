@@ -27,7 +27,6 @@ var BOX_CLASS = "dx-box",
     RESPONSIVE_BOX_CLASS = "dx-responsivebox",
     SCREEN_SIZE_CLASS_PREFIX = RESPONSIVE_BOX_CLASS + "-screen-";
 
-
 var moduleConfig = {
     beforeEach: function() {
         responsiveBoxScreenMock.setup.call(this);
@@ -36,7 +35,6 @@ var moduleConfig = {
         responsiveBoxScreenMock.teardown.call(this);
     }
 };
-
 
 QUnit.module("render", moduleConfig);
 
@@ -56,7 +54,6 @@ QUnit.test("empty widget shouldn't raise exception on resize (T259132)", functio
     $("#responsiveBox").dxResponsiveBox({});
     this.updateScreenSize();
 });
-
 
 QUnit.module("layouting", moduleConfig);
 
@@ -287,7 +284,6 @@ QUnit.test("rowspan", function(assert) {
     assert.equal($boxItems.eq(0).height(), firstRowSize + secondRowSize, "first item size");
     assert.equal($boxItems.eq(1).height(), thirdRowSize, "second item size");
 });
-
 
 QUnit.test("rowspan and colspan", function(assert) {
     var rows = [{ ratio: 1, baseSize: 100 }, { ratio: 2, baseSize: 200 }, { ratio: 1, baseSize: 200 }];
@@ -659,7 +655,6 @@ QUnit.test("dxUpdate should not be bubbling to parent container", function(asser
     }
 });
 
-
 QUnit.module("behavior");
 
 QUnit.test("update does not rerender items", function(assert) {
@@ -674,7 +669,6 @@ QUnit.test("update does not rerender items", function(assert) {
 
     assert.equal($responsiveBox.find(".test").get(0), $div.get(0), "item was not rerendered");
 });
-
 
 QUnit.module("templates");
 
@@ -701,7 +695,6 @@ QUnit.test("custom item renderer", function(assert) {
     assert.equal(templateContext, "dxResponsiveBox", "Correct context");
     assert.equal($.trim($responsiveBox.text()), "test", "item rendered");
 });
-
 
 QUnit.module("template rendering", moduleConfig);
 
@@ -775,7 +768,6 @@ QUnit.test("widget rendered correctly after rows option was changed", function(a
     assert.ok($responsiveBox.find(".dx-item .dx-widget").dxWidget("instance"), "widget is created");
 });
 
-
 QUnit.module("collision", moduleConfig);
 
 QUnit.test("item located at the same cell of another item", function(assert) {
@@ -832,7 +824,6 @@ QUnit.test("item spanning out of bounds", function(assert) {
     assert.equal($.trim($responsiveBox.text()), "01", "the former item rendered");
 });
 
-
 QUnit.module("events", moduleConfig);
 
 QUnit.test("onLayoutChanged", function(assert) {
@@ -880,7 +871,6 @@ QUnit.test("onItemClick", function(assert) {
 
     $(responsiveBox.itemElements()).eq(0).trigger("dxclick");
 });
-
 
 QUnit.module("option", moduleConfig);
 

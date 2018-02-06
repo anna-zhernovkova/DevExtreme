@@ -31,7 +31,6 @@ var ROWS_VIEW_CLASS = "rowsview",
     EDIT_MODE_ROW = "row",
     EDIT_MODE_FORM = "form";
 
-
 function isGroupRow($row) {
     return $row && $row.hasClass(GROUP_ROW_CLASS);
 }
@@ -231,7 +230,6 @@ var KeyboardNavigationController = core.ViewController.inherit({
         return columnIndex;
     },
 
-
     _isCellValid: function($cell) {
         if(isDefined($cell)) {
             var rowsView = this.getView("rowsView"),
@@ -273,7 +271,6 @@ var KeyboardNavigationController = core.ViewController.inherit({
             $focusElement;
 
         $focusedCell && $focusedCell.is("td") && $focusedCell.removeAttr("tabIndex");
-
 
         if(isGroupRow($row)) {
             $focusElement = $row;

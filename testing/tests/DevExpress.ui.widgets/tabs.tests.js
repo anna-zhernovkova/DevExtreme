@@ -47,7 +47,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 QUnit.module("general");
 
 QUnit.test("init", function(assert) {
@@ -203,7 +202,6 @@ QUnit.test("select action should not be triggered when disabled item is disabled
     assert.equal(selectedIndex, undefined);
 });
 
-
 QUnit.module("tab select action");
 
 QUnit.test("should not be triggered when is already selected", function(assert) {
@@ -278,7 +276,6 @@ QUnit.test("regression: B251795", function(assert) {
     assert.equal(itemSelectFired, 0);
 });
 
-
 QUnit.module("badges");
 
 QUnit.test("item badge render", function(assert) {
@@ -293,7 +290,6 @@ QUnit.test("item badge render", function(assert) {
     assert.ok($element.find(".dx-tab:eq(0) .dx-badge").length, "badge on the first item exists");
     assert.ok(!$element.find(".dx-tab:eq(1) .dx-badge").length, "badge on the second item is not exist");
 });
-
 
 QUnit.module("widget sizing render");
 
@@ -389,7 +385,6 @@ QUnit.test("Tabs in multiple mode", function(assert) {
 
     assert.equal(instance.option("selectedItems").length, 2, "selected two items in multiple mode");
 });
-
 
 QUnit.module("horizontal scrolling");
 
@@ -500,7 +495,6 @@ QUnit.test("hold on right nav button should scroll tabs to right to end", functi
 
     this.clock.restore();
 });
-
 
 QUnit.test("left nav button should be rendered if showNavButtons=true and possible to scroll left", function(assert) {
     var $element = $("#scrollableTabs").dxTabs({
@@ -721,7 +715,6 @@ QUnit.test("tabs should scroll to the selected item on init", function(assert) {
     assert.ok(itemOffset > contentLeft, "item offset is greater than left boundary");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria role", function(assert) {
@@ -733,7 +726,6 @@ QUnit.test("aria role", function(assert) {
     assert.equal($element.attr("role"), "tablist", "role of the tab list is correct");
     assert.equal($item.attr("role"), "tab", "role of the tab list is correct");
 });
-
 
 QUnit.module("default template", {
     prepareItemTest: function(data) {

@@ -975,7 +975,6 @@ module.exports = function($, gridCore, columnResizingReordering, domUtils, commo
             });
         };
 
-
         options && options.controllers && $.extend(that._controllers, options.controllers);
         options && options.views && $.extend(that._views, options.views);
 

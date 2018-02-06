@@ -41,7 +41,6 @@ var PANORAMA_CLASS = "dx-panorama",
     PANORAMA_ITEM_MOVE_DURATION = 300,
     PANORAMA_ITEM_MOVE_EASING = "cubic-bezier(.40, .80, .60, 1)";
 
-
 var moveBackground = function($element, position) {
     $element.css("background-position", position + "px 0%");
 };
@@ -104,7 +103,6 @@ var endAnimation = function(elements) {
         fx.stop(element, true);
     });
 };
-
 
 var PanoramaItemsRenderStrategy = Class.inherit({
 

@@ -250,7 +250,6 @@ QUnit.test("Initialize resizedCallbacks", function(assert) {
     assert.strictEqual(resizedWidth, 110);
 });
 
-
 QUnit.test("Initialize from options without caption", function(assert) {
     this.applyOptions({
         columns: [{ dataField: 'TestField1' }, { dataField: 'TestField2' }]
@@ -416,7 +415,6 @@ QUnit.test("getVisibleColumns for several grouped column", function(assert) {
     assert.equal(visibleColumns[1].cssClass, 'dx-command-expand');
     assert.equal(visibleColumns[2].dataField, 'TestField1');
 });
-
 
 QUnit.test("getVisibleColumns for several grouped column when showWhenGrouped defined", function(assert) {
     this.applyOptions({
@@ -599,7 +597,6 @@ QUnit.test("setCellValue for column with dataField", function(assert) {
     //assert
     assert.deepEqual(data, { Name: 'Alex', Address: { City: 'London' } }, "data after setCellValue");
 });
-
 
 QUnit.test("getVisibleColumns with hidden columns", function(assert) {
     //arrange
@@ -1351,7 +1348,6 @@ QUnit.test("Reinitialize from array store on init", function(assert) {
 
     this.columnsController.init();
 
-
     var visibleColumns = this.columnsController.getVisibleColumns();
 
     assert.deepEqual(processColumnsForCompare(visibleColumns, ['dataField', 'visible', 'dataType']), [
@@ -1625,7 +1621,6 @@ QUnit.test("Initialize Lookup column when calculateDisplayValue is defined as st
     assert.strictEqual(lookup.calculateCellValue(1), undefined, 'lookup calculateCellValue do not work');
 });
 
-
 QUnit.test("Initialize Lookup column when calculateDisplayValue is defined as function", function(assert) {
     var array = [
         { name: 'Alex', age: 15, category_id: 1, category: { name: "Category 1" } },
@@ -1775,7 +1770,6 @@ QUnit.test("Initialize from not loaded array store when sort defined", function(
     assert.ok(!this.getColumns().length);
 });
 
-
 QUnit.test("Initialize from array store when items with different data", function(assert) {
     var dataSource = new DataSource([
         { name1: 'Alex', age1: 15 },
@@ -1833,7 +1827,6 @@ QUnit.test("Converting dates for array store", function(assert) {
 
     //act
     this.columnsController.applyDataSource(dataSource);
-
 
     //assert
     var columns = this.columnsController.getVisibleColumns();
@@ -2006,7 +1999,6 @@ QUnit.test("Not update dates for array store after inserting", function(assert) 
         { name: 'Max', birthDate: '1989/7/7' }
     ]);
 });
-
 
 QUnit.test("parsing dates", function(assert) {
     var array = [
@@ -2262,7 +2254,6 @@ QUnit.test("Initialize grouping from dataSource and sorting from columns", funct
 
     dataSource.load();
 
-
     //act
 
     this.columnsController.applyDataSource(dataSource);
@@ -2294,7 +2285,6 @@ QUnit.test("Initialize grouping from dataSource when sortOrder is defined in col
     });
 
     dataSource.load();
-
 
     //act
 
@@ -2333,7 +2323,6 @@ QUnit.test("Second Initialize from array store after reset", function(assert) {
     //act
     this.columnsController.reset();
     this.columnsController.applyDataSource(dataSource2);
-
 
     assert.deepEqual(this.getColumns(), [
         { index: 0, visible: true, showEditorAlways: false, allowFiltering: true, dataField: 'id', caption: 'Id', alignment: 'right', dataType: 'number' },
@@ -2397,7 +2386,6 @@ QUnit.test("Second Initialize from array when regenerateColumnsByVisibleItems en
     this.columnsController.applyDataSource(dataSource1);
     this.columnsController.applyDataSource(dataSource2);
 
-
     assert.deepEqual(this.getColumns(), [
         { index: 0, visible: true, showEditorAlways: false, allowFiltering: true, dataField: 'id', caption: 'Id', alignment: 'right', dataType: 'number' },
         { index: 1, visible: true, showEditorAlways: false, allowFiltering: true, dataField: 'value', caption: 'Value', alignment: 'left', dataType: 'string' }
@@ -2426,7 +2414,6 @@ QUnit.test("Second Initialize from array when regenerateColumnsByVisibleItems di
     //act
     this.columnsController.applyDataSource(dataSource1);
     this.columnsController.applyDataSource(dataSource2);
-
 
     assert.deepEqual(this.getColumns(), [
         { index: 0, visible: true, showEditorAlways: false, allowFiltering: true, dataField: 'name', caption: 'Name', alignment: 'left', dataType: 'string' },
@@ -3470,7 +3457,6 @@ QUnit.test("change column on customizeColumns", function(assert) {
     assert.strictEqual(this.columnsController.getVisibleColumns()[0].alignment, 'left');
 });
 
-
 QUnit.test("add column on customizeColumns", function(assert) {
     var customizeColumnsCount = 0;
 
@@ -3883,7 +3869,6 @@ QUnit.test("move column when grouped columns exists", function(assert) {
     assert.equal(this.columnsController.getVisibleColumns()[4].dataField, 'field5');
 });
 
-
 QUnit.test("move column to end when out of array range", function(assert) {
     this.applyOptions({ columns: ["field1", "field2", "field3", "field4", "field5"] });
 
@@ -3914,7 +3899,6 @@ QUnit.test('Reset columnIndex after move column', function(assert) {
     assert.equal(this.columnsController._columns[3].index, 3, 'columns 3 index');
     assert.equal(this.columnsController._columns[4].index, 4, 'columns 4 index');
 });
-
 
 QUnit.test("move column from group panel to headers", function(assert) {
     var columnsChangedArgs;
@@ -4291,7 +4275,6 @@ QUnit.test("sortOrder should not be reset after column is ungrouped", function(a
     assert.strictEqual(this.columnsController.getVisibleColumns()[0].groupIndex, undefined);
 });
 
-
 QUnit.test("lastSortOrder should not be updated after changing the group index", function(assert) {
     //arrange
     this.applyOptions({ columns: [{ dataField: "field1", sortOrder: "desc" }, { dataField: "field2", groupIndex: 1 }, "field3"] });
@@ -4422,7 +4405,6 @@ QUnit.test("update column groupIndex after endUpdate", function(assert) {
     this.columnsController.columnsChanged.add(function(e) {
         columnsChangedArgs.push(e);
     });
-
 
     this.columnsController.endUpdate();
 
@@ -4637,7 +4619,6 @@ QUnit.test("change column option validationRules at runtime", function(assert) {
     this.columnsController.reset();
     this.columnsController.applyDataSource(dataSource);
 
-
     assert.deepEqual(this.columnsController.getVisibleColumns()[1].validationRules, [{ type: "required" }], "validationRules in internal column options");
     assert.deepEqual(this.option("columns")[1].validationRules, [{ type: "required" }], "validationRules in public column options");
 
@@ -4741,7 +4722,6 @@ QUnit.test("columnsChanged on update exist column parameter and applyDataSource"
 
     //act
     this.columnsController.applyDataSource(dataSource);
-
 
     assert.ok(this.columnsController.getColumns()[0].visible);
     assert.strictEqual(columnsChangedCount, 1);
@@ -4917,7 +4897,6 @@ QUnit.test("disabled allowSorting for all columns", function(assert) {
     assert.strictEqual(this.columnsController.getColumns()[2].allowSorting, false);
     assert.strictEqual(this.columnsController.getColumns()[2].sortOrder, undefined);
 });
-
 
 QUnit.test("disabled allowSorting for one column", function(assert) {
     this.applyOptions({ columns: ["field1", { dataField: "field2", allowSorting: false }, "field3"], commonColumnSettings: { allowSorting: true }, sorting: { mode: 'single' } });
@@ -5605,7 +5584,6 @@ QUnit.test("getGroupDataSourceParameters. One group column when autoExpandGroup 
     assert.deepEqual(groupParameters, [{ selector: 'field1', desc: false, isExpanded: true }]);
 });
 
-
 QUnit.test("getGroupDataSourceParameters. Several group columns", function(assert) {
     this.applyOptions({
         columns: [{ dataField: 'field1', groupIndex: 1 }, { dataField: 'field2', groupIndex: 0, autoExpandGroup: true }]
@@ -5670,7 +5648,6 @@ QUnit.test("display text for lookup column with calculateGroupValue", function(a
 
     this.columnsController.applyDataSource(createMockDataSource(array));
 
-
     var groupParameters = this.columnsController.getGroupDataSourceParameters();
     var visibleColumns = this.columnsController.getVisibleColumns();
 
@@ -5698,7 +5675,6 @@ QUnit.test("display text for lookup column with calculateDisplayValue", function
     });
 
     this.columnsController.applyDataSource(createMockDataSource(array));
-
 
     var groupParameters = this.columnsController.getGroupDataSourceParameters();
     var visibleColumns = this.columnsController.getVisibleColumns();
@@ -6368,7 +6344,6 @@ QUnit.test('Get user state after columns reordering', function(assert) {
     assert.deepEqual(columns[1], { "dataField": "TestField2", "dataType": "string", "visibleIndex": 0, "visible": true, "width": 50, "sortOrder": "asc", sortIndex: 1, "filterValue": "TestFilter2", "selectedFilterOperation": "startswith" });
 });
 
-
 QUnit.test('Apply user state', function(assert) {
     //arrange
     var that = this,
@@ -6468,7 +6443,6 @@ QUnit.test('Apply user state for dynamically added band column', function(assert
         ownerBand: 1
     });
 });
-
 
 //T282665
 QUnit.test('Apply user state when operations is not allowed', function(assert) {
@@ -6737,7 +6711,6 @@ QUnit.test('No apply user state when dataField in columns and user state are dif
     var that = this,
         columns;
 
-
     //act
     that.columnsController.setUserState([
         { "dataField": "Test1", "visibleIndex": 0, "visible": true, "width": 50, "sortOrder": "desc", "filterValue": "Test1", "selectedFilterOperation": "startswith" },
@@ -6763,7 +6736,6 @@ QUnit.test('apply user state when several calculated columns without names', fun
     var that = this,
         columns;
 
-
     //act
     that.columnsController.setUserState([
             { "visibleIndex": 0, "visible": true, "width": 50, "sortOrder": "desc", "filterValue": "Test1", "selectedFilterOperation": "startswith" },
@@ -6788,7 +6760,6 @@ QUnit.test('apply user state when several columns with same dataField', function
         //arrange
     var that = this,
         columns;
-
 
         //act
     that.columnsController.setUserState([
@@ -7967,7 +7938,6 @@ QUnit.test("isBandColumnsUsed should return true when bandcolumns are set", func
     //assert
     assert.ok(this.columnsController.isBandColumnsUsed(), "band column is used");
 });
-
 
 QUnit.test("isBandColumnsUsed should return false when bandcolumns are not set", function(assert) {
     //arrange

@@ -200,7 +200,6 @@ QUnit.test("dxinactive should not be fired immediately after other dxinactive un
     $anotherNeighbor.off(feedbackEvents.inactive);
 });
 
-
 QUnit.module("feedback mouse", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -255,7 +254,6 @@ QUnit.test("dxactive should be fired on parent element if child was active befor
     this.clock.tick(0);
 });
 
-
 QUnit.module("feedback simulator", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -297,7 +295,6 @@ QUnit.test("dxinactive should be fired after mouseup with timeout", function(ass
     this.clock.tick(100);
     assert.equal(inactiveFired, 1, "inactive fired after timeout");
 });
-
 
 QUnit.module("delegated feedback touch", {
     beforeEach: function() {
@@ -406,7 +403,6 @@ QUnit.test("dxinactive should be fired after remove DOM node", function(assert) 
     $elementContent.detach();
     this.clock.tick(10);
 });
-
 
 QUnit.module("feedback lock", {
     beforeEach: function() {

@@ -1517,7 +1517,6 @@ function setDiscreteType(series) {
         assert.equal(parentGroup.children[1], this.renderer.stub("g").getCall(2).returnValue);
         assert.equal(parentGroup.children[2], this.renderer.stub("g").getCall(4).returnValue);
 
-
         assert.deepEqual(errorBarGroup.attr.lastCall.args, [{
             "class": "dxc-error-bars",
             "clip-path": "wideClipId",
@@ -1882,7 +1881,6 @@ function setDiscreteType(series) {
         assert.equal(this.renderer.stub("path").callCount, 1);
         assert.equal(this.renderer.stub("path").getCall(0).args[1], "bezier", "line element");
         assert.equal(this.renderer.stub("path").getCall(0).returnValue.stub("append").lastCall.args[0], series._elementsGroup);
-
 
         var element = this.renderer.stub("path").getCall(0).returnValue,
             elementPoints = element._stored_settings.points;
@@ -2269,7 +2267,6 @@ function setDiscreteType(series) {
         assert.strictEqual(series._markersGroup.stub("animate").lastCall.args[0].opacity, 1);
     });
 
-
     QUnit.test("Draw two segments with animation complete animation", function(assert) {
         var series = this.series;
         this.series.updateData([{ arg: 1, val: 10 }, { arg: 2, val: 20 }, { arg: 3, val: null }, { arg: 4, val: 44 }]);
@@ -2286,7 +2283,6 @@ function setDiscreteType(series) {
         assert.strictEqual(series._labelsGroup.stub("animate").lastCall.args[0].opacity, 1);
         assert.strictEqual(series._markersGroup.stub("animate").lastCall.args[0].opacity, 1);
     });
-
 
     QUnit.module("Spline. Update animation", {
         beforeEach: function() {

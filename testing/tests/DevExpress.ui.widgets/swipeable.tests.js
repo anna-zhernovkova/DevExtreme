@@ -23,7 +23,6 @@ QUnit.test("render", function(assert) {
     assert.ok(this.element.hasClass("dx-swipeable"));
 });
 
-
 $.each({
     "onStart": "start",
     "onUpdated": "",

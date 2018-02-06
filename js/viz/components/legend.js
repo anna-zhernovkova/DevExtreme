@@ -868,7 +868,6 @@ extend(legendPrototype, {
     // BaseWidget_layout_implementation
 });
 
-
 exports.plugin = {
     name: "legend",
     init: function() {

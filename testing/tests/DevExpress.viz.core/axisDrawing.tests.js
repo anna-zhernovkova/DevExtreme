@@ -7990,7 +7990,6 @@ QUnit.test("Add correction to right margin for grid width if right is less than 
     assert.strictEqual(margins.top, 0, "top");
 });
 
-
 QUnit.test("Do not add correction to right margin for grid width if right margin is greter than grid width. Horizontal axis", function(assert) {
     //arrange
     this.updateOptions({

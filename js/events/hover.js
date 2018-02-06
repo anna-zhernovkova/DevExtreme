@@ -16,7 +16,6 @@ var HOVERSTART_NAMESPACE = "dxHoverStart",
     HOVEREND = "dxhoverend",
     POINTERLEAVE_NAMESPACED_EVENT_NAME = eventUtils.addNamespace(pointerEvents.leave, HOVEREND_NAMESPACE);
 
-
 var Hover = Class.inherit({
 
     noBubble: true,

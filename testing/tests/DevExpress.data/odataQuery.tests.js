@@ -123,7 +123,6 @@ QUnit.test("JSONP for cross-domain requests", function(assert) {
         .always(done);
 });
 
-
 QUnit.module("Query string generation", moduleWithMockConfig);
 QUnit.test("sort", function(assert) {
     assert.expect(2);
@@ -1300,7 +1299,6 @@ QUnit.test("aggregates", function(assert) {
         })
         .always(done);
 });
-
 
 QUnit.module("Error handling", moduleConfig);
 QUnit.test("generic HTTP error", function(assert) {

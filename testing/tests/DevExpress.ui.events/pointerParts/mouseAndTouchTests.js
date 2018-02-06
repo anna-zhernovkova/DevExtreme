@@ -86,7 +86,6 @@ QUnit.test("dxpointerup triggers twice on real devices", function(assert) {
     assert.equal(triggered, 1);
 });
 
-
 $.each({
     "dxpointerdown": "mouseDown",
     "dxpointermove": "mouseMove",
@@ -182,7 +181,6 @@ QUnit.test("pointers in dxpointer events should be updated on mouse move", funct
     });
     simulateMouseEvent(this.$element, "mousemove", { clientX: 50 });
 });
-
 
 $.each({
     "dxpointerdown": "touchstart",

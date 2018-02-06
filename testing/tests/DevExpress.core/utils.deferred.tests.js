@@ -69,7 +69,6 @@ QUnit.test("when should be rejected if one of deferred was rejected", function(a
     assert.deepEqual(failHandlerCount, 1, "rejected only once");
 });
 
-
 QUnit.module("promise");
 
 QUnit.test("converted deferred should be resolved when source resolved", function(assert) {
@@ -99,7 +98,6 @@ QUnit.test("converted deferred should be rejected when source rejected", functio
         });
     });
 });
-
 
 QUnit.module("deferred");
 

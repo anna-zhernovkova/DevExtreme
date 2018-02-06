@@ -35,7 +35,6 @@ var ViewEngineTester = ViewEngine.inherit({
     }
 });
 
-
 QUnit.module("ViewEngine load external templates", {
     beforeEach: function() {
         ajaxMock.setup({
@@ -224,8 +223,6 @@ QUnit.test("Garbage dynamic markup is not put in cache (T303333)", function(asse
     });
 
 });
-
-
 
 QUnit.module("ViewEngine");
 
@@ -524,7 +521,6 @@ QUnit.test("View placeholder content should override the existing layout's one (
     assert.equal($render.find(".header").text(), "view specific header");
 });
 
-
 QUnit.test("Apply layout - placeholder in view (B230507)", function(assert) {
     var engine = new ViewEngineTester({ $root: $("#apply-layout-placeholder-in-view") });
     var $view = engine.getViewTemplate("index");
@@ -570,7 +566,6 @@ QUnit.test("Render view complex", function(assert) {
     var viewInfo = { viewName: "index", model: model };
 
     //engine.afterViewSetup(viewInfo);
-
 
     var $markup = engine._testRenderView(viewInfo);
 

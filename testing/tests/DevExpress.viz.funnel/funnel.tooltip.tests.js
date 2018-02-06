@@ -11,7 +11,6 @@ var $ = require("jquery"),
 
 dxFunnel.addPlugin(funnelTooltip.plugin);
 
-
 var tooltipEnvironment = $.extend({}, environment, {
     beforeEach: function() {
         var that = this;

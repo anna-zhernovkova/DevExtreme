@@ -221,7 +221,6 @@ QUnit.test("Check that header filter shows without errors when using KO", functi
         .first()
         .trigger("dxclick"); //Without the fix for T269782 we will get error after that
 
-
     //assert
     assert.ok(true);
 });

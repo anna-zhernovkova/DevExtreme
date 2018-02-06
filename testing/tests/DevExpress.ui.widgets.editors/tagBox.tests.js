@@ -62,7 +62,6 @@ var moduleSetup = {
     }
 };
 
-
 QUnit.module("rendering", moduleSetup);
 
 QUnit.test("rendering", function(assert) {
@@ -158,7 +157,6 @@ QUnit.test("tagBox should not render an empty tag when item is not found in the 
     assert.equal($tags.length, 1, "only one tag should be rendered");
     assert.equal($tags.text(), "item 1", "first tag should be rendered");
 });
-
 
 QUnit.module("select element");
 
@@ -287,7 +285,6 @@ QUnit.test("unselect item with value '0'", function(assert) {
     assert.deepEqual(tagBoxInstance.option("value"), [1]);
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget select element should get the 'name' attribute with a correct value", function(assert) {
@@ -299,7 +296,6 @@ QUnit.test("widget select element should get the 'name' attribute with a correct
 
     assert.equal($select.attr("name"), expectedName, "the select element 'name' attribute has correct value");
 });
-
 
 QUnit.module("list selection", moduleSetup);
 
@@ -588,7 +584,6 @@ QUnit.test("removing tags after clicking the 'clear' button", function(assert) {
     assert.equal($element.find("." + TAGBOX_TAG_CLASS).length, 1, "one item is chosen");
 });
 
-
 QUnit.module("multi tag support", {
     beforeEach: function() {
         this.getTexts = function($tags) {
@@ -847,7 +842,6 @@ QUnit.test("tagbox should show count of selected items when only first page is l
     assert.equal($tagBox.find("." + TAGBOX_MULTI_TAG_CLASS).text(), "5 selected", "text is correct");
 });
 
-
 QUnit.module("the 'value' option", moduleSetup);
 
 QUnit.test("value should be passed by value (not by reference)", function(assert) {
@@ -880,7 +874,6 @@ QUnit.test("reset()", function(assert) {
     tagBox.reset();
     assert.deepEqual(tagBox.option("value"), [], "Value should be reset");
 });
-
 
 QUnit.module("the 'displayExpr' option", moduleSetup);
 
@@ -919,7 +912,6 @@ QUnit.test("displayExpr change at runtime", function(assert) {
     var $tag = $element.find("." + TAGBOX_TAG_CONTENT_CLASS);
     assert.equal($tag.text(), "one", "tag render displayValue");
 });
-
 
 QUnit.module("the 'onValueChanged' option", moduleSetup);
 
@@ -1025,7 +1017,6 @@ QUnit.test("onValueChanged should not be fired on the 'backspace' key press if t
     keyboardMock($input).press('backspace');
     assert.notOk(spy.called, "onValueChanged is not fired");
 });
-
 
 QUnit.module("the 'onCustomItemCreating' option", moduleSetup);
 
@@ -1195,7 +1186,6 @@ QUnit.test("tags should have a right display texts for acceptCustomValue and pre
     assert.equal($tags.eq(1).text(), "two");
 });
 
-
 QUnit.module("placeholder");
 
 QUnit.test("placeholder should appear after tag deleted", function(assert) {
@@ -1227,7 +1217,6 @@ QUnit.test("placeholder is hidden after tag is removed if the search value is ex
     $($tagBox.find("." + TAGBOX_TAG_REMOVE_BUTTON_CLASS)).trigger("dxclick");
     assert.notOk($placeholder.is(":visible"), "placeholder is hidden");
 });
-
 
 QUnit.module("tag template", moduleSetup);
 
@@ -1313,7 +1302,6 @@ QUnit.test("selected list items should be correct if the default tag template is
     $($list.find(".dx-list-item").eq(0)).trigger("dxclick");
     assert.deepEqual(list.option("selectedItems"), [items[0]], "the 'selectedItems' list option is correct");
 });
-
 
 QUnit.module("showSelectionControls", moduleSetup);
 
@@ -1543,7 +1531,6 @@ QUnit.test("T378748 - the tab key press should not lead to error while navigatin
 
     assert.expect(0);
 });
-
 
 QUnit.module("keyboard navigation", {
     _init: function(options) {
@@ -1905,7 +1892,6 @@ QUnit.testInActiveWindow("popup should be closed on the 'esc' key press if the s
     assert.ok(this.$element.hasClass("dx-state-focused"), "widget is focused");
     assert.notOk(this.instance.option("opened"), "popup is closed");
 });
-
 
 QUnit.module("keyboard navigation through tags", {
     _init: function() {
@@ -2441,7 +2427,6 @@ QUnit.test("the input caret should not move while navigating through tags in the
 
     assert.ok(event.isDefaultPrevented(), "the event default is prevented, so the input caret did not move");
 });
-
 
 QUnit.module("searchEnabled", moduleSetup);
 
@@ -3111,7 +3096,6 @@ QUnit.test("Second search should be work, when first search are running", functi
     assert.equal($(".dx-list-item").length, 1, "search was completed");
 });
 
-
 QUnit.module("the 'acceptCustomValue' option", moduleSetup);
 
 QUnit.test("acceptCustomValue", function(assert) {
@@ -3163,7 +3147,6 @@ QUnit.test("adding the custom tag should clear input value (T385448)", function(
 
     assert.equal($input.val(), "", "the input is empty");
 });
-
 
 QUnit.module("the 'selectedItems' option", moduleSetup);
 
@@ -3248,7 +3231,6 @@ QUnit.test("all items are selected correctly when the last item is deselected fr
     assert.equal(selectedItems.length, 6, "All items should be selected");
 });
 
-
 QUnit.module("the 'onSelectionChanged' option", moduleSetup);
 
 QUnit.test("the 'onSelectionChanged' action should contain correct 'addedItems' argument", function(assert) {
@@ -3291,7 +3273,6 @@ QUnit.test("the 'onSelectionChanged' action should contain correct 'removedItems
     $($listItems.eq(1)).trigger("dxclick");
     assert.deepEqual(spy.args[3][0].removedItems, [], "not items in the 'removedItems' argument after item is selected");
 });
-
 
 QUnit.module("the 'fieldTemplate' option", moduleSetup);
 
@@ -3398,7 +3379,6 @@ QUnit.test("value should be cleared after deselect all items if fieldTemplate an
     assert.deepEqual($tagBox.dxTagBox("option", "value"), [], "value was cleared");
     assert.equal($field.text(), "", "text was cleared after the deselect");
 });
-
 
 QUnit.module("applyValueMode = 'useButtons'", {
     _init: function(options) {
@@ -3671,7 +3651,6 @@ QUnit.test("value should keep initial tag order with object items", function(ass
     assert.deepEqual(this.instance.option("value"), [items[1].id, items[0].id], "tags order is correct");
 });
 
-
 QUnit.test("value should keep initial tag order with object items and 'this' valueExpr", function(assert) {
     this.reinit({
         items: [{ id: 1, name: "Alex" }, { id: 2, name: "John" }, { id: 3, name: "Max" }],
@@ -3693,7 +3672,6 @@ QUnit.test("value should keep initial tag order with object items and 'this' val
 
     assert.deepEqual(this.instance.option("value"), [items[1], items[0]], "tags order is correct");
 });
-
 
 QUnit.module("the 'onSelectAllValueChanged' option", {
     _init: function(options) {
@@ -3768,7 +3746,6 @@ QUnit.test("the 'onSelectAllValueChanged' action is fired only one time if one i
     $($list.find(".dx-list-item").eq(0)).trigger("dxclick");
     assert.equal(this.spy.callCount, 1, "count is correct");
 });
-
 
 QUnit.module("single line mode", {
     beforeEach: function() {
@@ -3992,7 +3969,6 @@ QUnit.test("focusOut should be prevented when tagContainer clicked - T454876", f
 
     $inputWrapper.trigger("mousedown");
 });
-
 
 QUnit.module("keyboard navigation through tags in single line mode", {
     beforeEach: function() {
@@ -4218,7 +4194,6 @@ QUnit.test("tags container should be scrolled to the start after the last tag lo
 
     assert.equal($container.scrollLeft(), expectedScrollPosition, "tags container is scrolled to the start");
 });
-
 
 QUnit.module("dataSource integration", moduleSetup);
 
@@ -4495,7 +4470,6 @@ QUnit.test("the 'values' option should work correctly", function(assert) {
     tagBox.option("value", [items[0]]);
     assert.deepEqual(tagBox.option("value"), [items[0]], "the 'value' option works correctly with writing");
 });
-
 
 QUnit.module("regression", {
     beforeEach: function() {

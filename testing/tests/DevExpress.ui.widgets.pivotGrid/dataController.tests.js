@@ -957,7 +957,6 @@ QUnit.test("Pass wordWrapEnabled option to HeaderInfo", function(assert) {
     ]);
 });
 
-
 QUnit.test("columnsInfo when cells descriptions count > 1 when sorting by summary", function(assert) {
     var dataController = new DataController({
         dataSource: {
@@ -2281,7 +2280,6 @@ QUnit.test("update options", function(assert) {
         }
     });
 
-
     function assertFunction() {
         assert.deepEqual(dataController.getColumnsInfo(), [
             [
@@ -2678,7 +2676,6 @@ QUnit.test("Hide empty columns in different groups", function(assert) {
             ]
         }
     });
-
 
     assert.deepEqual(prepareCellsInfo(dataController.getCellsInfo()), [
         [
@@ -3448,7 +3445,6 @@ QUnit.test("T492326. Not set colspan in rowInfo item if all values and totals ar
     ]);
 });
 
-
 QUnit.module("Showing total on the top", moduleConfig);
 
 QUnit.test("Get header info. Show column totals near", function(assert) {
@@ -3641,7 +3637,6 @@ QUnit.test("Get header info with near total and two level expanded", function(as
         },
         texts: texts
     });
-
 
     assert.deepEqual(dataController.getColumnsInfo(), [
         [
@@ -4323,7 +4318,6 @@ QUnit.test("dataAdapter for columnsScrollController", function(assert) {
     assert.ok(!dataSourceChanged.called);
 });
 
-
 QUnit.test("dataSourceChanged should fired only on data change", function(assert) {
     var dataController = new DataController(this.getOptions({
             dataSource: {
@@ -4493,7 +4487,6 @@ QUnit.test("Paging methods. Get/set", function(assert) {
     assert.strictEqual(dataController.columnPageSize(100), 100, "set column page size");
     assert.strictEqual(dataController.columnPageSize(), 100, "get column page size after setting");
 
-
     assert.strictEqual(dataController.rowPageIndex(), 0, "get default row page index");
     assert.strictEqual(dataController.rowPageIndex(100), 100, "set row page index");
     assert.strictEqual(dataController.rowPageIndex(), 100, "get row page index after setting");
@@ -4601,7 +4594,6 @@ QUnit.test("Get data by pageIndex, pageSize, pageCount. Rows", function(assert) 
                 "type": "D"
             }
         ],
-
 
         [
             {
@@ -4931,7 +4923,6 @@ QUnit.test("Get data by pageIndex, pageSize, pageCount. Rows first level when th
     dataController._rowsScrollController.endPageIndex.returns(6);
 
     dataController.rowPageSize(2);
-
 
     assert.deepEqual(dataController.getRowsInfo(), [
         [
@@ -5318,7 +5309,6 @@ QUnit.test("get cells info", function(assert) {
     dataController._rowsScrollController.beginPageIndex.returns(1);
     dataController._rowsScrollController.endPageIndex.returns(2);
 
-
     assert.deepEqual(prepareCellsInfo(dataController.getCellsInfo()), [
         [
             { columnType: "T", rowType: "D", text: "2" },
@@ -5490,7 +5480,6 @@ QUnit.test("T327502. DataController changed once on update", function(assert) {
     assert.ok(changedCallback.calledOnce);
 });
 
-
 QUnit.module("StateStoring", {
     beforeEach: function() {
         moduleConfig.beforeEach.call(this);
@@ -5596,7 +5585,6 @@ QUnit.module("StateStoring", {
                 fields: [{}]
             }
         });
-
 
         assert.deepEqual(dataController._dataSource.fields(), [{
             caption: "",

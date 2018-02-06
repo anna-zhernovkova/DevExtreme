@@ -155,7 +155,6 @@ QUnit.test('addInterval day overflow', function(assert) {
     assert.deepEqual(newDate, new Date(2012, 1, 1));
 });
 
-
 QUnit.test('addInterval date object', function(assert) {
     //arrange, act
     var newDate = dateUtils.addInterval(new Date(2012, 1, 1, 1, 1, 1, 1), {
@@ -539,7 +538,6 @@ QUnit.test('quarter 4', function(assert) {
     assert.equal(dateUtils.getQuarter(10), 3, '11 month');
     assert.equal(dateUtils.getQuarter(11), 3, '12 month');
 });
-
 
 QUnit.module("Periods");
 

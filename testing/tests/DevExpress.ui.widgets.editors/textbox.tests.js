@@ -156,7 +156,6 @@ QUnit.test("T218573 - clearButton should be hidden if mode is 'search' and the '
     assert.equal($(".dx-clear-button-area").length, 0, "clear button is not rendered");
 });
 
-
 QUnit.module("options changing", {
     beforeEach: function() {
         this.element = $("#textbox").dxTextBox({});
@@ -331,7 +330,6 @@ QUnit.test("change width", function(assert) {
 
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
-
 
 QUnit.module("aria accessibility");
 

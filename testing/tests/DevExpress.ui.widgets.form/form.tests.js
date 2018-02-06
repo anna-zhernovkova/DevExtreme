@@ -216,7 +216,6 @@ QUnit.test("Form doesn't refresh on dimension changed if colCount is not auto", 
         instance = $formContainer.dxForm("instance"),
         refreshStub = sinon.stub(instance, "_refresh");
 
-
     resizeCallbacks.fire();
 
     //assert
@@ -2507,7 +2506,6 @@ QUnit.test("tabElement argument of tabs.template option is correct", function(as
     });
 });
 
-
 QUnit.test("Update editorOptions of an editor inside the tab", function(assert) {
     //arrange
     var testContainer = $("#form"),
@@ -3405,7 +3403,6 @@ QUnit.test("One column screen should be customizable with screenByWidth option o
             items: ["name", "lastName", "room", "isDeveloper"]
         }).dxForm("instance");
 
-
     assert.equal($form.find(".dx-single-column-item-content").length, 0, "There are no single column items");
 
     //act
@@ -3610,7 +3607,6 @@ QUnit.test("Column count for group may depend on screen factor", function(assert
         }]
     });
 
-
     assert.equal($form.find(".dx-group-colcount-3").length, 1, "first group should have 3 columns");
     assert.equal($form.find(".dx-group-colcount-1").length, 1, "second group should have 1 column");
 
@@ -3648,7 +3644,6 @@ QUnit.test("Column count for tabs may depend on screen factor", function(assert)
         }]
     });
 
-
     assert.equal($form.find(".dx-field-item-tab.dx-col-2").length, 1, "tab has 3 groups on md screen");
 
     //act
@@ -3682,7 +3677,6 @@ QUnit.test("Cached colCount options doesn't leak", function(assert) {
             items: ["name", "lastName"]
         }]
     }).dxForm("instance");
-
 
     assert.equal(instance._cachedColCountOptions.length, 2, "root + group item colCount options cached");
 

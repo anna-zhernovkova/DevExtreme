@@ -169,7 +169,6 @@ QUnit.test("Click", function(assert) {
     assert.strictEqual(spy.lastCall.args[0].item, widget.getAllItems()[2], "item");
 });
 
-
 QUnit.test("Legend click", function(assert) {
     this.renderer.offsetTemplate = { left: 40, top: 30 };
     var itemClick = sinon.spy(),

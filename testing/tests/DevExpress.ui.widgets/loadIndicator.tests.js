@@ -103,7 +103,6 @@ QUnit.test("rendered markup", function(assert) {
     assert.equal($indicator.find("." + LOADINDICATOR_SEGMENTN + "1").length, 0, "Numerated segment not created");
 });
 
-
 QUnit.module("", {});
 
 QUnit.test("LoadIndicator with custom indicator", function(assert) {

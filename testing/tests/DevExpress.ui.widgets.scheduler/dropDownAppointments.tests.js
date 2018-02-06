@@ -154,7 +154,6 @@ QUnit.test("DropDown menu should have a correct button template", function(asser
     assert.equal($buttonTemplate.html().toLowerCase(), "<span>1 more</span>", "Button template is OK");
 });
 
-
 QUnit.test("DropDown menu button should have a correct width", function(assert) {
     var $dropDownMenu = this.renderDropDownAppointmentsContainer(),
         menu;

@@ -170,7 +170,6 @@ QUnit.test("viewRemoved event is raised after removing view", function(assert) {
         viewRemovedLog.push(e.viewInfo);
     });
 
-
     viewCache.setView("1", { test: "test" });
     assert.equal(viewRemovedLog.length, 0);
     viewCache.removeView("1");

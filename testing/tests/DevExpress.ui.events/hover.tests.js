@@ -228,7 +228,6 @@ QUnit.test("hover events does not fire unexpectedly after update multiple subscr
     var firstElement = $firstContainer.find(selector)[0];
     var secondElement = $secondContainer.find(selector)[0];
 
-
     $firstContainer.trigger($.Event(POINTER_ENTER, { which: 1, pointers: [], target: firstElement }));
     $firstContainer.trigger($.Event(POINTER_LEAVE, { which: 1, pointers: [], target: firstElement }));
     $secondContainer.trigger($.Event(POINTER_ENTER, { which: 1, pointers: [], target: secondElement }));

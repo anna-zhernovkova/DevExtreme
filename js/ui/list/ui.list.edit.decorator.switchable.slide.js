@@ -33,7 +33,6 @@ var LIST_EDIT_DECORATOR = "dxListEditDecorator",
     SLIDE_MENU_ANIMATION_DURATION = 400,
     SLIDE_MENU_ANIMATION_EASING = "cubic-bezier(0.075, 0.82, 0.165, 1)";
 
-
 registerDecorator(
     "menu",
     "slide",

@@ -11,7 +11,6 @@ var $ = require("../../core/renderer"),
     registerDecorator = require("./ui.list.edit.decorator_registry").register,
     EditDecorator = require("./ui.list.edit.decorator");
 
-
 var SELECT_DECORATOR_ENABLED_CLASS = "dx-list-select-decorator-enabled",
 
     SELECT_DECORATOR_SELECT_ALL_CLASS = "dx-list-select-all",

@@ -13,7 +13,6 @@ var $ = require("jquery"),
 
 $('<div id="test-container">').appendTo("#qunit-fixture");
 
-
 factory.RangeContainer = function(parameters) {
     parameters.className = "test-range-container";
     var item = new TestElement(parameters);

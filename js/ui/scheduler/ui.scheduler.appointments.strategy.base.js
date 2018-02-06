@@ -126,7 +126,6 @@ var BaseRenderingStrategy = Class.inherit({
                         height: height
                     }, position[j], startDate);
 
-
                     if(this._isRtl()) {
                         position[j].left = currentMaxAllowedPosition;
                     }

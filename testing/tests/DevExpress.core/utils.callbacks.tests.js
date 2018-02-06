@@ -51,7 +51,6 @@ QUnit.test("Fired method", function(assert) {
     assert.ok(this.Callbacks.fired(), "Callback fired");
 });
 
-
 QUnit.test("Call all Callbacks in a list with the given context", function(assert) {
     //arrange
     var context = {},

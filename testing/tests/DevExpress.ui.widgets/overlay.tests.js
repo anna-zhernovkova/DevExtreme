@@ -117,7 +117,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("render", moduleConfig);
 
 QUnit.test("overlay class should be added to overlay", function(assert) {
@@ -360,7 +359,6 @@ QUnit.test("resize callbacks", function(assert) {
     assert.equal(onResizeFired, 1, "onResize fired");
     assert.equal(onResizeEndFired, 1, "onResizeEnd fired");
 });
-
 
 QUnit.module("visibility", moduleConfig);
 
@@ -617,7 +615,6 @@ QUnit.test("dxresize event should be fired only once when container shows first 
     }
 });
 
-
 QUnit.module("position", moduleConfig);
 
 QUnit.test("position change should not show the content if the overlay is hidden", function(assert) {
@@ -723,7 +720,6 @@ QUnit.test("overlay should be correctly animated with custom 'animation.show.to'
         top: "100px"
     }).appendTo($container);
 
-
     var widgetPosition = {
         my: "bottom",
         at: "bottom",
@@ -749,7 +745,6 @@ QUnit.test("overlay should be correctly animated with custom 'animation.show.to'
     var expectedPosition = positionUtils.calculate($content, widgetPosition);
     assert.deepEqual(positionUtils.setup($content), { top: expectedPosition.v.location, left: expectedPosition.h.location }, "overlay positioned correctly");
 });
-
 
 QUnit.module("shading", moduleConfig);
 
@@ -804,7 +799,6 @@ QUnit.test("shading color should be customized by option", function(assert) {
     overlay.option("shading", false);
     assert.ok(!/rgb\(255,\s?0,\s?0\)/.test($wrapper.css("background-color")));
 });
-
 
 QUnit.module("dimensions", moduleConfig);
 
@@ -905,7 +899,6 @@ QUnit.test("dimensions should be shrunk correctly with min sizes changes dynamic
     instance.option("minHeight", 200);
     assert.equal($content.height(), 200);
 });
-
 
 QUnit.module("animation", moduleConfig);
 
@@ -1181,7 +1174,6 @@ QUnit.test("overlay should be able to get animation function", function(assert) 
     }
 });
 
-
 QUnit.module("content", moduleConfig);
 
 QUnit.test("content ready action should be fired if was set at initialization", function(assert) {
@@ -1294,7 +1286,6 @@ QUnit.test("contentTemplate option support dynamic change", function(assert) {
     assert.equal($.trim($overlay.dxOverlay("$content").text()), "template2", "template rerendered");
 });
 
-
 QUnit.module("defer rendering", moduleConfig);
 
 QUnit.test("behavior if option set to true", function(assert) {
@@ -1323,7 +1314,6 @@ QUnit.test("behavior if option set to false", function(assert) {
     instance.show();
     assert.ok(!onContentReadyFired, "after show overlay content do not render");
 });
-
 
 QUnit.module("close on outside click", moduleConfig);
 
@@ -1446,7 +1436,6 @@ QUnit.test("overlays' priority", function(assert) {
 
     assert.equal(overlay1.option("visible"), false, "First overlay is now hidden, because it has become active");
 });
-
 
 QUnit.test("closeOnOutsideClick works after first overlay hiding", function(assert) {
     var $overlay1 = $("#overlay").dxOverlay({
@@ -1768,7 +1757,6 @@ QUnit.test("target scroll subscriptions should be unsubscribed for current overl
     assert.equal($overlay1.dxOverlay("option", "visible"), false, "overlay1 closed");
 });
 
-
 QUnit.module("container", moduleConfig);
 
 QUnit.test("content should not be moved to container", function(assert) {
@@ -1968,7 +1956,6 @@ QUnit.test("widget should react on viewport change with correct container", func
     }
 });
 
-
 QUnit.module("target", moduleConfig);
 
 QUnit.test("target option should be present in positions", function(assert) {
@@ -2015,7 +2002,6 @@ QUnit.test("target option should be present in positions", function(assert) {
         assert.equal(overlay.option(item).get(0), $target.get(0), item + " set");
     });
 });
-
 
 QUnit.module("back button callback", moduleConfig);
 
@@ -2069,7 +2055,6 @@ QUnit.test("overlay should be hidden after callback fired if overlay showed by s
     hideTopOverlayCallback.fire();
     assert.equal(instance.option("visible"), false, "hidden after back button event");
 });
-
 
 QUnit.module("API", moduleConfig);
 
@@ -2184,7 +2169,6 @@ QUnit.test("content()", function(assert) {
     assert.ok(instance.$content().hasClass(OVERLAY_CONTENT_CLASS), "API method content() returns correct jQuery object");
 });
 
-
 QUnit.module("integration tests", moduleConfig);
 
 QUnit.test("wrong gallery render on start in overlay widget (B232427)", function(assert) {
@@ -2230,7 +2214,6 @@ QUnit.test("change width", function(assert) {
 
     assert.strictEqual(instance.$content().outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
-
 
 QUnit.module("drag", moduleConfig);
 
@@ -2574,7 +2557,6 @@ QUnit.test("resized overlay should not have default dimensions after toggle visi
     assert.deepEqual([$overlayContent.width(), $overlayContent.height()], [250, 250], "correct size");
 });
 
-
 QUnit.module("drag & resize", moduleConfig);
 
 QUnit.test("dragged overlay should have default dimensions after toggle visibility", function(assert) {
@@ -2595,7 +2577,6 @@ QUnit.test("dragged overlay should have default dimensions after toggle visibili
 
     assert.deepEqual([$overlayContent[0].style.width, $overlayContent[0].style.height], ["auto", "auto"], "correct size");
 });
-
 
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
@@ -2732,7 +2713,6 @@ QUnit.test("overlay doesn't handle keyboard propagated events", function(assert)
     assert.equal(this.overlay.option("visible"), true, "overlay doesn't handle keyboard propagated events");
 });
 
-
 QUnit.module("focus policy", {
     beforeEach: function() {
         this.tabEvent = $.Event("keydown", { keyCode: 9 });
@@ -2860,7 +2840,6 @@ QUnit.test("focusin event should not be propagated (T342292)", function(assert) 
 
     $(document).off(".test");
 });
-
 
 QUnit.module("scrollable interaction", {
     beforeEach: function() {
@@ -3052,7 +3031,6 @@ QUnit.test("scroll event should not prevent text selection in content", function
 
     assert.ok(e._cancelPreventDefault, "overlay should set special flag for prevent default cancelling");
 });
-
 
 QUnit.module("specifying base z-index", moduleConfig);
 

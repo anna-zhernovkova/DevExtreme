@@ -948,7 +948,6 @@ QUnit.test("Cancel collapse row on a collapsing event", function(assert) {
     assert.equal(items.length, 2, "count item");
 });
 
-
 QUnit.module("Sorting", { beforeEach: function() {
     this.items = [
         { id: 1, parentId: 0, name: "Name 3", age: 19 },
@@ -1034,7 +1033,6 @@ QUnit.test("sortOrder changing by columnOption should be applied", function(asse
     assert.equal(items[1].data.name, "Name 2", "item 1 name value");
     assert.equal(items[2].data.name, "Name 1", "item 2 name value");
 });
-
 
 QUnit.module("Remote Operations", { beforeEach: function() {
     this.items = [

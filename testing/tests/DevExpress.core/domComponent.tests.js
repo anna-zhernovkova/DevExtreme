@@ -980,7 +980,6 @@ QUnit.test("Dispose: events are cleaned, dxremove is fired", function(assert) {
     assert.notOk(clickRun);
 });
 
-
 QUnit.test("get element", function(assert) {
     var element = $("#component").TestComponent(),
         instance = dataUtils.data(element[0], "TestComponent");

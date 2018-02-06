@@ -266,7 +266,6 @@ define(function(require, exports, module) {
         }
     });
 
-
     QUnit.test("Fallback to default (en) culture", function(assert) {
         var originalLocale = Globalize.locale().locale;
         try {

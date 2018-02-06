@@ -64,7 +64,6 @@ function isOnClickApplyFilterMode(that) {
     return that.option("filterRow.applyFilter") === "onClick";
 }
 
-
 var ColumnHeadersViewFilterRowExtender = (function() {
     var getEditorInstance = function($editorContainer) {
         var $editor = $editorContainer && $editorContainer.children(),
@@ -107,7 +106,6 @@ var ColumnHeadersViewFilterRowExtender = (function() {
             return isOnClickApplyFilterMode(that) && column.bufferedSelectedFilterOperation !== undefined ? column.bufferedSelectedFilterOperation : column.selectedFilterOperation;
         }
     };
-
 
     var getFilterValue = function(that, columnIndex, $editorContainer) {
         var column = that._columnsController.columnOption(columnIndex),

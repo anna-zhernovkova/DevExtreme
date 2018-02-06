@@ -65,7 +65,6 @@ var environment = {
     }
 };
 
-
 QUnit.module('Canvas', environment);
 
 QUnit.test('Create canvas when size option is defined', function(assert) {
@@ -417,7 +416,6 @@ QUnit.test('Tooltip is not created on widget creation', function(assert) {
     assert.ok(!("_tooltip" in bullet));
     assert.deepEqual(this.renderer.root.attr.lastCall.args, [{ "pointer-events": "visible" }]);
 });
-
 
 QUnit.module('Structure', environment);
 

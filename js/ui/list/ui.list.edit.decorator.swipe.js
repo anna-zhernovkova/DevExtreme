@@ -6,7 +6,6 @@ var translator = require("../../animation/translator"),
     EditDecorator = require("./ui.list.edit.decorator"),
     Deferred = require("../../core/utils/deferred").Deferred;
 
-
 registerDecorator(
     "delete",
     "swipe",

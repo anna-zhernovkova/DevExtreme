@@ -58,7 +58,6 @@ var ValidationGroup = DOMComponent.inherit({
             Validator.getInstance($(validatorContainer))._initGroupRegistration();
         });
 
-
         $element.find(".dx-validationsummary").each(function(_, summaryContainer) {
             ValidationSummary.getInstance($(summaryContainer))._initGroupRegistration();
         });

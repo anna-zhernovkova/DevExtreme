@@ -9,7 +9,6 @@ var $ = require("jquery"),
 /* global insertMockFactory, MockTranslator, MockAxis */
 require("../../helpers/chartMocks.js");
 
-
 require("viz/chart");
 
 var createSeries = function(options, renderSettings) {
@@ -109,7 +108,6 @@ var environment = {
         };
     }
 };
-
 
 var checkTwoGroups = function(assert, series) {
     var parentGroup = series._group,

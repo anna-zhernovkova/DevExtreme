@@ -52,7 +52,6 @@ QUnit.test("date parsing with yyyy-MM-ddThh", function(assert) {
     assert.equal(parsedDate.toString(), value.toString());
 });
 
-
 QUnit.test("date parsing with yyyy-MM-ddThh:mm", function(assert) {
     var value = new Date(2017, 0, 20, 11, 12),
         stringValue = "2017-01-20T11:12";

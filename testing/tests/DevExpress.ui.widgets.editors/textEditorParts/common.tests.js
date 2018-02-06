@@ -38,7 +38,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("general");
 
 QUnit.test("markup init", function(assert) {
@@ -298,7 +297,6 @@ QUnit.test("dxTextEditor with height option should have min-height auto style on
     assert.equal($input.get(0).style.minHeight, "0px", "min-height inline style is defined");
 });
 
-
 QUnit.module("text option", moduleConfig);
 
 QUnit.test("Typing in input should affext 'text' option, but not 'value'", function(assert) {
@@ -324,7 +322,6 @@ QUnit.test("'Text' option should not be 'undefined'", function(assert) {
     assert.equal(textEditor.option("text"), "not original", "text set correctly again");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget input should get the 'name' attribute with a correct value", function(assert) {
@@ -336,7 +333,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("options changing", moduleConfig);
 
@@ -721,7 +717,6 @@ QUnit.testInActiveWindow("Remove .dx-state-focused class after disabled of the e
     assert.ok(!$textEditor.hasClass("dx-state-focused"), "dx-state-focused was removed");
 });
 
-
 QUnit.module("api", moduleConfig);
 
 QUnit.test("focus method", function(assert) {
@@ -876,7 +871,6 @@ QUnit.test("event should be fired once when there are multiple subscriptions", f
     assert.equal(keyUpSpy.callCount, 2, "keyUp event handled twice");
 });
 
-
 QUnit.module("regressions", moduleConfig);
 
 QUnit.test("event handlers are not set", function(assert) {
@@ -889,7 +883,6 @@ QUnit.test("event handlers are not set", function(assert) {
     ];
 
     var input = this.input;
-
 
     this.element.dxTextEditor({});
 
@@ -1041,7 +1034,6 @@ QUnit.test("TextEditor with mask option should firing the 'onChange' event", fun
     $input.triggerHandler("blur");
     assert.equal(handler.callCount, 2, "'change' event is not fired after focus out without value change");
 });
-
 
 QUnit.module("deprecated options");
 

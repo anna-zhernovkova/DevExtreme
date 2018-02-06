@@ -295,7 +295,6 @@ var getDatesByRecurrence = function(options) {
         result = result.concat(iterationDates);
     });
 
-
     result.sort(function(a, b) {
         return a - b;
     });

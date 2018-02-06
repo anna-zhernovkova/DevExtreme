@@ -18,7 +18,6 @@ var DX_SWIPEABLE = "dxSwipeable",
         "onCancel": "dxswipecancel"
     };
 
-
 var Swipeable = DOMComponent.inherit({
 
     _getDefaultOptions: function() {

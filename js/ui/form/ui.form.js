@@ -1380,7 +1380,6 @@ var Form = Widget.inherit({
             separatorIndex = fieldName.indexOf(fieldSeparator),
             resultPath = [];
 
-
         while(separatorIndex !== -1) {
             resultPath.push(fieldName.substr(0, separatorIndex));
             fieldName = fieldName.substr(separatorIndex + 1);

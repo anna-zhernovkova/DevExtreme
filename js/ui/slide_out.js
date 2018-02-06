@@ -89,7 +89,6 @@ var SlideOut = CollectionWidget.inherit({
             */
             menuPosition: "normal",
 
-
             /**
             * @name dxSlideOutOptions_menuGrouped
             * @publicName menuGrouped

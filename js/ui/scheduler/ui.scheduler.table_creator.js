@@ -37,7 +37,6 @@ var SchedulerTableCreator = {
                     }
                 }
 
-
                 var cellDataObject,
                     dataKey,
                     dataValue;

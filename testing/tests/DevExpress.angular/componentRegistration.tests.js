@@ -1465,7 +1465,6 @@ QUnit.test("Dispose nested containers", function(assert) {
     assert.ok(innerDisposed);
 });
 
-
 QUnit.test("widget inside two nested containers", function(assert) {
     var $markup = $(
         "<div dx-test-container='{ bindingOptions: { text: \"vm.outerText\" } }'>" +
@@ -1706,7 +1705,6 @@ QUnit.test("creates anonymous template from its contents", function(assert) {
     assert.equal(listItems.text(), "123");
 });
 
-
 QUnit.test("correct scope as model for template", function(assert) {
     var TestContainer = Widget.inherit({
         _getDefaultOptions: function() {
@@ -1871,7 +1869,6 @@ QUnit.test("Widget options does not override scope properties", function(assert)
     });
 
     registerComponent("dxTestContainer1", TestContainer);
-
 
     var $container = $("<div/>").appendTo(FIXTURE_ELEMENT()),
         $controller = $("<div/>")
@@ -2115,7 +2112,6 @@ QUnit.test("watcher type changed (T145604)", function(assert) {
         ), controller),
         scope = $markup.scope();
 
-
     for(var i = 0; i < 100; i++) {
         data.push({
             text: "Item text " + i
@@ -2313,7 +2309,6 @@ QUnit.test("template.render() - data parameter is Scope", function(assert) {
             "</div>"
         ).appendTo($container);
 
-
     angular.bootstrap($container, ["testApp"]);
 
     assert.equal($markup.find(".text").text(), "my text");
@@ -2422,7 +2417,6 @@ QUnit.test("child collection widget should be rendered correctly when template p
 
     assert.equal($markup.dxParentWidget("option", "templatesRenderAsynchronously"), FIXTURE_ELEMENT().find(".child-widget").dxChildWidget("option", "templatesRenderAsynchronously"), "templatesRenderAsynchronously provided");
 });
-
 
 QUnit.test("memory leaks in CollectionWidget", function(assert) {
     var TestCollectionContainer = CollectionWidget.inherit({
@@ -2579,7 +2573,6 @@ QUnit.test("Watchers executed after component initialization (T334273)", functio
 
     var element = $('<div custom-directive></div>').appendTo(FIXTURE_ELEMENT());
 
-
     angular.injector(['app']).invoke(function($rootScope, $compile) {
         $compile(element)($rootScope);
     });
@@ -2709,7 +2702,6 @@ QUnit.test("change option in component action handler (phase $apply) ", function
     var $markup = $("<div dx-action-test=\"{ onHandler: vm.handler,  bindingOptions: { value: 'vm.value' }}\"></div>")
             .appendTo(this.$controller),
         scope;
-
 
     this.testApp.controller("my-controller", function($scope) {
         scope = $scope;
@@ -2844,7 +2836,6 @@ QUnit.test("No watchers on disposing", function(assert) {
     assert.equal(scope.$$watchers.length, 1);// NOTE: One uncleared watcher created for dxDigestCallbacks service
     assert.ok(!!instance);
 });
-
 
 QUnit.test("Component shouldn't watch digest callback after dispose", function(assert) {
     var beginCounter = 0,

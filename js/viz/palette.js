@@ -297,7 +297,6 @@ function BlendColors(palette, parameters) {
             currentColorIndex = 0,
             cleanColorIndices = [];
 
-
         if(parameters.keepLastColorInEnd) {
             cleanColorIndices = distributeColors(count - 2, colorInGroups, 1, [0, count - 1]);
         } else {
@@ -311,7 +310,6 @@ function BlendColors(palette, parameters) {
         }
 
         result = blendColors(result, count);
-
 
         return result;
     }

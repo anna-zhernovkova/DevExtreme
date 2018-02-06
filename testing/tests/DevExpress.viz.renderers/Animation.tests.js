@@ -534,7 +534,6 @@ var $ = require("jquery"),
         assert.ok(firstTick !== secondTick);
     });
 
-
     QUnit.test('Calculate animation progress', function(assert) {
         var animation = new this.Animation(this.element, this.params, $.extend(this.options, { duration: 10000 }));
         animation._startTime = new Date(2013, 0, 1, 0, 0, 0, 0);

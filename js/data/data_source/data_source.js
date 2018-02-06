@@ -128,8 +128,6 @@ function normalizeDataSourceOptions(options, normalizationOptions) {
     return options;
 }
 
-
-
 function normalizeStoreLoadOptionAccessorArguments(originalArguments) {
     switch(originalArguments.length) {
         case 0:

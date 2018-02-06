@@ -8,7 +8,6 @@ var $ = require("jquery"),
     ajaxMock = require("../../../helpers/ajaxMock.js"),
     browser = require("core/utils/browser");
 
-
 require("ui/map");
 
 var LOCATIONS = testing.LOCATIONS,

@@ -19,7 +19,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 require("common.css!");
 
 require("ui/data_grid/ui.data_grid");
@@ -37,7 +36,6 @@ var $ = require("jquery"),
 function getTextFromCell(cell) {
     return $(cell).text();
 }
-
 
 function createGridView(options, userOptions) {
     this.options = $.extend({}, {
@@ -797,7 +795,6 @@ function createGridView(options, userOptions) {
             scrollableUpdateCallCount++;
         };
 
-
         //act
         dataController.changed.fire({
             changeType: 'append',
@@ -1008,7 +1005,6 @@ function createGridView(options, userOptions) {
         });
 
         columnsHeader = testElement.find('table').find('tbody > tr').first().find('td');
-
 
         //assert
         assert.equal(columnsHeader.eq(0).outerWidth(), 20);
@@ -1596,7 +1592,6 @@ function createGridView(options, userOptions) {
             },
             gridView = this.createGridView(defaultOptions),
             testElement = $('<div />').width(300).appendTo($('#container'));
-
 
         gridView.render(testElement);
 

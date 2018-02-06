@@ -40,7 +40,6 @@ var $ = require("jquery"),
     MockEditingController = dataGridMocks.MockEditingController,
     fx = require("animation/fx");
 
-
 var gridCore = require("ui/data_grid/ui.data_grid.core"),
     dragEvents = require("events/drag"),
     columnResizingReordering = require("ui/data_grid/ui.data_grid.columns_resizing_reordering"),
@@ -1268,7 +1267,6 @@ function getEvent(options) {
             { columnIndex: 1, optionName: "width", optionValue: "45.000%" }
         ], 'update column options after resizing');
     });
-
 
     QUnit.test('Set new width of column in the separatorMoving callback function RTL', function(assert) {
         //arrange

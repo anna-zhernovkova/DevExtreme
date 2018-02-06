@@ -10,7 +10,6 @@ var eventsEngine = require("../../events/core/events_engine"),
     realDevice = require("../../core/devices").real(),
     compareVersions = require("../../core/utils/version").compare;
 
-
 var SCROLL_INIT_EVENT = "dxscrollinit",
     SCROLL_START_EVENT = "dxscrollstart",
     SCROLL_MOVE_EVENT = "dxscroll",
@@ -18,11 +17,9 @@ var SCROLL_INIT_EVENT = "dxscrollinit",
     SCROLL_STOP_EVENT = "dxscrollstop",
     SCROLL_CANCEL_EVENT = "dxscrollcancel";
 
-
 var isWheelEvent = function(e) {
     return e.type === "dxmousewheel";
 };
-
 
 var Locker = Class.inherit((function() {
 
@@ -55,7 +52,6 @@ var Locker = Class.inherit((function() {
     };
 
 })());
-
 
 var TimeoutLocker = Locker.inherit((function() {
 
@@ -103,7 +99,6 @@ var TimeoutLocker = Locker.inherit((function() {
 
 })());
 
-
 var WheelLocker = TimeoutLocker.inherit((function() {
 
     var WHEEL_UNLOCK_TIMEOUT = 400;
@@ -138,7 +133,6 @@ var WheelLocker = TimeoutLocker.inherit((function() {
     };
 
 })());
-
 
 var PointerLocker = TimeoutLocker.inherit((function() {
 
@@ -201,7 +195,6 @@ var PointerLocker = TimeoutLocker.inherit((function() {
     })());
 
 })();
-
 
 var ScrollEmitter = GestureEmitter.inherit((function() {
 

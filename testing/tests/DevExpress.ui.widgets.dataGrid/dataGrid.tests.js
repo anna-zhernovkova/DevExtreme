@@ -2261,7 +2261,6 @@ QUnit.test("resize on change window size", function(assert) {
         ]
     });
 
-
     //act
     $dataGrid.width(400);
     resizeCallbacks.fire();
@@ -2287,7 +2286,6 @@ QUnit.test("resize on change width", function(assert) {
     //act
     dataGrid.option("width", 400);
 
-
     //assert
     assert.equal($dataGrid.find(".dx-datagrid-table").width(), 400);
 });
@@ -2310,7 +2308,6 @@ QUnit.test("resize on change height from fixed to auto", function(assert) {
     //act
     dataGrid.option("height", "auto");
 
-
     //assert
     assert.equal($dataGrid.find(".dx-datagrid-rowsview").get(0).style.height, "");
 });
@@ -2331,7 +2328,6 @@ QUnit.test("resize on change height from auto to fixed", function(assert) {
 
     //act
     dataGrid.option("height", 400);
-
 
     //assert
     assert.equal(Math.round($dataGrid.find(".dx-datagrid").height()), 400);
@@ -2357,7 +2353,6 @@ QUnit.test("resize column event when columnAutoWidth enabled", function(assert) 
             ]
         }),
         dataGrid = $dataGrid.dxDataGrid("instance");
-
 
     //assert
     assert.equal(resizedWidths.length, 1);
@@ -2582,7 +2577,6 @@ QUnit.test("max-height from styles", function(assert) {
     //assert
     assert.equal(Math.round($dataGrid.find(".dx-datagrid").height()), 400, "height is equal max-height");
 
-
     //act
     dataGrid.searchByText("test");
 
@@ -2608,9 +2602,7 @@ QUnit.test("scrollTop position must be kept after updateDimensions when scrollin
         }),
         dataGrid = $dataGrid.dxDataGrid("instance");
 
-
     var scrollable = $dataGrid.find(".dx-scrollable").dxScrollable("instance");
-
 
     //act
     scrollable.scrollTo({ x: 0, y: 50 });
@@ -2714,7 +2706,6 @@ QUnit.test("resize on change visibility", function(assert) {
             { dataField: "field4" }
         ]
     });
-
 
     //act
     $dataGrid.show();
@@ -3541,7 +3532,6 @@ QUnit.test("Keep vertical browser scroll position after refresh with freespace r
     });
     dataGrid.pageIndex(1);
 
-
     $("#qunit-fixture").scrollTop(500);
 
     //assert
@@ -4048,7 +4038,6 @@ QUnit.test("updateDimensions during grouping when fixed to right column exists",
             }
         });
 
-
     loadResult = $.Deferred();
     dataGrid.columnOption("field1", "groupIndex", 0);
 
@@ -4080,7 +4069,6 @@ QUnit.test("columnHeaders visibility after change some options", function(assert
             mode: 'multiple'
         }
     });
-
 
     //assert
     assert.ok(!dataGrid.isReady(), "dataGrid is not ready");
@@ -4684,7 +4672,6 @@ QUnit.test("selection.showCheckBoxesMode change", function(assert) {
 
     assert.equal($(dataGrid.$element()).find(".dx-select-checkboxes-hidden").length, 1, "select checkboxes are hidden");
 
-
     //act
     dataGrid.option("selection.showCheckBoxesMode", "none");
     dataGrid.option("selection.showCheckBoxesMode", "always");
@@ -4705,7 +4692,6 @@ QUnit.test("selection.mode change from single to multiple", function(assert) {
     });
 
     assert.equal($(dataGrid.$element()).find(".dx-row.dx-selection").length, 1, "one row is selected");
-
 
     //act
     dataGrid.option("selection.mode", "multiple");
@@ -4783,7 +4769,6 @@ QUnit.test("dataSource pageSize change", function(assert) {
     //assert
     assert.equal(dataGrid.getController("data")._dataSource.pageSize(), 50);
 });
-
 
 QUnit.test("columns change", function(assert) {
     //arrange, act
@@ -5355,7 +5340,6 @@ QUnit.test("scrolling change after creating before data is rendered", function(a
     assert.ok(!dataGrid.getView("pagerView").isVisible(), "pager visibility");
 });
 
-
 //T120699
 QUnit.test("showRowLines/showColumnLines change", function(assert) {
     //arrange, act
@@ -5387,7 +5371,6 @@ QUnit.test("showRowLines/showColumnLines change", function(assert) {
     //assert
     assert.equal(resizeCalledCount, 2, "resize called");
 });
-
 
 QUnit.test("dataSource instance of DataSource", function(assert) {
     //arrange, act
@@ -5557,7 +5540,6 @@ QUnit.test("onContentReady after change page", function(assert) {
     assert.equal($("#dataGrid").find(".dx-data-row").length, 1);
     assert.equal(contentReadyCallCount, 2);
 });
-
 
 QUnit.test("pageIndex return deferred when change page", function(assert) {
     var doneCalled = false;
@@ -5790,7 +5772,6 @@ QUnit.test("Assign column options with beginUpdate/endUpdate", function(assert) 
     dataGrid.getController("columns").columnsChanged.add(function(e) {
         columnsChangedArgs.push(e);
     });
-
 
     //act
     dataGrid.beginUpdate();
@@ -6290,7 +6271,6 @@ QUnit.testInActiveWindow("Tab key on editor should focus next cell if editing mo
 
     navigationController._keyDownHandler({ key: "tab", originalEvent: $.Event("keydown", { target: $(":focus").get(0) }) });
     this.clock.tick();
-
 
     //act
     navigationController._keyDownHandler({ key: "tab", originalEvent: $.Event("keydown", { target: $(":focus").get(0) }) });
@@ -7141,7 +7121,6 @@ QUnit.test("Row heights should be synchronized after expand master detail row wi
     assert.equal($rows.eq(0).height(), $rows.eq(1).height(), "row heights are synchronized");
 });
 
-
 QUnit.test("Column hiding should works with masterDetail and column fixing", function(assert) {
     //arrange
     var dataGrid = createDataGrid({
@@ -7400,7 +7379,6 @@ QUnit.test("skip columns synchronization on window resize when grid size is not 
 
     //assert
     assert.equal(dataGrid.getController("resizing")._synchronizeColumns.callCount, 0, "synchronizeColumns is not called");
-
 
     //act
     $(dataGrid.$element()).height(500);
@@ -7726,7 +7704,6 @@ QUnit.test("beginCustomLoading in onInitialized", function(assert) {
         });
 
     this.clock.tick();
-
 
     //assert
     assert.ok(initialized, "onInitialized called");
@@ -8227,7 +8204,6 @@ QUnit.test("rowTemplate via dxTemplate should works with masterDetail template",
             },
             rowTemplate: 'testRowWithExpand'
         });
-
 
     //act
     $($(dataGrid.$element()).find(".dx-datagrid-expand").eq(0)).trigger("dxclick");
@@ -8746,7 +8722,6 @@ QUnit.test("controller public methods does not exist", function(assert) {
     }
 });
 
-
 QUnit.test("controller public methods already registered", function(assert) {
     gridCore.registerModule("test", {
         controllers: {
@@ -8766,7 +8741,6 @@ QUnit.test("controller public methods already registered", function(assert) {
         assert.ok(e.message.indexOf("Public method 'refresh' is already registered") > -1);
     }
 });
-
 
 QUnit.test("view public methods", function(assert) {
     gridCore.registerModule("test", {
@@ -8954,7 +8928,6 @@ QUnit.test("Pressing arrow keys inside editor of the internal grid does not call
     //assert
     assert.notOk(preventDefaultCalled, "preventDefault is not called");
 });
-
 
 QUnit.module("Formatting");
 

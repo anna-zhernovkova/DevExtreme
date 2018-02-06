@@ -184,7 +184,6 @@ QUnit.module("Array Local Store", moduleConfig);
 QUnit.test("Async loading when more 10000 items", function(assert) {
     var items = [];
 
-
     for(var i = 0; i < 20000; i++) {
         items.push({ name: "test" + i });
     }
@@ -504,7 +503,6 @@ QUnit.test("Numeric intervals. With format and without custom customizeText call
         sinon.stub(formatHelper, "format");
         formatHelper.format.returns("$100");
 
-
         assert.strictEqual(field.customizeText({
             value: 0,
             valueText: "$0"
@@ -546,7 +544,6 @@ QUnit.test("Date intervals formatting", function(assert) {
         assert.strictEqual(pivotGridUtils.formatValue(1, fields[3]), "1", "day 1");
     });
 });
-
 
 QUnit.test("Summary types", function(assert) {
     this.load({
@@ -1063,7 +1060,6 @@ QUnit.test("Expand row on several levels", function(assert) {
         assert.strictEqual(data.values[2][0][0], 3, 'Romero - GT');
     });
 });
-
 
 QUnit.test("Expand column & row", function(assert) {
     this.load({
@@ -1729,7 +1725,6 @@ QUnit.test("drill down by row path", function(assert) {
     });
 });
 
-
 QUnit.test("drill down by row and column path", function(assert) {
     this.getDrillDownData({
         columns: [{ dataField: "ShipCountry" }],
@@ -1814,13 +1809,11 @@ QUnit.test("DrillDown by path when groups", function(assert) {
 
     this.load(loadOptions);
 
-
     var drillItems = store.getDrillDownItems(loadOptions, { columnPath: [1997, 2, 6], rowPath: ["Brazil"], customColumns: ["OrderID"] });
 
     assert.strictEqual(drillItems.length, 2);
     assert.deepEqual(drillItems, [{ OrderID: 10563 }, { OrderID: 10581 }]);
 });
-
 
 QUnit.module("Custom Store local filtering");
 

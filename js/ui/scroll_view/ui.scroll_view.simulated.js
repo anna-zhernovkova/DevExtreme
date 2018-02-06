@@ -20,7 +20,6 @@ var SCROLLVIEW_PULLDOWN_REFRESHING_CLASS = "dx-scrollview-pull-down-loading",
     STATE_REFRESHING = 2,
     STATE_LOADING = 3;
 
-
 var ScrollViewScroller = simulatedStrategy.Scroller.inherit({
 
     ctor: function() {
@@ -217,7 +216,6 @@ var ScrollViewScroller = simulatedStrategy.Scroller.inherit({
         this.callBase();
     }
 });
-
 
 var SimulatedScrollViewStrategy = simulatedStrategy.SimulatedStrategy.inherit({
 

@@ -119,7 +119,6 @@ QUnit.test("custom template name", function(assert) {
     assert.equal(instance._popup._wrapper().find(".my-text").length, 3);
 });
 
-
 QUnit.test("dropdownmenu should delegate templates to child widgets (T131530)", function(assert) {
     var $dropDownMenu = $("#T131530");
     ko.applyBindings({

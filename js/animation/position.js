@@ -105,8 +105,6 @@
 * @type number
 */
 
-
-
 var $ = require("../core/renderer"),
     commonUtils = require("../core/utils/common"),
     each = require("../core/utils/iterator").each,

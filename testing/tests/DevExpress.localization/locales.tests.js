@@ -65,7 +65,6 @@ var compareLocales = function(first, second, assert) {
     });
 };
 
-
 QUnit.test("en and ru", function(assert) {
     compareLocales("en", "ru", assert);
 });

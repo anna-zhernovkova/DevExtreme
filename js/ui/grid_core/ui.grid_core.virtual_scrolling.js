@@ -31,7 +31,6 @@ var isAppendMode = function(that) {
     return that.option("scrolling.mode") === SCROLLING_MODE_INFINITE;
 };
 
-
 var VirtualScrollingDataSourceAdapterExtender = (function() {
     var updateLoading = function(that) {
         var beginPageIndex = that._virtualScrollController.beginPageIndex(-1);
@@ -465,7 +464,6 @@ var VirtualScrollingRowsViewExtender = (function() {
                 heightRatio = that._heightRatio || 1,
                 rowHeight = that._rowHeight,
                 beginHeight = virtualItemsCount ? Math.floor(virtualItemsCount.begin * rowHeight * heightRatio) : 0;
-
 
             if(virtualItemsCount && scrollTop >= beginHeight && scrollTop <= beginHeight + that._contentTableHeight) {
                 that._dataController.setViewportItemIndex(virtualItemsCount.begin + (scrollTop - beginHeight) / rowHeight);

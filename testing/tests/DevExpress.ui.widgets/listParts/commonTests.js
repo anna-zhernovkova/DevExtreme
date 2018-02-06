@@ -135,7 +135,6 @@ var moduleSetup = {
     }
 };
 
-
 QUnit.module("rendering", moduleSetup);
 
 QUnit.test("rendering empty message for empty list", function(assert) {
@@ -289,7 +288,6 @@ QUnit.test("items of group should be in a group body", function(assert) {
     assert.equal($groupBody.children("." + LIST_ITEM_CLASS).length, 1, "there are items in items wrapper");
 });
 
-
 QUnit.module("nested rendering", moduleSetup);
 
 QUnit.test("plain list with nested list should contain correct items", function(assert) {
@@ -323,7 +321,6 @@ QUnit.test("grouped list with nested list should contain correct items", functio
 
     assert.equal(instance.itemElements().length, 2, "correct items count");
 });
-
 
 var LIST_GROUP_COLLAPSED_CLASS = "dx-list-group-collapsed",
     LIST_COLLAPSIBLE_GROUPS_CLASS = "dx-list-collapsible-groups";
@@ -747,8 +744,6 @@ QUnit.test("more button shouldn't disappear after group collapsed with custom st
     }
 });
 
-
-
 QUnit.module("next button", moduleSetup);
 
 var isElementHidden = function($element) {
@@ -870,7 +865,6 @@ QUnit.test("nextButton should not be removed after repaint", function(assert) {
     assert.ok($(".dx-list-next-button", this.element).text());
 });
 
-
 QUnit.module("options", moduleSetup);
 
 QUnit.test("dataSource as config", function(assert) {
@@ -905,7 +899,6 @@ QUnit.test("dataSource as store", function(assert) {
     assert.equal(element.text(), "12345");
     assert.deepEqual(element.dxList("instance").option("items"), [1, 2, 3, 4, 5]);
 });
-
 
 QUnit.module("options changed", moduleSetup);
 
@@ -995,7 +988,6 @@ QUnit.test("onItemSwipe", function(assert) {
     list.option("onItemSwipe", swipeHandler);
     swipeItem();
 });
-
 
 QUnit.test("dxList shouldn't show 'Loading' and 'No data' at the same time than dataSource option changed", function(assert) {
     var $list = $("#list").dxList({ pageLoadMode: "scrollBottom" }),
@@ -1352,7 +1344,6 @@ QUnit.test("list should prevent default behavior when context menu event is firi
     assert.ok(contextMenuEvent.isDefaultPrevented(), "default prevented");
 });
 
-
 QUnit.module("dataSource integration", moduleSetup);
 
 QUnit.test("pageLoading should be ordered for async dataSource (T233998)", function(assert) {
@@ -1651,7 +1642,6 @@ QUnit.test("list should scroll to top if data source is load is happened", funct
     assert.equal(instance.scrollTop(), 0, "list scrolled to top");
 });
 
-
 QUnit.module("infinite list scenario", moduleSetup);
 
 QUnit.test("appending items on scroll bottom (deprecated autoPagingEnabled = true)", function(assert) {
@@ -1855,7 +1845,6 @@ QUnit.test("infinite loading should happen when widget element is shown", functi
     assert.deepEqual($element.dxList("option", "items"), [1, 2, 3, 4], "all data loaded");
 });
 
-
 QUnit.module("scrollView interaction", moduleSetup);
 
 QUnit.test("list.updateDimensions calls scrollView.update", function(assert) {
@@ -1960,7 +1949,6 @@ QUnit.test("rtlEnabled option should be passed to scrollView", function(assert) 
     assert.ok(!scrollView.option("rtlEnabled"), "rtlEnabled option is passed to scrollView on optionChange");
 });
 
-
 QUnit.module("scrollView integration", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -1986,7 +1974,6 @@ QUnit.test("on repaint scroll should be moved to top", function(assert) {
 QUnit.test("on start scrollbar has correct height", function(assert) {
     var $list = $("#list");
     $list.height(100);
-
 
     $list.dxList({
         items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
@@ -2203,7 +2190,6 @@ QUnit.test("scroll position should be saved after selectionMode option changing"
     assert.equal(scrollView.scrollTop(), scrollTop, "position was not changed");
 });
 
-
 QUnit.module("regressions", moduleSetup);
 
 QUnit.test("list loading does not re-render items", function(assert) {
@@ -2350,7 +2336,6 @@ QUnit.test("change width", function(assert) {
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -2417,7 +2402,6 @@ QUnit.test("list scroll to focused item after press home/end", function(assert) 
         $item = $element.find(toSelector(LIST_ITEM_CLASS)).first(),
         keyboard = keyboardMock($element),
         itemHeight = $item.outerHeight();
-
 
     $element.trigger("focusin");
     instance.option("height", itemHeight * 3);
@@ -2592,7 +2576,6 @@ QUnit.testInActiveWindow("First list item should be focused on the 'tab' key pre
     assert.ok($element.hasClass("dx-state-focused"), "list is focused");
     assert.ok($element.find(".dx-scrollview-content").hasClass("dx-state-focused"), "scrollview content is focused");
 });
-
 
 QUnit.module("aria accessibility");
 

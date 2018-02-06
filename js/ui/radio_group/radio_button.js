@@ -136,7 +136,6 @@ var RadioButton = Editor.inherit({
             this._clickHandler(args.event);
         }).bind(this));
 
-
         eventsEngine.off(this.$element(), eventName);
         eventsEngine.on(this.$element(), eventName, (function(e) {
             this._clickAction({ event: e });

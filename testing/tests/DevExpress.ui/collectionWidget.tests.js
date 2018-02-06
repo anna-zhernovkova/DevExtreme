@@ -55,7 +55,6 @@ var TestComponent = CollectionWidget.inherit({
     __actionConfigs: {}
 });
 
-
 QUnit.testStart(function() {
     var markup = '\
         <div id="cmp"></div>\
@@ -146,7 +145,6 @@ QUnit.test("custom render func, returns jquery", function(assert) {
     assert.equal(element.find(".item").length, 3);
     assert.equal($.trim(element.text()), "Text is: 0;Text is: 1;Text is: 2;");
 });
-
 
 QUnit.test("custom render func, returns jquery", function(assert) {
     var element = this.element;
@@ -635,7 +633,6 @@ QUnit.test("item.disabled property changing should not re-render whole item", fu
     assert.ok($item.is(instance.$element().find(".item")));
 });
 
-
 QUnit.module("events", {
     beforeEach: function() {
         registerComponent("TestComponent", TestComponent);
@@ -959,7 +956,6 @@ QUnit.test("onClick option in item", function(assert) {
     assert.ok(args.itemElement, "item element provided");
 });
 
-
 QUnit.module("option change");
 
 QUnit.test("changing onItemRendered should not fire refresh", function(assert) {
@@ -971,7 +967,6 @@ QUnit.test("changing onItemRendered should not fire refresh", function(assert) {
     });
     assert.ok(!itemsReRendered, "items does not refreshed");
 });
-
 
 QUnit.module("items via markup", {
     beforeEach: function() {
@@ -1463,7 +1458,6 @@ QUnit.test("Item should not lose focus class when you use arrows with 'selectOnF
     assert.ok($lastItem.hasClass(FOCUSED_ITEM_CLASS), "Last item must stay focused when we press 'right' button on the keyboard");
 });
 
-
 QUnit.module("focus policy", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -1602,7 +1596,6 @@ QUnit.test("item is focused after setting focusedElement option", function(asser
     assert.ok($item.hasClass(FOCUSED_ITEM_CLASS), "item is focused after setting focusedItem option");
 });
 
-
 QUnit.test("first item  should be focused after setting focusedElement option to empty array", function(assert) {
     assert.expect(1);
 
@@ -1638,7 +1631,6 @@ QUnit.test("item is focused after focusing on element", function(assert) {
     assert.equal(isRenderer(instance.option("focusedElement")), !!config().useJQuery, "focusedElement is correct");
     assert.ok($item.hasClass(FOCUSED_ITEM_CLASS), "item is focused");
 });
-
 
 QUnit.module("isReady");
 
@@ -1738,7 +1730,6 @@ QUnit.test("data widget should handle dataSource loading error", function(assert
     assert.equal(contentReadyFired, 1, "onContentReady fired once on loading fail");
 });
 
-
 QUnit.module("aria accessibility", {
     beforeEach: function() {
         this.items = [{ text: "item 1" }, { text: "item 2" }, { text: "item 3" }];
@@ -1794,7 +1785,6 @@ QUnit.test("aria-label for empty collection", function(assert) {
     assert.equal($element.attr("aria-label"), undefined, "aria-label for not empty collection is correct");
 });
 
-
 QUnit.test("onFocusedItemChanged option on init", function(assert) {
     assert.expect(3);
 
@@ -1838,7 +1828,6 @@ QUnit.test("getDataSource, dataSource is defined", function(assert) {
 
     assert.ok(instance.getDataSource() instanceof DataSource);
 });
-
 
 QUnit.module("default template", {
     prepareItemTest: function(data) {

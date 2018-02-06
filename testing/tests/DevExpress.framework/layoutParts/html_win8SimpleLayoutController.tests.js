@@ -110,7 +110,6 @@
             assert.equal($layout.hasClass("has-toolbar-bottom"), visible);
         };
 
-
         createLayoutController(options).then(function(layoutController) {
             var expectedVisibilityOnRendered = [ true, false ];
 
@@ -123,7 +122,6 @@
                 assert.ok(expectedVisibility === true || expectedVisibility === false);
                 assert.equal(toolbar.option("visible"), expectedVisibility);
             });
-
 
             layoutController.showView(viewInfo).then(function() {
                 testToolbarVisibility(true);

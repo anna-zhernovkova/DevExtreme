@@ -44,7 +44,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("click handler", moduleConfig);
 
 QUnit.test("event triggers", function(assert) {
@@ -262,7 +261,6 @@ QUnit.test("click should not be fired on pointercancel (Win8 parasitic click)", 
     pointerMock($element).start().down().cancel();
 });
 
-
 QUnit.module("prevent default", moduleConfig);
 
 QUnit.test("pointer events should not be prevented", function(assert) {
@@ -294,7 +292,6 @@ QUnit.test("click should not be prevented (T131440, T131837)", function(assert) 
 
     nativePointerMock($element).click();
 });
-
 
 QUnit.module("reset active element", moduleConfig);
 
@@ -552,7 +549,6 @@ QUnit.test("click on element should not prevent focus on mousedown if used nativ
     assert.ok(!isDefaultPrevented, "click on element should call preventDefault() on 'mousedown' event");
 });
 
-
 QUnit.module("target and currentTarget", moduleConfig);
 
 QUnit.test("dxclick should be prevented if 10px bound is exceeded", function(assert) {
@@ -654,7 +650,6 @@ QUnit.test("dxclick should not be fired if target is child of element", function
     $container.trigger({ type: "dxpointerup", pointers: [] });
 });
 
-
 QUnit.module("several subscriptions");
 
 QUnit.test("dxclick should not be fired if target is child of element", function(assert) {
@@ -676,7 +671,6 @@ QUnit.test("dxclick should not be fired if target is child of element", function
     pointerMock($("#first")).start().down().up();
     pointerMock($("#second")).start().down().up();
 });
-
 
 QUnit.module("native click support");
 
@@ -727,7 +721,6 @@ QUnit.test("dxclick should triggers only on left mouse button click", function(a
 
     var $element = $("#element").on("dxclick", function(e) { triggered++; }),
         triggered = 0;
-
 
     $element.trigger($.Event("click", { which: 1 }));
     assert.equal(triggered, 1, "left button click");

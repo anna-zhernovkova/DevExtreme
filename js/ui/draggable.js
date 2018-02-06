@@ -24,7 +24,6 @@ var DRAGGABLE = "dxDraggable",
     DRAGGABLE_CLASS = dasherize(DRAGGABLE),
     DRAGGABLE_DRAGGING_CLASS = DRAGGABLE_CLASS + "-dragging";
 
-
 var Draggable = DOMComponent.inherit({
     _getDefaultOptions: function() {
         return extend(this.callBase(), {

@@ -13,7 +13,6 @@ var $ = require("../../core/renderer"),
 
     WIDGET_WITH_LEGACY_CONTAINER_NAME = "dxDataGrid";
 
-
 var ModuleItem = Class.inherit({
     _endUpdateCore: function() { },
 

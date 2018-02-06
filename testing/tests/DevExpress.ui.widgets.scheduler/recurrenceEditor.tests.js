@@ -229,7 +229,6 @@ QUnit.test("Recurrence editor should correctly process values to the freq radioG
     assert.equal(freqEditor.option("value"), "MONTHLY", "Freq editor has right value");
 });
 
-
 QUnit.module("Recurrence editor - interval editor", {
     beforeEach: function() {
         this.createInstance = function(options) {
@@ -284,7 +283,6 @@ QUnit.test("Recurrence repeat-interval editor should have correct aria-described
     assert.notEqual($intervalEditor.attr("aria-describedby"), undefined, "aria-describedby exists");
     assert.equal($intervalEditor.attr("aria-describedby"), $intervalLabel.attr("id"), "aria-describedby is correct");
 });
-
 
 QUnit.module("Recurrence editor - repeat-end editor", {
     beforeEach: function() {

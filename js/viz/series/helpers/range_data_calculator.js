@@ -148,7 +148,6 @@ module.exports = {
                 viewport: getInitialRange(series.valueAxisType, series.valueType, points.length ? series.getValueRangeInitialValue() : undefined)
             });
 
-
         processCategories(range.arg);
         processCategories(range.val);
 

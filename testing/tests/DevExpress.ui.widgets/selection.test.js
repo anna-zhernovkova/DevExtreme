@@ -928,7 +928,6 @@ QUnit.test("focusedItemIndex should be reset to -1 after deselect all", function
     assert.strictEqual(selection._focusedItemIndex, -1, "focusedItemIndex");
 });
 
-
 var createDeferredSelection = function(data, options, dataSource) {
     return new Selection($.extend({
         deferred: true,
@@ -954,7 +953,6 @@ var createDeferredSelection = function(data, options, dataSource) {
         }
     }, options));
 };
-
 
 QUnit.module("Deferred mode", {
     beforeEach: function() {
@@ -1450,7 +1448,6 @@ QUnit.test("getSelectedItemKeys returns deferred", function(assert) {
     //assert
     assert.deepEqual(selectedKeys, [1, 2, 6], "selected keys");
 });
-
 
 QUnit.test("selectedItemKeys", function(assert) {
     var selection = this.createDeferredSelection(this.data, {});

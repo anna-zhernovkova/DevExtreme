@@ -53,7 +53,6 @@ function createThemeMarkerStyle(themeName) {
     return style;
 }
 
-
 var TestLayoutController = Class.inherit({
     ctor: function(options) {
         this.log = noop;//is overridden by options.log
@@ -107,7 +106,6 @@ var TestLayoutController = Class.inherit({
         return $("<div/>");
     }
 }).include(EventsMixin);
-
 
 var viewTemplatesBackup,
     savedTransitionExecutor;
@@ -174,7 +172,6 @@ QUnit.test("Set current view", function(assert) {
             }
         };
 
-
     var app = new htmlFrameworkMocks.MockHtmlApplication({
         layoutSet: [{ controller: layoutController }],
         namespace: {
@@ -237,7 +234,6 @@ QUnit.test("Extend view model from view template", function(assert) {
             title: "model title",
             modelProperty: "model property"
         };
-
 
     var app = new htmlFrameworkMocks.MockHtmlApplication({
         layoutSet: [{ controller: layoutController }],
@@ -803,7 +799,6 @@ QUnit.test("Controller viewHidden event causes application viewHidden event", fu
         layoutController: controller
     };
 
-
     app._showViewImpl(viewInfo);
     controller.fireEvent("viewHidden", [viewInfo]);
 
@@ -973,13 +968,11 @@ QUnit.test("layout transitions", function(assert) {
         }
     });
 
-
     app.navigate("view1", { root: true });
 
     assert.equal(sequenceLog.length, 6);
 
     assert.equal(sequenceLog[5], "c1_activate");
-
 
     var steps = [
             function() {

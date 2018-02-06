@@ -69,7 +69,6 @@ QUnit.test("fieldTemplate is rendered after changing value", function(assert) {
     assert.equal($.trim($dropDownEditor.text()), "newtest", "template rendered");
 });
 
-
 QUnit.module("options");
 
 QUnit.test("openOnFieldClick option with custom template", function(assert) {

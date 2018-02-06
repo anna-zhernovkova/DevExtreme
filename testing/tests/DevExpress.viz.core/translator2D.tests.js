@@ -2270,7 +2270,6 @@ QUnit.test('scroll', function(assert) {
     assert.equal(zoom.translate.toFixed(2), -10.00, "negative scroll translate");
     assert.equal(zoom.scale.toFixed(2), 1.00, "negative scroll scale");
 
-
     assert.deepEqual(translator.zoom(0, 1), {
         min: 10,
         max: 90,
@@ -2326,7 +2325,6 @@ QUnit.test('scroll. Logarithmic axis', function(assert) {
 
     assert.equal(zoom.translate.toFixed(2), -10.00, "negative scroll translate");
     assert.equal(zoom.scale.toFixed(2), 1.00, "negative scroll scale");
-
 
     zoom = translator.zoom(600, 1);
 
@@ -2403,7 +2401,6 @@ QUnit.test('scroll inverted range', function(assert) {
     assert.equal(zoom.translate.toFixed(2), -10.00, "negative scroll translate");
     assert.equal(zoom.scale.toFixed(2), 1.00, "negative scroll scale");
 
-
     assert.deepEqual(translator.zoom(0, 1), {
         min: 90,
         max: 10,
@@ -2449,7 +2446,6 @@ QUnit.test('scale without scroll', function(assert) {
 
     assert.roughEqual(zoom.translate.toFixed(2), 0, 0.001, "zoom in translate");
     assert.roughEqual(zoom.scale.toFixed(2), 2, 0.001, "zoom in scale");
-
 
     zoom = translator.zoom(0, 0.98);
     assert.roughEqual(zoom.min.toFixed(2), 10.22, 0.1, "zoom out min");
@@ -2915,7 +2911,6 @@ QUnit.test('scale with stick=true', function(assert) {
     translator.zoom(250, 1);
 
     assert.deepEqual(translator.visibleCategories, ['a1', 'a2', 'a3', 'a4']);
-
 
     zoom = translator.zoom(0, 0.75);
     assert.equal(zoom.min, "a1");

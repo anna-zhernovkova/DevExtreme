@@ -354,7 +354,6 @@ var Resizable = DOMComponent.inherit({
         };
     },
 
-
     _getMovingSides: function(e) {
         var $target = $(e.target),
             hasCornerTopLeftClass = $target.hasClass(RESIZABLE_HANDLE_CORNER_CLASS + "-top-left"),

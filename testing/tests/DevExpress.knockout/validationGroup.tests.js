@@ -34,7 +34,6 @@ QUnit.test("Knockout widgets can be created inside of dxValidationGroup", functi
     assert.ok($("#knockoutTextBox").dxTextBox("instance"), "TextBox inside of validation should be created by Knockout");
 });
 
-
 QUnit.test("Two dxValidationGroups should be registered and differentiated", function(assert) {
 
     ko.applyBindings({}, document.getElementById("testcaseMultipleGroups"));

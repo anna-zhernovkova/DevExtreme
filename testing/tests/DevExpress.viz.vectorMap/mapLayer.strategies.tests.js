@@ -870,7 +870,6 @@ QUnit.test("Arrange / value", function(assert) {
     assert.deepEqual(elements[4].proxy.attribute.lastCall.args, ["data-field"], "attribute 5");
 });
 
-
 QUnit.test("Arrange with grouping", function(assert) {
     this.context.settings = { sizeGroups: [1, 2] };
 

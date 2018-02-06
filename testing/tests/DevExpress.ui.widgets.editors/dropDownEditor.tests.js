@@ -353,7 +353,6 @@ QUnit.test("field method returning overlay content", function(assert) {
     assert.ok($field.hasClass("dx-texteditor-input"), "field has class dx-texteditor-input");
 });
 
-
 QUnit.module("focus policy");
 
 QUnit.testInActiveWindow("editor should save focus on button clicking", function(assert) {
@@ -475,7 +474,6 @@ QUnit.test("focusout should not be fired on valueChanged", function(assert) {
     assert.equal(textBoxOnFocusOutStub.callCount, 0, "onFocusOut textbox is fired");
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         fx.off = true;
@@ -500,7 +498,6 @@ QUnit.test("control keys test", function(assert) {
         altUp = $.Event("keydown", { which: 38, altKey: true });
 
     assert.ok(!this.dropDownEditor.option("opened"), "overlay is hidden on first show");
-
 
     this.dropDownEditor.option("opened", true);
     this.keyboard.keyDown("esc");
@@ -771,7 +768,6 @@ QUnit.testInActiveWindow("popup should be closed on the 'esc' key press if the b
     assert.ok(this.$element.hasClass("dx-state-focused"), "editor is focused");
 });
 
-
 QUnit.module("deferRendering");
 
 QUnit.test("popup is rendered only when open editor when deferRendering is true", function(assert) {
@@ -781,7 +777,6 @@ QUnit.test("popup is rendered only when open editor when deferRendering is true"
 
     assert.equal($(".dx-dropdowneditor-overlay").length, 1, "content is not rendered");
 });
-
 
 QUnit.module("Templates");
 
@@ -886,7 +881,6 @@ QUnit.test("events should be rendered for input after value is changed when fiel
     });
 });
 
-
 QUnit.module("options");
 
 QUnit.test("acceptCustomValue", function(assert) {
@@ -976,7 +970,6 @@ QUnit.test("input is not editable after changed readOnly state", function(assert
 
     assert.equal($input.val(), "one", "value is not changed");
 });
-
 
 QUnit.module("popup integration");
 
@@ -1184,7 +1177,6 @@ QUnit.test("'buttonsLocation' option", function(assert) {
     assert.equal($(".dx-popup-bottom .dx-toolbar-before .dx-button").length, 2, "buttons are rendered in 'toolbar-before'");
 });
 
-
 QUnit.module("actions", {
     beforeEach: function() {
         fx.off = true;
@@ -1242,7 +1234,6 @@ QUnit.test("onOpened should fire when widget is disabled", function(assert) {
     dropDownEditor.close();
     assert.ok(onClosedActionStub.called, "onClosed action was fired");
 });
-
 
 QUnit.module("aria accessibility");
 

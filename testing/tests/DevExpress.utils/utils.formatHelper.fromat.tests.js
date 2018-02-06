@@ -395,14 +395,12 @@ QUnit.test('exponential number type round', function(assert) {
     assert.strictEqual(formatHelper.format(999, 'exponential', 1), '1.0E+3');
 });
 
-
 QUnit.test('exponential number type positive and negative number', function(assert) {
     //act, assert
     assert.strictEqual(formatHelper.format(0, 'exponential', 2), '0.00E+0');
     assert.strictEqual(formatHelper.format(1234, 'exponential', 2), '1.23E+3');
     assert.strictEqual(formatHelper.format(-1234, 'exponential', 2), '-1.23E+3');
 });
-
 
 QUnit.module('formatNumberEx');
 

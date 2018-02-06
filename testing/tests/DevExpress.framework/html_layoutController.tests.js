@@ -75,7 +75,6 @@ QUnit.test("Disable", function(assert) {
         viewName: "simple"
     };
 
-
     layoutController.on("viewRendered", function(viewInfo) {
         eventLog.push({ name: "viewRendered", viewInfo: viewInfo });
     });
@@ -256,7 +255,6 @@ QUnit.test("Show same view twice (T263730)", function(assert) {
             },
             viewName: "simple"
         };
-
 
     layoutController.on("viewRendered", function(viewInfo) {
         eventLog.push({ name: "viewRendered", viewInfo: viewInfo });
@@ -443,7 +441,6 @@ QUnit.test("Commands work (B252354)", function(assert) {
         title: ko.observable("MyCommand"),
         action: noop()
     };
-
 
     try {
         fx.off = true;
@@ -957,7 +954,6 @@ QUnit.test("orientationChanged should not rise re-rendering for already shown or
     templateContext.option("orientation", "landscape");
     assert.equal(viewRenderedCount, 2);
 });
-
 
 QUnit.test("orientationChanged should not rise re-rendering if orientation was not defined for view", function(assert) {
     var templateContext = new Component({

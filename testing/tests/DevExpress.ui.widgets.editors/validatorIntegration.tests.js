@@ -38,8 +38,6 @@ var Fixture = Class.inherit({
     }
 });
 
-
-
 (function() {
     QUnit.module("Regression", {
         beforeEach: function() {

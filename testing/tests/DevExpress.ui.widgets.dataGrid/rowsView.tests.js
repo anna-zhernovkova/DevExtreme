@@ -237,7 +237,6 @@ QUnit.test('Render scrollable', function(assert) {
         test: "test"
     };
 
-
     //act
     rowsView.render(testElement);
     rowsView.height(100);
@@ -1094,7 +1093,6 @@ QUnit.test('Render selection from dataController rows state', function(assert) {
     assert.equal(getText(selectedCells[2]), '3/03/2003', 'row 3 cell 3');
 });
 
-
 QUnit.test('Update selection on changed dataController event', function(assert) {
     //arrange
     var dataController = new MockDataController({ items: this.items }),
@@ -1322,7 +1320,6 @@ QUnit.test('Custom function template options for lookup column', function(assert
     assert.equal(templateOptions[1].displayValue, 'Lookup 2', 'row 2 display value');
     assert.equal(templateOptions[1].text, 'Lookup 2', 'row 2 text');
 });
-
 
 QUnit.test('Custom extern column template with allowRenderToDetachedContainer', function(assert) {
     var rows = [{ values: ['1'] }, { values: ['2'] }, { values: ['3'] }],
@@ -1739,7 +1736,6 @@ QUnit.test('Selection on hold should not work when showCheckBoxesMode is always'
     assert.ok(!selectionOptions.changeItemSelectionCallsCount);
 });
 
-
 //T355686
 QUnit.test('ContextMenu on hold when touch and when assign items in onContextMenuPreparing', function(assert) {
     if(devices.real().deviceType === "desktop" && browser.msie && parseInt(browser.version) <= 10) {
@@ -1767,7 +1763,6 @@ QUnit.test('ContextMenu on hold when touch and when assign items in onContextMen
     var oldTouch = support.touch;
     support.touch = true;
     this.dataGrid.contextMenuView.render(testElement);
-
 
     //act
     rowsView.render(testElement);
@@ -4067,7 +4062,6 @@ QUnit.test('set pageIndex scroll content when virtual scrolling mode', function(
     var done = assert.async();
     var testElement = $('#container');
 
-
     this.options.scrolling.mode = 'virtual';
     this.options.scrolling.useNative = true;
 
@@ -4095,7 +4089,6 @@ QUnit.test('None-zero initial pageIndex when virtual scrolling mode', function(a
     //arrange
     var done = assert.async();
     var testElement = $('#container');
-
 
     this.options.scrolling.mode = 'virtual';
     this.options.scrolling.useNative = true;
@@ -4138,7 +4131,6 @@ QUnit.test('set pageSize scroll content when virtual scrolling mode', function(a
 
     this.rowsView.scrollTo({ y: 10, x: 0 });
 
-
     this.rowsView.scrollChanged.add(function(e) {
         //assert
         assert.strictEqual(e.top, 0, 'scroll position after change pageSize');
@@ -4153,7 +4145,6 @@ QUnit.test('reset scroll position on set pageIndex when standard scrolling mode'
     //arrange
     var done = assert.async();
     var testElement = $('#container');
-
 
     this.options.scrolling.useNative = true;
 
@@ -4191,7 +4182,6 @@ QUnit.test('ScrollToPage when standard scrolling mode reset position to 0', func
     var done = assert.async();
     var testElement = $('#container');
 
-
     this.options.scrolling.useNative = true;
 
     this.setupDataGridModules();
@@ -4226,7 +4216,6 @@ QUnit.test('Scroll position is not reset on change dataSource', function(assert)
     //arrange
     var done = assert.async();
     var testElement = $('#container');
-
 
     this.options.columns = ['name', 'age'];
 
@@ -4263,7 +4252,6 @@ QUnit.test('Scroll position is not reset on change dataSource when virtual scrol
     //arrange
     var done = assert.async();
     var testElement = $('#container');
-
 
     this.options.scrolling.mode = 'virtual';
     this.options.scrolling.useNative = true;
@@ -4303,7 +4291,6 @@ QUnit.test('Reset scroll position on change filter when virtual scrolling enable
     //arrange
     var done = assert.async();
     var testElement = $('#container');
-
 
     this.options.scrolling.mode = 'virtual';
     this.options.scrolling.useNative = true;
@@ -4400,7 +4387,6 @@ QUnit.test('free space row height for last page when dataGrid without height and
     that.options.paging.pageIndex = 2;
     that.setupDataGridModules();
 
-
     that.rowsView.render(testElement);
 
     that.dataController.pageSize(3);
@@ -4425,7 +4411,6 @@ QUnit.test('free space row height for last page when dataGrid without height and
     that.options.paging.pageSize = 3;
     that.options.paging.pageIndex = 2;
     that.setupDataGridModules();
-
 
     that.rowsView.render(testElement);
 
@@ -5008,7 +4993,6 @@ QUnit.test("Show summary in a group row for column going after a grouped column 
     assert.equal($cellElements.last().text(), "Count: 1", "summary text");
 });
 
-
 //T411212
 QUnit.test("Show master detail with rowTemplate", function(assert) {
     //arrange
@@ -5501,7 +5485,6 @@ QUnit.test('setViewportItemIndex for virtual scrolling when rowsView height auto
     var $parent = $(".dx-datagrid").parent();
     var $dataGridContainer = $(".dx-datagrid").detach();
 
-
     rowsView.render(testElement);
     rowsView.height('auto');
     rowsView.resize();
@@ -5605,7 +5588,6 @@ QUnit.test('Render rows at end when virtual scrolling', function(assert) {
     });
     rowsView.resize();
 
-
     var content = testElement.find('.dx-scrollable-content').children();
 
     assert.equal(options.viewportSize, Math.round(90 / rowHeight));
@@ -5674,7 +5656,6 @@ QUnit.test('Render rows at end when virtual scrolling enabled and rowTemplate is
     });
     rowsView.resize();
 
-
     var content = testElement.find('.dx-scrollable-content').children();
 
     assert.equal(options.viewportSize, Math.round(90 / rowHeight));
@@ -5688,7 +5669,6 @@ QUnit.test('Render rows at end when virtual scrolling enabled and rowTemplate is
     assert.equal(content.children().eq(1)[0].tagName, 'TABLE');
     assert.roughEqual(content.children().eq(1).height(), rowHeight * (10 + 4) + content.find('.dx-datagrid-table-content').first().outerHeight(), 1);
 });
-
 
 QUnit.test('Render rows at end when infinite scrolling', function(assert) {
     //arrange
@@ -7010,7 +6990,6 @@ QUnit.test('No animation when data is not loaded', function(assert) {
     //assert
     assert.ok(!that.rowsView._loadPanel.option('animation'));
     assert.ok(that.rowsView._loadPanel.option('visible'));
-
 
     that.dataControllerOptions.isLoaded = true;
     that.dataController.loadingChanged.fire(false);

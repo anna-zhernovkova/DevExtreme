@@ -84,7 +84,6 @@ var iterateViews = function(callback) {
     $.each(views, callback);
 };
 
-
 QUnit.module("Rendering", {
     beforeEach: function() {
         fx.off = true;
@@ -118,7 +117,6 @@ QUnit.test("Calendar must render with dx-rtl class", function(assert) {
     this.calendar.option("rtlEnabled", true);
     assert.ok(this.$element.hasClass("dx-rtl"), "class dx-rtl must be");
 });
-
 
 QUnit.module("Hidden input", {
     beforeEach: function() {
@@ -161,7 +159,6 @@ QUnit.test("Calendar should pass value to the hidden input on widget value chang
     assert.equal($input.val(), this.stringValue(date), "input value is correct after widget value change");
 });
 
-
 QUnit.module("The 'name' option", {
     beforeEach: function() {
         this.$element = $("<div>").appendTo("body");
@@ -180,7 +177,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("Navigator", {
     beforeEach: function() {
@@ -235,7 +231,6 @@ QUnit.test("Calendar must display the current month and year", function(assert) 
     var navigatorCaption = this.$element.find(toSelector(CALENDAR_CAPTION_BUTTON_CLASS));
     assert.equal(navigatorCaption.text(), "June 2015");
 });
-
 
 QUnit.module("Navigator integration", {
     beforeEach: function() {
@@ -518,7 +513,6 @@ QUnit.test("navigator caption is correct after fast left short swipe", function(
     assert.equal(navigatorText, expectedText, "navigator caption is correct");
 });
 
-
 QUnit.module("Views initial positions", {
     beforeEach: function() {
         this.$element = $("<div>").appendTo("body");
@@ -580,7 +574,6 @@ QUnit.test("calendar views position in RTL", function(assert) {
     assert.equal(getBeforeViewInstance(this.instance).$element().position().left, viewWidth, "main view is at the left");
     assert.equal(getAfterViewInstance(this.instance).$element().position().left, -viewWidth, "main view is at the right");
 });
-
 
 QUnit.module("Views integration", {
     beforeEach: function() {
@@ -767,7 +760,6 @@ QUnit.test("contouredDate should not be passed to view if widget is not in focus
     assert.equal(getCurrentViewInstance(this.calendar).option("contouredDate"), null, "view contouredDate is null");
 });
 
-
 QUnit.module("Design mode", {
     beforeEach: function() {
         fx.off = true;
@@ -801,7 +793,6 @@ QUnit.test("In design mode, navigator links should do nothing", function(assert)
     $(this.$navigatorNext).trigger("dxclick");
     $(this.$navigatorPrev).trigger("dxclick");
 });
-
 
 QUnit.module("Keyboard navigation", {
     beforeEach: function() {
@@ -1227,7 +1218,6 @@ QUnit.test("correct view change after fast keyboard navigation", function(assert
     }
 });
 
-
 QUnit.module("Preserve time component on value change", {
     beforeEach: function() {
         fx.off = true;
@@ -1268,7 +1258,6 @@ QUnit.test("T277555 - time should not be reset if keyboard is used", function(as
 
     assert.deepEqual(calendar.option("value"), new Date(2015, 8, 2, 12, 57));
 });
-
 
 QUnit.module("Calendar footer", {
     beforeEach: function() {
@@ -1480,7 +1469,6 @@ QUnit.test("correct animation after today button click on the different zoom lev
     }
 });
 
-
 QUnit.module("Options", {
     beforeEach: function() {
         fx.off = true;
@@ -1596,7 +1584,6 @@ QUnit.test("contoured date displaying should depend on 'hasFocus' option", funct
     assert.deepEqual(getCurrentViewInstance(this.calendar).option("contouredDate"), new Date(2015, 10, 18), "view contoured is set");
 });
 
-
 QUnit.module("CellTemplate option", {
     beforeEach: function() {
         fx.off = true;
@@ -1648,7 +1635,6 @@ QUnit.test("correct data should be passed to cellTemplate", function(assert) {
     assert.equal(isDefined(data.date), true, "date field is present in itemData");
     assert.equal(isDefined(data.view), true, "view field is present in itemData");
 });
-
 
 QUnit.module("ZoomLevel option", {
     beforeEach: function() {
@@ -1818,7 +1804,6 @@ QUnit.test("change ZoomLevel after pressing enter key on view cell", function(as
         focusStateEnabled: true
     }).dxCalendar("instance");
     var trigger = function(which) { var e = $.Event("keydown", { which: which }); $element.trigger(e); };
-
 
     $.each(["century", "decade"], function(_, type) {
         calendar.option("zoomLevel", type);
@@ -2175,7 +2160,6 @@ QUnit.test("correct views rendering with max option", function(assert) {
     }, this));
 });
 
-
 QUnit.module("disabledDates option", {
     beforeEach: function() {
         fx.off = true;
@@ -2326,7 +2310,6 @@ QUnit.test("disabledDates argument contains correct component parameter", functi
     var component = stub.lastCall.args[0].component;
     assert.equal(component.NAME, "dxCalendar", "Correct component");
 });
-
 
 QUnit.module("Current date", {
     beforeEach: function() {
@@ -2514,7 +2497,6 @@ QUnit.test("contouredDate should not be rendered when focusStateEnabled is false
     assert.ok(!$day.hasClass(CALENDAR_CONTOURED_DATE_CLASS), "contoured date class is not attached");
 });
 
-
 QUnit.module("Navigation - click on other view cell", {
     beforeEach: function() {
         fx.off = true;
@@ -2601,7 +2583,6 @@ QUnit.test("Click on other view cell must set value correctly", function(assert)
         }
     }
 });
-
 
 QUnit.module("Navigation - swiping", {
     beforeEach: function() {
@@ -2896,7 +2877,6 @@ QUnit.test("maxRightOffset and maxLeftOffset are correct when rltEnabled=true (T
         .swipeEnd(0, -0.8);
 });
 
-
 QUnit.module("Aria accessibility", {
     beforeEach: function() {
         fx.off = true;
@@ -3106,7 +3086,6 @@ QUnit.test("aria id on contoured cell after view change (T321824)", function(ass
     }
 });
 
-
 QUnit.module("Regression", {
     beforeEach: function() {
         fx.off = true;
@@ -3164,7 +3143,6 @@ QUnit.test("T190814: dxCalendar - unable to navigate by keyboard from December 2
     $(this.$element).trigger($.Event("keydown", { which: RIGHT_ARROW_KEY_CODE }));
     assert.equal(calendar.option("currentDate").getMonth(), 0);
 });
-
 
 QUnit.module("dxCalendar number and string value support", {
     beforeEach: function() {

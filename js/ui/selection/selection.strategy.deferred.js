@@ -83,7 +83,6 @@ module.exports = SelectionStrategy.inherit({
         var keyField = this.options.key(),
             filter = [keyField, "=", key];
 
-
         if(Array.isArray(keyField)) {
             filter = [];
             for(var i = 0; i < keyField.length; i++) {

@@ -91,7 +91,6 @@ var forceRepaint = function($element) {
     }
 };
 
-
 var getElement = function(value) {
     return value && $(value.target || value);
 };

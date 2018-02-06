@@ -7,7 +7,6 @@ var $ = require("../../core/renderer"),
     Class = require("../../core/class"),
     abstract = Class.abstract;
 
-
 var renderedCallbacks = Callbacks();
 
 /**

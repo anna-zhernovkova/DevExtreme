@@ -66,7 +66,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.testStart(function() {
     var markup = '\
         <div id="scrollView" style="height: 50px; width: 50px;">\
@@ -223,7 +222,6 @@ QUnit.test("bottom position calculation", function(assert) {
         .move(0, $container.height() - $content.height() + $topPocket.height() + $bottomPocket.height() - 10)
         .up();
 });
-
 
 QUnit.module("actions", moduleConfig);
 
@@ -448,7 +446,6 @@ QUnit.test("disabled scrollview should not be updated on pointerdown after finis
 
     assert.equal(count, 1, "update action won't fired");
 });
-
 
 QUnit.module("dynamic", moduleConfig);
 
@@ -880,7 +877,6 @@ QUnit.test("scrollview content should not blink in bounce on iOS", function(asse
     assert.ok(!onEnd, "constant _disablePushBack is false on scroll end");
 });
 
-
 QUnit.module("scrollbars", moduleConfig);
 
 QUnit.test("scrollView locates scrollbar in correctly position after creation", function(assert) {
@@ -985,7 +981,6 @@ QUnit.test("scrolling by thumb should trigger bottom loading even without moving
     var containerPosition = $container.offset();
     mouse.down(containerPosition.top + containerSize, containerPosition.left + containerSize).up();
 });
-
 
 QUnit.module("api", moduleConfig);
 
@@ -1419,7 +1414,6 @@ QUnit.test("loadPanel hiding after release", function(assert) {
     assert.equal(loadPanel.option("visible"), false, "load panel hiding");
 });
 
-
 QUnit.test("scrollTo considers pullDown", function(assert) {
     var $scrollView = $("#scrollView").dxScrollView({
         useNative: false,
@@ -1643,7 +1637,6 @@ QUnit.test("onPullDown action", function(assert) {
         $topPocket = $scrollView.find("." + SCROLLVIEW_TOP_POCKET_CLASS),
         $pullDownText = $scrollView.find("." + SCROLLVIEW_PULLDOWN_TEXT_CLASS),
         topPocketHeight = $topPocket.height();
-
 
     var pointer = pointerMock($container).start().down();
     $container.scrollTop(-topPocketHeight);
@@ -2111,7 +2104,6 @@ QUnit.test("scroll fires with correctly arguments", function(assert) {
     $($container).trigger("scroll");
 });
 
-
 QUnit.module("native slideDown strategy", {
     beforeEach: function() {
         this.originalJQueryScrollTop = renderer.fn.scrollTop;
@@ -2306,7 +2298,6 @@ QUnit.test("B252260 - dxScrollView raise the 'Unknown dxScrollView refresh strat
     $("#scrollView").dxScrollView({ useNativeScrolling: true }).dxScrollView("instance");
 });
 
-
 QUnit.module("default value", {
     beforeEach: function() {
         moduleConfig.beforeEach.call(this);
@@ -2373,7 +2364,6 @@ QUnit.test("B251645 dxList: Pull down to refresh is active in design time", func
         config({ designMode: false });
     }
 });
-
 
 QUnit.module("pullDown and reachBottom events", moduleConfig);
 

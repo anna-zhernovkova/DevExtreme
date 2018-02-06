@@ -64,7 +64,6 @@ var moduleSetup = {
     }
 };
 
-
 QUnit.module("widget rendering", moduleSetup);
 
 QUnit.test("widget rendering", function(assert) {
@@ -246,7 +245,6 @@ QUnit.test("onContentReady action should be fired after opened item was rendered
 
 });
 
-
 QUnit.module("nested accordion", moduleSetup);
 
 QUnit.test("nested widget rendering", function(assert) {
@@ -277,7 +275,6 @@ QUnit.test("nested widget rendering", function(assert) {
     $(nested.itemElements()).eq(1).trigger("dxclick");
     assert.equal(nested.isItemSelected(1), true, "item selected by click");
 });
-
 
 QUnit.module("widget options", moduleSetup);
 
@@ -635,7 +632,6 @@ QUnit.test("height option in static mode when widget is multiple", function(asse
     assert.equal($element.find("." + ACCORDION_WRAPPER_CLASS).height(), widgetHeight, "item container height is correct");
 });
 
-
 QUnit.module("widget options changed", moduleSetup);
 
 QUnit.test("items options is changed", function(assert) {
@@ -879,7 +875,6 @@ QUnit.test("disabled state option of single item on init", function(assert) {
     assert.ok(this.$element.find("." + ACCORDION_ITEM_CLASS).eq(1).hasClass("dx-state-disabled"), "item has disabled-state class");
 });
 
-
 QUnit.module("widget behavior", moduleSetup);
 
 QUnit.test("item selection", function(assert) {
@@ -959,7 +954,6 @@ QUnit.test("expandItem method should return deferred", function(assert) {
             animationDuration: 300
         }).dxAccordion("instance");
 
-
     fx.off = false;
 
     instance.expandItem(2).done(function() {
@@ -978,7 +972,6 @@ QUnit.test("collapseItem method should return deferred", function(assert) {
             animationDuration: 300,
             collapsible: true
         }).dxAccordion("instance");
-
 
     fx.off = false;
 
@@ -1016,7 +1009,6 @@ QUnit.test("'onItemClick' firing conditions", function(assert) {
     assert.equal(titleActionFired, 1, "onItemTitleClick was not fired on itemContent click");
     assert.equal(itemActionFired, 2, "'onItemClick' was fired on itemContent click");
 });
-
 
 QUnit.module("update method");
 
@@ -1092,7 +1084,6 @@ QUnit.test("selectedIndex changes by keyboard", function(assert) {
     assert.equal(instance.option("selectedIndex"), 1, "index is right");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria role", function(assert) {
@@ -1139,7 +1130,6 @@ QUnit.test("body should be hidden if item is closed", function(assert) {
     accordion.collapseItem(0);
     assert.equal($itemBody.attr("aria-hidden"), "true", "body readable");
 });
-
 
 QUnit.module("default title template", {
     prepareItemTest: function(data) {

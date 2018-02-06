@@ -15,7 +15,6 @@ QUnit.testStart(function() {
 var DxWidget = Widget.inherit({});
 registerComponent("dxWidget", DxWidget);
 
-
 QUnit.module("events strategy");
 
 QUnit.test("setup event strategy", function(assert) {
@@ -66,5 +65,4 @@ QUnit.test("callbacks should have correct context", function(assert) {
     });
     $element.remove();
 });
-
 

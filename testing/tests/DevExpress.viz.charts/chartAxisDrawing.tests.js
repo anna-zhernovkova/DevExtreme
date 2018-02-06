@@ -147,7 +147,6 @@ QUnit.test("Take into account max margin on each side of pane", function(assert)
     valAxis
         .getMargins.returns({ left: 18, top: 15, right: 10, bottom: 9 });
 
-
     this.setupAxes([argAxis, valAxis]);
 
     new dxChart(this.container, {
@@ -361,7 +360,6 @@ QUnit.test("Rotated. Multiple value axes - margins are accumulated on top and bo
         .getMargins.returns({ bottom: 18, right: 15, top: 10, left: 9 });
     valAxis_outer
         .getMargins.returns({ bottom: 8, right: 8, top: 5, left: 4 });
-
 
     this.setupAxes([argAxis,
         valAxis_inner,

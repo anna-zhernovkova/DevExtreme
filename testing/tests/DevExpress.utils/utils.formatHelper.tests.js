@@ -201,7 +201,6 @@ QUnit.test('Year', function(assert) {
     checkDateWithFormat(date1, format, '2010', assert);
 });
 
-
 QUnit.module('Get Date Format by Tick Interval');
 
 QUnit.test('Year delta, no tickInterval', function(assert) {
@@ -264,7 +263,6 @@ QUnit.test('Second delta, no tickInterval', function(assert) {
     checkDateWithFormat(date1, format, '4:11:41 AM', assert);
 });
 
-
 QUnit.test('tickInterval as object', function(assert) {
     //arrange
     var date1 = new Date(2010, 2, 3, 4, 11, 41, 33),
@@ -274,7 +272,6 @@ QUnit.test('tickInterval as object', function(assert) {
     //assert
     checkDateWithFormat(date1, format, 'March 2010', assert);
 });
-
 
 QUnit.test('Year delta, custom tickInterval', function(assert) {
     //arrange
@@ -292,7 +289,6 @@ QUnit.test('Year delta, custom tickInterval', function(assert) {
     checkDateWithFormat(date1, getDateFormatByTickInterval(date1, date2, 'second'), '4/3/2010 4:11:41 AM', assert);
     checkDateWithFormat(date1, getDateFormatByTickInterval(date1, date2, 'millisecond'), '4/3/2010 4:11:41 AM 033', assert);
 });
-
 
 QUnit.test('Month delta, custom tickInterval', function(assert) {
     //arrange

@@ -35,7 +35,6 @@ var DX_MENU_CLASS = "dx-menu",
     DX_ADAPTIVE_MODE_CLASS = DX_MENU_CLASS + "-adaptive-mode",
     DX_ADAPTIVE_HAMBURGER_BUTTON_CLASS = DX_MENU_CLASS + "-hamburger-button",
 
-
     FOCUS_UP = "up",
     FOCUS_DOWN = "down",
     FOCUS_LEFT = "left",
@@ -767,7 +766,6 @@ var Menu = MenuBase.inherit({
             this._visibleSubmenu.hide();
         }
     },
-
 
     _getSubmenuByRootElement: function($rootItem) {
         if(!$rootItem) {

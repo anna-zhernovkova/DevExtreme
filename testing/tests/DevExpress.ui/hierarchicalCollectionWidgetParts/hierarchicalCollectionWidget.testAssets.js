@@ -3,7 +3,6 @@
 var $ = require("jquery"),
     HierarchicalDataAdapter = require("ui/hierarchical_collection/ui.data_adapter");
 
-
 var accessors = {
     getters: {
         items: function(item) { return item["items"]; },
@@ -24,7 +23,6 @@ var accessors = {
         display: function(item, value) { item["text"] = value; }
     }
 };
-
 
 var assets = {
     treeDataWithKeys: [

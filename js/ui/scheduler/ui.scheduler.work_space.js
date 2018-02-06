@@ -1604,7 +1604,6 @@ var SchedulerWorkSpace = Widget.inherit({
         return this.getCoordinatesByDate(currentDate);
     },
 
-
     setCellDataCache: function(cellCoordinates, groupIndex, $cell) {
         var cache = this.getCellDataCache(),
             data = this.getCellData($cell);

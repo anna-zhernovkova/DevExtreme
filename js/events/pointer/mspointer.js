@@ -54,5 +54,4 @@ MsPointerStrategy.resetObserver = function() {
     observer.reset();
 };
 
-
 module.exports = MsPointerStrategy;

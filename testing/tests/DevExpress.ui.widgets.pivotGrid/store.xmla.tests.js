@@ -892,7 +892,6 @@ QUnit.test("Hierarchy. Expand column & row", function(assert) {
 
         assert.strictEqual(data.values[7][1][0], 98, "Mounain Bikes - 2003 January");
 
-
         assert.strictEqual(data.values[13][3][0], null, "Touring Bikes - 2003 June");
 
     }).fail(getFailCallBack(assert))
@@ -1144,7 +1143,6 @@ QUnit.test("Hierarchy. Expand item with expanded children", function(assert) {
         assert.strictEqual(data.rows[0].children[0].text, "Q1 CY 2003");
         assert.strictEqual(data.rows[0].children[1].text, "Q2 CY 2003");
         assert.strictEqual(data.rows[1].text, "H2 CY 2003");
-
 
         assert.strictEqual(data.rows[data.rows.length - 1].text, "H2 CY 2003");
         assert.strictEqual(data.rows[data.rows.length - 1].index, 2);
@@ -1426,7 +1424,6 @@ QUnit.test("Hierarchy & not hierarchy. Load expanded axis with expanded not hira
     }).fail(getFailCallBack(assert))
         .always(done);
 });
-
 
 QUnit.test("Hierarchy & not hierarchy. Expand hierarchy item with expanded not hirarchy children", function(assert) {
     var done = assert.async();
@@ -2026,7 +2023,6 @@ QUnit.test("Filter field. Include type", function(assert) {
         .always(done);
 });
 
-
 QUnit.test("Filter field. Exclude type", function(assert) {
     var done = assert.async();
     this.store.load({
@@ -2136,7 +2132,6 @@ QUnit.test("Filter hierarchyLevel field. Include type", function(assert) {
     }).fail(getFailCallBack(assert))
         .always(done);
 });
-
 
 QUnit.test("Filter hierarchyLevel field. Exclude type", function(assert) {
     var done = assert.async();
@@ -2368,7 +2363,6 @@ QUnit.test("Sorting by none two dimension on axis and expanded item", function(a
     }).fail(getFailCallBack(assert))
         .always(done);
 });
-
 
 QUnit.test("Sorting group by none", function(assert) {
     var done = assert.async();
@@ -2816,7 +2810,6 @@ QUnit.test("Sorting by Summary field in first field on axis", function(assert) {
         .always(done);
 });
 
-
 QUnit.test("Sorting by Summary field in first field on axis with path", function(assert) {
     var done = assert.async();
     this.load({
@@ -2869,7 +2862,6 @@ QUnit.test("Sorting by Summary field in first field on axis with path", function
     }).fail(getFailCallBack(assert))
         .always(done);
 });
-
 
 QUnit.test("Sorting columns by row", function(assert) {
     var done = assert.async();
@@ -2994,7 +2986,6 @@ QUnit.test("Sorting by Summary field in with path with length greater then colum
     }).fail(getFailCallBack(assert))
         .always(done);
 });
-
 
 QUnit.test("Sorting by Summary two dimension on axis", function(assert) {
     var done = assert.async();
@@ -3276,7 +3267,6 @@ QUnit.test("Sort when several expanded groups on axis", function(assert) {
 
         assert.strictEqual(data.columns[0].text, "CY 2003");
         assert.strictEqual(data.columns[0].children[0].text, "December 2003");
-
 
     }).fail(getFailCallBack(assert))
         .always(done);
@@ -3708,7 +3698,6 @@ QUnit.test("T566739. Do not generate CrossJoin in select statement if skipValues
 
     assert.ok(this.getQuery().toLowerCase().indexOf("crossjoin") === -1);
 });
-
 
 QUnit.module("getDrillDownItems", stubsEnvironment);
 

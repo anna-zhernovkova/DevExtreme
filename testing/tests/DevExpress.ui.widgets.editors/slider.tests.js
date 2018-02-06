@@ -42,7 +42,6 @@ var SLIDER_CLASS = "dx-slider",
     TOOLTIP_CLASS = "dx-tooltip",
     TOOLTIP_CONTENT_CLASS = "dx-overlay-content";
 
-
 var moduleOptions = {
     beforeEach: function() {
         fx.off = true;
@@ -325,7 +324,6 @@ QUnit.test("'showRange' option should toggle class to range element", function(a
     assert.ok(!$("." + SLIDER_RANGE_CLASS).hasClass(SLIDER_RANGE_VISIBLE_CLASS));
 });
 
-
 QUnit.module("hidden input");
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -373,7 +371,6 @@ QUnit.test("the hidden input should use the decimal separator specified in DevEx
     }
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget input should get the 'name' attribute with a correct value", function(assert) {
@@ -385,7 +382,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("slider with tooltip");
 
@@ -775,7 +771,6 @@ QUnit.test("arrow should not go outside of the content overlay", function(assert
     assert.equal($content.offset().left, $arrow.offset().left, "arrow was fitted");
 });
 
-
 QUnit.module("'tooltip.format' option");
 
 QUnit.test("'tooltip.format' option as function", function(assert) {
@@ -868,7 +863,6 @@ QUnit.test("'tooltip.format' as undefined (null, false) should render value as i
 
     assert.equal($.trim($tooltip.text()), "1");
 });
-
 
 QUnit.module("labels", moduleOptions);
 
@@ -967,7 +961,6 @@ QUnit.test("'label.position' option toggles label position", function(assert) {
     assert.ok(!$slider.hasClass("dx-slider-label-position-top"));
 });
 
-
 QUnit.module("events");
 
 QUnit.test("value change should cause value change action call", function(assert) {
@@ -1005,7 +998,6 @@ QUnit.test("T269867 - handle should not have active state if the 'activeStateEna
     assert.ok(!$handle.hasClass("dx-state-active"), "handle should not have active state");
 });
 
-
 QUnit.module("focus policy", moduleOptions);
 
 QUnit.testInActiveWindow("Handle focus by click on track bar (T249311)", function(assert) {
@@ -1020,7 +1012,6 @@ QUnit.testInActiveWindow("Handle focus by click on track bar (T249311)", functio
     $slider.trigger("dxclick");
     assert.ok($handle.hasClass("dx-state-focused"), "handle has focus class after click on track");
 });
-
 
 QUnit.module("keyboard navigation", moduleOptions);
 
@@ -1201,7 +1192,6 @@ QUnit.test("T380070 - the value should not be changed on the 'right' key press i
     keyboardMock($handle).press("right");
     assert.ok(spy.called === false, "the onValueChanged is not called");
 });
-
 
 QUnit.module("regression tests", moduleOptions);
 
@@ -1540,7 +1530,6 @@ QUnit.test("change width", function(assert) {
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria role", function(assert) {
@@ -1586,7 +1575,6 @@ QUnit.test("change aria properties on option changing", function(assert) {
     assert.equal($handle.attr("aria-valuemax"), 70, "aria max is correct");
     assert.equal($handle.attr("aria-valuenow"), 40, "aria now is correct");
 });
-
 
 QUnit.module("visibility change");
 

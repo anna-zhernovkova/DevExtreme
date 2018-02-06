@@ -15,7 +15,6 @@ var MAP_CLASS = "dx-map",
     MAP_SHIELD_CLASS = "dx-map-shield",
     NATIVE_CLICK_CLASS = "dx-native-click";
 
-
 QUnit.module("rendering", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";
@@ -68,7 +67,6 @@ QUnit.test("map container should be rendered", function(assert) {
     assert.ok($map.children("." + MAP_CONTAINER_CLASS), "map container rendered");
 });
 
-
 QUnit.module("design mode", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";
@@ -115,7 +113,6 @@ QUnit.test("events should be recaptured", function(assert) {
     $map.trigger($.Event("mousedown", { button: 0 }));
 });
 
-
 QUnit.module("option change", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";
@@ -144,7 +141,6 @@ QUnit.test("disabled", function(assert) {
     map.option("disabled", false);
     assert.equal($map.find("." + MAP_SHIELD_CLASS).length, 0);
 });
-
 
 QUnit.module("markers", {
     beforeEach: function() {
@@ -252,7 +248,6 @@ QUnit.test("markers option should not accept null at runtime", function(assert) 
         }).dxMap("option", "markers", null);
     }, /markers/i, "not array exception was thrown");
 });
-
 
 QUnit.module("saving previous markers", {
     beforeEach: function() {
@@ -424,7 +419,6 @@ QUnit.test("changing existing marker should rerender marker", function(assert) {
     });
 });
 
-
 QUnit.module("async markers rendering", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";
@@ -494,7 +488,6 @@ QUnit.test("markers option change should not render incorrect markers", function
     map.option("markers", markers);
     map.option("markers", markers);
 });
-
 
 QUnit.module("routes", {
     beforeEach: function() {
@@ -602,7 +595,6 @@ QUnit.test("routes option should not accept null at runtime", function(assert) {
         }).dxMap("option", "routes", null);
     }, /routes/i, "not array exception was thrown");
 });
-
 
 QUnit.module("saving previous routes", {
     beforeEach: function() {
@@ -774,7 +766,6 @@ QUnit.test("changing existing route should rerender marker", function(assert) {
     });
 });
 
-
 QUnit.module("async routes rendering", {
     beforeEach: function() {
         var fakeURL = "/fakeGoogleUrl?";
@@ -838,7 +829,6 @@ QUnit.test("routes option change should not render incorrect routes", function(a
     routes.push(ROUTES[1]);
     map.option("routes", routes);
 });
-
 
 QUnit.module("Change provider", {
     beforeEach: function() {

@@ -99,7 +99,6 @@ var appointmentTooltip = {
             .text(this._formatTooltipDate(startDate, endDate, isAllDay))
             .appendTo($tooltip);
 
-
         var $buttons = $("<div>")
                         .addClass(APPOINTMENT_TOOLTIP_BUTTONS_CLASS)
                         .appendTo($tooltip);

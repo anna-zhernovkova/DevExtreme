@@ -262,7 +262,6 @@ QUnit.test("ui interaction validator should prevent all action handlers by valid
     assert.ok(!handlerSpy.called);
 });
 
-
 QUnit.test("ui interaction validator should prevent all ui action handlers by 'dx-state-readonly' class", function(assert) {
     var handlerSpy = sinon.spy(noop),
         $targetElement = $(".dx-state-readonly .dx-click-target");
@@ -319,7 +318,6 @@ QUnit.test("Working with jQueryEvent field should throw warning", function(asser
     new Action(function(e) {
         e.jQueryEvent = {};
     }).execute({ event: eventMock });
-
 
     if(noJquery) {
         assert.equal(log.length, 0);

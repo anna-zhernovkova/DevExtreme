@@ -80,7 +80,6 @@ function createLayoutManager(options) {
 function getStubSeries(type, innerRadius, points) {
     var stubSeries = new vizMocks.Series();
 
-
     stubSeries.type = type;
 
     stubSeries.stub("getVisiblePoints").returns(points || [createFakePointsWithStubLabels({}, true, false)]);

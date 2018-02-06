@@ -19,7 +19,6 @@ var SCROLLVIEW_PULLDOWN_REFRESHING_CLASS = "dx-scrollview-pull-down-loading",
     STATE_LOADING = 3,
     PULLDOWN_RELEASE_TIME = 400;
 
-
 var PullDownNativeScrollViewStrategy = NativeStrategy.inherit({
 
     _init: function(scrollView) {

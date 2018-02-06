@@ -37,7 +37,6 @@ viewPort($("#qunit-fixture").addClass("dx-viewport"));
 
 setTemplateEngine('hogan');
 
-
 QUnit.module('Filter Row', {
     beforeEach: function() {
 
@@ -414,7 +413,6 @@ QUnit.test('Reset operation via operation chooser when applyMode is onClick', fu
     });
 });
 
-
 QUnit.test('Change operation on columnsChanged event with filterValue optionName parameter', function(assert) {
     //arrange
     var testElement = $('#container'),
@@ -739,7 +737,6 @@ QUnit.test("update filter value for array column with dxTagBox", function(assert
     //act
     testElement.find(".dx-tagbox").first().dxTagBox("instance").option("value", [1, 2, 3]);
 
-
     //assert
     assert.deepEqual(this.columnsController.updateOptions[0], {
         columnIndex: 0,
@@ -991,7 +988,6 @@ QUnit.test("Set highlight when filter operation is changed", function(assert) {
 
     assert.ok(isHighLight);
 });
-
 
 QUnit.test("Apply filter button is changed enabled state when filter operation is changed", function(assert) {
     //arrange

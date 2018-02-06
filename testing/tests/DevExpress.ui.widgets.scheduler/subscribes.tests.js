@@ -262,7 +262,6 @@ QUnit.test("'needCoordinates' should calculate correct dates fo recurring appts 
     try {
         var instance = this.instance;
 
-
         instance.fire("needCoordinates", {
             appointmentData: {
                 "startDate": new Date(2015, 2, 2, 0),

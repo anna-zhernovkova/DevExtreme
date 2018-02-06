@@ -8,7 +8,6 @@ var $ = require("jquery"),
 /* global insertMockFactory, MockAxis */
 require("../../helpers/chartMocks.js");
 
-
 require("viz/chart");
 
 var createSeries = function(options, renderSettings) {

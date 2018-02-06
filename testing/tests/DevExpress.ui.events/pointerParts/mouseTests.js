@@ -71,7 +71,6 @@ QUnit.test("dxpointerup triggers twice on real devices", function(assert) {
     assert.equal(triggered, 1);
 });
 
-
 $.each({
     "dxpointerdown": "mouseDown",
     "dxpointermove": "mouseMove",

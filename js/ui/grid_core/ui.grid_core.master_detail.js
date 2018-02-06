@@ -11,7 +11,6 @@ var MASTER_DETAIL_CELL_CLASS = "dx-master-detail-cell",
     CELL_FOCUS_DISABLED_CLASS = "dx-cell-focus-disabled",
     ROW_LINES_CLASS = "dx-row-lines";
 
-
 module.exports = {
     defaultOptions: function() {
         return {

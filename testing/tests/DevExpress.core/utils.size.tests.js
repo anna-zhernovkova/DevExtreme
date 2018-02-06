@@ -224,7 +224,6 @@ QUnit.test("element is not in a DOM", function(assert) {
     }
 });
 
-
 QUnit.module("getElementBoxParams");
 
 QUnit.test("element in parent with fixed size", function(assert) {

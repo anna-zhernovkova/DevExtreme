@@ -98,7 +98,6 @@ QUnit.test("'teardown' method", function(assert) {
         handler = function() { },
         LOG;
 
-
     eventsEngine.on(this.element, "dxtestevent.test1.test2", data, handler);
     eventsEngine.off(this.element, "dxtestevent.test1.test2");
 

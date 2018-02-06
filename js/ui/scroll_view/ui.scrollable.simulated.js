@@ -504,7 +504,6 @@ var Scroller = Class.inherit({
     dispose: commonUtils.noop
 });
 
-
 var hoveredScrollable,
     activeScrollable;
 

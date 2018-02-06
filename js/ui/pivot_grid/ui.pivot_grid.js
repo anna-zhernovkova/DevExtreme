@@ -1587,7 +1587,6 @@ var PivotGrid = Widget.inherit({
                 .append(columnHeaderContainer)
                 .appendTo(tableElement);
 
-
             $(TR)
                 .append(rowHeaderContainer)
                 .append(columnsAreaElement)
@@ -1919,7 +1918,6 @@ var PivotGrid = Widget.inherit({
 
                 that._updateLoading();
                 that._renderNoDataText(dataAreaCell);
-
 
                 ///#DEBUG
                 that._testResultWidths = resultWidths;

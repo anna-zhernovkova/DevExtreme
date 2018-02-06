@@ -417,7 +417,6 @@ QUnit.test("selection should works with composite keys", function(assert) {
     assert.strictEqual(instance.option("selectedItem"), null, "selectedItem is null");
 });
 
-
 QUnit.test("selectedItem should be changed correctly with composite keys and valueExpr", function(assert) {
     var data = [
             { ID1: 1, ID2: 21 },
@@ -577,7 +576,6 @@ QUnit.test("highlight item when dataSource is mapped", function(assert) {
             return { id: data.id };
         }
     });
-
 
     var $lookup = $("#lookup").dxLookup({
         dataSource: dataSource,
@@ -803,7 +801,6 @@ QUnit.test("searchTimeout does not work (Q569033)", function(assert) {
         valueExpr: "id",
         searchTimeout: 500
     });
-
 
     this.togglePopup();
 
@@ -1407,7 +1404,6 @@ QUnit.test("The search field should be insert before list", function(assert) {
     assert.ok(listIndex > searchIndex, "list placed after search field");
 });
 
-
 QUnit.module("hidden input");
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -1465,7 +1461,6 @@ QUnit.test("the hidden input should get value in respect of the 'valueExpr' opti
     assert.equal($input.val(), items[0].id, "input value is correct");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("hidden input should get the 'name' attribute with a correct value", function(assert) {
@@ -1489,7 +1484,6 @@ QUnit.test("hidden input should get correct 'name' attribute after the 'name' op
     instance.option("name", expectedName);
     assert.equal($input.attr("name"), expectedName, "input has correct 'name' attribute");
 });
-
 
 QUnit.module("options", {
     beforeEach: function() {
@@ -2100,7 +2094,6 @@ QUnit.test("search wrapper should be rendered if the 'searchEnabled' option is t
     assert.equal($(instance.content()).find("." + LOOKUP_SEARCH_WRAPPER_CLASS).length, 1, "search wrapper is rendered");
 });
 
-
 QUnit.module("popup options", {
     beforeEach: function() {
         fx.off = true;
@@ -2330,7 +2323,6 @@ QUnit.test("popup height should be stretch when data items are loaded asynchrono
     assert.ok($(".dx-overlay-content").outerHeight() > defaultHeight, "popup height is changed when data is loaded");
 });
 
-
 QUnit.module("list options", {
     beforeEach: function() {
         fx.off = true;
@@ -2524,7 +2516,6 @@ QUnit.test("Popup height should be decrease after a loading of new page and sear
     assert.notEqual(listHeight, currentListHeight, "popup should be collapsed after search");
 });
 
-
 QUnit.module("widget sizing render");
 
 QUnit.test("default", function(assert) {
@@ -2558,7 +2549,6 @@ QUnit.test("change width", function(assert) {
 
     assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
 });
-
 
 QUnit.module("focus policy", {
     beforeEach: function() {
@@ -2645,7 +2635,6 @@ QUnit.test("lookup should not lose focus when clicking inside popup", function(a
 
     $($content).trigger("dxpointerdown");
 });
-
 
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
@@ -2944,7 +2933,6 @@ QUnit.test("'Home', 'End' keys does not changed default behaviour in searchField
     assert.equal(lookup.option("value"), undefined, "home key works correctly");
 });
 
-
 QUnit.module("dataSource integration");
 
 QUnit.test("'paginate' for dataSource depends on 'showNextButton' option (T172999)", function(assert) {
@@ -2980,7 +2968,6 @@ QUnit.test("search should be execute after paste", function(assert) {
         fx.off = originalFX;
     }
 });
-
 
 QUnit.module("Validation", {
     beforeEach: function() {
@@ -3054,7 +3041,6 @@ QUnit.test("Lookup should select an item in the grouped list", function(assert) 
     assert.deepEqual(instance.option("text"), "New Brochures", "option 'text' is correct");
     assert.equal($element.find(".dx-lookup-field").text(), "New Brochures", "text field is correct");
 });
-
 
 QUnit.module("device and theme specific tests", {
     beforeEach: function() {
@@ -3149,7 +3135,6 @@ QUnit.test("popup should also get 'invalid' class", function(assert) {
     assert.ok($popupContent.hasClass(LOOKUP_POPUP_INVALID_CLASS), "popup content has invalid class");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria role", function(assert) {
@@ -3169,7 +3154,6 @@ QUnit.test("aria-target for lookup's list should point to the list's focusTarget
     //TODO: change it when _getAriaTarget becomes an option
     assert.deepEqual(list._getAriaTarget(), list.$element(), "aria target for nested list is correct");
 });
-
 
 QUnit.module("default options", {
     beforeEach: function() {

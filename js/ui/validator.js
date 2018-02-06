@@ -146,7 +146,6 @@ var Validator = DOMComponent.inherit({
         }
     },
 
-
     _setOptionsByReference: function() {
         this.callBase();
 
@@ -217,8 +216,6 @@ var Validator = DOMComponent.inherit({
         }
     },
 
-
-
     /**
     * @name dxValidatorMethods_validate
     * @publicName validate()
@@ -249,10 +246,8 @@ var Validator = DOMComponent.inherit({
 
         this._applyValidationResult(result, adapter);
 
-
         return result;
     },
-
 
     /**
     * @name dxValidatorMethods_reset

@@ -3,7 +3,6 @@
 var inArray = require("../../core/utils/array").inArray,
     EditStrategy = require("./ui.collection_widget.edit.strategy");
 
-
 var PlainEditStrategy = EditStrategy.inherit({
 
     _getPlainItems: function() {

@@ -2271,7 +2271,6 @@ QUnit.test("Get columns from data provider when there is datetime column", funct
     assert.ok(columnCompare(columns[3], { width: 90, dataType: "date", format: "shortDateShortTime", alignment: "left", caption: "Test Field 4" }), "column 4");
 });
 
-
 QUnit.module("Export menu", {
     beforeEach: function() {
         this.setupModules = function(options, initDefaultOptions) {
@@ -2696,7 +2695,6 @@ QUnit.test("Show export button via option when the enabled option is disabled", 
     this.headerPanel.option("export.enabled", true);
     this.headerPanel.optionChanged({ name: "export", fullName: "export.enabled", value: true });
 
-
     //assert
     assert.ok(this.headerPanel.isVisible(), "is visible");
     $exportButton = $container.find(".dx-datagrid-export-button");
@@ -2878,7 +2876,6 @@ QUnit.test("Export to Excel button call`s exportTo when the button text is local
     assert.ok(exportToCalled, "exportTo Called");
     this.headerPanel._exportController.exportToExcel = _exportToExcel;
 });
-
 
 QUnit.module("Real dataGrid ExportController tests", {
     beforeEach: function() {

@@ -414,7 +414,6 @@ QUnit.test("animation option", function(assert) {
         }
     });
 
-
     $test
         .find(".defer-rendering")
         .dxDeferRendering(options)
@@ -546,7 +545,6 @@ QUnit.test("stops on dispose (T315643)", function(assert) {
             return $.Deferred().resolve().promise();
         }
     });
-
 
     $test
         .find(".defer-rendering")

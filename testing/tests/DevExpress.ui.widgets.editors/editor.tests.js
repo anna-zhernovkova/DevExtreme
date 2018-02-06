@@ -29,7 +29,6 @@ var Fixture = Class.inherit({
     }
 });
 
-
 (function() {
     QUnit.module("Editor", {
         beforeEach: function() {
@@ -229,7 +228,6 @@ var Fixture = Class.inherit({
     });
 })("Editor");
 
-
 (function() {
     QUnit.module("the 'name' option", {
         beforeEach: function() {
@@ -289,7 +287,6 @@ var Fixture = Class.inherit({
     });
 })("the 'name' option");
 
-
 (function() {
     QUnit.module("Validation", {
         beforeEach: function() {
@@ -305,14 +302,12 @@ var Fixture = Class.inherit({
         assert.ok(editor, "Editor was created");
     });
 
-
     QUnit.test("Container has dx-editor data mark", function(assert) {
         var editor = this.fixture.createEditor();
 
         assert.strictEqual(dataUtils.data(this.fixture.$element[0], "dx-validation-target"), editor, "Editor was saved");
     });
 })("Validation");
-
 
 (function() {
     QUnit.module("Validation - UI", {
@@ -344,7 +339,6 @@ var Fixture = Class.inherit({
         assert.ok(editor.$element().hasClass(INVALID_VALIDATION_CLASS), "Editor main element should be marked as invalid");
     });
 
-
     QUnit.test("Widget can be set in invalid state through options", function(assert) {
         //assign
         var message = "That is very bad editor",
@@ -363,7 +357,6 @@ var Fixture = Class.inherit({
         //assert
         assert.ok(editor.$element().hasClass(INVALID_VALIDATION_CLASS), "Editor main element should be marked as invalid");
     });
-
 
     QUnit.test("Widget message should be created", function(assert) {
         var message = "That is very bad editor",
@@ -650,7 +643,6 @@ var Fixture = Class.inherit({
     });
 })("Validation - UI");
 
-
 (function() {
     QUnit.module("Validation Events", {
         beforeEach: function() {
@@ -684,7 +676,6 @@ var Fixture = Class.inherit({
         var nullValue = null,
             handler = sinon.stub();
 
-
         var editor = this.fixture.createEditor({
             value: undefined
         });
@@ -697,7 +688,6 @@ var Fixture = Class.inherit({
         assert.ok(!handler.called, "Validating handler should not be called");
     });
 })("Validation Events");
-
 
 QUnit.module("aria accessibility", {
     beforeEach: function() {

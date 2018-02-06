@@ -119,8 +119,6 @@ QUnit.test("unselectItem() method", function(assert) {
     assert.ok(!treeView.$element().find(".dx-checkbox").eq(2).dxCheckBox("instance").option("value"));
 });
 
-
-
 QUnit.test("expandItem() method", function(assert) {
     var data = [{ text: "Item 1", items: [{ text: "Nested item" }] }, { text: "Item 2" }],
         treeView = initTree({

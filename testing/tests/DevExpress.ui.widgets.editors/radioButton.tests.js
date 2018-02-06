@@ -20,7 +20,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 QUnit.module("button rendering");
 
 QUnit.test("widget should be rendered", function(assert) {
@@ -35,7 +34,6 @@ QUnit.test("icon should be rendered", function(assert) {
 
     assert.ok($icon.length, "icon rendered");
 });
-
 
 QUnit.module("value changing");
 
@@ -75,7 +73,6 @@ QUnit.test("value change action should be fired on value change", function(asser
     var radioButton = $("#radioButton").dxRadioButton("instance");
     radioButton.option("value", true);
 });
-
 
 QUnit.module("interaction");
 
@@ -120,7 +117,6 @@ QUnit.test("state changes on space press", function(assert) {
 
     assert.equal(instance.option("value"), true, "value has been change successfully");
 });
-
 
 QUnit.module("aria accessibility");
 

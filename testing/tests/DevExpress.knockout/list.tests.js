@@ -75,7 +75,6 @@ QUnit.test("default with ko approach", function(assert) {
     assert.equal($.trim(items.text()), "01", "all items rendered");
 });
 
-
 QUnit.module("regressions", moduleSetup);
 
 QUnit.test("scrollView size updated on onContentReady (B253584)", function(assert) {
@@ -135,7 +134,6 @@ QUnit.test("B233222. List - group header uses item template", function(assert) {
     assert.equal($headers.eq(2).text(), "nonExistent", "default list group template when custom group.template was not found");
 });
 
-
 QUnit.module("deleting in grouped list MVVM support");
 
 QUnit.test("deleteItem should correctly be handled by ko subscriptions with isolated items", function(assert) {
@@ -165,7 +163,6 @@ QUnit.test("deleteItem should correctly be handled by ko subscriptions with isol
     list.deleteItem({ group: 0, item: 0 });
     list.deleteItem({ group: 1, item: 0 });
 });
-
 
 QUnit.module("selecting MVVM support");
 

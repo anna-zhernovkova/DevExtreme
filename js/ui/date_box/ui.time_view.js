@@ -28,7 +28,6 @@ var cssRotate = function($arrow, angle, offset) {
     $arrow.css("transform", "rotate(" + angle + "deg)" + " translate(0," + offset + "px)");
 };
 
-
 var TimeView = Editor.inherit({
 
     _getDefaultOptions: function() {

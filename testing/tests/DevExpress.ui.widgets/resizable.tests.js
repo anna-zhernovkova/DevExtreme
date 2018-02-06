@@ -25,7 +25,6 @@ var RESIZABLE_CLASS = "dx-resizable",
     RESIZABLE_HANDLE_LEFT_CLASS = "dx-resizable-handle-left",
     RESIZABLE_HANDLE_CORNER_CLASS = "dx-resizable-handle-corner";
 
-
 QUnit.module("markup");
 
 QUnit.test("resizable render", function(assert) {
@@ -68,7 +67,6 @@ QUnit.test("resizable shouldn't render handles if handles is none", function(ass
     assert.equal($resizable.find("." + RESIZABLE_HANDLE_CLASS).length, 0, "no handles were rendered");
 });
 
-
 QUnit.test("resizable should have corner handles when need", function(assert) {
     var $resizable = $("#resizable").dxResizable({
             handles: "right bottom"
@@ -98,7 +96,6 @@ QUnit.test("resizable should have corner handles when need", function(assert) {
     assert.ok(isHandleExist("bottom-left"), "bottom left corner exists with 'all' handles");
     assert.ok(isHandleExist("bottom-right"), "bottom right corner exists with 'all' handles");
 });
-
 
 QUnit.module("behavior");
 
@@ -226,7 +223,6 @@ QUnit.test("resizable should change size correctly after several drag events", f
     assert.equal($resizable.outerWidth(), elementWidth + 11, "width of element was changed correctly");
 });
 
-
 QUnit.module("behavior with auto size");
 
 QUnit.test("drag on left handle should not change height", function(assert) {
@@ -276,7 +272,6 @@ QUnit.test("drag on bottom handle should not change width", function(assert) {
     pointer.dragStart().drag(0, 10);
     assert.equal($resizable[0].style.width, "auto", "width of element was not changed");
 });
-
 
 QUnit.module("drag integration");
 
@@ -692,7 +687,6 @@ QUnit.test("vertical grid step", function(assert) {
     assert.equal($resizable.outerHeight(), 60, "grid step forward");
 });
 
-
 QUnit.module("area");
 
 QUnit.test("element bottom boundary", function(assert) {
@@ -855,7 +849,6 @@ QUnit.test("Area can be a window", function(assert) {
     pointerMock($resizable.find("." + RESIZABLE_HANDLE_BOTTOM_CLASS)).start().down().move(0, 20).dragEnd();
     assert.equal($resizable.offset().top + $resizable.outerHeight(), resizableBottom + 20);
 });
-
 
 QUnit.module("actions");
 

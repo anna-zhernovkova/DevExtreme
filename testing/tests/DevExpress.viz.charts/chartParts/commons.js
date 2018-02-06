@@ -94,7 +94,6 @@ function getHeaderBlockStub() {
 }
 exports.getHeaderBlockStub = getHeaderBlockStub;
 
-
 function getLegendStub() {
     return legendModule.Legend.lastCall.returnValue;
 }
@@ -255,7 +254,6 @@ exports.environment = {
         this.tooltip = null;
 
         tooltipModule.Tooltip = null;
-
 
     },
 

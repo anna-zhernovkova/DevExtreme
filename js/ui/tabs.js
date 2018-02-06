@@ -41,7 +41,6 @@ var TABS_CLASS = "dx-tabs",
 
     TAB_OFFSET = 30;
 
-
 /**
 * @name dxTabs
 * @publicName dxTabs

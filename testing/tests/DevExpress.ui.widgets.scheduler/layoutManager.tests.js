@@ -39,7 +39,6 @@ var moduleOptions = {
     }
 };
 
-
 QUnit.module("LayoutManager", moduleOptions);
 
 QUnit.test("LayoutManager should be initialized", function(assert) {

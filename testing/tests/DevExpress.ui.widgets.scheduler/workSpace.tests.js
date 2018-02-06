@@ -514,7 +514,6 @@ QUnit.testStart(function() {
         var $element = this.instance.$element(),
             cellCounter = 0;
 
-
         assert.equal($element.find(".dx-scheduler-date-table tbody tr").length, 48, "Date table has 48 rows");
         assert.equal($element.find(".dx-scheduler-date-table tbody tr>td").length, 48, "Date table has 48 cells");
 
@@ -581,7 +580,6 @@ QUnit.testStart(function() {
         assert.strictEqual($element.find(".dx-scheduler-group-row").eq(1).find("th").attr("colspan"), undefined, "Group header has a right 'colspan'");
     });
 
-
     QUnit.test("Time panel should have 24 rows and 24 cells", function(assert) {
         checkRowsAndCells(this.instance.$element(), assert);
     });
@@ -603,7 +601,6 @@ QUnit.testStart(function() {
 
         assert.equal(coords.top, $element.find(".dx-scheduler-date-table tbody td").eq(4).position().top, "Top cell coordinates are right");
         assert.equal(coords.left, $element.find(".dx-scheduler-date-table tbody td").eq(4).position().left, "Left cell coordinates are right");
-
 
         var $cell = $element.find(".dx-scheduler-date-table tbody td").eq(5),
             position = $cell.position();
@@ -1895,8 +1892,6 @@ QUnit.testStart(function() {
         assert.ok(cells.eq(0).hasClass("dx-state-focused"), "new cell is focused");
     });
 
-
-
     QUnit.test("Month workspace navigation by arrows, RTL mode", function(assert) {
         var $element = $("#scheduler-work-space").dxSchedulerWorkSpaceMonth({
                 focusStateEnabled: true,
@@ -1933,7 +1928,6 @@ QUnit.testStart(function() {
         keyboard.keyDown("up");
         assert.ok(cells.eq(0).hasClass("dx-state-focused"), "cell is still focused");
     });
-
 
     QUnit.test("Workspace should scroll to focused cell during navigation", function(assert) {
         var $element = $("#scheduler-work-space").dxSchedulerWorkSpaceWeek({
@@ -2183,7 +2177,6 @@ QUnit.testStart(function() {
         assert.equal(cells.filter(".dx-state-focused").length, 14, "right quantity of focused cells");
     });
 
-
     QUnit.test("Workspace Week should allow select/unselect cells with shift & arrows, RTL mode", function(assert) {
         var $element = $("#scheduler-work-space").dxSchedulerWorkSpaceWeek({
                 focusStateEnabled: true,
@@ -2366,7 +2359,6 @@ QUnit.testStart(function() {
         assert.equal(cells.slice(1, 3).filter(".dx-state-focused").length, 2, "right cells are focused");
     });
 
-
     QUnit.test("Workspace Day should allow select/unselect cells with shift & arrows", function(assert) {
         var $element = $("#scheduler-work-space").dxSchedulerWorkSpaceDay({
                 focusStateEnabled: true,
@@ -2508,7 +2500,6 @@ QUnit.testStart(function() {
     });
 
 })("Workspace Keyboard Navigation");
-
 
 (function() {
     QUnit.module("Workspace Mouse Interaction");
@@ -2720,7 +2711,6 @@ QUnit.testStart(function() {
     QUnit.test("Popup should be shown when onCellClick", function(assert) {
         assert.expect(1);
 
-
         var $element = $("#scheduler-work-space").dxSchedulerWorkSpaceMonth({
                 focusStateEnabled: true,
                 onCellClick: function(e) {
@@ -2739,7 +2729,6 @@ QUnit.testStart(function() {
     });
 
 })("Workspace Mouse Interaction");
-
 
 (function() {
 

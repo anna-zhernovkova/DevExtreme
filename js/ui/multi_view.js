@@ -14,7 +14,6 @@ var $ = require("../core/renderer"),
     Swipeable = require("../events/gesture/swipeable"),
     Deferred = require("../core/utils/deferred").Deferred;
 
-
 var MULTIVIEW_CLASS = "dx-multiview",
     MULTIVIEW_WRAPPER_CLASS = "dx-multiview-wrapper",
     MULTIVIEW_ITEM_CONTAINER_CLASS = "dx-multiview-item-container",

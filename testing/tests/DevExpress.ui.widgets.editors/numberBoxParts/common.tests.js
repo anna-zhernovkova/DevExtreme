@@ -24,7 +24,6 @@ var NUMBERBOX_CLASS = "dx-numberbox",
 
     ACTIVE_STATE_CLASS = "dx-state-active";
 
-
 QUnit.module("basics");
 
 QUnit.test("markup init", function(assert) {
@@ -661,7 +660,6 @@ QUnit.test("The widget should be invalid if isValid option is false on init but 
     assert.ok($numberBox.hasClass(INVALID_CLASS), "widget is invalid");
 });
 
-
 QUnit.module("submit element");
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -709,7 +707,6 @@ QUnit.test("the hidden input should use the decimal separator specified in DevEx
     }
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("hidden input should get the 'name' attribute", function(assert) {
@@ -732,7 +729,6 @@ QUnit.test("editor input should not get the 'name' attribute", function(assert) 
 
     assert.notOk(input.hasAttribute("name"), "edior input does not have the 'name' attribute");
 });
-
 
 QUnit.module("input value updating");
 

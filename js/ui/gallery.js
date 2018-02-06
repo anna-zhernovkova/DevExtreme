@@ -83,7 +83,6 @@ var GalleryNavButton = Widget.inherit({
     }
 });
 
-
 /**
 * @name dxgallery
 * @publicName dxGallery
@@ -508,7 +507,6 @@ var Gallery = CollectionWidget.inherit({
             if(index > itemsCount + itemsPerPage - 1) {
                 realIndex = lastItemDuplicateIndex - realIndex - itemsPerPage;
             }
-
 
             var itemPosition = itemWidth * (realIndex + offsetRatio) + freeSpace * (realIndex + 1 - offsetRatio);
             $(this).css(rtlEnabled ? "right" : "left", itemPosition * 100 + "%");
@@ -1033,7 +1031,6 @@ var Gallery = CollectionWidget.inherit({
         }
 
         var indexOffset = this._calculateIndexOffset(newIndex, prevIndex);
-
 
         this._renderContainerPosition(indexOffset, this.option("animationEnabled") && !withoutAnimation).done(function() {
             this._setFocusOnSelect();

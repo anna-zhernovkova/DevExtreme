@@ -55,7 +55,6 @@ QUnit.test("Get JSON", function(assert) {
     var xhr = this.requests[0];
     xhr.respond(200, { "Content-Type": "application/json" }, JSON.stringify(json));
 
-
     assert.equal(xhr.method, "GET");
     assert.equal(xhr.url, "/json-url");
     assert.deepEqual(result, json);

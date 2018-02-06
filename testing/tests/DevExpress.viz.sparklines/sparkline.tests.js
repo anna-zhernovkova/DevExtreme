@@ -1237,7 +1237,6 @@ QUnit.begin(function() {
         assert.deepEqual(customizeFunction.call({ index: 3, value: 6 }), {});
     });
 
-
     QUnit.test('Extremum points when mode is minMax. Bar, winloss', function(assert) {
         this.createSparkline({
             dataSource: [4, 9, 8, 6],

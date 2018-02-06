@@ -446,7 +446,6 @@ var browser, focused;
                     }
                 }
 
-
                 var that = this;
 
                 $.each(keys, function(index, key) {
@@ -510,5 +509,4 @@ var browser, focused;
         };
     };
 }));
-
 

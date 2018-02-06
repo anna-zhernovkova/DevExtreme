@@ -828,7 +828,6 @@ module.exports = {
                             $transparentColumn = this._columnHeadersView.getTransparentColumnElement(),
                             boundingRect;
 
-
                         if(!result && location === "headers" && $transparentColumn && $transparentColumn.length) {
                             boundingRect = $transparentColumn.get(0).getBoundingClientRect();
 

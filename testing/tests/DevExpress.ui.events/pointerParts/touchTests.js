@@ -41,7 +41,6 @@ QUnit.test("pointer event should not trigger twice on real devices", function(as
     assert.ok(elementHandler.calledOnce, "Element handler should be triggered");
     assert.ok(containerHandler.calledOnce, "Container handler should be triggered by bubbling event");
 
-
     nativePointerMock($container)
         .start()
         .touchStart()
@@ -71,7 +70,6 @@ QUnit.test("dxpointerup triggers twice on real devices", function(assert) {
 
     assert.equal(triggered, 1);
 });
-
 
 $.each({
     "dxpointerdown": "touchstart",

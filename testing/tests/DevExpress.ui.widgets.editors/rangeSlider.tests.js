@@ -47,7 +47,6 @@ var moduleOptions = {
     }
 };
 
-
 QUnit.module("render", moduleOptions);
 
 QUnit.test("default", function(assert) {
@@ -168,7 +167,6 @@ QUnit.test("design mode", function(assert) {
     }
 });
 
-
 QUnit.module("hidden inputs");
 
 QUnit.test("two inputs should be rendered", function(assert) {
@@ -237,7 +235,6 @@ QUnit.test("the hidden inputs should use the decimal separator specified in DevE
     }
 });
 
-
 QUnit.module("'name' options");
 
 QUnit.test("first input should get the 'name' attribute depending on the 'startName' option", function(assert) {
@@ -283,7 +280,6 @@ QUnit.test("second input should get the 'name' attribute correctly after the 'en
     instance.option("endName", expectedName);
     assert.equal($input.attr("name"), expectedName, "the second input has correct 'name' attribute after the 'endName' option change");
 });
-
 
 QUnit.module("slider with tooltip");
 
@@ -400,7 +396,6 @@ QUnit.test("activeHandle should be changed is drag cross over handler (RTL)", fu
     pointer.up();
 });
 
-
 QUnit.module("actions");
 
 QUnit.test("onValueChanged should be fired after value is changed", function(assert) {
@@ -456,7 +451,6 @@ QUnit.test("onValueChanged should be fired when dxRangeSlider is disabled", func
     assert.ok(onValueChangedStub.called, "onValueChanged was fired");
 });
 
-
 QUnit.module("focus policy", moduleOptions);
 
 QUnit.testInActiveWindow("Handle focus by click on track bar (T249311)", function(assert) {
@@ -482,7 +476,6 @@ QUnit.testInActiveWindow("Handle focus by click on track bar (T249311)", functio
     pointer.start().down($rangeSlider.offset().left + 80, $rangeSlider.offset().top).up();
     assert.ok($rightHandle.hasClass("dx-state-focused"), "right handle has focus class after click on track");
 });
-
 
 QUnit.module("keyboard navigation", moduleOptions);
 
@@ -760,7 +753,6 @@ QUnit.testInActiveWindow("Handle should not stop when start = end and we move st
     assert.equal(rangeSlider.option("start"), 30, "start handle was not moved after collision");
 });
 
-
 QUnit.testInActiveWindow("Handle should not stop when start = end and we move end handle left via keyboard", function(assert) {
     var $rangeSlider = $("#slider").dxRangeSlider({
             start: 30,
@@ -927,7 +919,6 @@ QUnit.test("B233321 dxRangeSlider - impossible to change range in both direction
     assert.equal(module.instance.option("start"), 0, "start handler should be in min position");
     assert.equal(module.instance.option("end"), 50, "end handler should stay in middle");
 
-
     module.instance.option({
         "start": 50,
         "end": 50
@@ -942,7 +933,6 @@ QUnit.test("B233321 dxRangeSlider - impossible to change range in both direction
     assert.equal(module.instance.option("start"), 50, "start handler should be in min position");
     assert.equal(module.instance.option("end"), 100, "end handler should stay in middle");
 });
-
 
 QUnit.test("B234545 dxRangeSlider/dxSlider - incorrect behavior with negative min and max values.", function(assert) {
     this.instance.option({
@@ -1145,7 +1135,6 @@ QUnit.test("B238710 dxRangeSlider: click on left side of element sets up value t
     assert.equal(this.instance.option("start"), 0);
 });
 
-
 QUnit.module("RTL", moduleOptions);
 
 QUnit.test("render value", function(assert) {
@@ -1239,7 +1228,6 @@ QUnit.test("correct handle is moved by click in RTL mode (T106708)", function(as
     assert.equal($element.dxRangeSlider("option", "start"), 50);
     assert.equal($element.dxRangeSlider("option", "end"), 90);
 });
-
 
 QUnit.module("option value");
 
@@ -1337,7 +1325,6 @@ QUnit.test("reset method should set value to default", function(assert) {
 
     assert.deepEqual(instance.option("value"), [40, 60], "value was reset to default");
 });
-
 
 QUnit.module("aria accessibility");
 

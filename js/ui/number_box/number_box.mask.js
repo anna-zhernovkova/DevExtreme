@@ -242,7 +242,6 @@ var NumberBoxMask = NumberBoxBase.inherit({
             return;
         }
 
-
         if(end - start < text.length) {
             var editedText = this._getEditedText(text, { start: start, end: end }, ""),
                 noDigits = editedText.search(/[0-9]/) < 0;

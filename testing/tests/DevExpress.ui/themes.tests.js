@@ -102,7 +102,6 @@ require("style-compiler-test-server/known-css-files");
         return badSelectors;
     }
 
-
     QUnit.module("Selector check");
 
     $.each(window.knownCssFiles, function(i, cssFileName) {
@@ -112,7 +111,6 @@ require("style-compiler-test-server/known-css-files");
         }
 
         var cssUrl = ROOT_URL + "artifacts/css/" + cssFileName;
-
 
         QUnit.test(cssFileName, function(assert) {
             var done = assert.async(),
@@ -144,7 +142,6 @@ require("style-compiler-test-server/known-css-files");
     });
 
 })();
-
 
 (function() {
 
@@ -400,7 +397,6 @@ require("style-compiler-test-server/known-css-files");
                         }
                         ///TODO: end
 
-
                         that.writeToFrame("<style>.dx-theme-marker{ font-family: 'dx.sampleTheme.sampleColorScheme2';}</style>");
                         setTimeout(function() {
                             assert.ok(assertPredicate(), "theme name was updated only once");
@@ -446,7 +442,6 @@ require("style-compiler-test-server/known-css-files");
     });
 
 })();
-
 
 (function() {
 

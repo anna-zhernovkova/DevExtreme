@@ -695,7 +695,6 @@ var runTests = function() {
         assert.ok($item.hasClass("dx-item-selected"), "item has selected class");
     });
 
-
     QUnit.module("selecting of item keys", {
         beforeEach: function() {
             this.$element = $("#cmp");
@@ -793,7 +792,6 @@ var runTests = function() {
         assert.deepEqual(instance.option("selectedItem"), items[1], "selectedItem is correct");
         assert.ok($item.hasClass("dx-item-selected"), "item has selected class");
     });
-
 
     QUnit.module("selecting of items with datasource");
 
@@ -958,7 +956,6 @@ var runTests = function() {
         }
     });
 
-
     QUnit.module("selecting of items in single mode");
 
     QUnit.test("selectedItem should select only one item", function(assert) {
@@ -1105,7 +1102,6 @@ var runTests = function() {
         assert.equal($element.text(), "23", "items changed correctly");
     });
 
-
     QUnit.module("selecting of items in multiple mode", {
         beforeEach: function() {
             this.TestComponent = TestComponent.inherit({
@@ -1139,7 +1135,6 @@ var runTests = function() {
 
         assert.deepEqual(instance.option("selectedItemKeys"), [], "selectedItems option value is correct after selectedItem change");
     });
-
 
     QUnit.module("selection mode");
 
@@ -1180,7 +1175,6 @@ var runTests = function() {
 
         assert.ok($items.first().hasClass("dx-item-selected"), "selected class was attached");
     });
-
 
     QUnit.module("selection mode changing");
 
@@ -1235,7 +1229,6 @@ var runTests = function() {
 
         instance.option("selectionMode", 'single');
     });
-
 
     QUnit.module("selection required");
 
@@ -1492,7 +1485,6 @@ var runTests = function() {
         return promise;
     });
 
-
     QUnit.module("deleting with confirmation");
 
     QUnit.test("item should be deleted if confirmation resolved", function(assert) {
@@ -1643,7 +1635,6 @@ var runTests = function() {
         instance.deleteItem(0);
         instance.deleteItem(0);
     });
-
 
     QUnit.module("deleting from dataSource", {
         beforeEach: function() {
@@ -1849,7 +1840,6 @@ var runTests = function() {
         instance.deleteItem(1);
     });
 
-
     QUnit.module("reordering of items");
 
     QUnit.test("reorderItem should swap items by index", function(assert) {
@@ -2044,7 +2034,6 @@ var runTests = function() {
         });
         instance.reorderItem(0, 1);
     });
-
 
     QUnit.module("reordering with dataSource");
 

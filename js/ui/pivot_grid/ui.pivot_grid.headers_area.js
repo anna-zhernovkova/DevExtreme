@@ -18,7 +18,6 @@ var PIVOTGRID_AREA_CLASS = "dx-pivotgrid-area",
     PIVOTGRID_VERTICAL_SCROLL_CLASS = "dx-vertical-scroll",
     PIVOTGRID_EXPAND_BORDER = "dx-expand-border";
 
-
 function getCellPath(tableElement, cell) {
     if(cell) {
         var data = tableElement.data().data,
@@ -281,7 +280,6 @@ exports.VerticalHeadersArea = exports.HorizontalHeadersArea.inherit({
             columnOffsetResetIndexes = [],
             i,
             j;
-
 
         if(this.getColumnsCount() - columnCount > 0) {
             return;

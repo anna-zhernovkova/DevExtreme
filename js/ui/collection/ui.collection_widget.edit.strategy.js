@@ -5,7 +5,6 @@ var $ = require("../../core/renderer"),
     commonUtils = require("../../core/utils/common"),
     abstract = Class.abstract;
 
-
 var EditStrategy = Class.inherit({
 
     ctor: function(collectionWidget) {
@@ -131,6 +130,5 @@ var EditStrategy = Class.inherit({
     _itemsFromSameParent: abstract
 
 });
-
 
 module.exports = EditStrategy;

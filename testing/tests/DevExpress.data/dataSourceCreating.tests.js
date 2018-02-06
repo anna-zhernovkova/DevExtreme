@@ -47,7 +47,6 @@ QUnit.test("options.store is array", function(assert) {
     assert.ok(ds.store() instanceof ArrayStore);
 });
 
-
 QUnit.test("options.load provided", function(assert) {
     function loadFunc() {
         return [1, 2, 3];
@@ -104,7 +103,6 @@ QUnit.test("options.store is LocalStore config", function(assert) {
 
     assert.ok(source.store() instanceof LocalStore);
 });
-
 
 QUnit.test("options.store is ArrayStore config", function(assert) {
     var source = new DataSource({

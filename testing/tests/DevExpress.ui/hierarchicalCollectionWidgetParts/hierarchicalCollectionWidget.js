@@ -28,7 +28,6 @@ var createHierarchicalCollectionWidget = function(options) {
     return new TestComponent($("#hcw"), options);
 };
 
-
 QUnit.module("render", {
     beforeEach: function() {
         this.element = $("#hcw");

@@ -17,7 +17,6 @@ var eventMap = {
     "dxpointerleave": "mouseleave"
 };
 
-
 var activated = false;
 var activateStrategy = function() {
     if(activated) {
@@ -83,6 +82,5 @@ var MouseAndTouchStrategy = BaseStrategy.inherit({
 });
 MouseAndTouchStrategy.map = eventMap;
 MouseAndTouchStrategy.resetObserver = MouseStrategy.resetObserver;
-
 
 module.exports = MouseAndTouchStrategy;

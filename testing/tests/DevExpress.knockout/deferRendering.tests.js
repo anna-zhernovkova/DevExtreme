@@ -21,7 +21,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 QUnit.module("dxDeferRendering");
 
 QUnit.test("render with the 'with' binding", function(assert) {

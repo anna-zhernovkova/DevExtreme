@@ -147,13 +147,11 @@ var testEventDeltaTranslation = function(eventName) {
     });
 };
 
-
 QUnit.module("transform firing");
 
 testEventFiring(transformEvent["transformstart"]);
 testEventFiring(transformEvent["transform"]);
 testEventFiring(transformEvent["transformend"]);
-
 
 QUnit.module("transform data");
 
@@ -174,13 +172,11 @@ testEventFiring(transformEvent["translatestart"]);
 testEventFiring(transformEvent["translate"]);
 testEventFiring(transformEvent["translateend"]);
 
-
 QUnit.module("translate data");
 
 testEventTranslation(transformEvent["translate"]);
 testEventDeltaTranslation(transformEvent["translate"]);
 testEventTranslation(transformEvent["translateend"]);
-
 
 QUnit.module("pinch firing");
 
@@ -188,13 +184,11 @@ testEventFiring(transformEvent["pinchstart"]);
 testEventFiring(transformEvent["pinch"]);
 testEventFiring(transformEvent["pinchend"]);
 
-
 QUnit.module("pinch data");
 
 testEventScale(transformEvent["pinch"]);
 testEventDeltaScale(transformEvent["pinch"]);
 testEventScale(transformEvent["pinchend"]);
-
 
 QUnit.module("zoom firing");
 
@@ -202,20 +196,17 @@ testEventFiring(transformEvent["zoomstart"]);
 testEventFiring(transformEvent["zoom"]);
 testEventFiring(transformEvent["zoomend"]);
 
-
 QUnit.module("zoom data");
 
 testEventScale(transformEvent["zoom"]);
 testEventDeltaScale(transformEvent["zoom"]);
 testEventScale(transformEvent["zoomend"]);
 
-
 QUnit.module("rotate firing");
 
 testEventFiring(transformEvent["rotatestart"]);
 testEventFiring(transformEvent["rotate"]);
 testEventFiring(transformEvent["rotateend"]);
-
 
 QUnit.module("rotate data");
 

@@ -213,7 +213,6 @@ QUnit.test("group aggregates should not calculates if groupLevel < 1", function(
         ]
     });
 
-
     try {
         calculator.calculate();
         result = true;

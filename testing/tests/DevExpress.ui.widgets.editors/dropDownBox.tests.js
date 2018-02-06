@@ -390,7 +390,6 @@ QUnit.test("maxHeight should be 90% of maximum of top or bottom offsets includin
     }
 });
 
-
 QUnit.module("hidden input", moduleConfig);
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -455,7 +454,6 @@ QUnit.test("the hidden input should get value in respect of the 'valueExpr' opti
     assert.equal($input.val(), items[0].id, "input value is correct");
 });
 
-
 QUnit.test("the hidden input should get correct values if async data source is used", function(assert) {
     var data = [0, 1, 2, 3, 4],
         initialValue = 2,
@@ -494,7 +492,6 @@ QUnit.test("the hidden input should get correct values if async data source is u
     assert.equal($element.find("input[type='hidden']").val(), newValue, "first rendered option value is correct");
 });
 
-
 QUnit.module("the 'name' option", moduleConfig);
 
 QUnit.test("widget hidden input should get the 'name' attribute with a correct value", function(assert) {
@@ -506,8 +503,6 @@ QUnit.test("widget hidden input should get the 'name' attribute with a correct v
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
-
 
 QUnit.module("keyboard navigation", moduleConfig);
 

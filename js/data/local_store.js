@@ -88,7 +88,6 @@ var localStoreBackends = {
     "dom": DomLocalStoreBackend
 };
 
-
 /**
 * @name LocalStore
 * @publicName LocalStore

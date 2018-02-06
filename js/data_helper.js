@@ -11,7 +11,6 @@ var DATA_SOURCE_OPTIONS_METHOD = "_dataSourceOptions",
     DATA_SOURCE_FROM_URL_LOAD_MODE_METHOD = "_dataSourceFromUrlLoadMode",
     SPECIFIC_DATA_SOURCE_OPTION = "_getSpecificDataSourceOption";
 
-
 /**
 * @name DataHelperMixin
 * @publicName DataHelperMixin

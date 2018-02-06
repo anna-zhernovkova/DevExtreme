@@ -122,7 +122,6 @@ QUnit.test("keep user defined position.of", function(assert) {
     assert.equal(instance.option("position.of"), "body");
 });
 
-
 QUnit.module("options changed callbacks", {
     beforeEach: function() {
         this.element = $("#loadPanel").dxLoadPanel();

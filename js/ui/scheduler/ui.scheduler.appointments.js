@@ -347,7 +347,6 @@ var SchedulerAppointments = CollectionWidget.inherit({
         var startDate = model.settings ? new Date(this.invoke("getField", "startDate", model.settings)) : data.startDate,
             endDate = model.settings ? new Date(this.invoke("getField", "endDate", model.settings)) : data.endDate;
 
-
         $("<div>")
             .text(this._createAppointmentTitle(data))
             .addClass(APPOINTMENT_TITLE_CLASS)
@@ -541,7 +540,6 @@ var SchedulerAppointments = CollectionWidget.inherit({
             this._renderDraggable($appointment, allDay);
         }
     },
-
 
     _applyResourceDataAttr: function($appointment) {
         this.notifyObserver("getResourcesFromItem", {
@@ -941,7 +939,6 @@ var SchedulerAppointments = CollectionWidget.inherit({
             endViewDate = this.invoke("getEndViewDate").getTime(),
             startViewDate = this.invoke("getStartViewDate").getTime(),
             startDateTimeZone = this.invoke("getField", "startDateTimeZone", appointment);
-
 
         result = result || {
             parts: []

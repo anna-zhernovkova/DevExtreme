@@ -101,7 +101,6 @@ var Layout = MarkupComponent.inherit({
     }
 });
 
-
 /**
 * @name dxviewPlaceholder
 * @publicName dxViewPlaceholder

@@ -16,7 +16,6 @@ var eventMap = {
     "dxpointerleave": ""
 };
 
-
 var normalizeTouchEvent = function(e) {
     var pointers = [];
 
@@ -64,6 +63,5 @@ var TouchStrategy = BaseStrategy.inherit({
 });
 TouchStrategy.map = eventMap;
 TouchStrategy.normalize = normalizeTouchEvent;
-
 
 module.exports = TouchStrategy;

@@ -202,7 +202,6 @@ QUnit.test("Check pass correct borderOptions to axes", function(assert) {
     assert.equal(chart._argumentAxes[1].pane, "bottomPane");
     assert.deepEqual(chart._argumentAxes[1].borderOptions, bottomPaneExpectedBorder);
 
-
     assert.equal(chart._valueAxes[1].pane, "bottomPane");
     assert.deepEqual(chart._valueAxes[1].borderOptions, bottomPaneExpectedBorder);
     assert.equal(chart._valueAxes[0].pane, "topPane");
@@ -263,7 +262,6 @@ QUnit.test("Create negative width and height clipRects", function(assert) {
     assert.equal(chart._renderer.clipRect.callCount, 1);
 
     assert.ok(chart._canvasClipRect);
-
 
     assert.strictEqual(chart._canvasClipRect.stub("attr").lastCall, null);
 });
@@ -1274,7 +1272,6 @@ QUnit.test("dxChart with two value axis check default names", function(assert) {
     assert.equal(verticalAxes[1].getOptions().name, "defaultAxisName1");
 });
 
-
 QUnit.test("Show all axis grid for not synchronizeMultiAxes", function(assert) {
     //act
     var chart = this.createChart({
@@ -2190,7 +2187,6 @@ QUnit.test("Series. Series with invalid axis", function(assert) {
     assert.equal(series[0].pane, chart.defaultPane);
     assert.equal(chart._valueAxes[1].name, "axis");
 });
-
 
 QUnit.test("B251248. Break animations chart on update", function(assert) {
     var stubSeries1 = new MockSeries();

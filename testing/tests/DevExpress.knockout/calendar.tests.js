@@ -18,7 +18,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 QUnit.test("cellTemplate should have access to a $root model", function(assert) {
     var viewModel = {
         calendarConfig: {},

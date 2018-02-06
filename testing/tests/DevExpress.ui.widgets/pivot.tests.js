@@ -37,7 +37,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 var PIVOT_CLASS = "dx-pivot",
     PIVOT_AUTOHEIGHT_CLASS = "dx-pivot-autoheight",
 
@@ -53,11 +52,9 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 var position = function($element) {
     return translator.locate($element).left;
 };
-
 
 var mockFxAnimate = function(animations, type, output) {
     animations[type] = function($element, position, action) {
@@ -97,7 +94,6 @@ var animationCapturing = {
         delete this._animations;
     }
 };
-
 
 var PivotTabsMock = Widget.inherit({
 
@@ -160,7 +156,6 @@ var pivotTabsMock = {
     }
 };
 
-
 QUnit.module("pivot rendering", {
     beforeEach: function() {
         pivotTabsMock.setup();
@@ -185,7 +180,6 @@ QUnit.test("selected index should be equal 0", function(assert) {
 
     assert.equal(pivot.option("selectedIndex"), 0, "selectedIndex equals 0");
 });
-
 
 QUnit.module("markup", {
     beforeEach: function() {
@@ -218,7 +212,6 @@ QUnit.test("pivot item should be rendered", function(assert) {
     assert.equal($itemWrapper.text(), "all content", "pivot current content rendered with proper data");
 });
 
-
 QUnit.module("sizing", {
     beforeEach: function() {
         pivotTabsMock.setup();
@@ -240,7 +233,6 @@ QUnit.test("pivot should have correct class if height is auto", function(assert)
 
     assert.ok($pivot.hasClass(PIVOT_AUTOHEIGHT_CLASS), "pivot height is auto");
 });
-
 
 QUnit.module("caching items", {
     beforeEach: function() {
@@ -305,7 +297,6 @@ QUnit.test("cache should be cleared after items change", function(assert) {
     assert.equal($itemWrapper.find("." + PIVOT_ITEM_CLASS + ":not(." + PIVOT_ITEM_HIDDEN_CLASS + ")").text(), "unread content", "cache cleared");
 });
 
-
 QUnit.module("hiding items", {
     beforeEach: function() {
         pivotTabsMock.setup();
@@ -357,7 +348,6 @@ QUnit.test("shown event should be fired on item showing", function(assert) {
         domUtils.triggerShownEvent = origTriggerShownEvent;
     }
 });
-
 
 QUnit.module("content template", {
     beforeEach: function() {
@@ -435,7 +425,6 @@ QUnit.test("content should be rerendered if content template changed", function(
     assert.equal($itemWrapper.text(), "all content", "content rendered");
 });
 
-
 QUnit.module("item title template", {
     beforeEach: function() {
         fx.off = true;
@@ -467,7 +456,6 @@ QUnit.test("titleTemplate for item should have correct arguments", function(asse
     });
 });
 
-
 QUnit.module("design mode", {
     beforeEach: function() {
         config({ designMode: true });
@@ -496,7 +484,6 @@ QUnit.test("swipe should be rejected", function(assert) {
     assert.ok(startEvent.cancel, "index should not change, swipe was rejected");
 });
 
-
 QUnit.module("options", {
     beforeEach: function() {
         fx.off = true;
@@ -523,7 +510,6 @@ QUnit.test("disabled should reject swipe", function(assert) {
 
     assert.ok(startEvent.cancel, "index should not change, swipe was rejected");
 });
-
 
 QUnit.module("options change", {
     beforeEach: function() {
@@ -579,7 +565,6 @@ QUnit.test("selected index should be reset after items change", function(assert)
     pivot.option("items", [{ title: "unread", text: "unread content" }]);
     assert.equal(pivot.option("selectedIndex"), 0, "selected index reset");
 });
-
 
 QUnit.module("events", {
     beforeEach: function() {
@@ -642,7 +627,6 @@ QUnit.test("pivot should not render content twice after change items", function(
     assert.equal(renderItemCount, 2, "");
 });
 
-
 QUnit.module("animations", {
     beforeEach: function() {
         fx.off = true;
@@ -697,7 +681,6 @@ QUnit.test("complete", function(assert) {
     }
 });
 
-
 QUnit.module("selected index change animation", {
     beforeEach: function() {
         this.capturedAnimations = animationCapturing.start();
@@ -748,7 +731,6 @@ QUnit.test("changing selectedIndex should cause correct animation in RTL mode", 
     assert.strictEqual(this.capturedAnimations[1].end, 0, "wrapper animated to correct position via slideBack");
 });
 
-
 QUnit.module("interaction via click", {
     beforeEach: function() {
         fx.off = true;
@@ -768,7 +750,6 @@ QUnit.test("selected index should not be changed by click on item", function(ass
     $(pivot.itemElements()).eq(1).trigger("dxclick");
     assert.equal(pivot.option("selectedIndex"), 0, "selected index not changed");
 });
-
 
 QUnit.module("interaction via swipe", {
     beforeEach: function() {
@@ -1000,7 +981,6 @@ QUnit.test("previous animation should be stopped", function(assert) {
     assert.equal(this.completeCount, 1, "previous not finished once");
     assert.strictEqual(pivotTabs.prepared, 1, "pivottabs animation stopped only once");
 });
-
 
 QUnit.module("pivottabs integration", {
     beforeEach: function() {

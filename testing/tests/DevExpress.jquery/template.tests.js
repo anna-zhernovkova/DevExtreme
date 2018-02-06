@@ -89,7 +89,6 @@ QUnit.test("handlebars", function(assert) {
     checkTemplateEngine('handlebars', '{{text}}', assert);
 });
 
-
 QUnit.module("user template engine");
 
 var customUserTemplate = {

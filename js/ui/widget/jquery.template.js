@@ -103,7 +103,6 @@ registerTemplateEngine("doT", {
     }
 });
 
-
 var currentTemplateEngine;
 var setTemplateEngine = function(templateEngine) {
     if(typeUtils.isString(templateEngine)) {
@@ -117,7 +116,6 @@ var setTemplateEngine = function(templateEngine) {
 };
 
 setTemplateEngine("default");
-
 
 var Template = TemplateBase.inherit({
 

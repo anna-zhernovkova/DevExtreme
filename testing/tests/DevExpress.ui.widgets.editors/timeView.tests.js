@@ -54,7 +54,6 @@ QUnit.test("field should be rendered in bottom box section", function(assert) {
     assert.ok(box.itemElements().eq(1).find("." + TIMEVIEW_FIELD_CLASS).length, "clock rendered");
 });
 
-
 QUnit.module("clock rendering");
 
 QUnit.test("hour arrow should be rendered", function(assert) {
@@ -92,7 +91,6 @@ QUnit.test("clock should be shown if showClock option was changed", function(ass
 
     assert.ok($clock.length, "clock was rendered");
 });
-
 
 var getRotation = function($element) {
     var matrix = $element.css("transform"),
@@ -147,7 +145,6 @@ QUnit.test("minute arrow has right rotation after changing time option", functio
 
     assert.equal(getRotation($minuteArrow), 150, "arrow rotation is right");
 });
-
 
 QUnit.module("field rendering");
 
@@ -434,7 +431,6 @@ QUnit.test("timeView should not change value specified via api", function(assert
     assert.equal(formatField.option("value"), TIMEVIEW_FORMAT12_AM, "am is selected");
 });
 
-
 QUnit.module("format rendering");
 
 QUnit.test("minute numberbox should have min/max constraints", function(assert) {
@@ -453,7 +449,6 @@ QUnit.test("hour numberbox should have min/max constraints", function(assert) {
     assert.equal(hourNumberBox.option("max"), 24, "max constraint set");
 });
 
-
 QUnit.module("editor support");
 
 QUnit.test("value changed should be raised on value change", function(assert) {
@@ -470,7 +465,6 @@ QUnit.test("value changed should be raised on value change", function(assert) {
 
     instance.option("value", time);
 });
-
 
 QUnit.module("aria accessibility");
 

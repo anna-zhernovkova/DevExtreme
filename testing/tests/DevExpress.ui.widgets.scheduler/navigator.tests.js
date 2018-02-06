@@ -228,7 +228,6 @@ QUnit.test("Caption should be OK when step and date are changed", function(asser
     this.instance.option("step", "month");
     assert.equal(button.option("text"), caption, "Step is month: Caption is OK");
 
-
     this.instance.option("step", "agenda");
 
     weekDateString = devices.real().generic ? "30 January 2015" : "30 Jan 2015";
@@ -477,7 +476,6 @@ QUnit.test("Calendar should have a right date", function(assert) {
 
     this.instance.option("date", date);
 
-
     $($button).trigger("dxclick");
     var $calendar = $(".dx-popup-content>.dx-calendar");
 
@@ -502,7 +500,6 @@ QUnit.test("Calendar should have a right firstDayOfWeek", function(assert) {
         $button = $element.find(".dx-scheduler-navigator-caption");
 
     this.instance.option("firstDayOfWeek", 3);
-
 
     $($button).trigger("dxclick");
     var $calendar = $(".dx-popup-content>.dx-calendar");
@@ -780,7 +777,6 @@ QUnit.test("Caption should be OK for week view, if date = Sunday & firstDayOfWee
     assert.equal(button.option("text"), "23 Feb-1 Mar 2015", "Step is week: Caption is OK");
 });
 
-
 QUnit.module("Navigator Keyboard Navigation", {
     beforeEach: function() {
         devices.current({ platform: "generic" });
@@ -815,7 +811,6 @@ QUnit.test("focusStateEnabled should be passed to buttons", function(assert) {
 QUnit.test("tabIndex should be passed to buttons", function(assert) {
     var $element = this.instance.$element(),
         $buttons = $element.find(".dx-button");
-
 
     assert.equal($element.attr("tabindex"), null, "element has no tabIndex");
 
@@ -875,7 +870,6 @@ QUnit.test("calendar should have right keyboard options", function(assert) {
     assert.strictEqual($calendar.dxCalendar("option", "tabIndex"), null, "Calendar have a right tabIndex");
     assert.strictEqual($calendar.dxCalendar("option", "hasFocus")(), true, "Calendar have a right hasFocus fn");
 });
-
 
 QUnit.module("Mobile behavior", {
     beforeEach: function() {

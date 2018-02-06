@@ -12,7 +12,6 @@ var $ = require("jquery"),
 /* global MockSeries, seriesMockData, categories */
 require("../../helpers/chartMocks.js");
 
-
 $('<div id="chartContainer">').appendTo("#qunit-fixture");
 
 (function seriesCreationTests() {
@@ -63,7 +62,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
         assert.equal(chart.series[0].options.name, "Custom name");
         assert.equal(chart.series[0].index, 0);
     });
-
 
     QUnit.test("dxChart with single series, series type is specified as number in option series", function(assert) {
         //arrange
@@ -205,7 +203,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
 
         seriesMockData.series.push(stubSeries1, stubSeries2, stubSeries3);
 
-
         //act
         var chart = this.createChart({
             valueAxis: {
@@ -323,7 +320,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
         assert.strictEqual(this.themeManager.getOptions.withArgs("series").getCall(1).args[2], 2);
     });
 
-
     QUnit.test("dxChart with two Series which belongs to different panes (with default pane)", function(assert) {
         //arrange
         var stubSeries1 = new MockSeries({}),
@@ -398,7 +394,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
                 }
             }]
         });
-
 
         //assert
 
@@ -1493,7 +1488,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
             series: [{ type: "mockType" }]
         });
 
-
         assert.ok(!this.labels[0].shift.called);
         assert.ok(!this.labels[1].shift.called);
         assert.ok(!this.labels[2].shift.called);
@@ -1581,7 +1575,6 @@ $('<div id="chartContainer">').appendTo("#qunit-fixture");
             series: [{ type: "mockType" }],
             size: { width: 100, height: 100 }
         });
-
 
         this.checkLabelPosition(assert, this.labels[0], [5, 70]);
         this.checkLabelPosition(assert, this.labels[1], [5, 80]);

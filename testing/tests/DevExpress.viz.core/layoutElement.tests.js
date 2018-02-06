@@ -1,6 +1,5 @@
 "use strict";
 
-
 var $ = require("jquery"),
     vizMocks = require("../../helpers/vizMocks.js"),
     layoutElementModule = require("viz/core/layout_element");

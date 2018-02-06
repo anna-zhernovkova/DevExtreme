@@ -84,7 +84,6 @@ QUnit.test("T325811 - 'text' option change should not lead to widget clearing", 
     assert.ok($testElement.parent().hasClass("dx-button"), "test element is still in button");
 });
 
-
 QUnit.module("regressions", {
     beforeEach: function() {
         this.element = $("#button").dxButton();

@@ -29,7 +29,6 @@ var moduleOptions = {
     }
 };
 
-
 QUnit.module("Appointments", moduleOptions);
 
 QUnit.test("Scheduler appointment should be initialized", function(assert) {

@@ -132,7 +132,6 @@ function createThemeManager(options, themeGroupName) {
         assert.equal(theme.widgetType, 'chart');
     });
 
-
     QUnit.test('First series theme - area', function(assert) {
         //arrange
         var themeManager = createThemeManager({});
@@ -361,7 +360,6 @@ function createThemeManager(options, themeGroupName) {
         }, "theme.label");
         assert.equal(theme.widgetType, 'chart');
     });
-
 
     QUnit.test('Change theme palette from user options', function(assert) {
         //arrange

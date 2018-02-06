@@ -117,7 +117,6 @@ var environmentWithSinonStubPoint = {
     }
 };
 
-
 function checkElementPoints(assert, elementPoints, expectedPoints, defaultCoord, comment) {
     assert.ok(elementPoints, comment);
     assert.equal(elementPoints.length, expectedPoints.length, comment + "- point length");
@@ -680,7 +679,6 @@ function setDiscreteType(series) {
         assert.strictEqual(series._labelsGroup.stub("animate").lastCall.args[0].opacity, 1);
         assert.strictEqual(series._markersGroup.stub("animate").lastCall.args[0].opacity, 1);
     });
-
 
     QUnit.test("Draw two segments with animation complete animation", function(assert) {
         var series = this.series;
@@ -1869,7 +1867,6 @@ function setDiscreteType(series) {
         assert.ok(this.renderer.stub("path").getCall(0).returnValue.sharp.calledOnce);
         assert.ok(this.renderer.stub("path").getCall(0).returnValue.sharp.firstCall.calledAfter(this.renderer.stub("path").getCall(0).returnValue.attr.lastCall));
 
-
         checkElementPoints(assert, this.renderer.stub("path").getCall(1).args[0], [[0, 5], [0, 5], [3, 5], [3, 5], [3, 5], [3, 5], [3, 5], [3, 5], [0, 5], [0, 5]], true, "first area element on creating");
         assert.equal(this.renderer.stub("path").getCall(1).args[1], "bezierarea");
 
@@ -1877,7 +1874,6 @@ function setDiscreteType(series) {
         assert.equal(this.renderer.stub("path").getCall(2).args[1], "bezier");
         assert.ok(this.renderer.stub("path").getCall(2).returnValue.sharp.calledOnce);
         assert.ok(this.renderer.stub("path").getCall(2).returnValue.sharp.firstCall.calledAfter(this.renderer.stub("path").getCall(2).returnValue.attr.lastCall));
-
 
         checkElementPoints(assert, this.renderer.stub("path").getCall(3).args[0], [[9, 5], [9, 5], [12, 5], [12, 5], [12, 5], [12, 5], [12, 5], [12, 5], [9, 5], [9, 5]], true, "second area element on creating");
         assert.equal(this.renderer.stub("path").getCall(3).args[1], "bezierarea");
@@ -2194,7 +2190,6 @@ function setDiscreteType(series) {
         assert.deepEqual(series._trackers[0].data.lastCall.args, [{ 'chart-data-series': series }]);
     });
 
-
     QUnit.module("Styles. SplineArea Series", {
         createSeries: function(options) {
             return createSeries(options, {
@@ -2353,7 +2348,6 @@ function setDiscreteType(series) {
         assert.strictEqual(series._labelsGroup.stub("animate").lastCall.args[0].opacity, 1);
         assert.strictEqual(series._markersGroup.stub("animate").lastCall.args[0].opacity, 1);
     });
-
 
     QUnit.test("Draw two segments with animation complete animation", function(assert) {
         var series = this.series;
@@ -2775,7 +2769,6 @@ function setDiscreteType(series) {
             pt.minY = that.data[i].val || 0;
         });
 
-
         series1.getAllPoints()[1].leftHole = 29;
         series1.getAllPoints()[1].minLeftHole = 9;
 
@@ -3083,7 +3076,6 @@ function setDiscreteType(series) {
         assert.equal(seriesGroup.children[0].toBackground.callCount, 1);
     });
 })();
-
 
 (function PolarSeries() {
     QUnit.module("Polar Series", {

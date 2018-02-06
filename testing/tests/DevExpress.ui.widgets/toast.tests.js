@@ -32,7 +32,6 @@ var moduleConfig = {
 var viewPort = $("#qunit-fixture").addClass("dx-viewport");
 setViewPort(viewPort);
 
-
 QUnit.testStart(function() {
     var markup =
         '<div id="toast"></div>\
@@ -102,7 +101,6 @@ QUnit.test("displayTime", function(assert) {
         }
     });
 
-
     this.instance.show();
     this.clock.tick(50);
 
@@ -129,7 +127,6 @@ QUnit.test("T179647 - only one toast is visible at the same time", function(asse
 
     assert.equal($(".dx-toast-content:visible").length, 1, "only the second toast is visible");
 });
-
 
 QUnit.module("API", moduleConfig);
 
@@ -232,7 +229,6 @@ QUnit.test("toast does not prevent closeOnOutsideClick handler of other overlays
         closeOnOutsideClick: true
     }).dxOverlay("instance");
 
-
     overlay.show();
     this.instance.show();
 
@@ -262,7 +258,6 @@ QUnit.test("it should be possible to select a message in the toast by the mouse"
     $($shader).trigger(event);
 });
 
-
 QUnit.module("back button handling", moduleConfig);
 
 QUnit.test("toast should not be hidden on back button press", function(assert) {
@@ -275,7 +270,6 @@ QUnit.test("toast should not be hidden on back button press", function(assert) {
     assert.equal(toast.option("visible"), true, "is not hidden after back button event");
 });
 
-
 QUnit.module("base z-index");
 
 QUnit.test("toast should have base z-index greater than overlay", function(assert) {
@@ -286,7 +280,6 @@ QUnit.test("toast should have base z-index greater than overlay", function(asser
 
     assert.equal($content.css("z-index"), 18001, "toast's z-index is correct");
 });
-
 
 QUnit.module("close events handling");
 
@@ -318,7 +311,6 @@ QUnit.test("closeOnClick option", function(assert) {
 
     assert.ok(!instance.option("visible"), "toast should hide on click if option is true");
 });
-
 
 QUnit.module("aria accessibility");
 

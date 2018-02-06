@@ -145,7 +145,6 @@ exports.AreaItem = Class.inherit({
 
                 columnMarkupArray.push("<td ");
 
-
                 if(cell) {
                     cell.rowspan && columnMarkupArray.push(rowspan + (cell.rowspan || 1) + "'");
                     cell.colspan && columnMarkupArray.push(colspan + (cell.colspan || 1) + "'");

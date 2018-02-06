@@ -39,7 +39,6 @@ QUnit.skip("Animation performance test", function(assert) {
         "transitionTimingFunction": "ease"
     });
 
-
     var measureFunction = function() {
         var deferred = $.Deferred();
         $div.on("transitionend", function() {
@@ -61,7 +60,6 @@ QUnit.skip("Animation performance test", function(assert) {
         $div2.css("left", 0);
         $div2.css("opacity", 1);
         $div2.css("transform", "translate(100px,0)");
-
 
         //$div.css("left", 0);
         //$div.css("opacity", 1);

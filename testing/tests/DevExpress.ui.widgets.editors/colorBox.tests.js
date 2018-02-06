@@ -155,7 +155,6 @@ QUnit.test("If value is set as 'null' color result preview should not have backg
     assert.ok(!colorBox.$element().find(".dx-colorbox-color-result-preview").attr("style"));
 });
 
-
 QUnit.test("If value is set as 'null' color result preview should not have background color - the second case(T198625)", function(assert) {
 
     showColorBox.call(this);
@@ -711,7 +710,6 @@ QUnit.testInActiveWindow("focus policy", function(assert) {
     $(this.instance._colorView.$element()).triggerHandler("focus");
     assert.ok(this.instance.$element().hasClass(STATE_FOCUSED_CLASS), "colorView on focus reset focus to element");
 });
-
 
 QUnit.module("Regressions", {
     beforeEach: function() {

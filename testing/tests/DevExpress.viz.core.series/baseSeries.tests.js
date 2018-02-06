@@ -14,7 +14,6 @@ var $ = require("jquery"),
 /* global insertMockFactory, MockTranslator, MockPoint, MockAxis */
 require("../../helpers/chartMocks.js");
 
-
 require("viz/chart");
 
 var createSeries = function(options, settings) {
@@ -1016,7 +1015,6 @@ QUnit.test("Draw simple data with null values", function(assert) {
     assert.equal(series._group.parent, this.seriesGroup);
     assert.deepEqual(series.drawnPoints, [points[0], points[1], points[3], points[5]]);
 
-
     assert.equal(series.drawnSegments.length, 3, "segments count");
     assert.deepEqual(series.drawnSegments[0], {
         segment: [points[0], points[1]],
@@ -1053,15 +1051,12 @@ QUnit.test("Draw simple data with null values. Three null in row", function(asse
 
     assert.deepEqual(series.drawnPoints, [points[0], points[1], points[5]], "drawn points");
 
-
     assert.equal(series.drawnSegments.length, 2, "segments count");
     assert.deepEqual(series.drawnSegments[0], {
         segment: [points[0], points[1]],
         num: 0,
         animationEnabled: true
     }, "first segment drawn");
-
-
 
     assert.deepEqual(series.drawnSegments[1], {
         segment: [points[5]],
@@ -1445,7 +1440,6 @@ QUnit.test("marker group style after updating. Financial", function(assert) {
     newOptions.width = 3;
     series.updateOptions(newOptions);
     series.draw(true);
-
 
     assert.ok(series._markersGroup.defaultMarkersGroup.stub("attr").calledOnce);
     assert.equal(series._markersGroup.defaultMarkersGroup.stub("attr").lastCall.args[0].fill, "green");
@@ -2307,7 +2301,6 @@ QUnit.test("select series when hover with allSeriesPoints", function(assert) {
     assert.strictEqual(series.getAllPoints()[0].resetView.lastCall.args[0], "hover");
 });
 
-
 QUnit.test("setSelectionState two times", function(assert) {
     var series = createSeries({
         selectionMode: "excludePoints",
@@ -2684,7 +2677,6 @@ QUnit.test("updateHover when series is selected in include points mode", functio
     assert.equal(series.stylesHistory.length, 2);
     assert.strictEqual(series.stylesHistory[1], "selection");
 
-
     $.each(series.getPoints(), function(i, p) {
         assert.strictEqual(p.setView.callCount, 1);
         assert.strictEqual(p.setView.getCall(0).args[0], "selection");
@@ -2711,7 +2703,6 @@ QUnit.test("select hovered series - selectionMode is excludePoints", function(as
     assert.equal(series.stylesHistory.length, 2);
     assert.strictEqual(series.stylesHistory[0], "hover");
     assert.strictEqual(series.stylesHistory[1], "selection");
-
 
     $.each(series.getPoints(), function(i, p) {
         if(p.applyStyle.called) {
@@ -2740,7 +2731,6 @@ QUnit.test("select hovered series - selectionMode is includePoints", function(as
     assert.equal(series.stylesHistory.length, 2);
     assert.strictEqual(series.stylesHistory[0], "hover");
     assert.strictEqual(series.stylesHistory[1], "selection");
-
 
     $.each(series.getPoints(), function(i, p) {
         if(p.applyStyle.called) {
@@ -3906,7 +3896,6 @@ QUnit.test("show hidden series", function(assert) {
             valueAxis: new MockAxis({ renderer: this.renderer })
         });
 
-
     series.draw();
     series.drawTrackers();
     series.hide();
@@ -4927,7 +4916,6 @@ QUnit.test("Pass legendCallback to point on selectPoint", function(assert) {
     series.selectPoint(series.getAllPoints()[0]);
     assert.strictEqual(series.getAllPoints()[0].applyView.lastCall.args[0], this.legendCallback);
 });
-
 
 QUnit.test("Pass legendCallback to point on deselect point", function(assert) {
     var series = this.createSeries();

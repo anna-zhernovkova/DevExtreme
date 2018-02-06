@@ -228,7 +228,6 @@ QUnit.test("Key method should return key field name", function(assert) {
     assert.strictEqual(this.store.key(), "OrderID");
 });
 
-
 QUnit.module("Summary calculation", moduleConfig);
 
 QUnit.test("Grand total values should have correct coordinates", function(assert) {
@@ -343,7 +342,6 @@ QUnit.test("Summary for several data fields", function(assert) {
         assert.strictEqual(getColumnTotal(data, data.columns[0]), "Argentina:count", "Grand total for Argentina is correct");
     });
 });
-
 
 QUnit.test("Empty string key", function(assert) {
     var dataSource = [
@@ -672,7 +670,6 @@ QUnit.test("getFields. Generate levels for user dataType", function(assert) {
 
 });
 
-
 QUnit.module("Data grouping");
 
 QUnit.test("Store should group data in fields by group intervals", function(assert) {
@@ -749,7 +746,6 @@ QUnit.test("Set default formatter for group fields with groupInterval", function
     });
 
 });
-
 
 QUnit.module("Mock tests");
 
@@ -1670,7 +1666,6 @@ QUnit.test("drill down by row path", function(assert) {
         assert.strictEqual(data.length, 249, "should return 249 items");
     });
 });
-
 
 QUnit.test("drill down by row and column path", function(assert) {
     this.getDrillDownData({

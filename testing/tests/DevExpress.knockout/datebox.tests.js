@@ -33,7 +33,6 @@ var toStandardDateFormat = uiDateUtils.toStandardDateFormat;
 var FORMATS_MAP = uiDateUtils.FORMATS_MAP,
     widgetName = "dxDateBox";
 
-
 var getInstanceWidget = function(instance) {
     return instance._strategy._widget;
 };
@@ -62,7 +61,6 @@ var getExpectedResult = function(date, mode, stringDate) {
 
     return support.inputType(mode) ? stringDate : localizedDate;
 };
-
 
 QUnit.module("options changed callbacks", moduleConfig);
 
@@ -113,7 +111,6 @@ QUnit.test("several editors for same value", function(assert) {
     assert.equal($datetime.val(), getExpectedResult(newValue, datetimeMode, toStandardDateFormat(newValue, datetimeMode)), "'datetime' format is displayed correctly");
     assert.equal($time.val(), getExpectedResult(newValue, timeMode, toStandardDateFormat(newValue, timeMode)), "'time' format is displayed correctly");
 });
-
 
 QUnit.module("dateView integration", {
     beforeEach: function() {

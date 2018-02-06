@@ -22,7 +22,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("loadSingle");
 QUnit.test("loadSingle call doesn't affect to state", function(assert) {
     var source = new DataSource(TEN_NUMBERS),
@@ -1023,7 +1022,6 @@ QUnit.test("events API, changed", function(assert) {
         cl.on_changed_callback = true;
     });
 
-
     source.load().done(function(r) {
         assert.deepEqual(r, [1, 2, 3]);
         assert.deepEqual(cl, {
@@ -1048,7 +1046,6 @@ QUnit.test("events API, loadingChanged", function(assert) {
     source.on("loadingChanged", function(isLoading) {
         cl.on_loadingChanged_callback.push(isLoading);
     });
-
 
     source.load().done(function(r) {
         assert.deepEqual(r, [1, 2, 3]);
@@ -1075,7 +1072,6 @@ QUnit.test("events API, loadError", function(assert) {
     source.on("loadError", function(e) {
         cl.on_loadError_callback = e.message;
     });
-
 
     source.load().fail(function(e) {
         assert.equal(e.message, "Forced");
@@ -1105,7 +1101,6 @@ QUnit.test("events API, customizeLoadResult", function(assert) {
         delete cl.on_customizeLoadResult_callback.operationId;
         loadResult.bar = 2;
     });
-
 
     source.load().done(function(r) {
         var expected = {
@@ -1143,7 +1138,6 @@ QUnit.test("events API, customizeStoreLoadOptions", function(assert) {
         cl.on_customizeStoreLoadOptions_callback = loadOptions;
         delete cl.onCustomizeStoreLoadOptions_option.operationId;
     });
-
 
     source.load().done(function(r) {
         var expected = {
@@ -1303,7 +1297,6 @@ QUnit.test("select", function(assert) {
     });
 });
 
-
 QUnit.module("requireTotalCount");
 QUnit.test("requireTotalCount: fail", function(assert) {
     var done = assert.async();
@@ -1375,7 +1368,6 @@ QUnit.test("totalCount when CustomStore with Promise/A", function(assert) {
                 };
             }
         });
-
 
     source.load().done(function(data, extra) {
         assert.deepEqual(data, [1, 2, 3]);
@@ -1452,7 +1444,6 @@ QUnit.test("paging with continuation token", function(assert) {
 
         throw Error();
     }
-
 
     var source = new DataSource({
         pageSize: null, // means page size varies

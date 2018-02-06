@@ -8,7 +8,6 @@ var SORT_CLASS = "dx-sort",
     SORTDOWN_CLASS = "dx-sort-down",
     HEADERS_ACTION_CLASS = "action";
 
-
 module.exports = {
     _applyColumnState: function(options) {
         var that = this,

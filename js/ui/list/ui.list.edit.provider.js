@@ -16,7 +16,6 @@ require("./ui.list.edit.decorator.context");
 require("./ui.list.edit.decorator.selection");
 require("./ui.list.edit.decorator.reorder");
 
-
 var editOptionsRegistry = [];
 
 var registerOption = function(enabledFunc, decoratorTypeFunc, decoratorSubTypeFunc) {
@@ -84,7 +83,6 @@ registerOption(
         return "default";
     }
 );
-
 
 var LIST_ITEM_BEFORE_BAG_CLASS = "dx-list-item-before-bag",
     LIST_ITEM_AFTER_BAG_CLASS = "dx-list-item-after-bag",

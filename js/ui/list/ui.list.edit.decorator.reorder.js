@@ -12,7 +12,6 @@ var $ = require("../../core/renderer"),
     registerDecorator = require("./ui.list.edit.decorator_registry").register,
     EditDecorator = require("./ui.list.edit.decorator");
 
-
 var ReorderScrollAnimator = Animator.inherit({
 
     ctor: function(strategy) {
@@ -30,7 +29,6 @@ var ReorderScrollAnimator = Animator.inherit({
     }
 
 });
-
 
 var LIST_EDIT_DECORATOR = "dxListEditDecorator",
     DRAG_START_EVENT_NAME = eventUtils.addNamespace(dragEvents.start, LIST_EDIT_DECORATOR),

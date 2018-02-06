@@ -179,7 +179,6 @@ QUnit.test("Toggle visibility action", function(assert) {
         treeView = $treeView.dxTreeView("instance"),
         items = treeView.option("items");
 
-
     var $toggleVisibilityIcon = $treeView.find("." + internals.TOGGLE_ITEM_VISIBILITY_CLASS);
 
     $toggleVisibilityIcon.trigger("dxclick");

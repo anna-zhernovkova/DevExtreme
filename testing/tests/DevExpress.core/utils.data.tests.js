@@ -61,7 +61,6 @@ QUnit.test("it works", function(assert) {
     assert.equal(GETTER("c.a.a")(obj), "c.a.a");
 });
 
-
 QUnit.test("complex getter", function(assert) {
     var original = {
         a: {
@@ -83,7 +82,6 @@ QUnit.test("complex getter", function(assert) {
     assert.deepEqual(GETTER(["a.a1", "c"])(original), expectation);
     assert.deepEqual(GETTER([])(original), undefined);
 });
-
 
 QUnit.test("functionsAsIs option", function(assert) {
     var obj = {
@@ -109,7 +107,6 @@ QUnit.test("square brackets in expr", function(assert) {
     assert.equal(GETTER("prop.items[1]")(obj), "second");
     assert.equal(GETTER("prop[items][1]")(obj), "second");
 });
-
 
 QUnit.test("empty results are the same", function(assert) {
     var monoGetter = GETTER("field1");

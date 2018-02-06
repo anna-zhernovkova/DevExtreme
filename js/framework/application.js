@@ -58,7 +58,6 @@ var Application = Class.inherit({
         this.stateManager = options.stateManager || new StateManager({ storage: options.stateStorage || sessionStorage() });
         this.stateManager.addStateSource(this.navigationManager);
 
-
         this.viewCache = this._createViewCache(options);
 
         this.commandMapping = this._createCommandMapping(options.commandMapping);
@@ -203,7 +202,6 @@ var Application = Class.inherit({
             direction = args.options.direction,
             resultDeferred,
             viewInfo = that._acquireViewInfo(args.item, args.options);
-
 
         if(!viewInfo.model) {
             this._processEvent("beforeViewSetup", {

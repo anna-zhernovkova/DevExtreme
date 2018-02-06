@@ -21,7 +21,6 @@ exports.createGroupFilter = function(path, storeLoadOptions) {
     return gridCore.combineFilters(filter);
 };
 
-
 exports.createOffsetFilter = function(path, storeLoadOptions) {
     var groups = normalizeSortingInfo(storeLoadOptions.group),
         i,

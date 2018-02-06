@@ -54,7 +54,6 @@ var Appointment = DOMComponent.inherit({
         });
     },
 
-
     _optionChanged: function(args) {
         switch(args.name) {
             case "data":

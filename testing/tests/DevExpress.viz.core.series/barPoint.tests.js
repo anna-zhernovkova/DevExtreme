@@ -1319,7 +1319,6 @@ QUnit.test("Get Graphic Settings", function(assert) {
     assert.equal(settings.width, 430);
 });
 
-
 QUnit.module("Draw label", environment);
 
 QUnit.test("Value = null", function(assert) {
@@ -2128,7 +2127,6 @@ QUnit.test("Draw label, point is abroad on the top", function(assert) {
     assert.equal(label.shift.firstCall.args[0], 40);
     assert.equal(label.shift.firstCall.args[1], 12);
 });
-
 
 QUnit.test("Draw label, point is abroad on the bottom", function(assert) {
     var label = createLabel.call(this, { x: 30, y: 220, width: 40, height: 10 });

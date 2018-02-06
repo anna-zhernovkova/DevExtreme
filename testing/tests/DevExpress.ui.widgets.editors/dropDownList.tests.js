@@ -127,7 +127,6 @@ QUnit.test("changing hover and focus states for list should be enabled on deskto
     }
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         fx.off = true;
@@ -239,7 +238,6 @@ QUnit.test("displayExpr has item in argument", function(assert) {
 
     assert.deepEqual(args, [2].concat(dataSource), "displayExpr args is correct");
 });
-
 
 QUnit.module("items & dataSource", moduleConfig);
 
@@ -612,7 +610,6 @@ QUnit.test("value option should be case-sensitive", function(assert) {
     assert.equal($element.find("input").val(), "First");
 });
 
-
 QUnit.module("selectedItem", moduleConfig);
 
 QUnit.test("selectedItem", function(assert) {
@@ -834,7 +831,6 @@ QUnit.test("onSelectionChanged action should not be fired when selectedItem was 
     assert.strictEqual(selectionChangedHandler.callCount, 0, "selectionChanged action was not fired");
 });
 
-
 QUnit.module("popup", moduleConfig);
 
 QUnit.test("popup max height should fit in the window", function(assert) {
@@ -980,7 +976,6 @@ QUnit.test("popup should be configured with templatesRenderAsynchronously=false 
     assert.strictEqual(popup.option("templatesRenderAsynchronously"), false, "templatesRenderAsynchronously should have false value");
 });
 
-
 QUnit.module("dataSource integration", moduleConfig);
 
 QUnit.test("guid integration", function(assert) {
@@ -996,7 +991,6 @@ QUnit.test("guid integration", function(assert) {
 
     assert.deepEqual($dropDownList.dxDropDownList("option", "selectedItem"), data[0], "value found");
 });
-
 
 QUnit.module("action options", moduleConfig);
 

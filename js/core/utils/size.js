@@ -64,6 +64,5 @@ var getSize = function(element, name, include) {
     return result;
 };
 
-
 exports.getSize = getSize;
 exports.getElementBoxParams = getElementBoxParams;

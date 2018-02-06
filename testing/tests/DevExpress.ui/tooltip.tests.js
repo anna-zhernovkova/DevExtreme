@@ -14,7 +14,6 @@ function checkTooltip(assert) {
     assert.ok($(".dx-tooltip-wrapper").hasClass("dx-position-right"));
 }
 
-
 QUnit.testStart(function() {
     var markup = '<button id="tooltip-target">My button</button>';
 

@@ -172,7 +172,6 @@ module.exports = {
                         .toggleClass(that.addWidgetPrefix(NOWRAP_CLASS), !that.option("wordWrapEnabled"))
                         .empty();
 
-
                     that._updateContent(that._renderTable());
 
                     that.callBase.apply(that, arguments);

@@ -469,7 +469,6 @@ QUnit.test("position my/at/of style", function(assert) {
     this.clock.tick(100);
 });
 
-
 if(support.transition()) {
 
     QUnit.module("CSS3 transitions", {
@@ -592,7 +591,6 @@ if(support.transition()) {
                 });
             });
         });
-
 
     });
 
@@ -1033,7 +1031,6 @@ if(support.transition()) {
     });
 }
 
-
 QUnit.module("fx effects");
 
 QUnit.test("fade", function(assert) {
@@ -1311,7 +1308,6 @@ QUnit.test("slide with predefined top & left", function(assert) {
     });
 });
 
-
 QUnit.module("relative animation");
 
 QUnit.test("slide", function(assert) {
@@ -1372,7 +1368,6 @@ QUnit.test("slide animate one axis", function(assert) {
         }
     });
 });
-
 
 QUnit.module("animation queue", {
     beforeEach: function() {
@@ -1447,7 +1442,6 @@ QUnit.test("stop queue animation without jumpToEnd", function(assert) {
 
     assert.equal(callBacksCount, 1);
 });
-
 
 QUnit.test("stop queue animation with jumpToEnd", function(assert) {
     var $element = this.$element,
@@ -1622,7 +1616,6 @@ QUnit.test("animations should be pushed to queue after stop correctly on complet
         done();
     });
 });
-
 
 QUnit.module("regression");
 

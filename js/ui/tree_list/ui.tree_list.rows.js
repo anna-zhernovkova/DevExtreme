@@ -121,7 +121,6 @@ exports.RowsView = rowsViewModule.views.rowsView.inherit((function() {
     };
 })());
 
-
 treeListCore.registerModule("rows", {
     defaultOptions: rowsViewModule.defaultOptions,
     views: {

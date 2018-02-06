@@ -732,7 +732,6 @@ QUnit.test("Point is visible. Series visible. Point outside visible area", funct
     point._calculateVisibility(-10, 10, 10, 10);
     var isVisible = point.isVisible();
 
-
     assert.ok(!isVisible);
 });
 
@@ -743,7 +742,6 @@ QUnit.test("Point is visible. Series no visible. Point inside visible area", fun
     point._calculateVisibility(100, 10, 0, 10);
     var isVisible = point.isVisible();
 
-
     assert.ok(!isVisible);
 });
 
@@ -753,7 +751,6 @@ QUnit.test("Point is visible. Series no visible. Point outside visible area", fu
     var point = createPoint(this.series, this.data, this.options);
     point._calculateVisibility(-10, 10, 10, 10);
     var isVisible = point.isVisible();
-
 
     assert.ok(!isVisible);
 });
@@ -1393,7 +1390,6 @@ QUnit.test("Draw only low errorBar. Rotated", function(assert) {
 
     assert.ok(point.graphic);
 
-
     assert.strictEqual(this.renderer.path.callCount, 1);
     assert.deepEqual(this.renderer.path.lastCall.args[0], [[24, 11, 22, 11], [24, 7, 24, 15]]);
 });
@@ -1411,7 +1407,6 @@ QUnit.test("Draw only high errorBar when defined only highError", function(asser
     point.draw(this.renderer, this.groups);
 
     assert.ok(point.graphic);
-
 
     assert.strictEqual(this.renderer.path.callCount, 1);
 
@@ -3188,7 +3183,6 @@ QUnit.test('Get navigator', function(assert) {
 
     assert.equal(point.__debug_browserNavigator, window.navigator);
 });
-
 
 QUnit.test("Tracker on ms devices with point.r < minTrackerSize. msPointer", function(assert) {
     var point = createPoint(this.series, { argument: "4", value: 3 }, this.options);

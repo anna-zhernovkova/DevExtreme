@@ -192,7 +192,6 @@ var ColumnChooserView = columnsView.ColumnsView.inherit({
                 searchEnabled: columnChooser.allowSearch
             };
 
-
         if(isSelectMode) {
             scrollableInstance = $container.find(".dx-scrollable").data("dxScrollable");
             scrollTop = scrollableInstance && scrollableInstance.scrollTop();
@@ -207,7 +206,6 @@ var ColumnChooserView = columnsView.ColumnsView.inherit({
 
             that.renderCompleted.fire();
         };
-
 
         if(this._isWinDevice()) {
             treeViewConfig.useNativeScrolling = false;

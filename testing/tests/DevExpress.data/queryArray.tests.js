@@ -33,7 +33,6 @@ QUnit.test("toArray convenience method", function(assert) {
     );
 });
 
-
 QUnit.module("Sorting");
 
 QUnit.test("basic usage", function(assert) {
@@ -326,7 +325,6 @@ QUnit.test("missing operation means equal", function(assert) {
     var done = assert.async(),
         input = [{ f: 42 }];
 
-
     QUERY(input).filter(["f", 42]).enumerate().done(function(r) {
         assert.deepEqual(r, input);
         done();
@@ -465,13 +463,11 @@ QUnit.test("conditions are not checked if it's not necessary", function(assert) 
     ).done(done);
 });
 
-
 QUnit.test("string functions", function(assert) {
     assert.expect(4);
 
     var done = assert.async(),
         input = [{ f: "a" }, { f: "ab" }, { f: "abc" }];
-
 
     var check = function(crit, expectation) {
         return QUERY(input).filter(crit).enumerate().done(function(r) {

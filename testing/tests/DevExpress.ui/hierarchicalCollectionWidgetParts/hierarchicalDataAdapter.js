@@ -31,7 +31,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("plain structure", moduleConfig);
 
 QUnit.test("all items should be converted", function(assert) {
@@ -108,7 +107,6 @@ QUnit.test("public node should exist in internalFields", function(assert) {
 
     assert.ok(Object.keys(data[0].internalFields.publicNode).length, "publicNode is not empty");
 });
-
 
 QUnit.module("tree structure with keys", moduleConfig);
 
@@ -256,7 +254,6 @@ QUnit.test("public node should exist in internalFields", function(assert) {
     assert.ok(Object.keys(data[0].internalFields.publicNode).length, "publicNode is not empty");
 });
 
-
 QUnit.module("tree structure with object instances", moduleConfig);
 
 QUnit.test("all items should be converted", function(assert) {
@@ -320,7 +317,6 @@ QUnit.test("public node should exist in internalFields", function(assert) {
 
     assert.ok(Object.keys(data[0].internalFields.publicNode).length, "publicNode is not empty");
 });
-
 
 QUnit.module("public methods", moduleConfig);
 
@@ -580,7 +576,6 @@ QUnit.test("getFullData", function(assert) {
     assert.equal(dataAdapter.getFullData().length, 3, "initial items");
 });
 
-
 QUnit.module("getPublicNode method", moduleConfig);
 
 QUnit.test("public node should have correct accessor fields", function(assert) {
@@ -629,7 +624,6 @@ QUnit.test("public node should depend on original node", function(assert) {
 
     assert.strictEqual(publicNode.selected, false, "public node became unselected");
 });
-
 
 QUnit.module("selection", moduleConfig);
 
@@ -695,7 +689,6 @@ QUnit.test("set multipleSelection false", function(assert) {
     assert.equal(dataAdapter.getSelectedNodesKeys(), 4, "last item id was selected");
 });
 
-
 QUnit.module("expand", moduleConfig);
 
 QUnit.test("set simple expand", function(assert) {
@@ -724,7 +717,6 @@ QUnit.test("set recursive expand", function(assert) {
     assert.ok(nodes[0].expanded, "node was expanded");
     assert.ok(nodes[0].items[0].expanded, "node was expanded");
 });
-
 
 QUnit.module("Item's dependence from nodes", moduleConfig);
 
@@ -779,7 +771,6 @@ QUnit.test("plain items", function(assert) {
     assert.ok(this.plainData[0].expanded, "node was expanded");
 });
 
-
 QUnit.module("Expansion changing", moduleConfig);
 
 QUnit.test("collapse item", function(assert) {
@@ -825,7 +816,6 @@ QUnit.test("expand item (simple expansion)", function(assert) {
     assert.ok(this.plainData[1].expanded, "child node was expanded");
     assert.deepEqual(dataAdapter.getExpandedNodesKeys(), [2], "expanded array was updated");
 });
-
 
 QUnit.module("Search operation");
 

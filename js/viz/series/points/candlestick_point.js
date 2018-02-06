@@ -204,7 +204,6 @@ module.exports = _extend({}, barPoint, {
                 max = _min(maxVisible, maxValue),
                 center = min + (max - min) / 2;
 
-
             if(rotated) {
                 y = that.x;
                 x = edgeLocation ? max : center;
@@ -320,7 +319,6 @@ module.exports = _extend({}, barPoint, {
         graphic.attr({ points: that._getPoints() }).smartAttr(style).sharp();
         group && graphic.append(that._getMarkerGroup(group));
     },
-
 
     _getLabelFormatObject: function() {
         var that = this;

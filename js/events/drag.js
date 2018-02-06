@@ -11,7 +11,6 @@ var $ = require("../core/renderer"),
     GestureEmitter = require("./gesture/emitter.gesture"),
     registerEmitter = require("./core/emitter_registrator");
 
-
 var DRAG_START_EVENT = "dxdragstart",
     DRAG_EVENT = "dxdrag",
     DRAG_END_EVENT = "dxdragend",
@@ -21,7 +20,6 @@ var DRAG_START_EVENT = "dxdragstart",
     DROP_EVENT = "dxdrop",
 
     DX_DRAG_EVENTS_COUNT_KEY = "dxDragEventsCount";
-
 
 var knownDropTargets = [],
     knownDropTargetSelectors = [],
@@ -342,7 +340,6 @@ registerEmitter({
         DRAG_END_EVENT
     ]
 });
-
 
 ///#DEBUG
 exports.dropTargets = knownDropTargets;

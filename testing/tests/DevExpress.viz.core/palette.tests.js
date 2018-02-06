@@ -262,7 +262,6 @@ QUnit.test('Blend without passing count', function(assert) {
     assert.strictEqual(palette.getNextColor(), "green");
 });
 
-
 QUnit.test('Blend with passing count', function(assert) {
     //act
     var palette = new this.Palette(['green', 'red', "yellow"], { extensionMode: "blend" });

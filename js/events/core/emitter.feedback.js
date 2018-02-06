@@ -15,7 +15,6 @@ var ACTIVE_EVENT_NAME = "dxactive",
     ACTIVE_TIMEOUT = 30,
     INACTIVE_TIMEOUT = 400;
 
-
 var FeedbackEvent = Class.inherit({
 
     ctor: function(timeout, fire) {
@@ -55,7 +54,6 @@ var FeedbackEvent = Class.inherit({
     }
 
 });
-
 
 var activeFeedback;
 
@@ -162,7 +160,6 @@ FeedbackEmitter.lock = function(deferred) {
 
     deferred.done(lockInactive);
 };
-
 
 registerEmitter({
     emitter: FeedbackEmitter,

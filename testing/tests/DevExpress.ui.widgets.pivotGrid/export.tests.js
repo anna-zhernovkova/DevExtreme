@@ -263,7 +263,6 @@ QUnit.test("getAllItems", function(assert) {
     }, "Column info clone empty cell object has correct content");
 });
 
-
 QUnit.test("Loading indicator showing", function(assert) {
     var pivotGrid = createPivotGrid(this.testOptions),
         spyBegin = sinon.spy(pivotGrid._dataController, "beginLoading"),

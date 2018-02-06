@@ -155,7 +155,6 @@ var GroupingDataSourceAdapterExtender = (function() {
     };
 })();
 
-
 dataSourceAdapter.extend(GroupingDataSourceAdapterExtender);
 
 var GroupingDataControllerExtender = (function() {
@@ -545,7 +544,6 @@ var GroupingHeaderPanelExtender = (function() {
 })();
 
 exports.GroupingHeaderPanelExtender = GroupingHeaderPanelExtender;
-
 
 var GroupingRowsViewExtender = (function() {
     return {

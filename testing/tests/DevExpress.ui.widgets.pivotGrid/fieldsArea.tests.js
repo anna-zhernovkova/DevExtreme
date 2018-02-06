@@ -8,8 +8,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
-
 require("common.css!");
 
 var FieldsArea = require("ui/pivot_grid/ui.pivot_grid.fields_area").FieldsArea,
@@ -72,7 +70,6 @@ QUnit.test("Render fields for row area", function(assert) {
     var area = new FieldsArea(this.component, "row");
 
     area.render(this.$container, [{ dataField: "Field Area 1", allowFiltering: true, allowSorting: true, area: "row" }]);
-
 
     assert.ok(this.$container.find(".dx-area-field").eq(0).children().eq(0).hasClass("dx-column-indicators")); //showColumnLines set to true for row area fields
 });

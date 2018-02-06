@@ -165,7 +165,6 @@ QUnit.test("Process display name changing", function(assert) {
     var displayNameSelectBox = this.getDisplayNameEditor(),
         idSelectBox = this.getIdEditor();
 
-
     displayNameSelectBox.option("value", "(UTC+03:00) Nairobi");
 
     assert.equal(this.instance.option("value"), "Africa/Addis_Ababa");

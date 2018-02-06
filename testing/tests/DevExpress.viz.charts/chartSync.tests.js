@@ -806,7 +806,6 @@ var environment = {
         });
         seriesMockData.series.push(stubSeries);
 
-
         $.each(chart.series, function(_, series) { series.dispose = function() { chart.seriesDisposed = true; }; });
         $.each(chart.seriesFamilies, function(_, family) { family.dispose = function() { chart.seriesFamiliesDisposed = true; }; });
         $.each(chart._argumentAxes, function(_, axis) { axis.dispose = function() { chart.horizontalAxesDisposed = true; }; });
@@ -1273,7 +1272,6 @@ var environment = {
                 }
             }),
             updatedData = [1, 2, 3, 4, 5];
-
 
         chart.series[0].setOptions({ range: { val: { min: 1, max: 5 } } });
         resetMocksInChart(chart);

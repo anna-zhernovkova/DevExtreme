@@ -259,7 +259,6 @@ if(device.deviceType === "desktop" && browser.msie && parseInt(browser.version) 
     });
 }
 
-
 QUnit.module('Editing', {
     beforeEach: function() {
         this.dataControllerOptions = {
@@ -1292,7 +1291,6 @@ QUnit.test('Api method editCell with column by wrong dataField', function(assert
     assert.equal(getInputElements(testElement).length, 0);
 });
 
-
 //T124946
 QUnit.test('Api method editCell with button', function(assert) {
     //arrange
@@ -1464,7 +1462,6 @@ QUnit.test('Remove row with message', function(assert) {
         assert.ok(body.find('.dx-dialog').length, 'has dialog');
         assert.strictEqual(body.find('.dx-dialog').first().find('.dx-popup-title').first().text(), 'TestTitle', 'confirm title');
         assert.strictEqual(body.find('.dx-dialog').first().find('.dx-dialog-message').first().text(), 'TestMessage', 'confirm message');
-
 
         //act
         //this.clock.tick(5000);
@@ -2092,7 +2089,6 @@ QUnit.test('Cancel changes when batch mode', function(assert) {
     this.editingController.cancelEditData();
     this.editingController.saveEditData();
 
-
     //assert
     assert.deepEqual(updateArgs, []);
     assert.deepEqual(removeKeys, []);
@@ -2216,7 +2212,6 @@ QUnit.test('Save Editing Cell when batch mode on click another cell', function(a
             return $.Deferred().resolve(key, values);
         }
     };
-
 
     rowsView.render(testElement);
     testElement.find('td').eq(1).trigger('dxclick'); //Second cell
@@ -3946,7 +3941,6 @@ QUnit.test("Update cell when edit mode batch and cancel in onRowUpdating is defe
         dataErrors.push(e);
     });
 
-
     var cancelDeferred = $.Deferred();
 
     that.options.onRowUpdating = function(params) {
@@ -4330,7 +4324,6 @@ QUnit.test('Cancel Inserting Row after change page', function(assert) {
 
     this.dataController.pageSize(3);
 
-
     headerPanelElement = testElement.find('.dx-datagrid-header-panel').first();
 
     //act
@@ -4401,8 +4394,6 @@ QUnit.test("Remove row when set onRowRemoving", function(assert) {
             confirmDeleteMessage: "TestMessage"
         }
     };
-
-
 
     that.options.onRowRemoving = function(params) {
         assert.deepEqual(params.data, that.array[0], "parameter data");
@@ -4682,7 +4673,6 @@ QUnit.test('Add highlight outline by batch edit mode when delayed template used 
     assert.strictEqual($elementWithOutline.length, 1, "highlight outline");
     assert.strictEqual($elementWithOutline.text(), 'test_Test11', "text in outline element");
 });
-
 
 QUnit.test("Append editorCell css class for row editing", function(assert) {
     //arrange
@@ -5148,7 +5138,6 @@ QUnit.test('Error during save changes in batch mode', function(assert) {
 
     assert.ok(!this.hasEditData(), 'not has edit data');
 
-
     var editCell = function(rowIndex, columnIndex, text) {
         testElement.find('tbody > tr').eq(rowIndex).find('td').eq(columnIndex).trigger('dxclick'); //Edit
         assert.equal(testElement.find('tbody > tr').eq(rowIndex).find('input').length, 1);
@@ -5164,7 +5153,6 @@ QUnit.test('Error during save changes in batch mode', function(assert) {
     //act
     this.editingController.saveEditData();
     this.clock.tick();
-
 
     //assert
     assert.deepEqual(updateArgs.length, 3, 'update count');
@@ -5578,7 +5566,6 @@ QUnit.test("loadingChanged should be called before editing oeprations", function
     //assert
     assert.strictEqual(deferreds.length, 1, "count of deferred updates");
     assert.deepEqual(loadingChangedArgs, [true], "loading changed args after updating start");
-
 
     //act
     deferreds[0].resolve();
@@ -6344,7 +6331,6 @@ if(!devices.win8) {
 
         //act
         rowsView.render(testElement);
-
 
         //assert
         assert.deepEqual(values, ["Alex", "Dan", "Vadim", "Dmitry", "Sergey", "Kate", "Dan"], "values for first column");
@@ -8547,7 +8533,6 @@ QUnit.test('Row with invalid values should move to current page after saving if 
     });
     that.editingController.optionChanged({ name: "onRowUpdating" });
 
-
     that.dataController.pageSize(2);
 
     //act
@@ -9396,7 +9381,6 @@ QUnit.test("Prevent cell validation if template with editor is used", function(a
     //assert
     assert.ok(!validator, "only internal editor validator");
 });
-
 
 QUnit.module('Editing with real dataController with grouping, masterDetail', {
     beforeEach: function() {
@@ -10449,7 +10433,6 @@ QUnit.test("customizeItem handler", function(assert) {
         }
     };
 
-
     rowsView.render(testElement);
 
     this.columnOption("phone", "formItem", {
@@ -10691,7 +10674,6 @@ QUnit.test("Edit and save form", function(assert) {
     testElement.find("input").first().trigger("change");
     that.saveEditData();
 
-
     //assert
     assert.ok(testElement.find(".dx-row").eq(0).hasClass("dx-data-row"), "first row is data row after save");
     assert.equal(testElement.find(".dx-row").eq(0).children().eq(0).text(), "Test123", "first cell saved");
@@ -10766,7 +10748,6 @@ QUnit.test("Edit and save form with invalid data", function(assert) {
     that.validatingController.optionChanged({ name: "onRowValidating" });
 
     rowsView.render(testElement);
-
 
     //act
     that.editRow(0);
@@ -11123,7 +11104,6 @@ QUnit.test("getCellElement returns correct editor with form editing and enabled 
     assert.deepEqual($(that.getCellElement(1, 1))[0], $editorElements[0], "first editor");
     assert.deepEqual($(that.getCellElement(1, "age"))[0], $editorElements[1], "second editor");
 });
-
 
 QUnit.module('Editing - "popup" mode', {
     beforeEach: function() {

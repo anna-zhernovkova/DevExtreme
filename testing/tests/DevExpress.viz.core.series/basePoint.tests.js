@@ -60,7 +60,6 @@ QUnit.test("Create with empty data", function(assert) {
     assert.strictEqual(point.lowError, undefined, "lowError should be undefined");
     assert.strictEqual(point.highError, undefined, "highError should be undefined");
 
-
     assert.ok(point._options, "Options should be created");
     assert.equal(point.series.name, "series", "Series option should be correct");
     assert.equal(point._options.rotated, "rotated", "Rotated options should be correct");

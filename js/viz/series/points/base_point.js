@@ -135,7 +135,6 @@ Point.prototype = {
 
         that._updateData(dataItem);
 
-
         !that.hasValue() && that.setInvisibility();
 
         that._fillStyle();

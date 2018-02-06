@@ -23,7 +23,6 @@ var moduleConfig = {
     }
 };
 
-
 QUnit.module("event firing", moduleConfig);
 
 QUnit.test("dxdblclick should bubble up", function(assert) {
@@ -35,7 +34,6 @@ QUnit.test("dxdblclick should bubble up", function(assert) {
 
     $("#element").trigger(dblclickEvent.name);
 });
-
 
 QUnit.module("timeout", moduleConfig);
 

@@ -93,7 +93,6 @@ var dxBullet = BaseSparkline.inherit({
         options.startScaleValue = startScaleValue = _Number(options.startScaleValue);
         options.endScaleValue = endScaleValue = _Number(options.endScaleValue);
 
-
         if(endScaleValue < startScaleValue) {
             level = endScaleValue;
             that._allOptions.endScaleValue = startScaleValue;

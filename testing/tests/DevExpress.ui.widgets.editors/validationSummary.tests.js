@@ -24,8 +24,6 @@ var Fixture = Class.inherit({
     }
 });
 
-
-
 QUnit.testStart(function() {
     var markup = '\
     <div id="dxSummary"></div>\
@@ -54,8 +52,6 @@ QUnit.testStart(function() {
         assert.strictEqual(this.fixture.$summaryContainer.find(".dx-empty-message").length, 0, "Validation Summary should be empty by default");
         assert.ok(summary, "Summary can be created");
     });
-
-
 
     QUnit.test("Summary can subscribe on group's Validated event", function(assert) {
         var group = "group1",
@@ -98,7 +94,6 @@ QUnit.testStart(function() {
             validators: [validator]
         });
 
-
         var items = summary.option('items');
 
         assert.ok(items, "Items should exists");
@@ -130,7 +125,6 @@ QUnit.testStart(function() {
             validators: [validator1, validator2]
         });
 
-
         var items = summary.option('items');
 
         assert.ok(items, "Items should exists");
@@ -138,7 +132,6 @@ QUnit.testStart(function() {
         assert.equal(items[0].text, message + "1-1", "Message should be transformed");
         assert.equal(items[1].text, message + "2", "Message should be transformed");
     });
-
 
     QUnit.test("Item click should focus on validator", function(assert) {
         var summary = this.fixture.createSummary(),
@@ -161,8 +154,6 @@ QUnit.testStart(function() {
     });
 })("General");
 
-
-
 (function() {
     QUnit.module("Regression", {
         beforeEach: function() {
@@ -183,7 +174,6 @@ QUnit.testStart(function() {
         assert.strictEqual(group, summary.option("validationGroup"));
     });
 
-
     QUnit.test("T212238: Summary can subscribe on group's Validated event when Summary is created before any validator in group", function(assert) {
         var group = "group1",
             validator = sinon.createStubInstance(Validator);
@@ -198,8 +188,6 @@ QUnit.testStart(function() {
 
         ValidationEngine.registerValidatorInGroup(group, validator);
 
-
-
         //act
         ValidationEngine.validateGroup(group);
 
@@ -211,8 +199,6 @@ QUnit.testStart(function() {
         assert.strictEqual(params.isValid, true, "IsValid should be passed");
         assert.ok(!params.brokenRule, "brokenRule should be null");
     });
-
-
 
     QUnit.test("dxValidationSummary should be able to reinit group registration and subscribe to new group", function(assert) {
         var group = "group1",
@@ -247,7 +233,6 @@ QUnit.testStart(function() {
     });
 })("Regression");
 
-
 (function() {
     QUnit.module("Update on validator's validation", {
         beforeEach: function() {
@@ -279,9 +264,7 @@ QUnit.testStart(function() {
 
         var summary = this.fixture.createSummary(null, { validationGroup: "group1" });
 
-
         ValidationEngine.validateGroup("group1");
-
 
         //act
         //change validator's state
@@ -295,7 +278,6 @@ QUnit.testStart(function() {
         assert.equal(items.length, 2, "Two messages should be shown (one message per validator)");
         assert.equal(items[0].text, message + " range", "Message should be updated");
     });
-
 
     QUnit.test("Message from valid item should be removed", function(assert) {
         var message = "test message",
@@ -412,7 +394,6 @@ QUnit.testStart(function() {
         });
 
         var summary = this.fixture.createSummary(null, { validationGroup: "group1" });
-
 
         ValidationEngine.validateGroup("group1");
 

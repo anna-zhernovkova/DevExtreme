@@ -13,7 +13,6 @@ var $ = require("jquery"),
 
 var SESSION_KEY = "dxPhoneJSApplication";
 
-
 var HistoryBasedNavigationDevice = Class.inherit({
     ctor: function(options) {
         options = options || {};

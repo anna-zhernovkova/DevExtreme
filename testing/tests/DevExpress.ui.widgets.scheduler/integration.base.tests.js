@@ -12,7 +12,6 @@ QUnit.testStart(function() {
 require("common.css!");
 require("generic_light.css!");
 
-
 var $ = require("jquery"),
     noop = require("core/utils/common").noop,
     errors = require("ui/widget/ui.errors"),

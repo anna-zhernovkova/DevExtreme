@@ -24,13 +24,11 @@ var BING_MAP_READY = "_bingScriptReady",
 
     MIN_LOCATION_RECT_LENGTH = 0.0000000000000001;
 
-
 var msMapsLoaded = function() {
     return window.Microsoft && window.Microsoft.Maps;
 };
 
 var msMapsLoader;
-
 
 var BingProvider = DynamicProvider.inherit({
     _mapType: function(type) {

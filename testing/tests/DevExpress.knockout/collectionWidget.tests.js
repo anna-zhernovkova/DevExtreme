@@ -116,7 +116,6 @@ var TestComponent = CollectionWidget.inherit({
 
 });
 
-
 QUnit.module("render", {
     beforeEach: function() {
         this.element = $("#cmp");
@@ -275,7 +274,6 @@ QUnit.test("$index is available in markup (T542335)", function(assert) {
     }
 });
 
-
 QUnit.module("items via markup", {
     beforeEach: function() {
         registerComponent("dxTestComponent", TestComponent);
@@ -352,7 +350,6 @@ QUnit.test("$parent should be correct for collection item", function(assert) {
     assert.equal($.trim($item.text()), "parent");
 });
 
-
 QUnit.module("deleting MVVM support", {
     beforeEach: function() {
         registerComponent("dxTestComponent", TestComponent);
@@ -361,7 +358,6 @@ QUnit.module("deleting MVVM support", {
         $.fn["TestComponent"] = null;
     }
 });
-
 
 QUnit.module("selecting MVVM support", {
     beforeEach: function() {

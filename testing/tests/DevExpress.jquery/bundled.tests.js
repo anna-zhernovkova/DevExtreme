@@ -9,7 +9,6 @@ define(function(require) {
 
     require("/artifacts/js/dx.mobile.debug.js");
 
-
     QUnit.module("jquery integration");
 
     QUnit.test("renderer uses correct strategy", function(assert) {

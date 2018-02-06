@@ -53,7 +53,6 @@ var $ = require("jquery"),
     FileUploader = require("ui/file_uploader"),
     Toolbar = require("ui/toolbar");
 
-
 QUnit.testStart(function() {
     $("#qunit-fixture").html('<div id="cmp"></div>');
 });
@@ -531,7 +530,6 @@ if(!(/chrome/i.test(navigator.userAgent))) {
     );
 }
 
-
 testComponentDefaults(Lookup,
     {},
     {
@@ -551,7 +549,6 @@ testComponentDefaults(Lookup,
     { platform: "win", version: [8], phone: true },
     { showCancelButton: false, fullScreen: true }
 );
-
 
 testComponentDefaults(Lookup,
     [
@@ -591,7 +588,6 @@ testComponentDefaults(Lookup,
         support.nativeScrolling = this._supportNativeScrolling;
     }
 );
-
 
 testComponentDefaults(Popup,
     {},

@@ -46,7 +46,6 @@ var nestedElementsCount = function($element, cssClass) {
     return $element.find(toSelector(cssClass)).length;
 };
 
-
 QUnit.module("rendering", {
     beforeEach: function() {
         this.$tabPanel = $("#tabPanel").dxTabPanel();
@@ -145,7 +144,6 @@ QUnit.test("container should consider tabs height when it rendered in hiding are
     assert.roughEqual(parseFloat($container.css("padding-top")), $tabs.outerHeight(), 0.1, "padding correct");
     assert.roughEqual(parseFloat($container.css("margin-top")), -$tabs.outerHeight(), 0.1, "margin correct");
 });
-
 
 QUnit.module("options", {
     beforeEach: function() {
@@ -419,7 +417,6 @@ QUnit.test("click on tab should be handled correctly when the 'deferRendering' o
     }
 });
 
-
 QUnit.module("events handlers", {
     beforeEach: function() {
         var that = this;
@@ -503,7 +500,6 @@ QUnit.test("runtime subscription to 'titleHold' event works fine", function(asse
     assert.verifySteps(["titleHold"]);
 });
 
-
 QUnit.module("focus policy", {
     beforeEach: function() {
         fx.off = true;
@@ -521,7 +517,6 @@ QUnit.test("focusing empty tab should not cause infinite loop", function(assert)
     });
     tabPanel.focus();
 });
-
 
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
@@ -632,7 +627,6 @@ QUnit.test("active tab should have aria-controls attribute pointing to active mu
     assert.notEqual($(tabs[1]).attr("aria-controls"), undefined, "aria-controls exists");
     assert.equal($(tabs[1]).attr("aria-controls"), $(views[1]).attr("id"), "aria-controls equals 2nd item's id");
 });
-
 
 QUnit.module("dataSource integration");
 

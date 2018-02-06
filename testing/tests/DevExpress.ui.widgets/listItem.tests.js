@@ -48,7 +48,6 @@ QUnit.test("showChevron should be rendered correctly after value changed", funct
     widget.$element().remove(); // NOTE: strange fix timers
 });
 
-
 QUnit.module("badge builtin");
 
 var LIST_ITEM_BADGE_CONTAINER_CLASS = "dx-list-item-badge-container",

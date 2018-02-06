@@ -544,7 +544,6 @@ var environmentWithSinonStubPoint = {
         assert.equal(bottomAnimatePoints[2].x, 3);
         assert.equal(bottomAnimatePoints[2].y, 0);
 
-
         $.each(series.getPoints(), function(i, pt) {
             assert.deepEqual(pt.draw.lastCall.args.length, 2);
             assert.equal(pt.draw.lastCall.args[0], renderer);

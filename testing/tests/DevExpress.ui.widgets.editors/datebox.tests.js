@@ -437,7 +437,6 @@ QUnit.test("T437211: Custom dxDateBox value formatter is not called if the same 
     assert.equal(expectedDisplayValue, instance.option("text"), "input value was formatted");
 });
 
-
 QUnit.module("hidden input");
 
 QUnit.test("a hidden input should be rendered", function(assert) {
@@ -501,7 +500,6 @@ QUnit.test("the value should be passed to the hidden input on widget value chang
     assert.equal($hiddenInput.val(), expectedStringValue, "input value is correct after widget value change");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget hidden input should get the 'name' attribute with a correct value", function(assert) {
@@ -513,7 +511,6 @@ QUnit.test("widget hidden input should get the 'name' attribute with a correct v
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("focus policy");
 
@@ -634,7 +631,6 @@ QUnit.testInActiveWindow("set focus on 'tab' key from editor to overlay and inve
 
     assert.ok($dateBox.hasClass(STATE_FOCUSED_CLASS), "dateBox on focus reset focus to element");
 });
-
 
 QUnit.module("options changed callbacks", moduleConfig);
 
@@ -806,7 +802,6 @@ QUnit.test("closeOnValueChange option still affects on buttons rendering", funct
     assert.equal($buttons.length, 0, "no buttons are rendered");
 });
 
-
 QUnit.module("merging dates", moduleConfig);
 
 QUnit.test("incorrect work of mergeDates function (B237850)", function(assert) {
@@ -889,7 +884,6 @@ QUnit.test("mergeDates must merge milliseconds when type is 'time'", function(as
     var date = new Date(2000, 6, 31, now.getHours(), now.getMinutes(), now.getSeconds(), 16);
     assert.deepEqual(this.instance.option("value"), date);
 });
-
 
 QUnit.module("dateView integration", {
     beforeEach: function() {
@@ -1072,7 +1066,6 @@ QUnit.test("specify dataPicker title, independent from 'type' option, when 'plac
     this.instance.open();
     assert.equal(this.popupTitle(), messageLocalization.format("dxDateBox-simulatedDataPickerTitleTime"), "title set successfully when 'placeholder' option set to ''");
 });
-
 
 QUnit.test("Native datebox should have specific class & button should have pointer-events:none", function(assert) {
     var $element = $("#dateBox").dxDateBox({
@@ -1259,7 +1252,6 @@ QUnit.test("the next value after null should have zero time components when type
     assert.equal(value.getMilliseconds(), 0, "milliseconds component is 0");
 });
 
-
 QUnit.module("widget sizing render");
 
 QUnit.test("default", function(assert) {
@@ -1345,7 +1337,6 @@ QUnit.test("dates should be merged correctly", function(assert) {
     $input.triggerHandler("change");
     assert.equal(instance.option("value").valueOf(), new Date(2014, 10, 1, 11, 22).valueOf(), "date merged correctly");
 });
-
 
 QUnit.module("datebox and calendar integration");
 
@@ -1724,7 +1715,6 @@ QUnit.test("disabledDates argument contains correct component parameter", functi
     assert.equal(component.NAME, "dxDateBox", "Correct component");
 });
 
-
 QUnit.module("datebox w/ calendar", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers(new Date().valueOf());
@@ -1800,7 +1790,6 @@ QUnit.test("DateBox must immediately display 'value' passed via the constructor 
 });
 
 QUnit.test("DateBox must pass value to calendar correctly if value is empty string", function(assert) {
-
 
     this.reinitFixture({
         value: '',
@@ -2028,7 +2017,6 @@ QUnit.test("Click on cancel button", function(assert) {
 QUnit.test("calendar does not open on field click (T189394)", function(assert) {
     assert.ok(!this.fixture.dateBox.option("openOnFieldClick"));
 });
-
 
 var getLongestCaptionIndex = uiDateUtils.getLongestCaptionIndex,
     getLongestDate = uiDateUtils.getLongestDate;
@@ -2357,7 +2345,6 @@ QUnit.test("calendar views should be positioned correctly", function(assert) {
         opened: true
     });
 
-
     var $calendarViews = $(".dx-popup-wrapper .dx-calendar-views-wrapper .dx-widget"),
         viewWidth = $calendarViews.eq(0).width();
 
@@ -2428,7 +2415,6 @@ QUnit.test("time component should not be changed if editing value with the help 
     assert.equal(value.getHours(), 14, "the 'hours' component has not been changed");
     assert.equal(value.getMinutes(), 15, "the 'minutes' component has not been changed");
 });
-
 
 QUnit.module("datebox with time component", {
     beforeEach: function() {
@@ -3073,7 +3059,6 @@ QUnit.test("validator correctly check value with 'time' format", function(assert
     assert.equal(dateBox.option("isValid"), true, "Editor should be marked as valid");
 });
 
-
 QUnit.module("native datebox", {
     beforeEach: function() {
         this.$dateBox = $("#dateBox");
@@ -3092,7 +3077,6 @@ QUnit.test("it should work and not fall", function(assert) {
     assert.ok(this.dateBox, "Instance of native datepicker should work for each platform");
     assert.equal(this.dateBox._strategy.NAME, "Native", "correct strategy is chosen");
 });
-
 
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
@@ -3316,7 +3300,6 @@ QUnit.testInActiveWindow("the 'shift+tab' key press leads to the cancel button f
     assert.ok($cancelButton.hasClass("dx-state-focused"), "cancel button is focused");
 });
 
-
 QUnit.module("aria accessibility");
 
 QUnit.test("aria-activedescendant on combobox should point to the active list item (date view)", function(assert) {
@@ -3365,7 +3348,6 @@ QUnit.test("aria-activedescendant on combobox should point to the active list it
         assert.ok(true, "skip test on devices");
     }
 });
-
 
 QUnit.module("pickerType");
 
@@ -3447,7 +3429,6 @@ QUnit.test("T319039 - classes on DateBox should be correct after the 'pickerType
     }
 });
 
-
 QUnit.module("'useNative' deprecated options");
 
 QUnit.test("the 'pickerType' option should depend on the 'useNative' and 'useCalendar' options", function(assert) {
@@ -3490,7 +3471,6 @@ QUnit.test("useCalendar = true and type = time should use time list (T248089)", 
         devices.real(currentDevice);
     }
 });
-
 
 QUnit.module("datebox validation");
 
@@ -3735,7 +3715,6 @@ QUnit.test("dxDateBox should validate value after change 'min' option", function
 
     assert.ok(dateBox.option("isValid"), "datebox is valid");
 });
-
 
 QUnit.module("DateBox number and string value support", {
     beforeEach: function() {

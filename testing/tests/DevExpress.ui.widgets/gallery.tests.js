@@ -258,7 +258,6 @@ QUnit.test("change selected item by swipe change indicator selected item", funct
         },
         mouse = this.mouse;
 
-
     assert.ok($indicatorItems().eq(0).hasClass(GALLERY_SELECTED_ITEM_CLASS));
 
     mouse.start().swipeStart().swipeEnd(-1);
@@ -705,7 +704,6 @@ QUnit.test("gallery should not hang when initialItemWidth is greater than widget
 
     assert.equal(instance._pagesCount(), 2, "pages count is correct");
 });
-
 
 QUnit.module("render", {
     beforeEach: function() {
@@ -1932,7 +1930,6 @@ QUnit.test("animationDuration", function(assert) {
         clock.tick(150);
         assert.equal($container.position().left, -400, "animation is completed");
 
-
         instance.option("animationDuration", 10000);
 
         instance.nextItem(true);
@@ -2059,7 +2056,6 @@ QUnit.test("keyboard navigation when there are a few pictures on the page", func
     assert.equal(this.instance.option("selectedIndex"), 0, "selectedIndex correct");
 });
 
-
 QUnit.module("RTL", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers();
@@ -2101,7 +2097,6 @@ QUnit.test("change selected item by swipe change indicator selected item", funct
             return $gallery.find("." + INDICATOR_ITEM_CLASS);
         },
         mouse = this.mouse;
-
 
     assert.ok($indicatorItems().eq(0).hasClass(GALLERY_SELECTED_ITEM_CLASS));
 
@@ -2188,7 +2183,6 @@ QUnit.test("Item positions are correct for responsive gallery, stretchImages=fal
     assert.equal(Math.abs(calculateItemPosition($galleryItems.first(), $gallery)), 95, "position of first item is correct");
 });
 
-
 QUnit.module("widget sizing render");
 
 QUnit.test("default", function(assert) {
@@ -2260,7 +2254,6 @@ QUnit.test("items position set without animation after windowsResizeCallback is 
 
 });
 
-
 QUnit.module("gallery with paginated dataSource", {
     beforeEach: function() {
         this.fxOff = fx.off;
@@ -2322,7 +2315,6 @@ QUnit.test("next navButton is invisible for last page and visible after click on
 
     var $nextNavButton = $gallery.find("." + NAV_NEXT_BUTTON_CLASS),
         $prevNavButton = $gallery.find("." + NAV_PREV_BUTTON_CLASS);
-
 
     $nextNavButton.trigger("dxclick");
     assert.equal($nextNavButton.css("display"), "none", "next navButton is invisible");
@@ -2467,7 +2459,6 @@ QUnit.test("aria role for items", function(assert) {
 
     assert.equal($item.attr("role"), "option", "item's role is correct");
 });
-
 
 QUnit.module("default template", {
     prepareItemTest: function(data) {

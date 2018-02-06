@@ -77,7 +77,6 @@ function createForeachTreeFunc(isAsync) {
 
             isChildrenProcessing = false;
 
-
             if(!parentAtFirst && callback(members, i) === false) {
                 return;
             }
@@ -157,7 +156,6 @@ exports.foreachDataLevel = function foreachDataLevel(data, callback, index, chil
         }
     }
 };
-
 
 exports.mergeArraysByMaxValue = function(values1, values2) {
     var result = [],

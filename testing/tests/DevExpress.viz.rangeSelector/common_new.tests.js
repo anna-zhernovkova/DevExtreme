@@ -38,7 +38,6 @@ QUnit.module("RangeSelector", {
 // T347971
 QUnit.test("Empty scale is drawn with compact height when 'dataSource' is defined and 'chart' is not", function(assert) {
 
-
     this.$container.dxRangeSelector({
         dataSource: []
     });

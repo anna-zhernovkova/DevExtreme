@@ -301,7 +301,6 @@ var active_touch_tooltip_widget = null,
     },
     isPointerDownCalled = false;
 
-
 var touchEvents = {
     "pointerdown.sparkline-tooltip": touchStartTooltipProcessing,
     "touchstart.sparkline-tooltip": touchStartTooltipProcessing

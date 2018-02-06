@@ -444,7 +444,6 @@ exports.ExcelCreator = Class.inherit({
         xmlResult.push("</sheetData>" + (this._options.autoFilterEnabled ? "<autoFilter ref=\"A" + this._dataProvider.getHeaderRowCount() + ":" + maxCellIndex + "\" />" : "") + this._generateMergingXML()
                    + "<ignoredErrors><ignoredError sqref=\"A1:" + maxCellIndex + "\" numberStoredAsText=\"1\" /></ignoredErrors></worksheet>");
 
-
         this._zip.folder(XL_FOLDER_NAME).folder(WORKSHEETS_FOLDER).file(WORKSHEET_FILE_NAME, xmlResult.join(""));
 
         this._colsArray = [];

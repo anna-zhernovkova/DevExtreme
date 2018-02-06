@@ -24,7 +24,6 @@ var FRAME_DURATION = Math.round(1000 / 60),
     VELOCITY_CALC_TIMEOUT = 200,
     TOUCH_BOUNDARY = GestureEmitter.initialTouchBoundary;
 
-
 GestureEmitter.touchBoundary(TOUCH_BOUNDARY);
 
 var moduleConfig = {
@@ -119,7 +118,6 @@ QUnit.test("dxscrollinit canceling", function(assert) {
         .move();
 });
 
-
 QUnit.module("scroll start");
 
 QUnit.test("dxscrollstart fired on first pointer move", function(assert) {
@@ -182,7 +180,6 @@ QUnit.test("dxscrollstart canceling", function(assert) {
     pointerMock($scrollable).start().down().move();
 });
 
-
 QUnit.module("scroll move");
 
 QUnit.test("dxscroll fired on pointer move", function(assert) {
@@ -244,7 +241,6 @@ QUnit.test("dxscroll canceling", function(assert) {
 
     assert.equal(fired, 1, "dxscroll fired once");
 });
-
 
 QUnit.module("scroll end");
 
@@ -363,7 +359,6 @@ QUnit.test("dxscrollend should not be fired when there was no pointer move", fun
         .up();
 });
 
-
 QUnit.module("scroll stop");
 
 QUnit.test("dxscrollstop fired on tap", function(assert) {
@@ -383,7 +378,6 @@ QUnit.test("dxscrollstop fired on tap", function(assert) {
     assert.ok($scrollable.is(args.target), "event target specified");
     assert.ok(args.originalEvent, "original event specified");
 });
-
 
 QUnit.module("scroll cancel");
 
@@ -416,7 +410,6 @@ QUnit.test("scroll cancel fired after set e.cancel=true", function(assert) {
     assert.equal(cancelEventCounter, 1, "cancel event fired once");
 });
 
-
 QUnit.module("scroll wheel");
 
 QUnit.test("dxscrollwheel fired on mouse wheel", function(assert) {
@@ -425,7 +418,6 @@ QUnit.test("dxscrollwheel fired on mouse wheel", function(assert) {
         scrollMove = 0,
         scrollEnd = 0,
         distance = TOUCH_BOUNDARY;
-
 
     var $scrollable = $("#scrollable")
         .on(scrollEvents.init, {
@@ -666,7 +658,6 @@ QUnit.test("dxscrollwheel did not prevent event", function(assert) {
                 direction: "both",
                 validate: function() { return true; }
             }, noop);
-
 
             var innerPointer = pointerMock($inner).start();
             innerPointer.down();

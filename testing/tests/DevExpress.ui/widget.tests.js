@@ -29,7 +29,6 @@ require("common.css!");
     var DxWidget = Widget.inherit({});
     registerComponent("dxWidget", DxWidget);
 
-
     QUnit.testStart(function() {
         var markup = '\
 <div id="widget"></div>\
@@ -504,7 +503,6 @@ require("common.css!");
         $element.remove();
     });
 
-
     QUnit.module("ui feedback", {
         beforeEach: function() {
             this.element = $("#widget");
@@ -526,7 +524,6 @@ require("common.css!");
 
         this.mouse.inactive();
         assert.ok(!element.hasClass(ACTIVE_STATE_CLASS));
-
 
         instance.option("activeStateEnabled", true);
         assert.ok(!element.hasClass(ACTIVE_STATE_CLASS));
@@ -594,7 +591,6 @@ require("common.css!");
         this.clock.tick(FEEDBACK_SHOW_TIMEOUT);
         assert.ok(!el.hasClass(ACTIVE_STATE_CLASS));
         assert.ok(el.hasClass(DISABLED_STATE_CLASS));
-
 
         this.mouse.up();
         this.clock.tick(FEEDBACK_HIDE_TIMEOUT);
@@ -785,7 +781,6 @@ require("common.css!");
             .trigger("dxclick");
     });
 
-
     QUnit.module("widget sizing render");
 
     QUnit.test("default", function(assert) {
@@ -832,7 +827,6 @@ require("common.css!");
         assert.strictEqual($element.outerWidth(), customWidth, "outer width of the element must be equal to custom width");
     });
 
-
     QUnit.module("templates support");
 
     var TestContainer = Widget.inherit({
@@ -858,7 +852,6 @@ require("common.css!");
     QUnit.test("internal template as name (string)", function(assert) {
         var testContainer = new TestContainer("#container", { template1: "item", template2: "group" }),
             templateCollection = testContainer.option("integrationOptions.templates");
-
 
         assert.strictEqual(testContainer._getTemplateByOption("template1"), templateCollection["item"]);
         assert.strictEqual(testContainer._getTemplateByOption("template2"), templateCollection["group"]);
@@ -1084,7 +1077,6 @@ require("common.css!");
         });
     });
 
-
     QUnit.module("templates caching", {
         beforeEach: function() {
             this.compileCalled = 0;
@@ -1131,7 +1123,6 @@ require("common.css!");
 
         assert.equal(this.compileCalled, 1);
     });
-
 
     QUnit.module("platform specific templates", {
         beforeEach: function() {
@@ -1180,7 +1171,6 @@ require("common.css!");
         var $testContainer = $("#platformSpecificContainer2").TestContainerWidget();
         assert.equal($testContainer.children().eq(0).text(), "ios", "choose first best template");
     });
-
 
     QUnit.module("template support regressions", {
         beforeEach: function() {
@@ -1261,7 +1251,6 @@ require("common.css!");
             }
         });
     });
-
 
     QUnit.module("keyboard navigation");
 
@@ -1353,7 +1342,6 @@ require("common.css!");
         assert.equal(handlerFired, 1, "new handler fired");
     });
 
-
     (function() {
 
         QUnit.module("isReady");
@@ -1379,7 +1367,6 @@ require("common.css!");
         });
 
     })();
-
 
     (function() {
 
@@ -1426,7 +1413,6 @@ require("common.css!");
         });
 
     })();
-
 
     (function() {
         QUnit.module("aria accessibility");

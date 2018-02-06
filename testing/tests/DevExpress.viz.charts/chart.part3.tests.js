@@ -369,9 +369,6 @@ QUnit.test("T543486. Named value axis in non-existent pane should have crosshair
     assert.strictEqual(chart._valueAxes[0].getOptions().crosshairMargin, 4);
 });
 
-
-
-
 QUnit.test("Create Horizontal Continuous Axis, Vertical Continuous axis", function(assert) {
     //Arrange
     var stubSeries = new MockSeries({
@@ -1433,7 +1430,6 @@ QUnit.test("Panes border, default attributes. Two render", function(assert) {
         animate: false
     });
 
-
     assert.ok(chart.panes);
     assert.ok(chart._panesBorderGroup.clear.called);
     assert.ok(chart._renderer.g.callCount);
@@ -1901,7 +1897,6 @@ QUnit.test("pass to ctor", function(assert) {
 
     seriesMockData.series.push(stubSeries1, stubSeries2);
 
-
     this.createChart({
         equalBarWidth: "equalBarWidth-option",
         barWidth: "barWidth-option",
@@ -1934,7 +1929,6 @@ QUnit.test("Negatives as zeroes. misspelling case", function(assert) {
 
     seriesMockData.series.push(stubSeries1, stubSeries2);
 
-
     this.createChart({
         series: [{ name: "name1", type: "line" }, { name: "name2", type: "bar" }],
         negativesAsZeroes: undefined,
@@ -1949,7 +1943,6 @@ QUnit.test("Negatives as zeroes. misspelling case is ignored when correct option
         stubSeries2 = new MockSeries({ points: [new MockPoint({ argument: "2", val: 2 })] });
 
     seriesMockData.series.push(stubSeries1, stubSeries2);
-
 
     this.createChart({
         series: [{ name: "name1", type: "line" }, { name: "name2", type: "bar" }],

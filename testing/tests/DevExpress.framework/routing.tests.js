@@ -241,7 +241,6 @@ QUnit.test("format with undefined param in the middle (Q578711)", function(asser
     assert.equal(uri, "test//p1");
 });
 
-
 QUnit.test("format must use all passed params", function(assert) {
     var router = new Router();
     router.register(":a");

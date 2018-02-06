@@ -141,7 +141,6 @@ Action.unregisterExecutor = function() {
     });
 };
 
-
 Action.registerExecutor({
     "undefined": {
         execute: function(e) {
@@ -160,7 +159,6 @@ Action.registerExecutor({
         }
     }
 });
-
 
 var createValidatorByTargetElement = function(condition) {
     return function(e) {
@@ -198,6 +196,5 @@ Action.registerExecutor({
         })
     }
 });
-
 
 module.exports = Action;

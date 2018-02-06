@@ -9,7 +9,6 @@ QUnit.testStart(function() {
     $("#qunit-fixture").html(markup);
 });
 
-
 require("common.css!");
 
 require("ui/data_grid/ui.data_grid");
@@ -1834,7 +1833,6 @@ QUnit.testInActiveWindow("Space in input", function(assert) {
 
     $("#container focus").first().focus();
 
-
     var e = $.Event("keydown", { which: 32 /* space */ });
     $("#container input").trigger(e);
 
@@ -1844,7 +1842,6 @@ QUnit.testInActiveWindow("Space in input", function(assert) {
     assert.ok(!isDefaultPrevented, "default is not prevented");
 
 });
-
 
 QUnit.testInActiveWindow("Space is not worked when selection is disabled", function(assert) {
     //arrange
@@ -2296,7 +2293,6 @@ QUnit.testInActiveWindow("Navigation using shift+tab inside edit form in the fir
     assert.equal(this.keyboardNavigationController._focusedCellPosition.rowIndex, 0, "row index");
 });
 
-
 //T448310
 QUnit.testInActiveWindow("Navigate using shift + tab to first editor from row after this editor", function(assert) {
     //arrange
@@ -2338,7 +2334,6 @@ QUnit.testInActiveWindow("Navigate using shift + tab to first editor from row af
     this.triggerKeyDown("enter");
 
     this.clock.tick();
-
 
     this.focusCell(0, 1);
     this.triggerKeyDown("enter");
@@ -2458,7 +2453,6 @@ QUnit.testInActiveWindow("Close edit form after esc key", function(assert) {
     this.triggerKeyDown("enter");
 
     this.clock.tick();
-
 
     var $focusedEditor = testElement.find(".test .dx-texteditor.dx-state-focused input");
     assert.equal($focusedEditor.length, 1, "focused editor in edit from exists");
@@ -2781,7 +2775,6 @@ if(device.deviceType === "desktop") {
             return $container;
         };
 
-
         //act
         this.gridView.render($container);
 
@@ -2807,7 +2800,6 @@ if(device.deviceType === "desktop") {
         var e = $.Event("keydown", { which: F8_KEYCODE });
         $($container.find(".dx-datagrid-rowsview")).trigger(e);
         this.clock.tick();
-
 
         //assert
         assert.ok(isRepaintCalled, "repaint called");
@@ -3245,7 +3237,6 @@ QUnit.testInActiveWindow("closeEditCell and reset focus on 'tab' if the current 
 
     assert.ok($("#container .dx-datagrid-focus-overlay:visible").length, "focus overlay is visible");
 
-
     var $lastCell = this.rowsView.element().find(".dx-row").filter(":visible").last().find("td").eq(1);
 
     //this.focusCell($lastCell);
@@ -3304,7 +3295,6 @@ QUnit.testInActiveWindow("closeEditCell and reset focus on 'tab' if the current 
     assert.deepEqual(this.keyboardNavigationController._focusedCellPosition, {}, "focused cell position is reset");
     assert.ok($("#container .dx-datagrid-focus-overlay").hasClass("dx-hidden"), "focus overlay is not visible");
 });
-
 
 //T280003
 QUnit.testInActiveWindow("Edit next cell after tab key press with column is not allow editing when editing mode batch", function(assert) {
@@ -3427,7 +3417,6 @@ QUnit.testInActiveWindow("Focus link elements on tab key", function(assert) {
 
     this.gridView.render($("#container"));
 
-
     //act
     var $cell = $(this.rowsView.element()).find(".dx-row").filter(":visible").eq(0).find("td").eq(0);
     $cell.focus().trigger("dxpointerdown");
@@ -3487,7 +3476,6 @@ QUnit.testInActiveWindow("Focus link elements on shift+tab key", function(assert
 
     this.gridView.render($("#container"));
 
-
     //act
     var $cell = $(this.rowsView.element()).find(".dx-row").filter(":visible").eq(0).find("td").eq(2);
     $cell.focus().trigger("dxpointerdown");
@@ -3544,7 +3532,6 @@ if(device.deviceType === "desktop") {
         setupModules(this);
 
         this.gridView.render($("#container"));
-
 
         //act
         var $cell = $(this.rowsView.element()).find(".dx-row").filter(":visible").eq(0).find("td").eq(0);
@@ -3896,7 +3883,6 @@ QUnit.testInActiveWindow("Try move to next cell via tab key when focus on last c
 
     assert.equal(this.keyboardNavigationController._focusedCellPosition.columnIndex, 1, "cellIndex");
     assert.equal(this.keyboardNavigationController._focusedCellPosition.rowIndex, 10, "rowIndex");
-
 
 });
 

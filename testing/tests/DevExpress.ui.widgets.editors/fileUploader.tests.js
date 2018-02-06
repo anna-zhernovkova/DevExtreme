@@ -42,7 +42,6 @@ var FILEUPLOADER_CLASS = "dx-fileuploader",
 
     FILEUPLOADER_AFTER_LOAD_DELAY = 500;
 
-
 var simulateFileChoose = function($fileUploader, files) {
     var $input = $fileUploader.find("." + FILEUPLOADER_INPUT_CLASS);
 
@@ -84,7 +83,6 @@ var getNewFile = function() {
     };
 };
 
-
 var moduleConfig = {
     beforeEach: function() {
         internals.changeFileInputRenderer(function() {
@@ -114,7 +112,6 @@ var moduleConfig = {
         this.clock.restore();
     }
 };
-
 
 QUnit.module("rendering");
 
@@ -195,7 +192,6 @@ QUnit.test("the 'Upload' button should be hidden if no files are chosen", functi
 
     assert.ok($uploadButton.length && !$uploadButton.is(":visible"), "the upload button is hidden");
 });
-
 
 QUnit.module("files rendering", moduleConfig);
 
@@ -408,7 +404,6 @@ QUnit.test("file list should be updated after choosing another file when 'multip
     assert.notEqual(this.xhrMock.getInstanceAt(1), undefined, "request is created");
 });
 
-
 QUnit.module("allowCanceling", moduleConfig);
 
 QUnit.test("cancel buttons rendering should depend on the 'allowCanceling' option", function(assert) {
@@ -420,7 +415,6 @@ QUnit.test("cancel buttons rendering should depend on the 'allowCanceling' optio
 
     simulateFileChoose($element, fakeFile);
     assert.ok(!$element.find("." + FILEUPLOADER_CANCEL_BUTTON_CLASS).is(":visible"), "cancel button is not visible when 'allowCanceling' is false");
-
 
     instance.option("allowCanceling", true);
     simulateFileChoose($element, fakeFile);
@@ -494,7 +488,6 @@ QUnit.test("file list should be cleared when 'useForm' option is used", function
 
     assert.deepEqual(fileUploader.option("value"), [newFile], "file list was cleared");
 });
-
 
 QUnit.module("autoUpload", moduleConfig);
 
@@ -589,7 +582,6 @@ QUnit.test("file should be uploaded only one time", function(assert) {
 
     assert.equal(xhr, newXhr, "new xhr was not created when file is uploaded");
 });
-
 
 QUnit.module("value option", moduleConfig);
 
@@ -699,7 +691,6 @@ QUnit.test("value should contain only file name (ie9 fix)", function(assert) {
     assert.deepEqual($fileUploader.dxFileUploader("option", "value"), [{ name: "fakefile.txt" }], "value contain file name");
 });
 
-
 QUnit.module("buttons text", moduleConfig);
 
 QUnit.test("select button text is changed by option", function(assert) {
@@ -735,7 +726,6 @@ QUnit.test("upload button text is changed by option", function(assert) {
     assert.equal($button.text(), uploadButtonText, "button text is correct");
 });
 
-
 QUnit.module("multiple option", moduleConfig);
 
 QUnit.test("field multiple attr should be set correctly", function(assert) {
@@ -763,7 +753,6 @@ QUnit.test("value should contain several file names", function(assert) {
     assert.deepEqual($fileUploader.dxFileUploader("option", "value"), [fakeFile, fakeFile1], "value contain both files");
 });
 
-
 QUnit.module("disabled option");
 
 QUnit.test("file input should be hidden when widget is disabled", function(assert) {
@@ -781,7 +770,6 @@ QUnit.test("file input should be hidden when widget is disabled", function(asser
     assert.ok($fileInput.is(":hidden"), "input is hidden");
 });
 
-
 QUnit.module("option accept", moduleConfig);
 
 QUnit.test("field accept should be rendered correctly", function(assert) {
@@ -798,7 +786,6 @@ QUnit.test("field accept should be rendered correctly", function(assert) {
     assert.equal($fileInput.prop("accept"), "video/*", "value was set to empty string");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget input should get the 'name' attribute with a correct value", function(assert) {
@@ -810,7 +797,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("option change", moduleConfig);
 
@@ -825,7 +811,6 @@ QUnit.test("file input should not be rerendered if widget repainted", function(a
     var $fileInput = $fileUploader.find("." + FILEUPLOADER_INPUT_CLASS);
     assert.equal($fileInput.val(), "fakefile", "value was not set to empty string");
 });
-
 
 QUnit.module("file uploading", moduleConfig);
 
@@ -1127,7 +1112,6 @@ QUnit.test("input value should not be cleared after the file selection", functio
     assert.equal($input.val(), "fakeFile", "value was cleared in input");
 });
 
-
 QUnit.module("uploading progress", moduleConfig);
 
 QUnit.test("the 'progress' option should reflect file upload progress", function(assert) {
@@ -1273,7 +1257,6 @@ QUnit.test("T246244 - the 'progress' option should be reset to 0 when last file 
     assert.equal(instance.option("progress"), 0, "progress is reset");
 });
 
-
 QUnit.module("file status message", moduleConfig);
 
 QUnit.test("correct status message on init", function(assert) {
@@ -1343,7 +1326,6 @@ QUnit.test("status message should be correct if upload failed", function(assert)
     var $fileStatusMessage = $element.find("." + FILEUPLOADER_FILE_STATUS_MESSAGE_CLASS);
     assert.equal($fileStatusMessage.text(), instance.option("uploadFailedMessage"), "upload failed message is correct");
 });
-
 
 QUnit.module("uploading events", moduleConfig);
 
@@ -1680,7 +1662,6 @@ QUnit.test("onUploadAborted event should contain request which is instance of XM
     $element.find("." + FILEUPLOADER_CANCEL_BUTTON_CLASS).trigger("dxclick");
 });
 
-
 QUnit.module("keyboard navigation", moduleConfig);
 
 QUnit.test("upload button should be focus target of fileUploader", function(assert) {
@@ -1745,7 +1726,6 @@ QUnit.test("Propagation of the native input click should be stopped (T404422)", 
 
     $selectButton.trigger("click");
 });
-
 
 QUnit.module("Drag and drop", moduleConfig);
 
@@ -1968,7 +1948,6 @@ QUnit.test("file should be added for the '.jpg' accept (T386887)", function(asse
     assert.equal($fileUploader.dxFileUploader("option", "value[0]").name, firstFile.name, "added file is correct");
 });
 
-
 QUnit.module("files selection", moduleConfig);
 
 QUnit.test("T328503 - input is in input container if you should not use native input click", function(assert) {
@@ -2036,7 +2015,6 @@ QUnit.test("file list should not be extended if the 'multiple' option is false",
 
     assert.equal($fileUploader.find("." + FILEUPLOADER_FILE_CLASS).length, 1, "only one file is in list");
 });
-
 
 QUnit.module("deprecated options", moduleConfig);
 

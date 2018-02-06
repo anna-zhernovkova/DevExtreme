@@ -17,7 +17,6 @@ if(!devices.real().generic) {
 fx.off = true;
 GoogleStaticProvider.remapConstant("/mapURL?");
 
-
 QUnit.module("OptionChanged", {
     beforeEach: function() {
         this.$element = $("<div />").appendTo("body");
@@ -78,7 +77,6 @@ $.each(DevExpress.ui, function(componentName, componentConstructor) {
 
     if($.fn[componentName]) {
         componentConstructor.prototype._defaultOptionsRules = function() { return []; };
-
 
         QUnit.test(componentName, function(assert) {
             var done = assert.async();

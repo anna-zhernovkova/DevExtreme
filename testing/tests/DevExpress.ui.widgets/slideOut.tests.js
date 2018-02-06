@@ -19,8 +19,6 @@ var SLIDEOUT_CLASS = "dx-slideout",
     LIST_CLASS = "dx-list",
     LIST_ITEM_CLASS = "dx-list-item";
 
-
-
 QUnit.testStart(function() {
     var markup = '\
         <div id="slideOut"></div>\
@@ -110,8 +108,6 @@ QUnit.test("show only one item at same time if contentTemplate append markup in 
 
     assert.equal($.trim(slideOut.find("." + SLIDEOUT_ITEM_CONTAINER_CLASS).text()), "itemText", "item was rendered only once");
 });
-
-
 
 QUnit.module("widget options", {
     beforeEach: function() {
@@ -560,8 +556,6 @@ QUnit.test("onMenuGroupRendered option change", function(assert) {
     assert.equal(list.option("onGroupRendered"), slideOut.option("onMenuGroupRendered"), "onMenuGroupRendered was transferred to list's onGroupRendered");
 });
 
-
-
 QUnit.module("swipe", {
     beforeEach: function() {
         this.$element = $("#slideOut");
@@ -748,7 +742,6 @@ QUnit.test("click on slideout item should close menu", function(assert) {
     $shield.trigger("dxclick");
     assert.ok(!instance.option("menuVisible"), "menu is hidden after click");
 });
-
 
 QUnit.module("back button callback", {
     beforeEach: function() {

@@ -22,7 +22,6 @@ var ACTION_SHEET_CLASS = "dx-actionsheet",
     ACTION_SHEET_ITEM_DATA_KEY = "dxActionSheetItemData",
     ACTION_SHEET_WITHOUT_TITLE_CLASS = "dx-actionsheet-without-title";
 
-
 /**
 * @name dxactionsheet
 * @publicName dxActionSheet

@@ -25,7 +25,6 @@ var testPosition = function(name, fixtureName, params, expectedLeft, expectedTop
     });
 };
 
-
 var testCollision = function(name, fixtureName, params, expectedHorzDist, expectedVertDist, debug) {
     QUnit.test(name, function(assert) {
         fixtures[fixtureName].create();
@@ -47,7 +46,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
     });
 
 };
-
 
 (function defaultModule() {
 
@@ -249,7 +247,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
     });
 })();
 
-
 (function collisionTopRightModule() {
 
     QUnit.module("collision, top-right corner");
@@ -315,7 +312,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
 
 })();
 
-
 (function collisionBottomLeftModule() {
     QUnit.module("collision, bottom-left corner");
 
@@ -379,7 +375,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
     });
 
 })();
-
 
 (function collisionBottomRightModule() {
 
@@ -445,7 +440,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
     });
 
 })();
-
 
 (function collisionReturnedValueModule() {
 
@@ -922,7 +916,6 @@ var testCollision = function(name, fixtureName, params, expectedHorzDist, expect
         }
     });
 })();
-
 
 (function elementOffsetModule() {
     QUnit.module("offset module", {

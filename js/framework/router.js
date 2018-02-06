@@ -9,7 +9,6 @@ var extend = require("../core/utils/extend").extend,
 // NOTE: replaceState crushes on WP8 if url contains ':' character (T108063)
 var JSON_URI_PREFIX = encodeURIComponent("json:");
 
-
 var Route = Class.inherit({
     _trimSeparators: function(str) {
         return str.replace(/^[\/.]+|\/+$/g, "");

@@ -1304,7 +1304,6 @@ QUnit.test('Mapping indexes', function(assert) {
         states: states
     }];
 
-
     var legend = this.createSimpleLegend();
 
     legend.draw(200, 200);
@@ -1626,7 +1625,6 @@ QUnit.test('horizontalAlignment specified incorrectly', function(assert) {
 
     assert.equal(legend._options.horizontalAlignment, 'right');
 });
-
 
 QUnit.module("Life cycle", $.extend({}, environment, {
     beforeEach: function() {

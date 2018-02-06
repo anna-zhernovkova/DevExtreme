@@ -16,7 +16,6 @@ var CONTEXTMENU_NAMESPACE = "dxContexMenu",
 
     CONTEXTMENU_EVENT_NAME = "dxcontextmenu";
 
-
 var ContextMenu = Class.inherit({
 
     setup: function(element) {
@@ -63,6 +62,5 @@ var ContextMenu = Class.inherit({
 */
 
 registerEvent(CONTEXTMENU_EVENT_NAME, new ContextMenu());
-
 
 exports.name = CONTEXTMENU_EVENT_NAME;

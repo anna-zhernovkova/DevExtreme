@@ -136,7 +136,6 @@ QUnit.test("addNamespace method", function(assert) {
     assert.equal(severalEventsByArray, "custom1.Widget custom2.Widget", "several custom event names");
 });
 
-
 QUnit.module("skip mousewheel event test");
 
 function needSkipMouseWheel(element) {
@@ -220,7 +219,6 @@ QUnit.testInActiveWindow("needSkipEvent returns true for select input wheel", fu
     }
 });
 
-
 QUnit.module("skip mouse event tests");
 
 function needSkipMouseDown(element) {
@@ -264,7 +262,6 @@ QUnit.test("needSkipEvent returns true for nested in .dx-skip-gesture-event clic
     var element = $("<div />").appendTo("<div class='dx-skip-gesture-event' />");
     assert.ok(needSkipMouseDown(element));
 });
-
 
 QUnit.module("skip pointer event tests");
 
@@ -408,7 +405,6 @@ if(compareVersion($.fn.jquery, [3]) < 0) {
             "prevValue"
         ];
 
-
     if("ontouchstart" in window && !('callPhantom' in window)) {
         $.each(["touchstart", "touchmove", "touchend", "touchcancel"], function(index, eventName) {
             QUnit.test("'" + eventName + "' event has all properties according to W3C (http://www.w3.org/TR/touch-eventUtils/)", function(assert) {
@@ -531,7 +527,6 @@ if(compareVersion($.fn.jquery, [3]) < 0) {
             });
         });
     }
-
 
     QUnit.module("regressions");
 

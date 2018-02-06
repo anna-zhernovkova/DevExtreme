@@ -105,7 +105,6 @@ var animationCapturing = {
     }
 };
 
-
 QUnit.module("rendering");
 
 QUnit.test("widget should be rendered", function(assert) {
@@ -218,7 +217,6 @@ QUnit.test("pointerdown should not affect to parent multiview (T306118)", functi
     assert.equal($(outerMultiView.option("focusedElement")).get(0), $outerItemElements.get(0), "focusedElement was not changed if event's target is not part of the widget");
 });
 
-
 QUnit.module("items positioning", {
     beforeEach: function() {
         fx.off = true;
@@ -265,7 +263,6 @@ QUnit.test("only selected item should be visible", function(assert) {
     assert.ok(!$items.eq(2).hasClass(MULTIVIEW_ITEM_HIDDEN_CLASS));
 });
 
-
 QUnit.module("animations", {
     beforeEach: function() {
         fx.off = true;
@@ -302,7 +299,6 @@ QUnit.test("complete", function(assert) {
         fx.stop = origFxStop;
     }
 });
-
 
 QUnit.module("selected index change animation", {
     beforeEach: function() {
@@ -405,7 +401,6 @@ QUnit.test("item container should be animated with zero duration if option anima
     assert.equal(this.capturedAnimations[0].duration, 0, "animation duration is 0");
 });
 
-
 QUnit.module("interaction via click", {
     beforeEach: function() {
         fx.off = true;
@@ -427,7 +422,6 @@ QUnit.test("selected index should not be changed by click on item", function(ass
     $(multiView.itemElements()).eq(1).trigger("dxclick");
     assert.equal(multiView.option("selectedIndex"), 0, "selected index not changed");
 });
-
 
 QUnit.module("interaction via swipe", {
     beforeEach: function() {
@@ -610,7 +604,6 @@ QUnit.test("swipe with focusStateEnabled false (T319963)", function(assert) {
     assert.equal($multiView.find(".dx-state-focused").length, 0, "there is no focused class on any item");
 });
 
-
 QUnit.module("loop", {
     beforeEach: function() {
         this._animationStartAction = $.proxy(function() {
@@ -756,7 +749,6 @@ QUnit.test("second item should have correct position if swipe present at first o
     pointer.swipeEnd();
 });
 
-
 QUnit.module("defer rendering", {
     beforeEach: function() {
         this._animationStartAction = $.proxy(function() {
@@ -862,7 +854,6 @@ QUnit.test("widget should be rerendered on the deferRendering option change", fu
     assert.equal(renderCount, expectedRenderCount, "widget was rerendered one time on option changed");
 });
 
-
 QUnit.module("keyboard navigation", {
     beforeEach: function() {
         this._animationStartAction = $.proxy(function() {
@@ -936,7 +927,6 @@ QUnit.test("items should be animated in correct direction after looping through 
     keyboardMock($multiView).keyDown("right");
     assert.equal(this.capturedAnimations[1].end, -800, "animated correctly");
 });
-
 
 QUnit.module("aria accessibility", {
     beforeEach: function() {

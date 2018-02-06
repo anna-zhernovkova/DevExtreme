@@ -50,7 +50,6 @@ function normalizeAggregate(aggregate) {
             : true,
         aggregator = aggregate.aggregator;
 
-
     if(typeof aggregator === "string") {
         aggregator = dataUtils.aggregators[aggregator];
         if(!aggregator) {

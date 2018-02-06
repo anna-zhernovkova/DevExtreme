@@ -672,7 +672,6 @@ var dxChart = AdvancedChart.inherit({
             }, {}),
             cleanPanesCanvases = _extend(true, {}, panesCanvases);
 
-
         if(!drawOptions.adjustAxes) {
             drawAxesWithTicks(verticalAxes, !rotated && synchronizeMultiAxes, panesCanvases, panesBorderOptions);
             drawAxesWithTicks(horizontalAxes, rotated && synchronizeMultiAxes, panesCanvases, panesBorderOptions);

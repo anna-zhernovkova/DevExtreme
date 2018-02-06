@@ -2683,7 +2683,6 @@ var Scheduler = Widget.inherit({
             startDateTimeStamp = startDate.getTime(),
             endDateTimeStamp = endDate.getTime();
 
-
         return (inArray(dayTimeStamp, [startDateTimeStamp, endDateTimeStamp]) > -1)
                 ||
                 (startDateTimeStamp < dayTimeStamp && endDateTimeStamp > dayTimeStamp);

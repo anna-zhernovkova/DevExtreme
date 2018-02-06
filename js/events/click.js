@@ -80,7 +80,6 @@ var ClickEmitter = Emitter.inherit({
 
 });
 
-
 // NOTE: native strategy for desktop, iOS 9.3+, Android 5+
 (function() {
     var NATIVE_CLICK_CLASS = "dx-native-click";
@@ -93,7 +92,6 @@ var ClickEmitter = Emitter.inherit({
     var isNativeClickEvent = function(target) {
         return useNativeClick || $(target).closest("." + NATIVE_CLICK_CLASS).length;
     };
-
 
     var prevented = null,
         lastFiredEvent = null;
@@ -158,7 +156,6 @@ var ClickEmitter = Emitter.inherit({
     ///#ENDDEBUG
 })();
 
-
 // NOTE: fixes native click blur on slow devices
 (function() {
     var desktopDevice = devices.real().generic;
@@ -188,7 +185,6 @@ var ClickEmitter = Emitter.inherit({
         eventsEngine.subscribeGlobal(document, eventUtils.addNamespace("click", NATIVE_CLICK_FIXER_NAMESPACE), clickHandler);
     }
 })();
-
 
 /**
   * @name ui events_dxclick

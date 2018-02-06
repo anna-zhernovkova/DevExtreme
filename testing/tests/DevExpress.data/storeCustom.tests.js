@@ -347,8 +347,6 @@ QUnit.test("byKey, promise result with lock", function(assert) {
     });
 });
 
-
-
 QUnit.test("byKey, non-promise result", function(assert) {
     var done = assert.async();
 

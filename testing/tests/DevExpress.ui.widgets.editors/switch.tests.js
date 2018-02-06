@@ -268,7 +268,6 @@ QUnit.test("the hidden input should change its value on widget value change", fu
     assert.equal($input.val(), "true", "input value has been changed second time");
 });
 
-
 QUnit.module("the 'name' option");
 
 QUnit.test("widget input should get the 'name' attribute with a correct value", function(assert) {
@@ -280,7 +279,6 @@ QUnit.test("widget input should get the 'name' attribute with a correct value", 
 
     assert.equal($input.attr("name"), expectedName, "the input 'name' attribute has correct value");
 });
-
 
 QUnit.module("interaction", {
     beforeEach: function() {
@@ -428,7 +426,6 @@ QUnit.test("handle follow of mouse during swipe", function(assert) {
     pointer.start().down().move(halfMargin, 0);
     assert.roughEqual(parseInt($innerWrapper.css("marginLeft")), -halfMargin, 1.01, "switch was swipe on half width");
 });
-
 
 QUnit.module("options changed callbacks", {
     beforeEach: function() {
@@ -607,7 +604,6 @@ QUnit.test("state changes on right and left key press correctly in rtl mode", fu
     keyboard.keyDown("right");
     assert.equal(instance.option("value"), false, "value has been change");
 });
-
 
 QUnit.module("aria accessibility");
 

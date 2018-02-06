@@ -90,7 +90,6 @@ var compileCriteria = (function() {
         );
     };
 
-
     var compileUnary = function(criteria) {
         var op = criteria[0],
             crit = compileCore(criteria[1]);

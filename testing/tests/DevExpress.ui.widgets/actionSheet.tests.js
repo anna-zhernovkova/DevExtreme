@@ -50,7 +50,6 @@ QUnit.test("render popup", function(assert) {
     assert.equal(popupPosition.at, "bottom");
     assert.strictEqual(popupPosition.of, window);
 
-
     assert.equal(popup.option("width"), "100%");
     assert.equal(popup.option("height"), "auto");
 });
@@ -462,7 +461,6 @@ QUnit.test("usePopover with target creates Popover", function(assert) {
     assert.equal($(".dx-actionsheet-cancel").length, 0, "no cancel button");
 });
 
-
 QUnit.test("usePopover option change", function(assert) {
     var $container = $("#container");
     var actionSheet = $("#actionSheet").dxActionSheet({
@@ -478,7 +476,6 @@ QUnit.test("usePopover option change", function(assert) {
     actionSheet.option("usePopover", false);
     assert.equal($(".dx-popover").length, 0, "popover is not selected");
 });
-
 
 QUnit.test("outside click fires cancel", function(assert) {
     var $actionSheet = $("#actionSheet").dxActionSheet({
@@ -564,7 +561,6 @@ QUnit.test("fails when using custom itemTemplate or itemRender (B253839)", funct
     $($actionSheet.find(".dx-actionsheet-item")).trigger("dxclick");
     assert.expect(0);
 });
-
 
 QUnit.module("widget sizing render");
 

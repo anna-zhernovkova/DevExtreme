@@ -116,7 +116,6 @@ QUnit.test("Save blob by _winJSBlobSave on winJS devices", function(assert) {
     }
 });
 
-
 QUnit.test("Save base64 via proxyUrl for IE < 10", function(assert) {
     //act
     if(browser.msie && parseInt(browser.version) < 10) {

@@ -318,7 +318,6 @@ QUnit.test("sync transitions", function(assert) {
         return result;
     };
 
-
     var transitionExecutor = new TransitionExecutorModule.TransitionExecutor();
 
     transitionExecutor.enter($toEnter1, { duration: 555 });

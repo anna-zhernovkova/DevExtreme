@@ -722,7 +722,6 @@ QUnit.test("Datetime, custom format - use provided format", function(assert) {
     assert.strictEqual(this.renderer.text.getCall(0).args[0], "10");
 });
 
-
 QUnit.module("Label overlapping, 'hide' mode", overlappingEnvironment);
 
 QUnit.test("horizontal axis", function(assert) {
@@ -1080,7 +1079,6 @@ QUnit.test("vertical labels overlap but shouldn't rotate", function(assert) {
     assert.equal(texts.getCall(0).returnValue.attr.lastCall.args[0].translateY, -5);
 });
 
-
 QUnit.test("Check title offset after olerlap resolving", function(assert) {
     this.translator.translate.withArgs(1).returns(0);
     this.translator.translate.withArgs(3).returns(15);
@@ -1349,7 +1347,6 @@ QUnit.test("Labels overlap", function(assert) {
     assert.equal(texts.getCall(3).returnValue.attr.lastCall.args[0].translateY, 607, "3 text moved");
     assert.equal(texts.getCall(4).returnValue.attr.lastCall.args[0].translateY, 600, "4 text not moved");
 });
-
 
 QUnit.test("Check title offset after olerlap resolving", function(assert) {
     var markersBBoxes = [
@@ -2376,7 +2373,6 @@ QUnit.test("Estimate margin. Overlapping mode is rotate, drawing type is stagger
 
     assert.strictEqual(margins.bottom, 3 + 14 * 2 + 10, "bottom margin");
 });
-
 
 QUnit.test("Estimate margin. Overlapping mode is stagger, drawing type is rotate", function(assert) {
     this.generatedTicks = ["c1", "c2", "c3", "c4"];

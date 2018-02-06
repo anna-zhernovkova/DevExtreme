@@ -155,7 +155,6 @@ QUnit.test("No reset zooming on series changed", function(assert) {
         }]
     });
 
-
     chart.zoomArgument(10, 50);
 
     series1.getValueAxis().zoom.reset();

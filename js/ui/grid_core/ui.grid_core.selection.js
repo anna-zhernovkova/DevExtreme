@@ -858,7 +858,6 @@ module.exports = {
                         selectionMode = that.option("selection.mode"),
                         $table = that.callBase.apply(that, arguments);
 
-
                     if(selectionMode !== "none") {
                         if(that.option(SHOW_CHECKBOXES_MODE) === "onLongTap" || !support.touch) {
                             //TODO Not working timeout by hold when it is larger than other timeouts by hold

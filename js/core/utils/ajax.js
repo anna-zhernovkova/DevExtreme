@@ -15,7 +15,6 @@ var SUCCESS = "success",
     NO_CONTENT = "nocontent",
     PARSER_ERROR = "parsererror";
 
-
 var isStatusSuccess = function(status) {
     return 200 <= status && status < 300;
 };

@@ -324,7 +324,6 @@ exports.deferRenderer = deferRenderer;
 exports.deferUpdate = deferUpdate;
 exports.deferUpdater = deferUpdater;
 
-
 exports.splitPair = splitPair;
 exports.splitQuad = splitQuad;
 

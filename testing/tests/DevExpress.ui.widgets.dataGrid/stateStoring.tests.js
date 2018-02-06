@@ -90,7 +90,6 @@ QUnit.test('Save state on unload', function(assert) {
     localStorage.removeItem('TestNameSpace');
 });
 
-
 QUnit.test('Load state', function(assert) {
     //arrange
     this.applyOptions({ type: 'localStorage', storageKey: 'TestNameSpace' });
@@ -243,7 +242,6 @@ QUnit.test('Custom function load when state contains date', function(assert) {
 
     localStorage.removeItem('TestNameSpace');
 });
-
 
 QUnit.test('Custom function save', function(assert) {
     //arrange
@@ -560,7 +558,6 @@ QUnit.test('stateStoringController correctly loads after switch stateStoring.ena
 
     this.stateStoringController.optionChanged({ name: "stateStoring" });
     this.clock.tick();
-
 
     //assert
     var items = this.dataController.items();

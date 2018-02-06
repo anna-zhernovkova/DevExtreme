@@ -637,7 +637,6 @@ DataSourceAdapter = DataSourceAdapter.inherit((function() {
     };
 })());
 
-
 module.exports = {
     extend: function(extender) {
         DataSourceAdapter = DataSourceAdapter.inherit(extender);

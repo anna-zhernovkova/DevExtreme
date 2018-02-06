@@ -106,7 +106,6 @@ var ThemeManager = BaseThemeManager.inherit((function() {
         return result;
     };
 
-
     var applyParticularTheme = {
         base: mergeOptions,
         argumentAxis: applyParticularAxisOptions,

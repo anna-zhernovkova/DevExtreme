@@ -146,7 +146,6 @@ $.each({
     });
 });
 
-
 $.each({
     "dxpointerdown": POINTER_DOWN_EVENT_NAME,
     "dxpointermove": POINTER_MOVE_EVENT_NAME,
@@ -168,7 +167,6 @@ $.each({
         });
     });
 });
-
 
 if(support.pointerEvents) {
     var msPointerEnabled = window.navigator.msPointerEnabled;

@@ -35,7 +35,6 @@ QUnit.test("template should receive dxshown event when attached to container", f
     templateRendered.remove(patcher);
 });
 
-
 QUnit.module("DevExtreme.AspNet.MVC wrappers integration");
 
 QUnit.test("templateRendered callbacks should be fired after template appended to container", function(assert) {
@@ -62,8 +61,6 @@ QUnit.test("templateRendered callbacks should be fired after template appended t
 
     templateRendered.remove(callback);
 });
-
-
 
 QUnit.module("showing");
 

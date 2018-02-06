@@ -178,7 +178,6 @@ module.exports = Class.inherit((function() {
             });
         });
 
-
         return d;
     };
 
@@ -1371,7 +1370,6 @@ module.exports = Class.inherit((function() {
                 sort(descriptions, data, getAscOrder);
             }
         },
-
 
         _update: function(deferred) {
             var that = this,

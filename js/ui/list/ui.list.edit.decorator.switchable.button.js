@@ -101,7 +101,6 @@ var SwitchableButtonEditDecorator = SwitchableEditDecorator.inherit({
 
 });
 
-
 var TOGGLE_DELETE_SWITCH_CONTAINER_CLASS = "dx-list-toggle-delete-switch-container",
     TOGGLE_DELETE_SWITCH_CLASS = "dx-list-toggle-delete-switch";
 
@@ -130,7 +129,6 @@ registerDecorator(
 
     })
 );
-
 
 registerDecorator(
     "delete",

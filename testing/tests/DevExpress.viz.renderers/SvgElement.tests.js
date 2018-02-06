@@ -16,7 +16,6 @@ function colorEqual(actual, expected, message) {
     });
 }
 
-
 $("<div>")
     .attr("id", "qunit-fixture")
     .css({ width: 300, height: 300 })

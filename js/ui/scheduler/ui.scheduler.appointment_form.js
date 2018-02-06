@@ -229,7 +229,6 @@ var SchedulerAppointmentForm = {
         var startDateFormItem = form.itemOption(startDateExpr),
             endDateFormItem = form.itemOption(endDateExpr);
 
-
         if(startDateFormItem && endDateFormItem) {
             var startDateEditorOptions = startDateFormItem.editorOptions,
                 endDateEditorOptions = endDateFormItem.editorOptions;

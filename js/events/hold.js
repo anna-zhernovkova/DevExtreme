@@ -9,7 +9,6 @@ var HOLD_EVENT_NAME = "dxhold",
     HOLD_TIMEOUT = 750,
     TOUCH_BOUNDARY = 5;
 
-
 var HoldEmitter = Emitter.inherit({
 
     start: function(e) {

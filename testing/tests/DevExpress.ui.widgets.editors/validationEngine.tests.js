@@ -18,13 +18,11 @@ var testInvalidRule = function(rule, invalidValue, assert, name) {
     return result;
 };
 
-
 QUnit.module("General");
 
 QUnit.test("ValidationEngine exists", function(assert) {
     assert.ok(ValidationEngine, "Ok");
 });
-
 
 QUnit.test("Unknown validation type", function(assert) {
 
@@ -41,7 +39,6 @@ QUnit.test("Unknown validation type", function(assert) {
         "Exception messages should be readable"
     );
 });
-
 
 QUnit.test("Undefined validation rules", function(assert) {
     var result = ValidationEngine.validate("CoolValue", undefined);
@@ -76,8 +73,6 @@ QUnit.test("Required - correct value", function(assert) {
     assert.ok(!result.brokenRule, "No any invalid rules");
 });
 
-
-
 QUnit.test("Required - empty string", function(assert) {
     testInvalidRequiredRules("", assert);
 });
@@ -93,7 +88,6 @@ QUnit.test("Required - undefined", function(assert) {
 QUnit.test("Required - false", function(assert) {
     testInvalidRequiredRules(false, assert);
 });
-
 
 QUnit.test("Required - 0 (zero) is valid value", function(assert) {
     var result = ValidationEngine.validate(0, [{
@@ -124,7 +118,6 @@ QUnit.test("Required - default English message", function(assert) {
         type: "required"
     }, "", assert);
 
-
     assert.equal(result.brokenRule.message, "Required");
 });
 
@@ -132,7 +125,6 @@ QUnit.test("Required - default English message with name", function(assert) {
     var result = testInvalidRule({
         type: "required"
     }, "", assert, "Login");
-
 
     assert.equal(result.brokenRule.message, "Login is required");
 });
@@ -160,7 +152,6 @@ QUnit.test("Pattern - valid", function(assert) {
     assert.ok(result.isValid, "IsValid");
     assert.ok(!result.brokenRule, "No any invalid rules");
 });
-
 
 QUnit.test("Pattern - valid, string", function(assert) {
     var result = ValidationEngine.validate("ABC", [{
@@ -202,9 +193,7 @@ QUnit.test("Pattern - empty value should be valid", function(assert) {
     assert.ok(result.isValid, "IsValid");
 });
 
-
 QUnit.module("Numeric rule");
-
 
 QUnit.test("Numeric - invalid", function(assert) {
     var result = testInvalidRule({
@@ -242,7 +231,6 @@ QUnit.test("Numeric - default English message", function(assert) {
     assert.equal(result.brokenRule.message, "Age must be a number");
 });
 
-
 QUnit.test("Numeric - empty value should be valid", function(assert) {
     var result = ValidationEngine.validate("", [{
         type: "numeric",
@@ -252,7 +240,6 @@ QUnit.test("Numeric - empty value should be valid", function(assert) {
     assert.ok(result, "Result is defined");
     assert.ok(result.isValid, "IsValid");
 });
-
 
 QUnit.module("Range rule - numeric");
 
@@ -267,7 +254,6 @@ QUnit.test("Range - invalid", function(assert) {
     assert.equal(result.brokenRule.message, "Please enter value inside of range");
 });
 
-
 QUnit.test("Range (min only) - invalid", function(assert) {
     var result = testInvalidRule({
         type: "range",
@@ -277,7 +263,6 @@ QUnit.test("Range (min only) - invalid", function(assert) {
 
     assert.equal(result.brokenRule.message, "Please enter value inside of range");
 });
-
 
 QUnit.test("Range (max only) - invalid", function(assert) {
     var result = testInvalidRule({
@@ -352,7 +337,6 @@ QUnit.test("Range (min only) - valid", function(assert) {
     assert.ok(!result.brokenRule, "Please enter value inside of range");
 });
 
-
 QUnit.test("Range - default English message", function(assert) {
     var result = testInvalidRule({
         type: "range",
@@ -372,8 +356,6 @@ QUnit.test("Range - default English message with name", function(assert) {
 
     assert.equal(result.brokenRule.message, "Length is out of range");
 });
-
-
 
 QUnit.test("Range - empty value should be valid", function(assert) {
     var result = ValidationEngine.validate("", [{
@@ -399,7 +381,6 @@ QUnit.test("Range - invalid", function(assert) {
     assert.equal(result.brokenRule.message, "Please enter value inside of range");
 });
 
-
 QUnit.test("Range (min only) - invalid", function(assert) {
     var result = testInvalidRule({
         type: "range",
@@ -409,7 +390,6 @@ QUnit.test("Range (min only) - invalid", function(assert) {
 
     assert.equal(result.brokenRule.message, "Please enter value inside of range");
 });
-
 
 QUnit.test("Range (max only) - invalid", function(assert) {
     var result = testInvalidRule({
@@ -458,7 +438,6 @@ QUnit.test("Range (min only) - valid", function(assert) {
     assert.ok(!result.brokenRule, "Please enter value inside of range");
 });
 
-
 QUnit.test("Range - empty value should be valid", function(assert) {
     var result = ValidationEngine.validate(null, [{
         type: "range",
@@ -483,7 +462,6 @@ QUnit.test("StringLength - invalid", function(assert) {
     assert.equal(result.brokenRule.message, "Wrong length - custom message");
 });
 
-
 QUnit.test("StringLength (min only) - invalid", function(assert) {
     var result = testInvalidRule({
         type: "stringLength",
@@ -493,7 +471,6 @@ QUnit.test("StringLength (min only) - invalid", function(assert) {
 
     assert.equal(result.brokenRule.message, "Wrong length - custom message");
 });
-
 
 QUnit.test("StringLength (max only) - invalid", function(assert) {
     var result = testInvalidRule({
@@ -519,7 +496,6 @@ QUnit.test("StringLength - incorrect rules (no min nor max)", function(assert) {
     );
 });
 
-
 QUnit.test("StringLength - trim by default - valid", function(assert) {
     var result = ValidationEngine.validate("Good                 ", [{
         type: "stringLength",
@@ -529,7 +505,6 @@ QUnit.test("StringLength - trim by default - valid", function(assert) {
 
     assert.equal(result.isValid, true, "Should be valid");
 });
-
 
 QUnit.test("StringLength - skipped trim - invalid", function(assert) {
     var result = ValidationEngine.validate("Good        ", [{
@@ -643,7 +618,6 @@ QUnit.test("StringLength - null equal to 0 length", function(assert) {
     assert.equal(result.isValid, true, "null equal to 0 length");
 });
 
-
 QUnit.module("Common types ");
 
 QUnit.test("Email - valid", function(assert) {
@@ -666,7 +640,6 @@ QUnit.test("Email - invalid", function(assert) {
     assert.equal(result.brokenRule.message, "Set good-looking email", "Custom message");
 });
 
-
 QUnit.test("Email - default English message", function(assert) {
     var result = testInvalidRule({
         type: "email"
@@ -682,7 +655,6 @@ QUnit.test("Email - default English message - with name", function(assert) {
 
     assert.equal(result.brokenRule.message, "Customer Email is invalid", "Default message");
 });
-
 
 QUnit.test("Email - empty value should be valid", function(assert) {
     var result = ValidationEngine.validate("", [{
@@ -732,7 +704,6 @@ QUnit.test("Can be validated positively", function(assert) {
             validator: validator
         },
         result = ValidationEngine.validate(value, [rule]);
-
 
     assert.ok(result, "Result is defined");
     assert.ok(!result.brokenRule, "No any invalid rules");
@@ -825,7 +796,6 @@ QUnit.test("Validation callback must have the 'data' in arguments when validator
         },
         result = ValidationEngine.validate(value, [rule]);
 
-
     assert.ok(result, "Result is defined");
     assert.ok(customCallback.calledOnce, "Validation callback was called");
 
@@ -835,7 +805,6 @@ QUnit.test("Validation callback must have the 'data' in arguments when validator
     assert.strictEqual(params.rule, rule, "Rule should be passed");
     assert.strictEqual(params.data, data, "Data should be passed");
 });
-
 
 QUnit.module("Compare rule");
 
@@ -890,7 +859,6 @@ QUnit.test("Comparison type != failed", function(assert) {
 
     assert.ok(!result.isValid, "Result should be invalid (even with different data types)");
 });
-
 
 QUnit.test("Comparison type !== passed", function(assert) {
     var result = ValidationEngine.validate("2", [{
@@ -956,7 +924,6 @@ QUnit.test("Comparison type >= failed", function(assert) {
     assert.ok(!result.isValid, "Result should be valid");
 });
 
-
 QUnit.test("Comparison type < passed", function(assert) {
     var result = ValidationEngine.validate("1", [{
         type: "compare",
@@ -1001,13 +968,11 @@ QUnit.test("Comparison type <= failed", function(assert) {
     assert.ok(!result.isValid, "Result should be valid");
 });
 
-
 QUnit.test("Default message", function(assert) {
     var result = testInvalidRule({
         type: "compare",
         comparisonTarget: function() { return "345"; }
     }, "123", assert);
-
 
     assert.equal(result.brokenRule.message, "Values do not match");
 });
@@ -1035,8 +1000,6 @@ QUnit.test("Comparison target should be set; otherways we should throw exception
     );
 });
 
-
-
 QUnit.module("State of validated rules");
 
 QUnit.test("Rule should not be revalidated if no value changed - invalid value", function(assert) {
@@ -1059,7 +1022,6 @@ QUnit.test("Rule should not be revalidated if no value changed - invalid value",
     assert.ok(result2.brokenRule, "Rule should be marked as broken");
     assert.equal(result2.brokenRule.message, message);
 });
-
 
 QUnit.test("Rule should not be revalidated if no value changed - valid value", function(assert) {
     var handler = sinon.spy(function() { return true; }),
@@ -1095,8 +1057,6 @@ QUnit.test("Rule should  be revalidated after value change - valid value", funct
     assert.ok(handler.calledTwice, "Handler should be called twice as value changed");
 });
 
-
-
 QUnit.test("If first rule fails, second one should not be evaluated", function(assert) {
     var handler = sinon.spy(function() { return true; }),
         value = "",
@@ -1115,7 +1075,6 @@ QUnit.test("If first rule fails, second one should not be evaluated", function(a
     assert.strictEqual(result1.isValid, false, "Result should be marked as invalid");
     assert.ok(!handler.called, "Handler should never be called");
 });
-
 
 QUnit.test("If first rule failed on last check, second one should not be evaluated", function(assert) {
     var handler = sinon.spy(function() { return true; }),
@@ -1137,7 +1096,6 @@ QUnit.test("If first rule failed on last check, second one should not be evaluat
     assert.ok(!handler.called, "Handler should be called twice as value changed");
 });
 
-
 QUnit.test("Compare rule should be reevaluated on each call", function(assert) {
     var value = "somevalue",
         handler = sinon.spy(function() { return value; }),
@@ -1154,7 +1112,6 @@ QUnit.test("Compare rule should be reevaluated on each call", function(assert) {
     assert.strictEqual(result2.isValid, true, "Result should be marked as valid");
     assert.ok(handler.calledTwice, "Handler should be called twice");
 });
-
 
 QUnit.module("Groups", {
     beforeEach: function() {
@@ -1216,8 +1173,6 @@ QUnit.test("Simple group - remove validator registration", function(assert) {
     assert.ok(groupConfig, "Group still exist Validation Engine");
     assert.equal(groupConfig.validators.length, 0, "Validator was unregistered");
 });
-
-
 
 QUnit.test("Simple group - call validateGroup method", function(assert) {
     var group = "newGroup",
@@ -1295,7 +1250,6 @@ QUnit.test("Undefined group is defined by default", function(assert) {
     assert.ok(config, "Config should be retrieved for undefined group");
 });
 
-
 QUnit.test("Simple group - call validate method on group config object", function(assert) {
     var validator = sinon.createStubInstance(Validator);
 
@@ -1324,7 +1278,6 @@ QUnit.test("Remove registered group", function(assert) {
     var groupConfig = ValidationEngine.getGroupConfig(group);
     assert.ok(!groupConfig, "Group config should be removed from the list");
 });
-
 
 QUnit.module("ViewModel");
 //all unit tests for KO are in koValidationTests.js

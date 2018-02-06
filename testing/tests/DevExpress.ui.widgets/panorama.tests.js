@@ -54,7 +54,6 @@ var toSelector = function(cssClass) {
     return "." + cssClass;
 };
 
-
 var position = function($element) {
     return translator.locate($element).left;
 };
@@ -70,7 +69,6 @@ var moveBackground = function($element, position) {
     // TODO: use when jQuery solve bug in firefox
     // $element.css("background-position-x", position);
 };
-
 
 var mockFxAnimateBackground = function(animations, type, output) {
     animations[type] = function($element, position, action) {
@@ -153,7 +151,6 @@ var animationCapturing = {
     }
 };
 
-
 QUnit.module("panorama rendering");
 
 QUnit.test("widget should be rendered", function(assert) {
@@ -167,7 +164,6 @@ QUnit.test("selected index should be equal 0", function(assert) {
 
     assert.equal(panorama.option("selectedIndex"), 0, "selectedIndex equals 0");
 });
-
 
 QUnit.module("markup");
 
@@ -249,7 +245,6 @@ QUnit.test("item should have correct geometry", function(assert) {
     assert.equal($item.outerWidth(), PANORAMA_TEST_WIDTH * PANORAMA_ITEM_WIDTH_SCALE, "correct width");
     assert.equal($item.outerHeight(), 500, "correct width");
 });
-
 
 QUnit.module("item rendering");
 
@@ -346,7 +341,6 @@ QUnit.test(">3 items should have correct position in RTL mode", function(assert)
     assert.equal(position($items.eq(2)), PANORAMA_TEST_WIDTH, "correct third item position");
 });
 
-
 QUnit.module("design mode", {
     beforeEach: function() {
         config({ designMode: true });
@@ -378,7 +372,6 @@ QUnit.test("swipe should be rejected", function(assert) {
 
 });
 
-
 QUnit.module("option", {
     beforeEach: function() {
         fx.off = true;
@@ -405,7 +398,6 @@ QUnit.test("disabled should reject swipe", function(assert) {
 
     assert.ok(startEvent.cancel, "swipe canceled in disabled widget");
 });
-
 
 QUnit.module("option change", {
     beforeEach: function() {
@@ -562,7 +554,6 @@ QUnit.test(">3 items should have correct geometry in RTL mode", function(assert)
     assert.equal(position($items.eq(2)), PANORAMA_TEST_WIDTH - PANORAMA_TEST_WIDTH * (PANORAMA_ITEM_WIDTH_SCALE + PANORAMA_ITEM_MARGIN_SCALE) * 2, "correct third item position");
 });
 
-
 QUnit.module("animations", {
     beforeEach: function() {
         fx.off = true;
@@ -592,7 +583,6 @@ QUnit.test("itemMove", function(assert) {
     animation.itemMove(this.$animated, 100);
     assert.strictEqual(position(this.$animated), 100, "animated to correct position");
 });
-
 
 QUnit.module("interaction via swipe", {
     beforeEach: function() {
@@ -746,7 +736,6 @@ QUnit.test("selected index should not be changed by click on item", function(ass
     assert.equal(panorama.option("selectedIndex"), 0, "selected index not changed");
 });
 
-
 QUnit.module("interaction via swipe");
 
 QUnit.test("previous animation should be stopped", function(assert) {
@@ -767,7 +756,6 @@ QUnit.test("previous animation should be stopped", function(assert) {
     assert.equal(panorama.option("selectedIndex"), 1, "previous animation finished");
 });
 
-
 QUnit.module("background response on swipe", {
     beforeEach: function() {
         this.capturedAnimations = animationCapturing.start();
@@ -785,7 +773,6 @@ var scaledBackgroundWidth = 600 * image.width / image.height;
 var backgroundStep = function(itemsCount) {
     return (scaledBackgroundWidth - PANORAMA_TEST_WIDTH * PANORAMA_ITEM_WIDTH_SCALE) / (itemsCount || 1);
 };
-
 
 QUnit.test("background should respond to swiping", function(assert) {
     var $panorama = $("#panorama").dxPanorama({
@@ -986,7 +973,6 @@ QUnit.test("canceled swipe should cause correct background animation", function(
     assert.strictEqual(this.capturedAnimations.bg[0].start, offset, "correct animation start position");
     assert.strictEqual(this.capturedAnimations.bg[0].end, 0, "correct animation end position");
 });
-
 
 QUnit.module("title response on swipe", {
     beforeEach: function() {
@@ -1194,7 +1180,6 @@ QUnit.test("canceled swipe should cause correct title animation", function(asser
     assert.strictEqual(this.capturedAnimations.title[0].start, offset, "correct animation start position");
     assert.strictEqual(this.capturedAnimations.title[0].end, titleStartPosition, "correct animation end position");
 });
-
 
 QUnit.module("swiping 2 items", {
     beforeEach: function() {
@@ -1684,7 +1669,6 @@ QUnit.test("canceled swipe from right to left on second item should cause correc
     assert.equal(this.capturedAnimations.items[2].end, PANORAMA_TEST_WIDTH, "correct ghost item end position");
     assert.equal($ghost.text(), "first item content", "ghost content correct");
 });
-
 
 QUnit.module("swiping >=3 items", {
     beforeEach: function() {

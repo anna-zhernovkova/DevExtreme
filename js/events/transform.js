@@ -7,7 +7,6 @@ var mathUtils = require("../core/utils/math"),
     Emitter = require("./core/emitter"),
     registerEmitter = require("./core/emitter_registrator");
 
-
 var DX_PREFIX = "dx",
 
     TRANSFORM = "transform",
@@ -19,7 +18,6 @@ var DX_PREFIX = "dx",
     START_POSTFIX = "start",
     UPDATE_POSTFIX = "",
     END_POSTFIX = "end";
-
 
 var eventAliases = [];
 var addAlias = function(eventName, eventArgs) {
@@ -57,7 +55,6 @@ addAlias(ROTATE, {
     rotation: true,
     deltaRotation: true
 });
-
 
 var getVector = function(first, second) {
     return {
@@ -167,7 +164,6 @@ var TransformEmitter = Emitter.inherit({
     }
 
 });
-
 
 /**
  * @name ui events_dxtransformstart

@@ -201,7 +201,6 @@ QUnit.test("should not fire an error when item contains 'nodeType' field", funct
     }
 });
 
-
 QUnit.module("selection single");
 
 QUnit.test("only one node should be selected on init", function(assert) {

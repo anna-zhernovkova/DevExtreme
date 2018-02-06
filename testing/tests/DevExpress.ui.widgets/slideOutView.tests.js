@@ -60,7 +60,6 @@ var animationCapturing = {
     }
 };
 
-
 QUnit.testStart(function() {
     var markup = '\
     <style>\
@@ -153,7 +152,6 @@ QUnit.test("render right menu position", function(assert) {
     assert.ok($menuContent.hasClass(SLIDEOUTVIEW_CLASS + "-left"), "left menu position class added");
 });
 
-
 QUnit.module("api");
 
 QUnit.test("menuContent() function", function(assert) {
@@ -211,7 +209,6 @@ QUnit.test("subscribe on toggleMenuVisibility function should fired at the end o
 
     assert.equal(count, 0, "callback not fired at animation start");
 });
-
 
 QUnit.module("navigation");
 
@@ -319,7 +316,6 @@ QUnit.test("menu should not handle back button click if it isn't visible", funct
     assert.ok(!hideTopOverlayCallback.hasCallback());
 });
 
-
 QUnit.module("interaction via swipe");
 
 QUnit.test("content container should be moved by swipe", function(assert) {
@@ -423,7 +419,6 @@ QUnit.test("content container should not be moved in design mode", function(asse
     }
 });
 
-
 QUnit.module("animation", {
     beforeEach: function() {
         this.capturedAnimations = animationCapturing.start();
@@ -474,7 +469,6 @@ QUnit.test("hiding menu should be animated", function(assert) {
     assert.equal(this.capturedAnimations[0].start, $menu.width() * 0.5, "correct start position");
     assert.equal(this.capturedAnimations[0].end, 0, "correct end position");
 });
-
 
 QUnit.module("shield");
 
@@ -565,7 +559,6 @@ QUnit.test("shield should have correct position after widget resize", function(a
 
     assert.equal($shield.offset().left, $content.offset().left, "shield has correct position");
 });
-
 
 QUnit.module("rtl");
 

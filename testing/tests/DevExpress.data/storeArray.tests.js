@@ -94,7 +94,6 @@ QUnit.test("paging", function(assert) {
     $.when(case1, case2).done(done);
 });
 
-
 QUnit.test("sorting, short syntax", function(assert) {
     var done = assert.async();
 
@@ -693,7 +692,6 @@ QUnit.test("modification operations without key use instance as key", function(a
             });
         });
 
-
     });
 
 });
@@ -887,7 +885,6 @@ QUnit.test("error in during query evaluation", function(assert) {
         });
     }, done, assert);
 });
-
 
 QUnit.test("error during update (missing item)", function(assert) {
     var done = assert.async();

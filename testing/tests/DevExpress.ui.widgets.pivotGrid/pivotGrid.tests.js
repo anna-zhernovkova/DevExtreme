@@ -435,7 +435,6 @@ QUnit.test("expand column item", function(assert) {
 
     this.clock.tick();
 
-
     //assert
     assert.deepEqual(expandValueChangingArgs, {
         area: 'column',
@@ -482,7 +481,6 @@ QUnit.test("T248253. DataSource changed", function(assert) {
         dataSource: this.dataSource
     });
 
-
     var $collapsedSpan = $("#pivotGrid").find('.dx-pivotgrid-collapsed');
     assert.strictEqual($collapsedSpan.length, 1);
 
@@ -490,7 +488,6 @@ QUnit.test("T248253. DataSource changed", function(assert) {
     $($collapsedSpan).trigger('dxclick');
 
     this.clock.tick();
-
 
     //assert
     assert.deepEqual(expandValueChangingArgs, {
@@ -659,7 +656,6 @@ QUnit.test("create field chooser with search", function(assert) {
     //act
     fieldChooserPopup.show();
     this.clock.tick(500);
-
 
     var fieldChooser = fieldChooserPopup.$content().data("dxPivotGridFieldChooser"),
         treeViewInstance = fieldChooserPopup.$content().find(".dx-treeview").dxTreeView("instance");
@@ -2242,7 +2238,6 @@ QUnit.test("resize when height changed to no scroll", function(assert) {
     assert.strictEqual(pivotGrid._rowsArea.groupElement().dxScrollable("scrollTop"), 0);
 });
 
-
 QUnit.test("page scrolling after tapping inside PivotGrid. T418829", function(assert) {
     var pivotGrid = createPivotGrid(this.testOptions, assert);
 
@@ -2841,7 +2836,6 @@ QUnit.test('dxPivotGrid with vertical scroll and minimum width without horizonta
                 ]
             }];
 
-
         var cellSet = [
         [[100000000, 0.1], [8, 0.8], [15, 0.15], [22, 0.22], [29, 0.29], [36, 0.36], [43, 0.43]],
         [[2, 0.2], [9, 0.9], [16, 0.16], [23, 0.23], [30, 0.3], [37, 0.37], [44, 0.44]],
@@ -2875,7 +2869,6 @@ QUnit.test('dxPivotGrid with vertical scroll and minimum width without horizonta
     var columnsArea = pivotGrid._columnsArea;
     assert.ok(!columnsArea.hasScroll(), 'no columnAreaScroll');
     assert.ok(columnsArea._groupWidth);
-
 
     var columnsWidth = sumArray(columnsArea.getColumnsWidth());
 
@@ -2911,7 +2904,6 @@ QUnit.test('Stretch columns when scrolling has size', function(assert) {
                     { value: '3', index: 4 }
                 ]
             }];
-
 
         var cellSet = [
         [[100000000, 0.1], [8, 0.8], [15, 0.15], [22, 0.22], [29, 0.29], [36, 0.36], [43, 0.43]],
@@ -2988,7 +2980,6 @@ QUnit.test('Stretch columns when scrolling has size. Virtual scrolling', functio
                 ]
             }];
 
-
         var cellSet = [
         [[100000000, 0.1], [8, 0.8], [15, 0.15], [22, 0.22], [29, 0.29], [36, 0.36], [43, 0.43]],
         [[2, 0.2], [9, 0.9], [16, 0.16], [23, 0.23], [30, 0.3], [37, 0.37], [44, 0.44]],
@@ -3053,7 +3044,6 @@ QUnit.test('No size reservation for scrolling when changed size to no scroll', f
                     { value: '3', index: 4 }
                 ]
             }];
-
 
         var cellSet = [
         [[100000000, 0.1], [8, 0.8], [15, 0.15], [22, 0.22], [29, 0.29], [36, 0.36], [43, 0.43]],
@@ -3127,7 +3117,6 @@ QUnit.test('B253995 - dxPivotGrid height is wrong when rows area has text wrappe
         { value: '2012', index: 11 },
         { value: '2012', index: 12 }
     ];
-
 
     var cellSet = [
         [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
@@ -3208,7 +3197,6 @@ QUnit.test('Pivot grid with border', function(assert) {
         { value: '2012', index: 12 }
     ];
 
-
     var cellSet = [
         [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
         [200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 200, 100],
@@ -3246,7 +3234,6 @@ QUnit.test('Pivot grid with border', function(assert) {
         return window.getComputedStyle ? parseFloat(window.getComputedStyle(element).height) : element.clientHeight;
     };
 
-
     var tableElement = pivotGrid.$element().find("table").first();
     assert.strictEqual(tableElement.outerWidth(), 500);
     assert.ok(Math.abs(getRealHeight(pivotGrid.$element().children()[0]) - 250) <= 1);
@@ -3273,7 +3260,6 @@ QUnit.test('Enable borders at runtime', function(assert) {
         { value: '2012', index: 11 },
         { value: '2012', index: 12 }
     ];
-
 
     var cellSet = [
         [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
@@ -3314,7 +3300,6 @@ QUnit.test('Enable borders at runtime', function(assert) {
     var getRealHeight = function(element) {
         return window.getComputedStyle ? parseFloat(window.getComputedStyle(element).height) : element.clientHeight;
     };
-
 
     var tableElement = pivotGrid.$element().find("table").first();
     assert.strictEqual(tableElement.outerWidth(), 500);
@@ -3731,7 +3716,6 @@ QUnit.test("Do not re-render continuously when virtual scrolling enabled", funct
     });
 
 });
-
 
 QUnit.module("Tests with stubs", {
     beforeEach: function() {
@@ -4214,7 +4198,6 @@ QUnit.test("Change DataController options", function(assert) {
     assert.strictEqual(dataControllerOptions.hideEmptySummaryCells, 6);
     assert.strictEqual(dataControllerOptions.rowHeaderLayout, 7);
 });
-
 
 QUnit.module("headersArea", {
     beforeEach: function() {
@@ -4724,7 +4707,6 @@ QUnit.test('scrollTo with virtual scrolling', function(assert) {
     assertFakeTable(0, -40, true);
 });
 
-
 QUnit.module('Vertical headers', {
     beforeEach: function() {
         this.data = [
@@ -4869,7 +4851,6 @@ QUnit.test('subscribe to scroll events', function(assert) {
     area.setRowsHeight([100, 120, 300]);
 
     area.processScroll();
-
 
     area.on("scroll", scrollHandler);
 
@@ -5226,7 +5207,6 @@ QUnit.test('scrollTo with virtual scrolling. Horizontal scrolling', function(ass
     assertFakeTable(1000 - 520, 220, true);
     assertFakeTable(1000 - (520 + 520 / 2), -40, true);
     assertFakeTable(0, -40, true);
-
 
     clock.restore();
 });

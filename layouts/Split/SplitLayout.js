@@ -50,7 +50,6 @@
         POINTER_UP_EVENT_NAME,
         POINTER_MOVE_EVENT_NAME;
 
-
     if(window.PointerEvent) {
         POINTER_DOWN_EVENT_NAME = "pointerdown";
         POINTER_UP_EVENT_NAME = "pointerup";

@@ -220,7 +220,6 @@ QUnit.test("Content should not be have a transform css property after complete",
     assert.equal($container.position().top, 0);
 });
 
-
 QUnit.module("dateView", {
     beforeEach: function() {
         this.clock = sinon.useFakeTimers(new Date().valueOf());
@@ -485,7 +484,6 @@ QUnit.test("rollers order accordingly date type", function(assert) {
         return item.type;
     });
     assert.deepEqual(rollerOrder, ["month", "day", "year"]);
-
 
     dateLocalization.inject({
         getFormatParts: function() {

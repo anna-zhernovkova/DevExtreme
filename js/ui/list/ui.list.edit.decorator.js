@@ -7,7 +7,6 @@ var $ = require("../../core/renderer"),
     swipeEvents = require("../../events/swipe"),
     eventUtils = require("../../events/utils");
 
-
 var LIST_EDIT_DECORATOR = "dxListEditDecorator",
     SWIPE_START_EVENT_NAME = eventUtils.addNamespace(swipeEvents.start, LIST_EDIT_DECORATOR),
     SWIPE_UPDATE_EVENT_NAME = eventUtils.addNamespace(swipeEvents.swipe, LIST_EDIT_DECORATOR),

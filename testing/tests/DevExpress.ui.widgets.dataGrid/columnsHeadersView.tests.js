@@ -355,7 +355,6 @@ QUnit.test('Updating column header after change grouping', function(assert) {
     assert.equal(cells.eq(2).text(), 'Column 3', 'header 3 text');
 });
 
-
 //T259458
 QUnit.test('Command column do not use headerCellTemplate', function(assert) { //arrange
     var testElement = $('#container'),
@@ -460,7 +459,6 @@ QUnit.test('Headers element is hidden when dataSource is not loaded', function(a
     assert.equal(this.columnHeadersView.element().find('table').length, 1, 'one table is rendered');
     assert.equal(this.columnHeadersView.element().find('tbody > tr').length, 0, 'rows is not rendered');
 });
-
 
 QUnit.test('Headers element is not rendered_B238622', function(assert) {
     //arrange
@@ -763,7 +761,6 @@ QUnit.test('Apply sorting by click', function(assert) {
     //assert
     var sortElements = testElement.find('.' + "dx-sort");
     assert.equal(sortElements.length, 0, 'sortElements count');
-
 
     var headerElement = testElement.find('td');
     sortElements = testElement.find('.' + "dx-sort");
@@ -2224,7 +2221,6 @@ QUnit.test("getColumnElements with rowIndex when there is band columns", functio
     //arrange
     var $columnElements,
         $testElement = $('#container');
-
 
     this.columns = [{ caption: "Band column 1", columns: ["Column1", "Column2"] }, "Column3", { caption: "Band column 2", columns: ["Column4", "Column5"] }];
     this.setupDataGrid();

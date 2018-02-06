@@ -232,7 +232,6 @@ var ToolbarBase = CollectionWidget.inherit({
         }
     },
 
-
     _getCurrentLabelsWidth: function(labels) {
         var width = 0;
 

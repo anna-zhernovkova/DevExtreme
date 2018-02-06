@@ -147,7 +147,6 @@ var standardColorNames = {
     'yellowgreen': '9acd32'
 };
 
-
 // array of color definition objects
 var standardColorTypes = [
     {

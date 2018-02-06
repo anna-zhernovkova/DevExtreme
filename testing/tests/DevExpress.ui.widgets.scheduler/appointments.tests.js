@@ -308,7 +308,6 @@ QUnit.test("Scheduler appointment should be resizable", function(assert) {
     assert.deepEqual(resizableInstance.option("area"), this.instance.$element().closest(".dx-scrollable-content"), "Resizable area is scrollable content");
 });
 
-
 QUnit.test("Scheduler appointment should not be resizable if allowResize is false", function(assert) {
     this.instance.option({ allowResize: false });
 
@@ -415,7 +414,6 @@ QUnit.test("Appointment should not be changed while resize when 'esc' key was pr
 
     var $appointment = this.instance.$element().find(".dx-scheduler-appointment"),
         keyboard = keyboardMock($appointment);
-
 
     var pointer = pointerMock(this.instance.$element().find(".dx-resizable-handle-bottom")).start();
     pointer.dragStart().drag(0, 40);
@@ -1042,7 +1040,6 @@ QUnit.test("Popup should be shown when onAppointmentDblClick", function(assert) 
     assert.notOk(stub.called, "showEditAppointmentPopup doesn't shown");
 });
 
-
 QUnit.module("Appointments Keyboard Navigation", {
     beforeEach: function() {
         moduleOptions.beforeEach.apply(this);
@@ -1156,7 +1153,6 @@ QUnit.test("Appointment popup should be opened after enter key press", function(
     var notifyStub = sinon.stub(this.instance, "notifyObserver"),
         $appointments = $(".dx-scheduler-appointment"),
         keyboard = keyboardMock($appointments.eq(0));
-
 
     $($appointments.eq(0)).trigger("focusin");
     keyboard.keyDown("enter");

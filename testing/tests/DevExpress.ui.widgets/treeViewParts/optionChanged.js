@@ -421,7 +421,6 @@ QUnit.test("parentIdExpr should work correctly when it was dynamically changed",
     assert.equal($node1.find(".dx-treeview-node").length, 1, "item 11 became a child of the item 1");
 });
 
-
 QUnit.module("Option changing for single item");
 
 QUnit.test("node should have disabled class when it was disabled at runtime", function(assert) {

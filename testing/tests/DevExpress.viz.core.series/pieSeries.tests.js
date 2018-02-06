@@ -309,7 +309,6 @@ var checkTwoGroups = function(assert, series) {
         series.updateData(this.data);
         series.canvas = { width: 400, height: 400, left: 0, right: 0, top: 0, bottom: 0 };
 
-
         series.draw();
         series.updateData([]);
         series.draw();

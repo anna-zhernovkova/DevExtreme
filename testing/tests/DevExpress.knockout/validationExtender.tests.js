@@ -28,7 +28,6 @@ QUnit.test("dxValidator should be stuck to observable", function(assert) {
     assert.ok(vm.login.dxValidator.on, "dxValidator should have 'on' method");
 });
 
-
 QUnit.test("Engine can subscribe to validate group", function(assert) {
     var vm = {
         login: ko.observable("test").extend({
@@ -109,8 +108,6 @@ QUnit.test("validated handler should be called", function(assert) {
     assert.strictEqual(args[0].validator, vm.login.dxValidator, "validation result should be passed");
 });
 
-
-
 QUnit.test("changing observable value should cause validation", function(assert) {
     var vm = {
             login: ko.observable("").extend({
@@ -130,7 +127,6 @@ QUnit.test("changing observable value should cause validation", function(assert)
     assert.ok(args, "Args should be passed");
     assert.strictEqual(args[0].value, "new value", "Value should be passed");
 });
-
 
 QUnit.test("Model should be found as a validation group", function(assert) {
     var vm = {},
@@ -154,7 +150,6 @@ QUnit.test("dxValidationGroup should win Model", function(assert) {
                 .attr("data-bind", "dxButton: { }")
                 .appendTo($groupContainer);
 
-
     ko.applyBindings(vm, $groupContainer[0]);
     var groupInstance = new ValidationGroup($groupContainer);
     //act
@@ -168,7 +163,6 @@ QUnit.test("validationGroup string key should win Model", function(assert) {
         $buttonContainer = $("<div></div>")
                 .attr("data-bind", "dxButton: { validationGroup: 'uniqueGroupKey' }")
                 .appendTo(FIXTURE_ELEMENT);
-
 
     ko.applyBindings(vm, $buttonContainer[0]);
     //act
