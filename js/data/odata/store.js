@@ -228,11 +228,12 @@ var ODataStore = Store.inherit({
         this._requireKey();
 
         var that = this,
+            callBase = this.callBase,
             d = new Deferred();
 
         when(this._sendRequest(this._url, "POST", null, values))
             .done(function(serverResponse) {
-                d.resolve(values, that.keyOf(serverResponse));
+                callBase(d, values, that.keyOf(serverResponse));
             })
             .fail(d.reject);
 
@@ -240,13 +241,14 @@ var ODataStore = Store.inherit({
     },
 
     _updateImpl: function(key, values) {
-        var d = new Deferred();
+        var callBase = this.callBase,
+            d = new Deferred();
 
         when(
             this._sendRequest(this._byKeyUrl(key), this._updateMethod, null, values)
         ).done(
             function() {
-                d.resolve(key, values);
+                callBase(d, key, values);
             }
         ).fail(d.reject);
 

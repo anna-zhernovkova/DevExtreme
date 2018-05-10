@@ -5201,7 +5201,7 @@ QUnit.testInActiveWindow('Update be called once in cell mode on value change for
     that.editCell(0, 0);
     $checkBox.focus().trigger("dxclick");
 
-    updateDeferred.resolve();
+    updateDeferred.resolve(1, 1);
     that.clock.tick();
 
     // assert

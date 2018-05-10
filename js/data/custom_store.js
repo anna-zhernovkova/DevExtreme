@@ -457,7 +457,8 @@ var CustomStore = Store.inherit({
     },
 
     _insertImpl: function(values) {
-        var userFunc = this._insertFunc,
+        var callBase = this.callBase,
+            userFunc = this._insertFunc,
             userResult,
             d = new Deferred();
 
@@ -469,14 +470,17 @@ var CustomStore = Store.inherit({
         }
 
         fromPromise(userResult)
-            .done(function(newKey) { d.resolve(values, newKey); })
+            .done(function(newKey) {
+                callBase(d, values, newKey);
+            })
             .fail(createUserFuncFailureHandler(d));
 
         return d.promise();
     },
 
     _updateImpl: function(key, values) {
-        var userFunc = this._updateFunc,
+        var callBase = this.callBase,
+            userFunc = this._updateFunc,
             userResult,
             d = new Deferred();
 
@@ -488,7 +492,9 @@ var CustomStore = Store.inherit({
         }
 
         fromPromise(userResult)
-            .done(function() { d.resolve(key, values); })
+            .done(function() {
+                callBase(d, key, values);
+            })
             .fail(createUserFuncFailureHandler(d));
 
         return d.promise();

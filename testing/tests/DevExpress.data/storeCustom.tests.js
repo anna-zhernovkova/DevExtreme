@@ -1,6 +1,7 @@
 "use strict";
 
 var $ = require("jquery"),
+    config = require("core/config"),
     CustomStore = require("data/custom_store"),
     processRequestResultLock = require("data/utils").processRequestResultLock,
     ERRORS = {
@@ -407,8 +408,13 @@ QUnit.test("insert, promise result", function(assert) {
     });
 
     store.insert({ a: 1 }).done(function(values, key) {
-        assert.deepEqual(values, { a: 1 });
-        assert.equal(key, 123);
+        if(config().useJQuery) {
+            assert.deepEqual(values, { a: 1 });
+            assert.equal(key, 123);
+        } else {
+            assert.deepEqual(values, { values: { a: 1 }, key: 123 });
+            assert.notOk(key);
+        }
         done();
     });
 });
@@ -423,8 +429,13 @@ QUnit.test("insert, non-promise result", function(assert) {
     });
 
     store.insert({ a: 1 }).done(function(values, key) {
-        assert.deepEqual(values, { a: 1 });
-        assert.equal(key, 123);
+        if(config().useJQuery) {
+            assert.deepEqual(values, { a: 1 });
+            assert.equal(key, 123);
+        } else {
+            assert.deepEqual(values, { values: { a: 1 }, key: 123 });
+            assert.notOk(key);
+        }
         done();
     });
 });
@@ -458,8 +469,13 @@ QUnit.test("update, promise result", function(assert) {
     });
 
     store.update(123, { a: 1 }).done(function(key, values) {
-        assert.strictEqual(key, 123);
-        assert.deepEqual(values, { a: 1 });
+        if(config().useJQuery) {
+            assert.strictEqual(key, 123);
+            assert.deepEqual(values, { a: 1 });
+        } else {
+            assert.deepEqual(key, { values: { a: 1 }, key: 123 });
+            assert.notOk(values);
+        }
         done();
     });
 });
@@ -477,8 +493,13 @@ QUnit.test("update, non-promise result", function(assert) {
     });
 
     store.update(123, { a: 1 }).done(function(key, values) {
-        assert.strictEqual(key, 123);
-        assert.deepEqual(values, { a: 1 });
+        if(config().useJQuery) {
+            assert.strictEqual(key, 123);
+            assert.deepEqual(values, { a: 1 });
+        } else {
+            assert.deepEqual(key, { values: { a: 1 }, key: 123 });
+            assert.notOk(values);
+        }
         assert.ok(updateCalled);
         done();
     });
@@ -612,8 +633,14 @@ QUnit.test("function context is current Store's instance", function(assert) {
         key: key,
         load: ensureThis,
         byKey: ensureThis,
-        insert: ensureThis,
-        update: ensureThis,
+        insert: function() {
+            ensureThis.apply(this);
+            return 1;
+        },
+        update: function() {
+            ensureThis.apply(this);
+            return 1;
+        },
         remove: ensureThis,
         totalCount: function() {
             ensureThis.apply(this);
@@ -628,8 +655,8 @@ QUnit.test("function context is current Store's instance", function(assert) {
 
     store.load();
     store.byKey();
-    store.insert();
-    store.update();
+    store.insert(1);
+    store.update(1);
     store.remove();
     store.totalCount();
 });

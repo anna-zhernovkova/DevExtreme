@@ -1,6 +1,7 @@
 "use strict";
 
 var $ = require("jquery"),
+    config = require("core/config"),
     EdmLiteral = require("data/odata/utils").EdmLiteral,
     ODataStore = require("data/odata/store"),
     ODataContext = require("data/odata/context"),
@@ -924,15 +925,20 @@ QUnit.test("works", function(assert) {
         .fail(function() { assert.fail(false, MUST_NOT_REACH_MESSAGE); })
         .done(function(data, key) { logger.push(["done", data, key]); })
         .done(function() {
-            assert.deepEqual(logger, [
+            var expectedLog = [
                 ["onInserting", { id: 1, foo: "bar" }],
                 ["inserting", { id: 1, foo: "bar" }],
 
                 ["onInserted", { id: 1, foo: "bar" }, 1],
-                ["inserted", { id: 1, foo: "bar" }, 1],
+                ["inserted", { id: 1, foo: "bar" }, 1]
+            ];
+            expectedLog.push(
+                config().useJQuery ?
+                    ["done", { id: 1, foo: "bar" }, 1] :
+                    ["done", { values: { id: 1, foo: "bar" }, key: 1 }, undefined]
+            );
 
-                ["done", { id: 1, foo: "bar" }, 1]
-            ]);
+            assert.deepEqual(logger, expectedLog);
         })
         .always(done);
 });
@@ -953,7 +959,9 @@ QUnit.test("insert with compound key", function(assert) {
     store.insert({ id: { foo: "bar", bar: "foo" } })
         .fail(function() { assert.ok(false, MUST_NOT_REACH_MESSAGE); })
         .done(function(data, key) {
-            assert.deepEqual(key, { foo: "bar", bar: "foo" });
+            config().useJQuery ?
+                assert.deepEqual(key, { foo: "bar", bar: "foo" }) :
+                assert.deepEqual(data.key, { foo: "bar", bar: "foo" });
         })
         .always(done);
 });
@@ -979,7 +987,9 @@ QUnit.test("with 201 status", function(assert) {
             assert.ok(false, MUST_NOT_REACH_MESSAGE);
         })
         .done(function(data, key) {
-            assert.equal(key, 1);
+            config().useJQuery ?
+                assert.equal(key, 1) :
+                assert.equal(data.key, 1);
         })
         .always(done);
 });
@@ -1068,7 +1078,7 @@ QUnit.test("works", function(assert) {
     $.when.apply($, promises)
         .fail(function() { assert.ok(false, MUST_NOT_REACH_MESSAGE); })
         .done(function() {
-            assert.deepEqual(log, [
+            var expectedLog = [
                 ["onUpdating", 1, { foo: "bar" }],
                 ["updating", 1, { foo: "bar" }],
 
@@ -1089,7 +1099,12 @@ QUnit.test("works", function(assert) {
                 ["onUpdated", 1, { foo: "bar" }],
                 ["updated", 1, { foo: "bar" }],
                 ["done", 1, { foo: "bar" }]
-            ]);
+            ];
+            if(!config().useJQuery) {
+                expectedLog[8] = expectedLog[11] = expectedLog[14] = ["done", { key: 1, values: { foo: "bar" } }, undefined];
+            }
+
+            assert.deepEqual(log, expectedLog);
         })
         .always(done);
 });

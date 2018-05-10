@@ -1,6 +1,7 @@
 "use strict";
 
 var Class = require("../core/class"),
+    config = require("../core/config"),
     abstract = Class.abstract,
     EventsMixin = require("../core/events_mixin"),
     each = require("../core/utils/iterator").each,
@@ -266,12 +267,21 @@ var Store = Class.inherit({
         that.fireEvent("inserting", [values]);
 
         return that._addFailHandlers(that._insertImpl(values).done(function(callbackValues, callbackKey) {
-            that.fireEvent("inserted", [callbackValues, callbackKey]);
+            var args = callbackKey ?
+                [callbackValues, callbackKey] :
+                [callbackValues.values, callbackValues.key];
+
+            that.fireEvent("inserted", args);
             that.fireEvent("modified");
         }));
     },
 
-    _insertImpl: abstract,
+    _insertImpl: function(deferred, values, key) {
+        return config().useJQuery ?
+            deferred.resolve(values, key) :
+            deferred.resolve({ values: values, key: key });
+
+    },
 
     /**
     * @name StoreMethods.update
@@ -287,12 +297,21 @@ var Store = Class.inherit({
         that.fireEvent("updating", [key, values]);
 
         return that._addFailHandlers(that._updateImpl(key, values).done(function(callbackKey, callbackValues) {
-            that.fireEvent("updated", [callbackKey, callbackValues]);
+            var args = callbackValues ?
+                [callbackKey, callbackValues] :
+                [callbackKey.key, callbackKey.values];
+
+            that.fireEvent("updated", args);
             that.fireEvent("modified");
         }));
     },
 
-    _updateImpl: abstract,
+    _updateImpl: function(deferred, key, values) {
+        return config().useJQuery ?
+            deferred.resolve(key, values) :
+            deferred.resolve({ values: values, key: key });
+
+    },
 
     /**
     * @name StoreMethods.remove

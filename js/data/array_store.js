@@ -114,7 +114,7 @@ var ArrayStore = Store.inherit({
         }
 
         this._array.push(obj);
-        return trivialPromise(values, keyValue);
+        return this.callBase(new Deferred(), values, keyValue).promise();
     },
 
     _updateImpl: function(key, values) {
@@ -140,7 +140,7 @@ var ArrayStore = Store.inherit({
         }
 
         objectUtils.deepExtendArraySafe(target, values, extendComplexObject);
-        return trivialPromise(key, values);
+        return this.callBase(new Deferred(), key, values).promise();
     },
 
     _removeImpl: function(key) {

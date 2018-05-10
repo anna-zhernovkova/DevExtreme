@@ -921,7 +921,7 @@ QUnit.test("the 'onCustomItemCreating' option with Deferred", function(assert) {
         $tagBox = $("#tagBox").dxTagBox({
             acceptCustomValue: true,
             displayExpr: "display",
-            valueExpr: "value",
+            valueExpr: "values",
             onCustomItemCreating: function(e) {
                 e.customItem = deferred.promise();
             }
@@ -939,7 +939,7 @@ QUnit.test("the 'onCustomItemCreating' option with Deferred", function(assert) {
 
     deferred.resolve({
         display: "display " + customValue,
-        value: "value " + customValue
+        values: "value " + customValue
     });
 
     var $tags = $tagBox.find(".dx-tag");
@@ -1003,9 +1003,16 @@ QUnit.test("custom item should be selected in list but tag should not be rendere
         $tagBox = $("#tagBox").dxTagBox({
             dataSource: store,
             onCustomItemCreating: function(e) {
-                e.customItem = store.insert({ id: 2, name: e.text }).done(function() {
+                var insertResult = store.insert({ id: 2, name: e.text }).done(function() {
                     instance.getDataSource().reload();
                 });
+                if(config().useJQuery) {
+                    e.customItem = insertResult;
+                } else {
+                    insertResult.done(function(result) {
+                        e.customItem = result.values;
+                    });
+                }
             },
             value: [],
             acceptCustomValue: true,
@@ -1036,9 +1043,16 @@ QUnit.test("custom item should be selected in list but tag should not be rendere
         $tagBox = $("#tagBox").dxTagBox({
             dataSource: store,
             onCustomItemCreating: function(e) {
-                e.customItem = store.insert({ id: 2, name: e.text }).done(function() {
+                var insertResult = store.insert({ id: 2, name: e.text }).done(function() {
                     instance.getDataSource().reload();
                 });
+                if(config().useJQuery) {
+                    e.customItem = insertResult;
+                } else {
+                    insertResult.done(function(result) {
+                        e.customItem = result.values;
+                    });
+                }
             },
             value: [],
             acceptCustomValue: true,

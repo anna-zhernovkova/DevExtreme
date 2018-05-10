@@ -1012,7 +1012,8 @@ var EditingController = modules.ViewController.inherit((function() {
                     type = editData.type,
                     deferred,
                     doneDeferred,
-                    params;
+                    params,
+                    result;
 
                 if(that._beforeSaveEditData(editData, index)) {
                     return;
@@ -1028,15 +1029,24 @@ var EditingController = modules.ViewController.inherit((function() {
                     case DATA_EDIT_DATA_INSERT_TYPE:
                         params = { data: data, cancel: false };
                         deferred = executeEditingAction("onRowInserting", params, function() {
-                            return store.insert(params.data).done(function(data, key) {
-                                editData.key = key;
+                            return store.insert(params.data).done(function(values, key) {
+                                if(key) {
+                                    editData.key = key;
+                                } else {
+                                    result = values.values;
+                                    editData.key = values.key;
+                                }
                             });
                         });
                         break;
                     case DATA_EDIT_DATA_UPDATE_TYPE:
                         params = { newData: data, oldData: oldData, key: editData.key, cancel: false };
                         deferred = executeEditingAction("onRowUpdating", params, function() {
-                            return store.update(editData.key, params.newData);
+                            return store.update(editData.key, params.newData).done(function(key, values) {
+                                if(!values) {
+                                    result = key.values;
+                                }
+                            });
                         });
                         break;
                 }
@@ -1046,7 +1056,7 @@ var EditingController = modules.ViewController.inherit((function() {
                     deferred
                         .always(function(data) {
                             isDataSaved = data !== "cancel";
-                            results.push({ key: editData.key, result: data });
+                            results.push({ key: editData.key, result: result || data });
                         })
                         .always(doneDeferred.resolve);
 
